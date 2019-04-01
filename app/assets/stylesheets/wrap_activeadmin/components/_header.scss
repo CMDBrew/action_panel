@@ -1,0 +1,245 @@
+%dropdown-to-menu {
+  &.navbar-dark  .dropdown-item a { color: $yiq-text-light; }
+  &.navbar-light .dropdown-item a { color: $yiq-text-dark; }
+
+  .dropdown-toggle {
+    &::after { display: none; }
+
+    &::before {
+      @extend .dropdown-toggle::after;
+      display: inline-block;
+      margin-right: map-get($spacers, 1);
+    }
+  }
+
+  .dropdown-menu {
+    position: static !important;
+    padding: 0;
+    border: 0;
+
+    @include transform(none !important);
+
+    &,
+    .dropdown-item:hover {
+      background: transparent;
+    }
+
+    .dropdown-item {
+      padding: 0;
+      background: transparent;
+
+      a {
+        @extend .nav-link;
+        padding-left: 2.5 * $spacer !important;
+      }
+    }
+  }
+}
+
+%navigation-sidebar-base {
+  $_item-spacer: map-get($spacers, 3);
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+
+  .navbar-nav { width: 100%; }
+
+  .nav-link,
+  .navbar-brand {
+    padding-right: $_item-spacer;
+    padding-left: $_item-spacer;
+    white-space: nowrap;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    margin: 0;
+  }
+
+  #header-nav {
+    display: flex;
+    flex: 1;
+
+    &,
+    .navbar-nav {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  #main-nav {
+    flex: 1;
+    overflow-y: auto;
+  }
+}
+
+%navigation-top-base {
+  #main-nav { @extend .mr-auto; }
+  .dropdown-item a { color: inherit; }
+}
+
+%navigation-fixed-top {
+  @extend %navigation-top-base;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  min-height: $header-fixed-top-height;
+}
+
+%navigation-top {
+  @extend %navigation-top-base;
+}
+
+%navigation-sidebar {
+  @extend %dropdown-to-menu;
+  @extend %navigation-sidebar-base;
+  display: flex;
+  width: $header-sidebar-width;
+
+  @at-root {
+    &,
+    #title_bar,
+    #wrapper {
+      @include transition(all 0.2s linear);
+    }
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    height: $titlebar-height;
+  }
+
+  @include media-breakpoint-down(lg) {
+    @include transform(translateX(-100%));
+    width: $header-sidebar-md-width;
+
+    &.show {
+      @include transform(translateX(0%));
+
+      ~ nav,
+      ~ div {
+        @include transform(translateX($header-sidebar-md-width));
+      }
+
+      @at-root {
+        body.header-active { overflow: hidden; }
+      }
+    }
+  }
+}
+
+%navigation-aside {
+  @extend %dropdown-to-menu;
+  @extend %navigation-sidebar-base;
+  display: block !important;
+  width: $header-sidebar-width;
+
+  @at-root {
+    &,
+    #title_bar,
+    #wrapper,
+    #aside-nav-content {
+      @include transition(all 0.2s linear);
+    }
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    height: $header-fixed-top-height;
+  }
+
+  #aside-nav-content {
+    @extend #{$header-aside-theme};
+    align-items: flex-start;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    @include media-breakpoint-up(xl) {
+      padding-top: $spacer;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .navbar-brand { display: none; }
+  }
+
+  @include media-breakpoint-down(lg) {
+    top: 0 !important;
+    z-index: $zindex-fixed + 1;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      content: '';
+    }
+
+    #aside-nav-content {
+      width: $header-sidebar-md-width;
+      @include transform(translateX(-100%));
+    }
+
+    &.show {
+      pointer-events: all;
+      opacity: 1;
+
+      &::after { background: rgba($modal-backdrop-bg, $modal-backdrop-opacity); }
+      #aside-nav-content { @include transform(translateX(0%)); }
+      @at-root { body.header-active { overflow: hidden; } }
+    }
+  }
+}
+
+#header {
+  @extend #{$header-theme};
+  z-index: $zindex-fixed;
+}
+
+#header,
+#aside-nav {
+  .nav-item {
+    .nav-link {
+      @extend .text-truncate;
+      width: 100%;
+
+      & > * {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .menu_badge { margin-left: $header-icon-offset;  }
+    }
+
+    .waa-icon {
+      @extend %streamline-icon;
+      @include waa-icon-size($header-icon-size);
+      display: inline-block;
+
+      margin-right: $header-icon-offset;
+      vertical-align: middle;
+      stroke: $header-icon-color;
+    }
+  }
+
+  .nav-link:hover .waa-icon { stroke: $header-icon-hover-color; }
+  .nav-item.active .waa-icon { stroke: $header-icon-active-color; }
+}

@@ -1,0 +1,15 @@
+.table_for {
+  @extend #{$table-for-theme};
+  .col { width: auto; }
+  .col-actions { text-align: right; }
+
+  th,
+  td {
+    vertical-align: inherit !important;
+  }
+
+  tr.selected td { background: $table-for-selected-color; }
+}
+
+.table_btn { @extend #{$table-for-btn-theme}; }
+

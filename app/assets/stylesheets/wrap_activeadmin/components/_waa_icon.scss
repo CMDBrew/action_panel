@@ -1,0 +1,6 @@
+.waa-icon {
+  @extend %streamline-icon;
+  @include waa-icon-size($icon-size);
+  display: inherit;
+  stroke: currentColor;
+}

@@ -1,0 +1,38 @@
+%titlebar-top-base {
+  position: fixed;
+  right: 0;
+  z-index: $zindex-fixed - 1;
+}
+
+#title_bar {
+  @extend #{$titlebar-theme};
+
+  $_titlebar: &;
+
+  flex-wrap: nowrap;
+  height: $titlebar-height;
+
+  #titlebar_left {
+    flex: 1;
+    margin-right: $spacer;
+  }
+
+  #titlebar_left,
+  #titlebar_right,
+  #breadcrumb {
+    @extend .text-truncate;
+    white-space: nowrap;
+  }
+
+  #breadcrumb {
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+
+    .breadcrumb-item {
+      @extend .text-truncate;
+      white-space: nowrap;
+    }
+  }
+}

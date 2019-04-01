@@ -1,0 +1,26 @@
+fieldset.inputs,
+fieldset.actions {
+  ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+fieldset.actions {
+  ol {
+    @extend .list-inline;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+  }
+
+  li {
+    @extend .list-inline-item;
+    margin-right: map-get($spacers, 2);
+    &:first-child { margin: 0; }
+  }
+}
+
+.form_cancel { @extend #{$form-cancel-theme}; }
+.form_submit { @extend #{$form-submit-theme}; }

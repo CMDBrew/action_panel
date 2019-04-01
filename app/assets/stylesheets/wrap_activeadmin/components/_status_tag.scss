@@ -1,0 +1,6 @@
+.status_tag {
+  @extend #{$status-tag-theme};
+
+  &.yes { @extend #{$status-tag-success}; }
+  &.no { @extend #{$status-tag-error}; }
+}

@@ -1,0 +1,119 @@
+// Switches for Bootstrap 4.
+$switch-height:              calc(#{$input-height} * 0.8) !default;
+$switch-height-sm:           calc(#{$input-height-sm} * 0.8) !default;
+$switch-height-lg:           calc(#{$input-height-lg} * 0.8) !default;
+$switch-border-radius:       $switch-height !default;
+$switch-border:              1px solid $input-border-color !default;
+$switch-bg:                  $custom-control-indicator-bg !default;
+$switch-checked-bg:          map-get($theme-colors, 'primary') !default;
+$switch-disabled-bg:         $custom-control-indicator-disabled-bg !default;
+$switch-disabled-color:      $custom-control-label-disabled-color !default;
+$switch-thumb-bg:            $white !default;
+$switch-thumb-border-radius: 50% !default;
+$switch-focus-box-shadow:    0 0 0 $input-btn-focus-width rgba(map-get($theme-colors, 'primary'), 0.25) !default;
+$switch-transition:          0.2s all !default;
+$switch-divider:             1px solid $hr-border-color !default;
+
+.form-switch {
+  position: relative;
+  display: block;
+  padding-bottom: $spacer / 2;
+  font-size: $font-size-base;
+  border-bottom: $switch-divider;
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    background: none;
+    border: 0;
+
+    clip-path: inset(50%);
+
+    + label .switch-btn {
+      position: relative;
+      display: inline-block;
+      height: $switch-height;
+      min-width: calc(#{$switch-height} * 2);
+      margin-left: $spacer;
+      line-height: $switch-height;
+      text-indent: calc(calc(#{$switch-height} * 2) + 0.5rem);
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: $switch-border-radius;
+      outline: none;
+      user-select: none;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: calc(#{$switch-height} * 2);
+        content: '';
+      }
+
+      &::before {
+        right: 0;
+        background-color: $switch-bg;
+        border: $switch-border;
+        border-radius: $switch-border-radius;
+        transition: $switch-transition;
+      }
+
+      &::after {
+        top: 0;
+        left: 0;
+        width: $switch-height;
+        height: $switch-height;
+        background-color: $switch-thumb-bg;
+        border: $switch-border;
+        border-radius: $switch-thumb-border-radius;
+        transition: $switch-transition;
+        @include box-shadow(0 0 0 1px rgba($dark, 0.05), 0 0 8px rgba($dark, 0.05));
+      }
+    }
+
+    &:checked + label .switch-btn {
+      &::before { background-color: $switch-checked-bg; }
+      &::after { margin-left: $switch-height; }
+    }
+
+    &:focus + label .switch-btn::before {
+      outline: none;
+      box-shadow: $switch-focus-box-shadow;
+    }
+
+    &:disabled + label .switch-btn {
+      color: $switch-disabled-color;
+      cursor: not-allowed;
+    }
+
+    &:disabled + label .switch-btn::before {
+      background-color: $switch-disabled-bg;
+    }
+  }
+
+  + .form-switch {
+    margin-left: $spacer;
+  }
+
+  .form-switch-label {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-direction: row;
+    margin: 0;
+
+    .switch-text {
+      flex: 1;
+      padding: $spacer / 2;
+      padding-left: 0;
+    }
+  }
+}

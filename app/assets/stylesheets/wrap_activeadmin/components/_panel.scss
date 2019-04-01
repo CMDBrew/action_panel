@@ -1,0 +1,18 @@
+.panel { margin-bottom: $grid-gutter-width / 2; }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  white-space: nowrap;
+
+  &:empty { display: none; }
+
+  .header-content {
+    @extend .text-truncate;
+    flex: 1;
+    margin-right: $spacer;
+
+    h5 { margin-bottom: 0; }
+  }
+}

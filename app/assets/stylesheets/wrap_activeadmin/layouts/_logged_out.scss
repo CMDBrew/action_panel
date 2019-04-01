@@ -1,0 +1,7 @@
+body.logged_out {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: map-get($spacers, 5) 0;
+}

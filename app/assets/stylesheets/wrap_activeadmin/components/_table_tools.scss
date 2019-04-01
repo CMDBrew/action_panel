@@ -1,0 +1,48 @@
+%table-tool-btn {
+  @extend #{$table-tools-btn-theme};
+  &.active { @extend #{$table-tools-btn-active-theme}; }
+  &:not(.active) { @extend #{$table-tools-btn-inactive-theme}; }
+}
+
+.table_tools {
+  margin-bottom: $spacer;
+}
+
+.table_tool_btn { @extend %table-tool-btn; }
+
+.scope_ctrls {
+  display: flex;
+  flex-direction: row;
+
+  .table_tools_segmented_control {
+    padding-left: $spacer;
+    margin: 0;
+  }
+}
+
+.scope_count {
+  @extend #{$scope-count-theme};
+}
+
+.filter-dropdown {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+
+  .dropdown-toggle { @extend %table-tool-btn; }
+  .card-header { display: none; }
+
+  .dropdown-menu {
+    width: $sidebar-width;
+
+    @include media-breakpoint-down(xs) {
+      width: calc(100vw - #{$grid-gutter-width});
+    }
+  }
+
+  .card {
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+  }
+}

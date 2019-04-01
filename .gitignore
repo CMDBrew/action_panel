@@ -1,0 +1,36 @@
+# Ignore local configs
+.DS_Store
+.bundle/
+log/*.log
+pkg/
+
+# Ignore Test Files
+spec/dummy/tmp/
+
+# Ignore Local Variables
+.env
+.env.production
+.keep
+
+# derailed reports
+report.txt
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+# Ignore byebug history
+.byebug_history
+
+# Ignore rbenv files
+.ruby-version
+
+# Ignore simplecov reports
+/coverage
+
+# DB dump
+*.dump
+
+# Ignore Dummy app
+spec/dummy/*

@@ -1,0 +1,13 @@
+.nav_tabs {
+  @extend #{$tab-theme};
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.tab-ctrls {
+  overflow-x: auto;
+  overflow-y: hidden;
+  // .nav-tabs { margin-bottom: $spacer; }
+}
+
+.ui-tabs-active .nav-link { @extend .active; }
