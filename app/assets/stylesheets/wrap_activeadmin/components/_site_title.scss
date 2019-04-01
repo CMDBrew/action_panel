@@ -2,4 +2,6 @@
   display: flex;
   align-items: center;
   .site_title { flex: 1; }
+
+  .site_title_image { height: $header-logo-size; }
 }

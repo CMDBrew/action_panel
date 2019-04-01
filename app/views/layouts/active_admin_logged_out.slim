@@ -20,14 +20,15 @@ html
           #active_admin_content
             .card.panel
               .card-body
-                .text-center.mb-3
-                  - image = ActiveAdmin.application.site_title_image.presence
-                  - if image
-                    = image_tag image,
-                      alt: ActiveAdmin.application.site_title,
-                      retina: true, class: 'logo'
-                  - else
-                    h6= active_admin_application.site_title(self)
+                .text-center
+                  .logo-container.mb-3
+                    - image = ActiveAdmin.application.site_title_image.presence
+                    - if image
+                      = image_tag image,
+                        alt: ActiveAdmin.application.site_title,
+                        retina: true, class: 'logo'
+                    - else
+                      h6= active_admin_application.site_title(self)
                   h3.card-title= yield :title
                 = flashes_html
                 = yield
