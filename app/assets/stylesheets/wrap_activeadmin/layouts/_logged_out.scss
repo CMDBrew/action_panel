@@ -4,4 +4,10 @@ body.logged_out {
   justify-content: center;
   min-height: 100vh;
   padding: map-get($spacers, 5) 0;
+
+  #active_admin_content {
+    display: flex;
+    flex-direction: column;
+  }
 }
+
