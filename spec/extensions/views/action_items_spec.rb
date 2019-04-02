@@ -19,10 +19,7 @@ RSpec.describe ActiveAdmin::Views::ActionItems do
   end
 
   describe 'html' do
-    before { WrapActiveAdmin.action_item_theme = 'btn-lg' }
-
     let(:action_items_html) { build_action_items(namespace, action_items) }
     it { expect(action_items_html.class_list).to include('btn-group') }
-    it { expect(action_items_html.children.first.to_s.include?('btn-lg')).to eq(true) }
   end
 end

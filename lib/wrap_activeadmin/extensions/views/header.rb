@@ -36,8 +36,7 @@ module ActiveAdmin
       end
 
       def instance_klass
-        @instance_klass ||=
-          "#{WrapActiveAdmin.instance_navigation} #{WrapActiveAdmin.instance_header_class}"
+        @instance_klass ||= WrapActiveAdmin.instance_navigation.to_s
       end
 
       def header_navigation
