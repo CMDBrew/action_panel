@@ -1,8 +1,8 @@
 # WrapActiveAdmin
-Short description and motivation.
+WrapActiveAdmin changed the theming for the popular gem **[ActiveAdmin](https://activeadmin.info/)** to **[Bootstrap 4](https://getbootstrap.com/)** while providing some common feature extensions to allow easy creation of beautiful applications with ActiveAdmin.
 
 ## Usage
-How to use my plugin.
+To customize WrapActiveAdmin please see the **[Wiki](https://github.com/CMDBrew/wrap_activeadmin_v2/wiki)**
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -19,8 +19,6 @@ Install ActiveAdmin if you haven't already installed it
 ```bash
 rails g active_admin:install
 ```
-
-To customize WrapActiveAdmin please see the **[Wiki](https://github.com/CMDBrew/wrap_activeadmin_v2/wiki)**
 
 ## Contributing
 - Clone this gem.
