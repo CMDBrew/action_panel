@@ -11,3 +11,4 @@
 }
 
 .ui-tabs-active .nav-link { @extend .active; }
+.tab-content > div { display: none; }
