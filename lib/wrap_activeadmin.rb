@@ -43,15 +43,10 @@ module WrapActiveAdmin
   @navigation       = 'top'
   @sidebar_position = 'right'
   @filter_position  = 'sidebar'
-  @header_class     = ''
 
   class << self
 
-    attr_accessor :navigation, :header_class, :sidebar_position, :filter_position
-
-    def instance_header_class
-      return_or_exec_proc(header_class)
-    end
+    attr_accessor :navigation, :sidebar_position, :filter_position
 
     def instance_navigation
       return_or_exec_proc(navigation.underscore)
