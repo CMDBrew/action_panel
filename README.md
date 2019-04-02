@@ -20,6 +20,31 @@ Install ActiveAdmin if you haven't already installed it
 rails g active_admin:install
 ```
 
+Install WrapActiveAdmin
+```bash
+rails g wrap_activeadmin:install
+```
+
+Or do it manually
+```scss
+// app/assets/stylesheets/active_admin.scss
+// replace active_admin with wrap_activeadmin
+@import "wrap_activeadmin/mixins";
+@import "wrap_activeadmin/base";
+```
+
+```coffee
+# app/assets/javascripts/active_admin.js.coffee
+# replace active_admin with wrap_activeadmin
+#= require wrap_activeadmin/base
+```
+
+```ruby
+# config/initializers/wrap_activeadmin.rb
+# Create an initializer
+# For more details on the configurations please see https://github.com/CMDBrew/wrap_activeadmin_v2/wiki/Configurations
+```
+
 ## Contributing
 - Clone this gem.
 - Create dummy rails app inside `spec/dummy`
