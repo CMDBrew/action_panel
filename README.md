@@ -20,6 +20,8 @@ Install ActiveAdmin if you haven't already installed it
 rails g active_admin:install
 ```
 
+To customize WrapActiveAdmin please see the **[Wiki](https://github.com/CMDBrew/wrap_activeadmin_v2/wiki)**
+
 ## Contributing
 - Clone this gem.
 - Create dummy rails app inside `spec/dummy`
