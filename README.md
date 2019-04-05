@@ -5,6 +5,7 @@ WrapActiveAdmin changed the theming for the popular gem **[ActiveAdmin](https://
 To customize WrapActiveAdmin please see the **[Wiki](https://github.com/CMDBrew/wrap_activeadmin_v2/wiki)**
 
 ## Installation
+### Add Gem
 Add this line to your application's Gemfile:
 ```ruby
 gem 'wrap_activeadmin'
@@ -15,10 +16,43 @@ And then execute:
 bundle install
 ```
 
-Install ActiveAdmin if you haven't already installed it
+### Install ActiveAdmin
+If you haven't already installed it
 ```bash
 rails g active_admin:install
 ```
+
+### Install WrapActiveAdmin
+```bash
+rails g wrap_activeadmin:install
+```
+
+Or do it manually
+```scss
+// app/assets/stylesheets/active_admin.scss
+// replace active_admin with wrap_activeadmin
+@import "wrap_activeadmin/mixins";
+@import "wrap_activeadmin/base";
+```
+
+```coffee
+# app/assets/javascripts/active_admin.js.coffee
+# replace active_admin with wrap_activeadmin
+#= require wrap_activeadmin/base
+```
+
+```ruby
+# config/initializers/wrap_activeadmin.rb
+# Create an initializer
+# For more details on the configurations please see https://github.com/CMDBrew/wrap_activeadmin_v2/wiki/Configurations
+```
+
+### Install Styles
+```bash
+rails g wrap_activeadmin:styles
+```
+
+*p.s. Make sure you remove `= require_tree .` from `application.css` or else you will have sass compile errors.*
 
 ## Contributing
 - Clone this gem.
