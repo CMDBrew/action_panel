@@ -3,6 +3,37 @@
   .col { width: auto; }
   .col-actions { text-align: right; }
 
+  th.sortable {
+    &.sorted-asc a::before { color: $primary; }
+    &.sorted-desc a::after { color: $primary; }
+
+    a {
+      position: relative;
+      padding-left: $spacer;
+
+      &::before,
+      &::after {
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        margin-left: $caret-spacing;
+        color: $nav-link-disabled-color;
+        vertical-align: $caret-vertical-align;
+        content: '';
+      }
+
+      &::before {
+        top: 2px;
+        @include caret-up;
+      }
+
+      &::after {
+        bottom: 2px;
+        @include caret-down;
+      }
+    }
+  }
+
   th,
   td {
     vertical-align: inherit !important;

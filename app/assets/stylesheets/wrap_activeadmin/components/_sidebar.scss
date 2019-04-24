@@ -2,7 +2,7 @@
   @extend #{$sidebar-header-theme};
   justify-content: flex-end;
   height: $sidebar-header-height;
-  @include media-breakpoint-up(xl) {  display: none; }
+  @include media-breakpoint-up($sidebar-breakpoint) {  display: none; }
 }
 
 #sidebar-content {
@@ -11,7 +11,7 @@
   $_sidebar: &;
 
   width: 100%;
-  @include media-breakpoint-up(xl) { width: $sidebar-width; }
+  @include media-breakpoint-up($sidebar-breakpoint) { width: $sidebar-width; }
 
   @if $sidebar-fixed == true {
     #sidebar {
@@ -27,9 +27,9 @@
   @at-root {
     @if $sidebar-fixed == true {
       body.with_sidebar {
-        @include media-breakpoint-up(xl) { padding-right: $sidebar-width; }
+        @include media-breakpoint-up($sidebar-breakpoint) { padding-right: $sidebar-width; }
 
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down((nth($breakpoints, index($breakpoints, $sidebar-breakpoint) - 1))) {
           &.sidebar-active #{$_sidebar} { @include transform(translateX(0%)); }
         }
 
@@ -39,6 +39,11 @@
           flex: 1;
           height: calc(100% - #{$sidebar-header-height});
           overflow-y: auto;
+        }
+
+        .sidebar-header,
+        .sidebar-toggle {
+          @include media-breakpoint-up($sidebar-breakpoint) { display: none; }
         }
 
         #{$_sidebar} {
@@ -51,7 +56,7 @@
           width: $sidebar-width;
           height: auto !important;
 
-          @include media-breakpoint-down(lg) {
+          @include media-breakpoint-down((nth($breakpoints, index($breakpoints, $sidebar-breakpoint) - 1))) {
             @include transition(all 0.2s linear);
             @include transform(translateX(100%));
           }
@@ -68,7 +73,7 @@
             @include navigation('fixed_top') {
               #{$_sidebar} {
                 top: calc(#{$header-fixed-top-height} + #{$titlebar-height});
-                @include media-breakpoint-down(lg) { top: $header-fixed-top-height; }
+                @include media-breakpoint-down((nth($breakpoints, index($breakpoints, $sidebar-breakpoint) - 1))) { top: $header-fixed-top-height; }
               }
             }
           } @else {

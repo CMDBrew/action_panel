@@ -1,0 +1,23 @@
+.nav_tabs {
+  .nav-item {
+    position: relative;
+
+    a {
+      color: $secondary;
+      background: transparent !important;
+      border: 0;
+    }
+  }
+
+  .nav-item.ui-tabs-active,
+  .nav-item.selected {
+    &::after {
+      position: absolute;
+      right: $nav-link-padding-x;
+      bottom: 0;
+      left: $nav-link-padding-x;
+      border-bottom: 2px solid $primary;
+      content: '';
+    }
+  }
+}

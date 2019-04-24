@@ -211,12 +211,15 @@
 
 #header {
   @extend #{$header-theme};
+  @extend .navbar-expand-#{(nth($breakpoints, index($breakpoints, $header-breakpoint) - 1))};
   z-index: $zindex-fixed;
 }
 
 #header,
 #aside-nav {
   .nav-item {
+    .menu_badge { margin-left: $header-icon-offset;  }
+
     .nav-link {
       @extend .text-truncate;
       width: 100%;
@@ -225,8 +228,6 @@
         display: inline-block;
         vertical-align: middle;
       }
-
-      .menu_badge { margin-left: $header-icon-offset;  }
     }
 
     .waa-icon {

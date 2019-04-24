@@ -1,0 +1,11 @@
+.index_as_table {
+  @extend .card;
+  margin-bottom: $grid-gutter-width;
+
+  th {
+    border-top: 0;
+    border-bottom: 0 !important;
+  }
+
+  table { margin-bottom: 0; }
+}

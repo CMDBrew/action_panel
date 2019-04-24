@@ -23,7 +23,7 @@ body { overflow-x: hidden; }
       padding-left: calc(#{$grid-gutter-width} / 2);
     }
 
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up($sidebar-breakpoint) {
       &.without_sidebar { flex: 1; }
       &.with_sidebar { flex: 1 1 $sidebar-width; }
       &.with_sidebar { max-width: calc(100% - #{$sidebar-width}); }

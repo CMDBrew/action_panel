@@ -1,0 +1,15 @@
+#title_bar {
+  &::after {
+    position: absolute;
+    right: $spacer;
+    bottom: 0;
+    left: $spacer;
+    border-bottom: 1px solid $hr-border-color;
+    content: '';
+
+    @include media-breakpoint-down(lg) {
+      right: 0;
+      left: 0;
+    }
+  }
+}

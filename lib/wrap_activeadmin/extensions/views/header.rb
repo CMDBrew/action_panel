@@ -40,7 +40,7 @@ module ActiveAdmin
       end
 
       def header_navigation
-        add_class "navbar navbar-expand-lg #{instance_klass}"
+        add_class "navbar #{instance_klass}"
 
         site_title @namespace
 

@@ -36,7 +36,7 @@ module WrapActiveAdmin
   WRAPPER_CONTAINER_CLASS      = 'wrapper_container'.freeze
   CONTENT_CONTAINER_CLASS      = 'content_container'.freeze
   FLASH_CLASS                  = 'flash_message'.freeze
-  COLUMN_BREAKPOINT            = 'lg'.freeze
+  COLUMN_BREAKPOINT            = 'md'.freeze
   SCOPE_COUNT_CLASS            = 'scope_count'.freeze
   MENU_BADGE_CLASS             = 'menu_badge'.freeze
 

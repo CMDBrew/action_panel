@@ -6,16 +6,16 @@
 // // Color system
 
 $white:    #fff !default;
-// $gray-100: #f8f9fa !default;
-// $gray-200: #e9ecef !default;
-// $gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
+$gray-100: #f5f6f7 !default;
+$gray-200: #e5e6e7 !default;
+$gray-300: #dcdcdc !default;
+$gray-400: #cdcecf !default;
 // $gray-500: #adb5bd !default;
 // $gray-600: #6c757d !default;
 // $gray-700: #495057 !default;
-// $gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
+$gray-800: #343639 !default;
+// $gray-900: #212529 !default;
+// $black:    #000 !default;
 
 // $grays: () !default;
 // // stylelint-disable-next-line scss/dollar-variable-default
@@ -34,7 +34,7 @@ $black:    #000 !default;
 //   $grays
 // );
 
-// $blue:    #007bff !default;
+$blue:    #2267ED !default;
 // $indigo:  #6610f2 !default;
 // $purple:  #6f42c1 !default;
 // $pink:    #e83e8c !default;
@@ -66,7 +66,7 @@ $black:    #000 !default;
 //   $colors
 // );
 
-// $primary:       $blue !default;
+$primary:       $blue !default;
 // $secondary:     $gray-600 !default;
 // $success:       $green !default;
 // $info:          $cyan !default;
@@ -108,7 +108,7 @@ $black:    #000 !default;
 
 // $enable-caret:                                true !default;
 // $enable-rounded:                              true !default;
-// $enable-shadows:                              false !default;
+$enable-shadows:                              true !default;
 // $enable-gradients:                            false !default;
 // $enable-transitions:                          true !default;
 // $enable-prefers-reduced-motion-media-query:   true !default;
@@ -161,8 +161,8 @@ $black:    #000 !default;
 // //
 // // Settings for the `<body>` element.
 
-// $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-bg:                   $gray-100 !default;
+$body-color:                $gray-800 !default;
 
 
 // // Links
@@ -219,7 +219,7 @@ $body-color:                $gray-900 !default;
 // // Set the number of columns and specify the width of the gutters.
 
 // $grid-columns:                12 !default;
-$grid-gutter-width:           2rem !default;
+// $grid-gutter-width:           30px !default;
 
 
 // // Components
@@ -232,7 +232,7 @@ $grid-gutter-width:           2rem !default;
 // $border-width:                1px !default;
 // $border-color:                $gray-300 !default;
 
-// $border-radius:               .25rem !default;
+$border-radius:               .3125rem !default;
 // $border-radius-lg:            .3rem !default;
 // $border-radius-sm:            .2rem !default;
 
@@ -281,7 +281,7 @@ $grid-gutter-width:           2rem !default;
 
 // $font-weight-lighter:         lighter !default;
 // $font-weight-light:           300 !default;
-// $font-weight-normal:          400 !default;
+$font-weight-normal:          400 !default;
 // $font-weight-bold:            700 !default;
 // $font-weight-bolder:          bolder !default;
 
@@ -345,13 +345,13 @@ $grid-gutter-width:           2rem !default;
 // // Customizes the `.table` component with basic values, each used across all table variations.
 
 // $table-cell-padding:          .75rem !default;
-// $table-cell-padding-sm:       .3rem !default;
+$table-cell-padding-sm:       0.3rem 0.5rem !default;
 
 // $table-color:                 $body-color !default;
 // $table-bg:                    null !default;
 // $table-accent-bg:             rgba($black, .05) !default;
 // $table-hover-color:           $table-color !default;
-$table-hover-bg:              rgba($black, .075) !default;
+$table-hover-bg:              lighten($primary, 41%) !default;
 // $table-active-bg:             $table-hover-bg !default;
 
 // $table-border-width:          $border-width !default;
@@ -724,9 +724,9 @@ $nav-link-disabled-color:           $gray-400 !default;
 // $navbar-toggler-font-size:          $font-size-lg !default;
 // $navbar-toggler-border-radius:      $btn-border-radius !default;
 
-$navbar-dark-color:                 rgba($white, .5) !default;
-$navbar-dark-hover-color:           rgba($white, .75) !default;
-$navbar-dark-active-color:          $white !default;
+// $navbar-dark-color:                 rgba($white, .5) !default;
+// $navbar-dark-hover-color:           rgba($white, .75) !default;
+// $navbar-dark-active-color:          $white !default;
 // $navbar-dark-disabled-color:        rgba($white, .25) !default;
 // $navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
 // $navbar-dark-toggler-border-color:  rgba($white, .1) !default;
@@ -753,18 +753,18 @@ $navbar-dark-active-color:          $white !default;
 // $dropdown-spacer:                   .125rem !default;
 // $dropdown-font-size:                $font-size-base !default;
 // $dropdown-color:                    $body-color !default;
-// $dropdown-bg:                       $white !default;
+$dropdown-bg:                       #f7f7f7 !default;
 // $dropdown-border-color:             rgba($black, .15) !default;
 // $dropdown-border-radius:            $border-radius !default;
-// $dropdown-border-width:             $border-width !default;
+$dropdown-border-width:             0 !default;
 // $dropdown-inner-border-radius:      calc(#{$dropdown-border-radius} - #{$dropdown-border-width}) !default;
 // $dropdown-divider-bg:               $gray-200 !default;
 // $dropdown-divider-margin-y:         $nav-divider-margin-y !default;
-// $dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
+$dropdown-box-shadow:               0 0 0 1px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.25) !default;
 
 // $dropdown-link-color:               $gray-900 !default;
-// $dropdown-link-hover-color:         darken($gray-900, 5%) !default;
-// $dropdown-link-hover-bg:            $gray-100 !default;
+$dropdown-link-hover-color:         $white !default;
+$dropdown-link-hover-bg:            $primary !default;
 
 // $dropdown-link-active-color:        $component-active-color !default;
 // $dropdown-link-active-bg:           $component-active-bg !default;
@@ -821,9 +821,9 @@ $navbar-dark-active-color:          $white !default;
 // $card-spacer-x:                     1.25rem !default;
 // $card-border-width:                 $border-width !default;
 // $card-border-radius:                $border-radius !default;
-// $card-border-color:                 rgba($black, .125) !default;
+$card-border-color:                 $gray-200 !default;
 // $card-inner-border-radius:          calc(#{$card-border-radius} - #{$card-border-width}) !default;
-// $card-cap-bg:                       rgba($black, .03) !default;
+$card-cap-bg:                       transparent !default;
 // $card-cap-color:                    null !default;
 // $card-color:                        null !default;
 // $card-bg:                           $white !default;
@@ -910,7 +910,7 @@ $navbar-dark-active-color:          $white !default;
 // // Badges
 
 // $badge-font-size:                   75% !default;
-// $badge-font-weight:                 $font-weight-bold !default;
+$badge-font-weight:                 $font-weight-normal !default;
 // $badge-padding-y:                   .25em !default;
 // $badge-padding-x:                   .4em !default;
 // $badge-border-radius:               $border-radius !default;
@@ -1043,7 +1043,7 @@ $navbar-dark-active-color:          $white !default;
 
 // $breadcrumb-bg:                     $gray-200 !default;
 // $breadcrumb-divider-color:          $gray-600 !default;
-// $breadcrumb-active-color:           $gray-600 !default;
+$breadcrumb-active-color:           $body-color !default;
 // $breadcrumb-divider:                quote("/") !default;
 
 // $breadcrumb-border-radius:          $border-radius !default;

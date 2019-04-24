@@ -74,14 +74,14 @@
       top: 0;
       left: 0;
 
-      @include media-breakpoint-up(xl) {
+      @include media-breakpoint-up($header-breakpoint) {
         left: $header-sidebar-width;
         width: calc(100% - #{$header-sidebar-width});
       }
     }
   }
 
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up($header-breakpoint) {
     padding-left: $header-sidebar-width;
   }
 }

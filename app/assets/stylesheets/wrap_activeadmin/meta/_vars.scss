@@ -1,3 +1,8 @@
+// Grid
+$breakpoints: 'xs', 'sm', 'md', 'lg', 'xl' !default;
+$sidebar-breakpoint: 'lg' !default;
+$header-breakpoint:  'xl' !default;
+
 // Header Navigation
 $header-theme:             '.navbar-dark, .bg-dark' !default;
 $header-fixed-top-height:  58px !default;

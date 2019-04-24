@@ -1,0 +1,28 @@
+#header {
+  border-right: 1px solid $gray-300;
+
+  @include media-breakpoint-down(lg) {
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-menu { box-shadow: none; }
+
+  .dropdown-item,
+  .nav-item:not(.has_nested) {
+    &.active { background: $gray-200 !important; }
+  }
+}
+
+#utility-nav {
+  position: relative;
+  padding: map-get($spacers, 1) 0;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: $spacer;
+    left: $spacer;
+    border-bottom: 1px solid $hr-border-color;
+    content: '';
+  }
+}
