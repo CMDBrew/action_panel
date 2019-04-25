@@ -1,14 +1,16 @@
 // Grid
 $breakpoints: 'xs', 'sm', 'md', 'lg', 'xl' !default;
 $sidebar-breakpoint: 'lg' !default;
-$header-breakpoint:  'xl' !default;
+$header-breakpoints: (
+  'sidebar': 'xl',
+  'top': 'xl'
+) !default;
 
 // Header Navigation
 $header-theme:             '.navbar-dark, .bg-dark' !default;
 $header-fixed-top-height:  58px !default;
 $header-sidebar-width:     200px !default;
 $header-sidebar-md-width:  320px !default;
-$header-aside-theme:       '.navbar-light, .bg-white, .border-right' !default;
 $header-icon-size:         20px !default;
 $header-icon-offset:       0.5rem !default;
 $header-icon-color:        $navbar-dark-color !default;

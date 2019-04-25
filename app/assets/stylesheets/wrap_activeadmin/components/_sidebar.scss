@@ -66,10 +66,6 @@
               #{$_sidebar} { top: $titlebar-height; }
             }
 
-            @include navigation('aside') {
-              #{$_sidebar} { top: $titlebar-height; }
-            }
-
             @include navigation('fixed_top') {
               #{$_sidebar} {
                 top: calc(#{$header-fixed-top-height} + #{$titlebar-height});

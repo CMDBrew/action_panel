@@ -1,0 +1,5 @@
+en:
+  wrap_active_admin:
+    form:
+      placeholders:
+        file: Choose File

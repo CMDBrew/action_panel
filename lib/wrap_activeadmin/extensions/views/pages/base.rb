@@ -12,7 +12,6 @@ module ActiveAdmin
         def build_page
           within body(class: body_classes) do
             header active_admin_namespace, current_menu
-            build_aside
             title_bar title, action_items_for_action
             build_flash_messages
 
@@ -76,23 +75,6 @@ module ActiveAdmin
             div msg, class: "#{WrapActiveAdmin::FLASH_CLASS} alert #{bs_class_for(type)}"
           end
         end
-
-        # rubocop:disable Metrics/MethodLength
-        def build_aside
-          return unless WrapActiveAdmin.instance_navigation.eql?('aside')
-          div id: 'aside-nav' do
-            nav id: 'aside-nav-content', class: 'navbar' do
-              site_title active_admin_namespace do
-                button waa_icon('close'),
-                       class: 'ml-3 btn close d-xl-none',
-                       'data-target': '#aside-nav', 'data-toggle': 'collapse'
-              end
-
-              global_navigation current_menu, id: 'main-nav', class: 'navbar-nav'
-            end
-          end
-        end
-        # rubocop:enable Metrics/MethodLength
 
         def bs_class_for(type)
           {
