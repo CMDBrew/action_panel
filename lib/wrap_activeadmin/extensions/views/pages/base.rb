@@ -12,7 +12,6 @@ module ActiveAdmin
         def build_page
           within body(class: body_classes) do
             header active_admin_namespace, current_menu
-            build_aside
             title_bar title, action_items_for_action
             build_flash_messages
 
@@ -26,7 +25,7 @@ module ActiveAdmin
         def build_page_content
           div id: 'active_admin_content' do
             contents = %i[build_body_content build_sidebar_content]
-            contents.reverse! if active_admin_config.try(:sidebar_position)&.eql?('left')
+            contents.reverse! if active_admin_config.sidebar_position&.eql?('left')
             contents.each { |x| send(x) }
           end
         end
@@ -62,7 +61,7 @@ module ActiveAdmin
             params[:controller].tr('/', '_'),
             'active_admin', 'logged_in',
             active_admin_namespace.name.to_s + '_namespace',
-            "navigation-#{WrapActiveAdmin.instance_navigation}",
+            "navigation-#{active_admin_config.navigation}",
             sidebar_class
           ]
         end
@@ -76,23 +75,6 @@ module ActiveAdmin
             div msg, class: "#{WrapActiveAdmin::FLASH_CLASS} alert #{bs_class_for(type)}"
           end
         end
-
-        # rubocop:disable Metrics/MethodLength
-        def build_aside
-          return unless WrapActiveAdmin.instance_navigation.eql?('aside')
-          div id: 'aside-nav' do
-            nav id: 'aside-nav-content', class: 'navbar' do
-              site_title active_admin_namespace do
-                button waa_icon('close'),
-                       class: 'ml-3 btn close d-xl-none',
-                       'data-target': '#aside-nav', 'data-toggle': 'collapse'
-              end
-
-              global_navigation current_menu, id: 'main-nav', class: 'navbar-nav'
-            end
-          end
-        end
-        # rubocop:enable Metrics/MethodLength
 
         def bs_class_for(type)
           {

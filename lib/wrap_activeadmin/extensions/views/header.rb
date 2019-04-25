@@ -22,11 +22,10 @@ module ActiveAdmin
       private
 
       def build_navigations
-        case WrapActiveAdmin.instance_navigation
+        case active_admin_config.navigation
         when 'top', 'fixed_top' then header_navigation
         when 'sidebar' then sidebar_navigation
-        when 'aside'   then aside_navigation
-        else raise "Navigation '#{WrapActiveAdmin.instance_navigation}' is not available"
+        else raise "Navigation '#{active_admin_config.navigation}' is not available"
         end
       end
 
@@ -36,12 +35,11 @@ module ActiveAdmin
       end
 
       def instance_klass
-        @instance_klass ||= WrapActiveAdmin.instance_navigation.to_s
+        @instance_klass ||= active_admin_config.navigation.to_s
       end
 
       def header_navigation
-        add_class "navbar navbar-expand-lg #{instance_klass}"
-
+        add_class "navbar #{instance_klass}"
         site_title @namespace
 
         button class: 'navbar-toggler', 'data-target': '#header-nav', 'data-toggle': 'collapse' do
@@ -50,21 +48,6 @@ module ActiveAdmin
 
         div id: 'header-nav', class: 'collapse navbar-collapse' do
           build_navs
-        end
-      end
-
-      def aside_navigation
-        add_class "navbar navbar-expand-xl #{instance_klass}"
-
-        button class: 'navbar-toggler mr-3 d-xl-none',
-               'data-target': '#aside-nav', 'data-toggle': 'collapse' do
-          span class: 'navbar-toggler-icon'
-        end
-
-        site_title @namespace
-
-        div id: 'header-nav' do
-          utility_navigation @utility_menu, id: 'utility-nav', class: 'navbar-nav'
         end
       end
 

@@ -30,7 +30,7 @@ module ActiveAdmin
       end
 
       def should_active_dropdown?
-        %w[sidebar aside].include? WrapActiveAdmin.instance_navigation
+        %w[sidebar].include? active_admin_config.navigation
       end
 
     end

@@ -37,12 +37,13 @@ window.ActiveAdmin = {}
 window.WrapActiveAdmin = {}
 
 @onDocReady = (element)->
-  $(document).find('#main_content').waaBatchAction()
+  $(element).find('#main_content').waaBatchAction()
+  $(element).find('.custom-file-input-group').waaFileInput()
 
 onReady = ->
-  $('#header, #aside-nav').on 'hide.bs.collapse', ->
+  $('#header').on 'hide.bs.collapse', ->
     $('body').removeClass('header-active')
-  $('#header, #aside-nav').on 'show.bs.collapse', ->
+  $('#header').on 'show.bs.collapse', ->
     $('body').addClass('header-active')
   $('#sidebar-content').on 'hide.bs.collapse', ->
     $('body').removeClass('sidebar-active')

@@ -34,6 +34,7 @@
 
   .dropdown-menu {
     width: $sidebar-width;
+    background: $card-bg;
 
     @include media-breakpoint-down(xs) {
       width: calc(100vw - #{$grid-gutter-width});

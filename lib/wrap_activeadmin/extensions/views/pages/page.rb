@@ -13,7 +13,7 @@ module ActiveAdmin
             params[:controller].tr('/', '_'),
             'active_admin', 'logged_in', 'custom-page',
             active_admin_namespace.name.to_s + '_namespace',
-            "navigation-#{WrapActiveAdmin.instance_navigation}",
+            "navigation-#{active_admin_config.navigation}",
             sidebar_class
           ]
         end

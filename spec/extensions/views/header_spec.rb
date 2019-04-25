@@ -25,14 +25,6 @@ RSpec.describe ActiveAdmin::Views::Header do
     it { expect(header.class_list).to include('navbar', 'top') }
   end
 
-  describe 'customize header position as aside' do
-    before { WrapActiveAdmin.navigation = 'aside' }
-    let(:header) { build_header(namespace, menu) }
-
-    it { expect(header.find_by_class('navbar-toggler').present?).to eq(true) }
-    it { expect(header.class_list).to include('navbar', 'aside') }
-  end
-
   describe 'customize header position as fixed_top' do
     before { WrapActiveAdmin.navigation = 'fixed_top' }
     let(:header) { build_header(namespace, menu) }

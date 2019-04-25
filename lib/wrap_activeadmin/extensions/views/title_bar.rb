@@ -23,7 +23,7 @@ module ActiveAdmin
       end
 
       def build_header_toggle
-        return unless %w[sidebar].include? WrapActiveAdmin.instance_navigation
+        return unless %w[sidebar].include? active_admin_config.navigation
         button class: 'navbar-toggler mr-3 d-xl-none',
                'data-target': '#header', 'data-toggle': 'collapse' do
           span class: 'navbar-toggler-icon'
@@ -38,7 +38,7 @@ module ActiveAdmin
       end
 
       def build_sidebar_toggle
-        button class: 'navbar-toggler d-xl-none sidebar-toggle',
+        button class: 'navbar-toggler sidebar-toggle',
                'data-target': '#sidebar-content', 'data-toggle': 'collapse' do
           span class: 'navbar-toggler-icon'
         end
