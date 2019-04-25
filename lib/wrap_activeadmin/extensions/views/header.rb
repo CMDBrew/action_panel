@@ -22,10 +22,10 @@ module ActiveAdmin
       private
 
       def build_navigations
-        case WrapActiveAdmin.instance_navigation
+        case active_admin_config.navigation
         when 'top', 'fixed_top' then header_navigation
         when 'sidebar' then sidebar_navigation
-        else raise "Navigation '#{WrapActiveAdmin.instance_navigation}' is not available"
+        else raise "Navigation '#{active_admin_config.navigation}' is not available"
         end
       end
 
@@ -35,7 +35,7 @@ module ActiveAdmin
       end
 
       def instance_klass
-        @instance_klass ||= WrapActiveAdmin.instance_navigation.to_s
+        @instance_klass ||= active_admin_config.navigation.to_s
       end
 
       def header_navigation

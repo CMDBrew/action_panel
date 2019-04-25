@@ -40,29 +40,4 @@ module WrapActiveAdmin
   SCOPE_COUNT_CLASS            = 'scope_count'.freeze
   MENU_BADGE_CLASS             = 'menu_badge'.freeze
 
-  @navigation       = 'top'
-  @sidebar_position = 'right'
-  @filter_position  = 'sidebar'
-
-  class << self
-
-    attr_accessor :navigation, :sidebar_position, :filter_position
-
-    def instance_navigation
-      return_or_exec_proc(navigation.underscore)
-    end
-
-    private
-
-    def return_or_exec_proc(config)
-      config.is_a?(Proc) ? instance_exec(&config) : config
-    end
-
-  end
-
-  # this function maps the vars from your app into your engine
-  def self.setup
-    yield self
-  end
-
 end

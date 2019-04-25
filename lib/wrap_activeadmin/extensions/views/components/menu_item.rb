@@ -44,7 +44,7 @@ module ActiveAdmin
       private
 
       def active_dropdown?
-        WrapActiveAdmin.instance_navigation.eql?('sidebar')
+        active_admin_config.navigation.eql?('sidebar')
       end
 
     end

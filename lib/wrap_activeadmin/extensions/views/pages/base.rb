@@ -25,7 +25,7 @@ module ActiveAdmin
         def build_page_content
           div id: 'active_admin_content' do
             contents = %i[build_body_content build_sidebar_content]
-            contents.reverse! if active_admin_config.try(:sidebar_position)&.eql?('left')
+            contents.reverse! if active_admin_config.sidebar_position&.eql?('left')
             contents.each { |x| send(x) }
           end
         end
@@ -61,7 +61,7 @@ module ActiveAdmin
             params[:controller].tr('/', '_'),
             'active_admin', 'logged_in',
             active_admin_namespace.name.to_s + '_namespace',
-            "navigation-#{WrapActiveAdmin.instance_navigation}",
+            "navigation-#{active_admin_config.navigation}",
             sidebar_class
           ]
         end

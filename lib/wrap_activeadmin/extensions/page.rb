@@ -1,10 +1,10 @@
 module ActiveAdmin
 
-  # Overwrite Resource - activeadmin/lib/active_admin/resource.rb
-  class Resource
+  # Overwrite Page - activeadmin/lib/active_admin/page.rb
+  class Page
 
     # The default sort order to use in the controller
-    attr_writer :sidebar_position, :filter_position, :navigation
+    attr_writer :sidebar_position, :navigation
 
     def navigation
       @navigation || namespace.navigation
@@ -12,10 +12,6 @@ module ActiveAdmin
 
     def sidebar_position
       @sidebar_position || namespace.sidebar_position
-    end
-
-    def filter_position
-      @filter_position || namespace.filter_position
     end
 
   end
