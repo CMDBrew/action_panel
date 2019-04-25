@@ -17,14 +17,9 @@ module Formtastic
       def label_html
         builder.label(
           method,
-          switch_html,
+          template.content_tag(:div, '', class: 'switch-btn'),
           label_html_options
-        )
-      end
-
-      def switch_html
-        template.content_tag(:span, label_text, class: 'switch-text') +
-          template.content_tag(:span, '', class: 'switch-btn')
+        ) + template.content_tag(:div, label_text, class: 'switch-text')
       end
 
       def check_box_with_label_html
