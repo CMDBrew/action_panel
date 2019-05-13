@@ -1,4 +1,6 @@
-module WrapActiveAdmin
+module WrapActiveadmin
+
   module ApplicationHelper
   end
+
 end

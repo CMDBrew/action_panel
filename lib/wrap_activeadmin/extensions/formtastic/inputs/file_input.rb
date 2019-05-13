@@ -23,7 +23,9 @@ module Formtastic
 
       def file_preview
         template.content_tag(:div, class: 'custom-file-preview') do
-          options[:preview] && object.try(options[:preview])
+          if options[:preview] && object.try(options[:preview])
+            template.image_tag object.send(options[:preview])
+          end
         end
       end
 
