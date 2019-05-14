@@ -1,0 +1,16 @@
+@each $_key, $_value in $thumbnail-sizes {
+  .thumbnail-#{$_key} {
+    position: relative;
+    width: $_value;
+    height: $_value;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      @include transform(translateX(-50%));
+    }
+  }
+}
