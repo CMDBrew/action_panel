@@ -13,9 +13,10 @@
 //= require_self
 //
 
-@import 'meta/**/*';
+@import 'meta/bootstrap_vars';
 @import 'bootstrap';
 @import 'bootstrap_overrides/import';
+@import 'meta/vars';
 @import 'components/**/*';
 @import 'layouts/**/*';
 

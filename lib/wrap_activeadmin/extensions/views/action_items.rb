@@ -11,11 +11,6 @@ module ActiveAdmin
         end
       end
 
-      def destroy_action?
-        controller.action_methods.include?('destroy') &&
-          authorized?(ActiveAdmin::Auth::DESTROY, resource)
-      end
-
       def destroy_message
         I18n.t('active_admin.delete_message')
       end

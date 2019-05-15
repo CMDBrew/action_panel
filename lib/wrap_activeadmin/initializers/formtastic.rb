@@ -10,7 +10,7 @@ module WrapActiveAdmin
       INPUTS_FILES  = %w[
         select_input check_boxes_input boolean_input switch_input file_input
       ].freeze
-      OTHER_FILES   = %w[form_builder].freeze
+      OTHER_FILES = %w[form_builder].freeze
 
       include Base
       extend ActiveSupport::Concern

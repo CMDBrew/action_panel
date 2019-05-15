@@ -2,7 +2,7 @@
 WrapActiveAdmin changed the theming for the popular gem **[ActiveAdmin](https://activeadmin.info/)** to **[Bootstrap 4](https://getbootstrap.com/)** while providing some common feature extensions to allow easy creation of beautiful applications with ActiveAdmin.
 
 ## Usage
-To customize WrapActiveAdmin please see the **[Wiki](https://github.com/CMDBrew/wrap_activeadmin_v2/wiki)**
+To customize WrapActiveAdmin please see the **[Wiki](docs/Home.md)**
 
 ## Installation
 ### Add Gem

@@ -17,7 +17,7 @@ module ActiveAdmin
       end
 
       def default_class_name
-        'table-responsive'
+        'table-responsive attributes_table'
       end
 
       # rubocop:disable Metrics/MethodLength, Metrics/AbcSize

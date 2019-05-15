@@ -5,7 +5,7 @@ module WrapActiveAdmin
     # Others Initializers
     module Others
 
-      FILES = %w[resource page form_builder view_helpers].freeze
+      FILES = %w[resource form_builder view_helpers].freeze
 
       include Base
       extend ActiveSupport::Concern

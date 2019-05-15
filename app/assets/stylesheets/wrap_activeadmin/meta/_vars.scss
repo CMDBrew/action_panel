@@ -43,6 +43,10 @@ $table-for-theme:            '.table-sm, .text-nowrap, .align-middle' !default;
 $table-for-btn-theme:        '.btn, .btn-sm, .btn-light' !default;
 $table-for-selected-color:   $table-hover-bg !default;
 
+// Attributes Table
+$attributes-table-empty-color: $text-muted !default;
+$attributes-table-value-align: right !default;
+
 // Tabs
 $tab-theme: '.nav, .nav-tabs' !default;
 
@@ -70,7 +74,7 @@ $icon-size: 16px !default;
 
 // Thumbnails
 $thumbnail-xs: 24px !default;
-$thumbnail-sm: 48px !default;
+$thumbnail-sm: 38px !default;
 $thumbnail-md: 64px !default;
 $thumbnail-lg: 128px !default;
 $thumbnail-sizes: (
