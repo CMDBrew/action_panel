@@ -9,7 +9,7 @@ To customize WrapActiveAdmin please see the **[Wiki](docs/Home.md)**
 Add this line to your application's Gemfile:
 ```ruby
 gem 'activeadmin', '~> 1.4.3'
-gem 'wrap_activeadmin', git: 'https://github.com/CMDBrew/wrap_activeadmin_v2.git', tag: '1.4.3.rc.1'
+gem 'wrap_activeadmin', git: 'https://github.com/CMDBrew/wrap_activeadmin_v2.git', branch: 'master'
 ```
 
 And then execute:
