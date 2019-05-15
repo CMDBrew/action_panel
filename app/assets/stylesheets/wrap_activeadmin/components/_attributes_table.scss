@@ -1,0 +1,4 @@
+.attributes_table {
+  .empty { color: $attributes-table-empty-color; }
+  td { text-align: $attributes-table-value-align; }
+}
