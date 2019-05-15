@@ -11,6 +11,12 @@ module ActiveAdmin
     register :sidebar_position, 'right'
     # The default filter_position
     register :filter_position, 'sidebar'
+    # The default new action_item display
+    register :new_action_item_display, :index
+    # The default edit action_item display
+    register :edit_action_item_display, :show
+    # The default destroy action_item display
+    register :destroy_action_item_display, :show
 
   end
 
