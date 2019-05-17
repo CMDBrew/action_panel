@@ -7,7 +7,7 @@ module Formtastic
 
       def select_html
         builder.select(input_name, collection, input_options,
-                       input_html_options.merge(class: 'custom-select'))
+                       input_html_options.reverse_merge(class: 'custom-select'))
       end
 
     end
