@@ -45,7 +45,8 @@ $table-for-selected-color:   $table-hover-bg !default;
 
 // Attributes Table
 $attributes-table-empty-color: $text-muted !default;
-$attributes-table-value-align: right !default;
+$attribute-table-key-width: 30% !default;
+$attributes-table-value-align: left !default;
 
 // Tabs
 $tab-theme: '.nav, .nav-tabs' !default;
