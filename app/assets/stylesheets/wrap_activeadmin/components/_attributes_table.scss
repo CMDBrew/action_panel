@@ -1,4 +1,5 @@
 .attributes_table {
   .empty { color: $attributes-table-empty-color; }
+  th { width: $attribute-table-key-width; }
   td { text-align: $attributes-table-value-align; }
 }

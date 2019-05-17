@@ -1,3 +1,5 @@
+.dropdown-toggle::after { vertical-align: middle; }
+
 .dropdown-item {
   &:not(a) {
     padding: 0;
