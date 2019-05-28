@@ -12,6 +12,11 @@ gem 'activeadmin', '~> 1.4.3'
 gem 'wrap_activeadmin', git: 'https://github.com/CMDBrew/wrap_activeadmin_v2.git', branch: 'master'
 ```
 
+Add API key to (/Users/username/.bundle/config)
+```shell
+bundle config github.com YOUR_API_KEY
+```
+
 And then execute:
 ```bash
 bundle install
