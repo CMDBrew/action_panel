@@ -57,9 +57,9 @@ end
 - Default value for `destroy_action_item_display` is: `show`
 ```ruby
 ActiveAdmin.register AdminUser do
-  admin.new_action_item_display = :index
-  admin.edit_action_item_display = :show
-  admin.destroy_action_item_display = :show
+  config.new_action_item_display = :index
+  config.edit_action_item_display = :show
+  config.destroy_action_item_display = :show
 end
 ```
 
