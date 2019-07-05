@@ -80,6 +80,7 @@
 }
 
 %navigation-top-base {
+  min-height: $header-fixed-top-height;
   #main-nav { @extend .mr-auto; }
   .dropdown-item a { color: inherit; }
 }
@@ -95,7 +96,6 @@
 
 %navigation-top {
   @extend %navigation-top-base;
-  min-height: $header-fixed-top-height;
 }
 
 %navigation-sidebar {

@@ -8,6 +8,12 @@ f.input :super_admin, as: :switch
 f.input :avatar, as: :file, preview: :avatar
 ```
 
+## Trix Editor Input
+For more information please see https://github.com/kylefox/trix
+```ruby
+f.input :body, as: :trix_editor
+```
+
 ## Columns inside HasMany
 Arbre has issues rendering inside Formtastic has_many see [Official Issue](https://github.com/activeadmin/activeadmin/issues/4043) so you can do the followings instead.
 ```ruby

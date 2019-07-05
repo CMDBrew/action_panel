@@ -7,6 +7,13 @@ module ActiveAdmin
       # Overwriting Views::Pages::Index - activeadmin/lib/active_admin/views/pages/index.rb
       class Index < Base
 
+        def main_content
+          build_table_tools
+          wrap_with_batch_action_form do
+            build_collection
+          end
+        end
+
         # rubocop:disable all
         def build_table_tools
           div class: 'table_tools' do

@@ -78,8 +78,23 @@ becomes
 </div>
 ```
 
+## Tabs
+Allow none jquery tabs. Simply pass in option `http: true` and now it becomes a http tab with `params[:tab]` in the URL.
+```ruby
+tabs(http: true) do
+  tab :tab_1 do
+    ...
+  end
+
+  tab :tab_2 do
+    ...
+  end
+end
+```
+
+
 ## Dropdown Menu
-Adde new options for dropdown item
+Added new options for dropdown item
 #### `item_divider` to create a divider
 ```ruby
 dropdown_menu 'my dropdown' do

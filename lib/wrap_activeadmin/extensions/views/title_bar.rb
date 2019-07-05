@@ -34,14 +34,6 @@ module ActiveAdmin
       def build_titlebar_right
         div id: 'titlebar_right' do
           build_action_items
-          build_sidebar_toggle
-        end
-      end
-
-      def build_sidebar_toggle
-        button class: 'navbar-toggler sidebar-toggle',
-               'data-target': '#sidebar-content', 'data-toggle': 'collapse' do
-          span class: 'navbar-toggler-icon'
         end
       end
 

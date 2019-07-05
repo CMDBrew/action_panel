@@ -28,7 +28,6 @@
 #= require active_admin/lib/has_many
 #= require active_admin/initializers/datepicker
 #= require active_admin/initializers/filters
-#= require active_admin/initializers/tabs
 #= require active_admin/ext/jquery-ui
 #= require active_admin/ext/jquery
 #= require_tree ./lib
@@ -40,8 +39,10 @@ window.WrapActiveAdmin = {}
 @onDocReady = (element)->
   $(element).find('#main_content').waaBatchAction()
   $(element).find('.custom-file-input-group').waaFileInput()
+  $(element).find('.tabs').waaTabs()
 
 onReady = ->
+  $('#active_admin_content .dropdown').aaDropdown()
   $('#header').on 'hide.bs.collapse', ->
     $('body').removeClass('header-active')
   $('#header').on 'show.bs.collapse', ->

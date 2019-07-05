@@ -15,7 +15,8 @@ module ActiveAdmin
         menu_options[:class] = "#{menu_options[:class]} dropdown-menu"
         options[:class] = "#{options[:class]} dropdown"
 
-        @button = build_button(name, button_options.merge('data-toggle': 'dropdown'))
+        @button =
+          build_button(name, button_options.merge('data-toggle': 'dropdown'))
         @menu   = build_menu(menu_options)
 
         super(options)

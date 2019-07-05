@@ -22,11 +22,10 @@ $header-logo-size:         32px !default;
 // TitleBar
 $titlebar-theme:     '.navbar-light, .bg-light' !default;
 $titlebar-height:    56px !default;
-$titlebar-fixed:     false !default;
+$titlebar-fixed:     true !default;
 $action-items-theme: '.btn, .btn-secondary' !default;
 
 // Sidebar
-$sidebar-fixed:         false !default;
 $sidebar-width:         320px !default;
 $sidebar-theme:         '.bg-white' !default;
 $sidebar-header-height: $titlebar-height !default;
