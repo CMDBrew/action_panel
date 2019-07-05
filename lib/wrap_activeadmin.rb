@@ -2,6 +2,7 @@
 require 'activeadmin'
 require 'bootstrap'
 require 'inline_svg'
+require 'trix'
 
 # Require Initializers
 require 'wrap_activeadmin/initializers/base'
@@ -11,6 +12,7 @@ require 'wrap_activeadmin/initializers/formtastic'
 require 'wrap_activeadmin/initializers/inputs'
 require 'wrap_activeadmin/initializers/resource'
 require 'wrap_activeadmin/initializers/views'
+require 'wrap_activeadmin/initializers/orm'
 require 'wrap_activeadmin/initializers/others'
 
 # Compilers

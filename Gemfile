@@ -25,6 +25,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Use devise
   gem 'devise'
+  # Rails Chrome Panel
+  gem 'meta_request'
 end
 
 group :test do

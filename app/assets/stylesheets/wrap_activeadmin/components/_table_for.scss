@@ -42,5 +42,11 @@
   tr.selected td { background: $table-for-selected-color; }
 }
 
-.table_btn { @extend #{$table-for-btn-theme}; }
+.table_btn {
+  @extend #{$table-for-btn-theme};
+
+  &.dropdown-toggle {
+    span + i { margin-left: map-get($spacers, 2); }
+  }
+}
 

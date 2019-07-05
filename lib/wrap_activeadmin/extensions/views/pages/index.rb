@@ -24,6 +24,7 @@ module ActiveAdmin
 
         def build_filter_ctrl
           return unless active_admin_config.filter_position.eql?('table_tools')
+
           dropdown_menu I18n.t('active_admin.sidebars.filters'),
                         class: 'filter-dropdown',
                         menu: { class: 'dropdown-menu-right' } do
@@ -39,6 +40,7 @@ module ActiveAdmin
           sections = []
           available_sidebar_sections.collect do |section|
             next unless filter_section?(section)
+
             sections.push section
           end
           sections

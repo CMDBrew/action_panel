@@ -16,13 +16,15 @@ module WrapActiveAdmin
     include WrapActiveAdmin::Initializers::Resource
     include WrapActiveAdmin::Initializers::Views
     include WrapActiveAdmin::Initializers::ViewHelpers
+    include WrapActiveAdmin::Initializers::Orm
     include WrapActiveAdmin::Initializers::Others
 
-    # Add default configs to ActiveAdmin
-    initializer 'default configs' do |_app|
+    # Change default configs for ActiveAdmin
+    config.before_initialize do
       ActiveAdmin.setup do |config|
         config.current_filters = false
         config.comments_menu   = false
+        config.comments_order  = 'created_at DESC'
         config.meta_tags = {
           viewport: 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no'
         }

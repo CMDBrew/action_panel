@@ -17,6 +17,10 @@ module ActiveAdmin
     register :edit_action_item_display, :show
     # The default destroy action_item display
     register :destroy_action_item_display, :show
+    # Use rich textarea for active_admin_comments?
+    register :trix_active_admin_comments, true
+    # The default comments per page
+    register :comments_per_page, 2
 
   end
 

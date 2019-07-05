@@ -5,6 +5,7 @@ module ViewHelpers
 
     def waa_icon(icon, prefix: 'waa-icon', path: 'wrap_activeadmin/icons')
       return if icon.blank?
+
       if block_given?
         yield
       else

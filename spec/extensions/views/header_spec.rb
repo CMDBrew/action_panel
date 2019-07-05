@@ -18,7 +18,12 @@ RSpec.describe ActiveAdmin::Views::Header do
   end
 
   describe 'customize header position as top' do
-    before { WrapActiveAdmin.navigation = 'top' }
+    before do
+      ActiveAdmin.setup do |config|
+        config.navigation = 'top'
+      end
+    end
+
     let(:header) { build_header(namespace, menu) }
 
     it { expect(header.find_by_class('navbar-toggler').present?).to eq(true) }
@@ -26,7 +31,12 @@ RSpec.describe ActiveAdmin::Views::Header do
   end
 
   describe 'customize header position as fixed_top' do
-    before { WrapActiveAdmin.navigation = 'fixed_top' }
+    before do
+      ActiveAdmin.setup do |config|
+        config.navigation = 'fixed_top'
+      end
+    end
+
     let(:header) { build_header(namespace, menu) }
 
     it { expect(header.find_by_class('navbar-toggler').present?).to eq(true) }
@@ -34,7 +44,12 @@ RSpec.describe ActiveAdmin::Views::Header do
   end
 
   describe 'customize header position as sidebar' do
-    before { WrapActiveAdmin.navigation = 'sidebar' }
+    before do
+      ActiveAdmin.setup do |config|
+        config.navigation = 'sidebar'
+      end
+    end
+
     let(:header) { build_header(namespace, menu) }
 
     it { expect(header.find_by_class('navbar-toggler').present?).to eq(false) }

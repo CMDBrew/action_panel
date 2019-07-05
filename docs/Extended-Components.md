@@ -27,14 +27,14 @@ end
 ```
 
 ## Panel
-Title is not required for panel 
-```ruby 
+Title is not required for panel
+```ruby
 panel do
 end
 ```
- 
+
 Header actions can now render block
-```ruby 
+```ruby
 panel 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod' do
   header_action do
     div class: 'btn-group' do
@@ -64,7 +64,7 @@ becomes
 ```
 
 You can pass in an extra `size` argument to change the breakpoint
-```ruby 
+```ruby
 columns do
   column(span: 8, size: 'md') {}
   column(span: 4, size: 'md') {}
@@ -79,17 +79,17 @@ becomes
 ```
 
 ## Dropdown Menu
-Adde new options for dropdown item 
+Adde new options for dropdown item
 #### `item_divider` to create a divider
 ```ruby
-dropdown_menu 'my dropdown' do 
+dropdown_menu 'my dropdown' do
   item_divider
 end
 ```
 
 #### `raw_item` to render raw html content
 ```ruby
-dropdown_menu 'my dropdown' do 
+dropdown_menu 'my dropdown' do
   raw_item(div('my html content'))
 end
 ```

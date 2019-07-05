@@ -16,12 +16,12 @@ module ViewHelpers
     private
 
     def menu_title(label)
-      title = label.is_a?(Class) ? label.model_name.human(count: 2) : label
-      content_tag(:span, title, class: 'menu-text')
+      label.is_a?(Class) ? label.model_name.human(count: 2) : label
     end
 
     def menu_badge(count)
       return unless count.is_a?(Integer) && count.positive?
+
       count = '99+' if count > 99
       content_tag(:span, count, class: WrapActiveAdmin::MENU_BADGE_CLASS)
     end

@@ -27,6 +27,7 @@ module ActiveAdmin
 
       def build_title(title)
         return if title.blank?
+
         div h5(title.to_s), class: 'header-content'
       end
 

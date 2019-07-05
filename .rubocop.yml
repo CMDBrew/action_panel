@@ -24,6 +24,7 @@ Documentation:
     - 'config/**/*.rb'
     - 'lib/tasks/**/*.rake'
     - 'spec/support/**/*.rb'
+    - 'spec/dummy/**/*.rb'
 
 Metrics/AbcSize:
   Exclude:

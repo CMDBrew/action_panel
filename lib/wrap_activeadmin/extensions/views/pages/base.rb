@@ -42,6 +42,7 @@ module ActiveAdmin
 
         def build_sidebar_content
           return if skip_sidebar?
+
           div id: 'sidebar-content' do
             nav build_sidebar_toggle, class: 'navbar sidebar-header'
             sidebar(sidebar_sections_for_action,
@@ -50,7 +51,7 @@ module ActiveAdmin
         end
 
         def build_sidebar_toggle
-          button waa_icon('close'),
+          button waa_icon('close.svg'),
                  class: 'ml-3 btn close d-xl-none',
                  'data-target': '#sidebar-content', 'data-toggle': 'collapse'
         end

@@ -19,6 +19,7 @@
 #= require jquery_ujs
 #= require popper
 #= require bootstrap
+#= require trix
 #= require_self
 #= require active_admin/lib/checkbox-toggler
 #= require active_admin/lib/flash

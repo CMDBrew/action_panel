@@ -1,4 +1,7 @@
-.dropdown-toggle::after { vertical-align: middle; }
+.dropdown-toggle {
+  &::after { vertical-align: middle; }
+  &.no-caret::after { content: none; }
+}
 
 .dropdown-item {
   &:not(a) {
