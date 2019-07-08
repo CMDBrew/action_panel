@@ -42,7 +42,7 @@ window.WrapActiveAdmin = {}
   $(element).find('.tabs').waaTabs()
 
 onReady = ->
-  $('#active_admin_content .dropdown').aaDropdown()
+  $('#active_admin_content .dropdown').waaDropdown()
   $('#header').on 'hide.bs.collapse', ->
     $('body').removeClass('header-active')
   $('#header').on 'show.bs.collapse', ->

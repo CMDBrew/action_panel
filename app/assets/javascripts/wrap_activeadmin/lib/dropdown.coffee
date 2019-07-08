@@ -22,4 +22,4 @@ class WrapActiveAdmin.Dropdown
     @$element.on 'hidden.bs.dropdown', ->
       $(@).append $dropdown.detach()
 
-$.widget.bridge 'aaDropdown', WrapActiveAdmin.Dropdown
+$.widget.bridge 'waaDropdown', WrapActiveAdmin.Dropdown

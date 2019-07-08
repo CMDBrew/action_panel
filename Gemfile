@@ -13,7 +13,6 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-
 group :development, :test do
   # Find unused I18n keys
   gem 'i18n-tasks', '~> 0.9.21'
