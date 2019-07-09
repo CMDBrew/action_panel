@@ -19,6 +19,9 @@
 #= require jquery_ujs
 #= require popper
 #= require bootstrap
+#= require moment
+#= require moment/es.js
+#= require fullcalendar
 #= require trix
 #= require_self
 #= require active_admin/lib/checkbox-toggler

@@ -1,0 +1,10 @@
+.index_as_calendar {
+  .btn {
+    @extend #{$table-tools-btn-theme};
+    text-shadow: none;
+    background-image: none;
+    @include box-shadow(none);
+    &.active { @extend #{$table-tools-btn-active-theme}; }
+    &:not(.active) { @extend #{$table-tools-btn-inactive-theme}; }
+  }
+}

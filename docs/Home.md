@@ -2,6 +2,7 @@ WrapActiveAdmin extends based on activeadmin default functionalities. To see con
 
 - **[Installation](../README.md)**
 - **[Configurations](Configurations.md)**
+- **[Extended Index](Extended-Index.md)**
 - **[Extended Components](Extended-Components.md)**
 - **[Extended Formtastic Inputs](Extended-Formtastic-Inputs.md)**
 - **[View Helpers](View-Helpers.md)**

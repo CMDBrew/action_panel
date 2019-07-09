@@ -21,6 +21,8 @@ module ActiveAdmin
     register :trix_active_admin_comments, true
     # The default comments per page
     register :comments_per_page, 2
+    # Pagination Exclusion
+    register :pagination_exclusion, []
 
   end
 

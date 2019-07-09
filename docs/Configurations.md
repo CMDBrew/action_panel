@@ -10,6 +10,7 @@ ActiveAdmin.setup do |config|
    config.new_action_item_display = :index
    config.edit_action_item_display = :show
    config.destroy_action_item_display = :show
+   config.pagination_exclusion = []
 
    config.namespace :admin do |admin|
      admin.navigation = 'fixed_top'
@@ -19,6 +20,7 @@ ActiveAdmin.setup do |config|
      admin.new_action_item_display = :index
      admin.edit_action_item_display = :show
      admin.destroy_action_item_display = :show
+     config.pagination_exclusion = []
    end
 end
 ```
@@ -61,6 +63,15 @@ ActiveAdmin.register AdminUser do
   config.new_action_item_display = :index
   config.edit_action_item_display = :show
   config.destroy_action_item_display = :show
+end
+```
+
+#### Pagination Exclusion
+- Default value `[]`
+Add additional pagination exclusions to hide pagination in the index view for custom IndexAs components.
+```ruby
+ActiveAdmin.setup do |config|
+  config.pagination_exclusion = %i[index_as_custom]
 end
 ```
 

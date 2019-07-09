@@ -33,6 +33,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sass-rails'
   spec.add_dependency 'inline_svg', '~> 1.3.1'
   spec.add_dependency 'trix-rails', '~> 2.0'
+  spec.add_dependency 'font-awesome-rails'
+  spec.add_dependency 'momentjs-rails'
+  spec.add_dependency 'fullcalendar-rails', '~> 3.1'
 
   spec.add_development_dependency 'byebug'
   spec.add_development_dependency 'devise'

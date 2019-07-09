@@ -13,6 +13,7 @@ module WrapActiveAdmin
     include WrapActiveAdmin::Initializers::Formtastic
     include WrapActiveAdmin::Initializers::Inputs
     include WrapActiveAdmin::Initializers::BatchActions
+    include WrapActiveAdmin::Initializers::IndexAsCalendar
     include WrapActiveAdmin::Initializers::Resource
     include WrapActiveAdmin::Initializers::Views
     include WrapActiveAdmin::Initializers::ViewHelpers
