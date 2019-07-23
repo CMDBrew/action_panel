@@ -2,6 +2,10 @@
 require 'activeadmin'
 require 'bootstrap'
 require 'inline_svg'
+require 'trix'
+require 'font-awesome-rails'
+require 'fullcalendar-rails'
+require 'momentjs-rails'
 
 # Require Initializers
 require 'wrap_activeadmin/initializers/base'
@@ -9,8 +13,10 @@ require 'wrap_activeadmin/initializers/view_helpers'
 require 'wrap_activeadmin/initializers/batch_actions'
 require 'wrap_activeadmin/initializers/formtastic'
 require 'wrap_activeadmin/initializers/inputs'
+require 'wrap_activeadmin/initializers/index_as_calendar'
 require 'wrap_activeadmin/initializers/resource'
 require 'wrap_activeadmin/initializers/views'
+require 'wrap_activeadmin/initializers/orm'
 require 'wrap_activeadmin/initializers/others'
 
 # Compilers

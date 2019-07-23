@@ -1,0 +1,37 @@
+.active_admin_comment {
+  @extend #{$activeadmin-comment-theme};
+  fieldset.actions ol { flex-direction: row; }
+
+  .comment-date {
+    @extend #{$activeadmin-comment-date-theme};
+  }
+}
+
+.comments {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  @include box-shadow(0);
+
+  .paginating-footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .pagination_information { margin-bottom: $spacer; }
+  }
+
+  .card-header {
+    padding: map-get($spacers, 2) 0;
+    margin-bottom: $spacer;
+  }
+
+  .card-body { padding: 0; }
+
+  .card-body,
+  .card-header {
+    background: transparent;
+  }
+
+  .empty { display: none; }
+}

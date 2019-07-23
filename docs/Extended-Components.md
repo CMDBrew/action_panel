@@ -27,14 +27,14 @@ end
 ```
 
 ## Panel
-Title is not required for panel 
-```ruby 
+Title is not required for panel
+```ruby
 panel do
 end
 ```
- 
+
 Header actions can now render block
-```ruby 
+```ruby
 panel 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod' do
   header_action do
     div class: 'btn-group' do
@@ -64,7 +64,7 @@ becomes
 ```
 
 You can pass in an extra `size` argument to change the breakpoint
-```ruby 
+```ruby
 columns do
   column(span: 8, size: 'md') {}
   column(span: 4, size: 'md') {}
@@ -78,18 +78,33 @@ becomes
 </div>
 ```
 
+## Tabs
+Allow none jquery tabs. Simply pass in option `http: true` and now it becomes a http tab with `params[:tab]` in the URL.
+```ruby
+tabs(http: true) do
+  tab :tab_1 do
+    ...
+  end
+
+  tab :tab_2 do
+    ...
+  end
+end
+```
+
+
 ## Dropdown Menu
-Adde new options for dropdown item 
+Added new options for dropdown item
 #### `item_divider` to create a divider
 ```ruby
-dropdown_menu 'my dropdown' do 
+dropdown_menu 'my dropdown' do
   item_divider
 end
 ```
 
 #### `raw_item` to render raw html content
 ```ruby
-dropdown_menu 'my dropdown' do 
+dropdown_menu 'my dropdown' do
   raw_item(div('my html content'))
 end
 ```

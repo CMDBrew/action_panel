@@ -24,6 +24,7 @@ module ActiveAdmin
 
       def build_header_toggle
         return unless %w[sidebar].include? active_admin_config.navigation
+
         button class: 'navbar-toggler mr-3 d-xl-none',
                'data-target': '#header', 'data-toggle': 'collapse' do
           span class: 'navbar-toggler-icon'
@@ -33,14 +34,6 @@ module ActiveAdmin
       def build_titlebar_right
         div id: 'titlebar_right' do
           build_action_items
-          build_sidebar_toggle
-        end
-      end
-
-      def build_sidebar_toggle
-        button class: 'navbar-toggler sidebar-toggle',
-               'data-target': '#sidebar-content', 'data-toggle': 'collapse' do
-          span class: 'navbar-toggler-icon'
         end
       end
 
@@ -55,6 +48,7 @@ module ActiveAdmin
 
       def valid_links
         return if links.blank?
+
         links.delete_if { |x| x =~ %r{<a\ href="\/admin">Admin<\/a>} }
       end
 

@@ -6,17 +6,21 @@ ActiveAdmin.setup do |config|
    config.navigation = 'top'
    config.sidebar_position = 'right'
    config.filter_position = 'sidebar'
+   config.trix_active_admin_comments = true
    config.new_action_item_display = :index
    config.edit_action_item_display = :show
    config.destroy_action_item_display = :show
+   config.pagination_exclusion = []
 
    config.namespace :admin do |admin|
      admin.navigation = 'fixed_top'
      admin.sidebar_position = 'right'
      admin.filter_position = 'sidebar'
+     config.trix_active_admin_comments = false
      admin.new_action_item_display = :index
      admin.edit_action_item_display = :show
      admin.destroy_action_item_display = :show
+     config.pagination_exclusion = []
    end
 end
 ```
@@ -49,7 +53,6 @@ ActiveAdmin.register AdminUser do
 end
 ```
 
-
 #### Action Items Display Actions
 - Available options are: `index`, `show`, `edit`
 - Default value for `new_action_item_display` is: `index`
@@ -63,6 +66,14 @@ ActiveAdmin.register AdminUser do
 end
 ```
 
+#### Pagination Exclusion
+- Default value `[]`
+Add additional pagination exclusions to hide pagination in the index view for custom IndexAs components.
+```ruby
+ActiveAdmin.setup do |config|
+  config.pagination_exclusion = %i[index_as_custom]
+end
+```
 
 ## Theming
 - See **[_bootstrap_vars.scss](../app/assets/stylesheets/wrap_activeadmin/meta/_bootstrap_vars.scss)** for available bootstrap configurations

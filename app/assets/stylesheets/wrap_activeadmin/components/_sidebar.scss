@@ -8,82 +8,8 @@
 #sidebar-content {
   @extend #{$sidebar-theme};
 
-  $_sidebar: &;
-
   width: 100%;
+  padding-right: calc(#{$grid-gutter-width} / 2);
+  padding-left: calc(#{$grid-gutter-width} / 2);
   @include media-breakpoint-up($sidebar-breakpoint) { width: $sidebar-width; }
-
-  @if $sidebar-fixed == true {
-    #sidebar {
-      width: auto;
-      margin-right: calc(#{$grid-gutter-width} / 2);
-      margin-left: calc(#{$grid-gutter-width} / 2);
-    }
-  } @else {
-    padding-right: calc(#{$grid-gutter-width} / 2);
-    padding-left: calc(#{$grid-gutter-width} / 2);
-  }
-
-  @at-root {
-    @if $sidebar-fixed == true {
-      body.with_sidebar {
-        @include media-breakpoint-up($sidebar-breakpoint) { padding-right: $sidebar-width; }
-
-        @include media-breakpoint-down((nth($breakpoints, index($breakpoints, $sidebar-breakpoint) - 1))) {
-          &.sidebar-active #{$_sidebar} { @include transform(translateX(0%)); }
-        }
-
-        #main-content.with_sidebar { max-width: 100% !important; }
-
-        #sidebar {
-          flex: 1;
-          height: calc(100% - #{$sidebar-header-height});
-          overflow-y: auto;
-        }
-
-        .sidebar-header,
-        .sidebar-toggle {
-          @include media-breakpoint-up($sidebar-breakpoint) { display: none; }
-        }
-
-        #{$_sidebar} {
-          position: fixed;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          z-index: $zindex-fixed + 1;
-          display: block !important;
-          width: $sidebar-width;
-          height: auto !important;
-
-          @include media-breakpoint-down((nth($breakpoints, index($breakpoints, $sidebar-breakpoint) - 1))) {
-            @include transition(all 0.2s linear);
-            @include transform(translateX(100%));
-          }
-
-          @if $titlebar-fixed == true {
-            @include navigation('sidebar') {
-              #{$_sidebar} { top: $titlebar-height; }
-            }
-
-            @include navigation('fixed_top') {
-              #{$_sidebar} {
-                top: calc(#{$header-fixed-top-height} + #{$titlebar-height});
-                @include media-breakpoint-down((nth($breakpoints, index($breakpoints, $sidebar-breakpoint) - 1))) { top: $header-fixed-top-height; }
-              }
-            }
-          } @else {
-            @include navigation('fixed_top') {
-              #{$_sidebar} { top: $header-fixed-top-height; }
-            }
-          }
-        }
-      }
-    } @else {
-      .sidebar-header,
-      .sidebar-toggle {
-        display: none !important;
-      }
-    }
-  }
 }

@@ -13,7 +13,6 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-
 group :development, :test do
   # Find unused I18n keys
   gem 'i18n-tasks', '~> 0.9.21'
@@ -25,6 +24,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   # Use devise
   gem 'devise'
+  # Rails Chrome Panel
+  gem 'meta_request'
 end
 
 group :test do
