@@ -35,4 +35,4 @@ class ActiveAdminBootstrap.FileInput
       @update(e)
       false
 
-$.widget.bridge 'waaFileInput', ActiveAdminBootstrap.FileInput
+$.widget.bridge 'aaFileInput', ActiveAdminBootstrap.FileInput

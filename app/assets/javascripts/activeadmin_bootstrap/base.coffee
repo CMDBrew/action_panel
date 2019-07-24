@@ -22,6 +22,7 @@
 #= require moment
 #= require moment/es.js
 #= require fullcalendar
+#= require select2-full
 #= require trix
 #= require_self
 #= require active_admin/lib/checkbox-toggler
@@ -40,12 +41,13 @@ window.ActiveAdmin = {}
 window.ActiveAdminBootstrap = {}
 
 @onDocReady = (element)->
-  $(element).find('#main_content').waaBatchAction()
-  $(element).find('.custom-file-input-group').waaFileInput()
-  $(element).find('.tabs').waaTabs()
+  $(element).find('#main_content').aaBatchAction()
+  $(element).find('.custom-file-input-group').aaFileInput()
+  $(element).find('.tabs').aaTabs()
+  $(element).find('select.select2').aaSelect2()
 
 onReady = ->
-  $('#active_admin_content .dropdown').waaDropdown()
+  $('#active_admin_content .dropdown').aaDropdown()
   $('#header').on 'hide.bs.collapse', ->
     $('body').removeClass('header-active')
   $('#header').on 'show.bs.collapse', ->

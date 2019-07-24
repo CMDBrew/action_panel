@@ -16,4 +16,4 @@ class ActiveAdminBootstrap.Tabs
     return if @$element.hasClass @options.excludeClass
     @$element.tabs()
 
-$.widget.bridge 'waaTabs', ActiveAdminBootstrap.Tabs
+$.widget.bridge 'aaTabs', ActiveAdminBootstrap.Tabs

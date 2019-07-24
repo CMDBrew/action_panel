@@ -18,7 +18,8 @@ module Formtastic
       private
 
       def extra_html_options(choice)
-        input_html_options.merge(custom_choice_html_options(choice)).merge(class: 'form-check-input')
+        input_html_options.merge(custom_choice_html_options(choice)).
+          merge(class: 'form-check-input')
       end
 
     end

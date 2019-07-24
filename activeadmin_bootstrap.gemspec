@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'bootstrap', '~> 4.3.1'
   spec.add_dependency 'slim-rails'
   spec.add_dependency 'sass-rails'
+  spec.add_dependency 'select2-rails'
   spec.add_dependency 'inline_svg', '~> 1.3.1'
   spec.add_dependency 'trix-rails', '~> 2.0'
   spec.add_dependency 'font-awesome-rails'

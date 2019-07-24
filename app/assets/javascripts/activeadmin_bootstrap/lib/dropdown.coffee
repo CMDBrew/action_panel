@@ -22,4 +22,4 @@ class ActiveAdminBootstrap.Dropdown
     @$element.on 'hidden.bs.dropdown', ->
       $(@).append $dropdown.detach()
 
-$.widget.bridge 'waaDropdown', ActiveAdminBootstrap.Dropdown
+$.widget.bridge 'aaDropdown', ActiveAdminBootstrap.Dropdown

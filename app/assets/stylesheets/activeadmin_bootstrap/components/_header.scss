@@ -155,9 +155,9 @@
       }
     }
 
-    .waa-icon {
+    .aa-icon {
       @extend %streamline-icon;
-      @include waa-icon-size($header-icon-size);
+      @include aa-icon-size($header-icon-size);
       display: inline-block;
 
       margin-right: $header-icon-offset;
@@ -166,6 +166,6 @@
     }
   }
 
-  .nav-link:hover .waa-icon { stroke: $header-icon-hover-color; }
-  .nav-item.active .waa-icon { stroke: $header-icon-active-color; }
+  .nav-link:hover .aa-icon { stroke: $header-icon-hover-color; }
+  .nav-item.active .aa-icon { stroke: $header-icon-active-color; }
 }

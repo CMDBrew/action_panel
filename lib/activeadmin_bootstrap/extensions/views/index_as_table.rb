@@ -26,7 +26,7 @@ module ActiveAdmin
           name          = options.delete(:name)     { '' }
           defaults      = options.delete(:defaults) { true }
           dropdown      = options.delete(:dropdown) { false }
-          dropdown_name = options.delete(:dropdown_name) { waa_icon('menu.svg') }
+          dropdown_name = options.delete(:dropdown_name) { aa_icon('menu.svg') }
           options[:class] ||= 'col-actions'
 
           column name, options do |resource|

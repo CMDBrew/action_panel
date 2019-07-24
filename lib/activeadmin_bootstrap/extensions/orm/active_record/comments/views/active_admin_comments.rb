@@ -65,7 +65,7 @@ module ActiveAdmin
           return unless authorized?(ActiveAdmin::Auth::DESTROY, comment)
 
           div class: 'comment-actions' do
-            dropdown_menu waa_icon('menu.svg'),
+            dropdown_menu aa_icon('menu.svg'),
                           button: { class: 'btn-sm no-caret' },
                           menu: { class: 'dropdown-menu-right' } do
               comment_action_delete(comment)

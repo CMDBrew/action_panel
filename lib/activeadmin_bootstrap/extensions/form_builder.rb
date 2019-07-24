@@ -53,7 +53,7 @@ module ActiveAdmin
 
       form_builder.input sortable_column, as: :hidden
       template.content_tag(:li, class: 'handle') do
-        template.waa_icon 'sortable.svg'
+        template.aa_icon 'sortable.svg'
       end
     end
 

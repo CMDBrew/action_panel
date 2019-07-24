@@ -8,7 +8,7 @@ module ViewHelpers
       icon    = options.delete(:icon) { nil }
       count   = options.delete(:count) { 0 }
       safe_join [
-        waa_icon(icon, options), menu_title(label),
+        aa_icon(icon, options), menu_title(label),
         menu_badge(count)
       ]
     end

@@ -15,11 +15,13 @@
 @import 'trix';
 @import 'fullcalendar';
 @import 'font-awesome';
+@import 'select2';
 @import 'meta/bootstrap_vars';
 @import 'bootstrap';
 @import 'bootstrap_overrides/import';
 @import 'meta/vars';
 @import 'components/**/*';
+@import 'vendors/**/*';
 @import 'layouts/**/*';
 
 html {

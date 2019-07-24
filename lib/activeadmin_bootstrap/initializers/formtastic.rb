@@ -8,7 +8,8 @@ module ActiveAdminBootstrap
       BASE_FILES    = %w[wrapping html choices].freeze
       ACTIONS_FILES = %w[base].freeze
       INPUTS_FILES  = %w[
-        select_input check_boxes_input boolean_input switch_input file_input
+        select_input select2_input check_boxes_input
+        boolean_input switch_input file_input
       ].freeze
       OTHER_FILES = %w[form_builder].freeze
 

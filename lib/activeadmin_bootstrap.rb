@@ -6,6 +6,7 @@ require 'trix'
 require 'font-awesome-rails'
 require 'fullcalendar-rails'
 require 'momentjs-rails'
+require 'select2-rails'
 
 # Require Initializers
 require 'activeadmin_bootstrap/initializers/base'

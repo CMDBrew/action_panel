@@ -53,4 +53,4 @@ class ActiveAdminBootstrap.BatchAction
       else
         $batchSelector.each -> $(@).find('.dropdown-toggle').addClass('disabled')
 
-$.widget.bridge 'waaBatchAction', ActiveAdminBootstrap.BatchAction
+$.widget.bridge 'aaBatchAction', ActiveAdminBootstrap.BatchAction

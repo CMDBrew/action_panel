@@ -1,6 +1,6 @@
-.waa-icon {
+.aa-icon {
   @extend %streamline-icon;
-  @include waa-icon-size($icon-size);
+  @include aa-icon-size($icon-size);
   display: inherit;
   overflow: visible;
   stroke: currentColor;

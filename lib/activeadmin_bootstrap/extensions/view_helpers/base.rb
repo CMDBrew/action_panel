@@ -3,7 +3,7 @@ module ViewHelpers
   # ViewHelpers Base
   module Base
 
-    def waa_icon(icon, prefix: 'waa-icon', path: 'activeadmin_bootstrap/icons')
+    def aa_icon(icon, prefix: 'aa-icon', path: 'activeadmin_bootstrap/icons')
       return if icon.blank?
 
       if block_given?
