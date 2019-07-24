@@ -1,0 +1,5 @@
+en:
+  active_admin_bootstrap:
+    form:
+      placeholders:
+        file: Choose File

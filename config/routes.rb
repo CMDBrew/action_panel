@@ -1,2 +1,2 @@
-WrapActiveAdmin::Engine.routes.draw do
+ActiveAdminBootstrap::Engine.routes.draw do
 end

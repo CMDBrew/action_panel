@@ -10,7 +10,7 @@ AllCops:
     - 'script/**/*'
     - 'node_modules/**/*'
     - 'db/migrate/**/*'
-    - 'wrap_activeadmin.gemspec'
+    - 'activeadmin_bootstrap.gemspec'
 
 Rails:
   Enabled: true
@@ -38,7 +38,7 @@ Metrics/LineLength:
     - 'Gemfile'
 Metrics/ModuleLength:
   Exclude:
-    - 'lib/wrap_activeadmin/extensions/views/helpers/view_helpers.rb'
+    - 'lib/activeadmin_bootstrap/extensions/views/helpers/view_helpers.rb'
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*.rb'
@@ -48,8 +48,8 @@ Metrics/BlockLength:
     - 'config/**/*.rb'
     - 'app/admin/**/*.rb'
     - 'app/views/**/*.arb'
-    - 'lib/wrap_activeadmin/admin/**/*.rb'
-    - 'wrap_activeadmin.gemspec'
+    - 'lib/activeadmin_bootstrap/admin/**/*.rb'
+    - 'activeadmin_bootstrap.gemspec'
 
 Rails/DynamicFindBy:
   Exclude:
