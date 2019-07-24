@@ -9,7 +9,7 @@ To customize ActiveAdminBootstrap please see the **[Wiki](docs/Home.md)**
 Add this line to your application's Gemfile:
 ```ruby
 gem 'activeadmin', '~> 1.4.3'
-gem 'activeadmin_bootstrap', git: 'https://github.com/CMDBrew/activeadmin_bootstrap_v2.git', branch: 'master'
+gem 'activeadmin_bootstrap', git: 'https://github.com/CMDBrew/activeadmin_bootstrap.git', branch: 'master'
 ```
 
 Add API key to (/Users/username/.bundle/config)
