@@ -1,4 +1,4 @@
-WrapActiveAdmin extends based on activeadmin default functionalities. To see configuration options for activeadmin please see the [Official ActiveAdmin Documentation](https://activeadmin.info/)
+ActiveAdminBootstrap extends based on activeadmin default functionalities. To see configuration options for activeadmin please see the [Official ActiveAdmin Documentation](https://activeadmin.info/)
 
 - **[Installation](../README.md)**
 - **[Configurations](Configurations.md)**

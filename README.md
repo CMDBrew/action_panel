@@ -1,15 +1,15 @@
-# WrapActiveAdmin
-WrapActiveAdmin changed the theming for the popular gem **[ActiveAdmin](https://activeadmin.info/)** to **[Bootstrap 4](https://getbootstrap.com/)** while providing some common feature extensions to allow easy creation of beautiful applications with ActiveAdmin.
+# ActiveAdminBootstrap
+ActiveAdminBootstrap changed the theming for the popular gem **[ActiveAdmin](https://activeadmin.info/)** to **[Bootstrap 4](https://getbootstrap.com/)** while providing some common feature extensions to allow easy creation of beautiful applications with ActiveAdmin.
 
 ## Usage
-To customize WrapActiveAdmin please see the **[Wiki](docs/Home.md)**
+To customize ActiveAdminBootstrap please see the **[Wiki](docs/Home.md)**
 
 ## Installation
 ### Add Gem
 Add this line to your application's Gemfile:
 ```ruby
 gem 'activeadmin', '~> 1.4.3'
-gem 'wrap_activeadmin', git: 'https://github.com/CMDBrew/wrap_activeadmin_v2.git', branch: 'master'
+gem 'activeadmin_bootstrap', git: 'https://github.com/CMDBrew/activeadmin_bootstrap_v2.git', branch: 'master'
 ```
 
 Add API key to (/Users/username/.bundle/config)
@@ -28,34 +28,34 @@ If you haven't already installed it
 rails g active_admin:install
 ```
 
-### Install WrapActiveAdmin
+### Install ActiveAdminBootstrap
 ```bash
-rails g wrap_activeadmin:install
+rails g activeadmin_bootstrap:install
 ```
 
 Or do it manually
 ```scss
 // app/assets/stylesheets/active_admin.scss
-// replace active_admin with wrap_activeadmin
-@import "wrap_activeadmin/mixins";
-@import "wrap_activeadmin/base";
+// replace active_admin with activeadmin_bootstrap
+@import "activeadmin_bootstrap/mixins";
+@import "activeadmin_bootstrap/base";
 ```
 
 ```coffee
 # app/assets/javascripts/active_admin.js.coffee
-# replace active_admin with wrap_activeadmin
-#= require wrap_activeadmin/base
+# replace active_admin with activeadmin_bootstrap
+#= require activeadmin_bootstrap/base
 ```
 
 ```ruby
-# config/initializers/wrap_activeadmin.rb
+# config/initializers/activeadmin_bootstrap.rb
 # Create an initializer
-# For more details on the configurations please see https://github.com/CMDBrew/wrap_activeadmin_v2/wiki/Configurations
+# For more details on the configurations please see https://github.com/CMDBrew/activeadmin_bootstrap_v2/wiki/Configurations
 ```
 
 ### Install Styles
 ```bash
-rails g wrap_activeadmin:styles
+rails g activeadmin_bootstrap:styles
 ```
 
 *p.s. Make sure you remove `= require_tree .` from `application.css` or else you will have sass compile errors.*
@@ -63,7 +63,7 @@ rails g wrap_activeadmin:styles
 ## Contributing
 - Clone this gem.
 - Create dummy rails app inside `spec/dummy`
-- add `require "wrap_activeadmin"` to your `application.rb`
+- add `require "activeadmin_bootstrap"` to your `application.rb`
 
 Replace `bin/boot`
 ```ruby

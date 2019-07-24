@@ -1,7 +1,7 @@
 ## Initializers
 To configure ActiveAdmin create an initializer
 ```ruby
-# config/initializers/wrap_activeadmin.rb
+# config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
    config.navigation = 'top'
    config.sidebar_position = 'right'
@@ -76,5 +76,5 @@ end
 ```
 
 ## Theming
-- See **[_bootstrap_vars.scss](../app/assets/stylesheets/wrap_activeadmin/meta/_bootstrap_vars.scss)** for available bootstrap configurations
-- See **[_vars.scss](../app/assets/stylesheets/wrap_activeadmin/meta/_vars.scss)** for available activeadmin component configurations.
+- See **[_bootstrap_vars.scss](../app/assets/stylesheets/activeadmin_bootstrap/meta/_bootstrap_vars.scss)** for available bootstrap configurations
+- See **[_vars.scss](../app/assets/stylesheets/activeadmin_bootstrap/meta/_vars.scss)** for available activeadmin component configurations.

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    wrap_activeadmin (2.0.0)
+    activeadmin_bootstrap (2.0.0)
       activeadmin (~> 1.4.3)
       bootstrap (~> 4.3.1)
       font-awesome-rails
@@ -378,6 +378,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeadmin_bootstrap!
   byebug
   capybara
   chromedriver-helper
@@ -400,7 +401,6 @@ DEPENDENCIES
   thin
   vcr
   webmock
-  wrap_activeadmin!
 
 BUNDLED WITH
    1.17.3
