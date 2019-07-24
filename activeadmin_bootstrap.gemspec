@@ -38,6 +38,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'jquery-minicolors-rails'
   spec.add_dependency 'font-awesome-rails'
+  spec.add_dependency 'just-datetime-picker'
   spec.add_dependency 'momentjs-rails'
   spec.add_dependency 'fullcalendar-rails', '~> 3.1'
   spec.add_dependency 'bootstrap-datepicker-rails'

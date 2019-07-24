@@ -9,6 +9,7 @@ require 'momentjs-rails'
 require 'select2-rails'
 require 'jquery-minicolors-rails'
 require 'bootstrap-datepicker-rails'
+require 'just-datetime-picker'
 
 # Require Initializers
 require 'activeadmin_bootstrap/initializers/base'

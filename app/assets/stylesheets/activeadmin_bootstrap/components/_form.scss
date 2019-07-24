@@ -76,7 +76,37 @@ fieldset.has_many_fields {
 
 li.input { list-style: none; }
 
+.fragments {
+  legend { margin-bottom: 0; }
 
+  legend.label {
+    font-size: $font-size-base;
+
+    & > label { @extend label; }
+  }
+
+  .input-fragment {
+    .field_with_error {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
+
+.fragments-group {
+  @extend .row;
+  padding: 0;
+  margin: 0 calc(-#{$spacer} / 4) !important;
+  list-style: none;
+
+  .fragment {
+    @extend .col-md;
+    padding: 0 $spacer / 4;
+    margin-bottom: $spacer;
+
+    & > label { @extend .small; }
+  }
+}
 
 .form_cancel { @extend #{$form-cancel-theme}; }
 .form_submit { @extend #{$form-submit-theme}; }
