@@ -23,6 +23,7 @@
 #= require moment/es.js
 #= require fullcalendar
 #= require select2-full
+#= require jquery.minicolors
 #= require trix
 #= require_self
 #= require active_admin/lib/checkbox-toggler
@@ -44,7 +45,8 @@ window.ActiveAdminBootstrap = {}
   $(element).find('#main_content').aaBatchAction()
   $(element).find('.custom-file-input-group').aaFileInput()
   $(element).find('.tabs').aaTabs()
-  $(element).find('select.select2').aaSelect2()
+  $(element).find('.form-control.select2').aaSelect2()
+  $(element).find('.form-control.minicolors').aaColorPicker()
 
 onReady = ->
   $('#active_admin_content .dropdown').aaDropdown()
