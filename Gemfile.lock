@@ -2,9 +2,10 @@ PATH
   remote: .
   specs:
     activeadmin_bootstrap (2.0.0)
-      activeadmin (~> 1.4.3)
+      activeadmin (~> 2.2)
       bootstrap (~> 4.3.1)
       bootstrap-datepicker-rails
+      coffee-rails
       font-awesome-rails
       fullcalendar-rails (~> 3.1)
       inline_svg (~> 1.3.1)
@@ -45,18 +46,18 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    activeadmin (1.4.3)
-      arbre (>= 1.1.1)
-      coffee-rails
+    activeadmin (2.2.0)
+      arbre (~> 1.2, >= 1.2.1)
       formtastic (~> 3.1)
-      formtastic_i18n
-      inherited_resources (>= 1.9.0)
-      jquery-rails (>= 4.2.0)
-      kaminari (>= 0.15)
-      railties (>= 4.2, < 5.3)
-      ransack (>= 1.8.7)
-      sass (~> 3.1)
-      sprockets (< 4.1)
+      formtastic_i18n (~> 0.4)
+      inherited_resources (~> 1.7)
+      jquery-rails (~> 4.2)
+      kaminari (~> 1.0, >= 1.0.1)
+      railties (>= 5.0, < 6.1)
+      ransack (~> 2.1, >= 2.1.1)
+      sassc-rails (~> 2.1)
+      sprockets (>= 3.0, < 4.1)
+      sprockets-es6 (~> 0.9, >= 0.9.2)
     activejob (5.2.2)
       activesupport (= 5.2.2)
       globalid (>= 0.3.6)
@@ -86,6 +87,10 @@ GEM
     ast (2.4.0)
     autoprefixer-rails (9.6.1)
       execjs
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.12)
     bootstrap (4.3.1)
       autoprefixer-rails (>= 9.1.0)
@@ -358,6 +363,10 @@ GEM
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
+    sprockets-es6 (0.9.2)
+      babel-source (>= 5.8.11)
+      babel-transpiler
+      sprockets (>= 3.0.0)
     sprockets-rails (3.2.1)
       actionpack (>= 4.0)
       activesupport (>= 4.0)

@@ -28,7 +28,6 @@
 #= require trix
 #= require_self
 #= require active_admin/lib/checkbox-toggler
-#= require active_admin/lib/flash
 #= require active_admin/lib/per_page
 #= require active_admin/lib/table-checkbox-toggler
 #= require active_admin/lib/has_many
