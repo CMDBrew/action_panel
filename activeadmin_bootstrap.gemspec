@@ -40,6 +40,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'font-awesome-rails'
   spec.add_dependency 'momentjs-rails'
   spec.add_dependency 'fullcalendar-rails', '~> 3.1'
+  spec.add_dependency 'bootstrap-datepicker-rails'
 
   spec.add_development_dependency 'byebug'
   spec.add_development_dependency 'devise'

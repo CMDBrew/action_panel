@@ -19,6 +19,7 @@
 #= require jquery_ujs
 #= require popper
 #= require bootstrap
+#= require bootstrap-datepicker
 #= require moment
 #= require moment/es.js
 #= require fullcalendar
@@ -31,7 +32,6 @@
 #= require active_admin/lib/per_page
 #= require active_admin/lib/table-checkbox-toggler
 #= require active_admin/lib/has_many
-#= require active_admin/initializers/datepicker
 #= require active_admin/initializers/filters
 #= require active_admin/ext/jquery-ui
 #= require active_admin/ext/jquery
@@ -49,7 +49,7 @@ window.ActiveAdminBootstrap = {}
   $(element).find('.form-control.minicolors').aaColorPicker()
 
 onReady = ->
-  $('#active_admin_content .dropdown').aaDropdown()
+  $('#active_admin_content .dropdown:not(.filter-dropdown)').aaDropdown()
   $('#header').on 'hide.bs.collapse', ->
     $('body').removeClass('header-active')
   $('#header').on 'show.bs.collapse', ->

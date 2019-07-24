@@ -8,6 +8,7 @@ require 'fullcalendar-rails'
 require 'momentjs-rails'
 require 'select2-rails'
 require 'jquery-minicolors-rails'
+require 'bootstrap-datepicker-rails'
 
 # Require Initializers
 require 'activeadmin_bootstrap/initializers/base'
