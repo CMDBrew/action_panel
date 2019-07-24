@@ -10,6 +10,9 @@ onDOMReady = ->
       todayBtn: true
       clearBtn: true
       format: 'yyyy-mm-dd'
+      templates:
+        leftArrow: '<i class="fa fa-chevron-left"></i>'
+        rightArrow: '<i class="fa fa-chevron-right"></i>'
     }
     options  = input.data 'datepicker-options'
     input.datepicker $.extend(defaults, options)
