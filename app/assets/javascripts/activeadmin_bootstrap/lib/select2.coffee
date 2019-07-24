@@ -1,7 +1,7 @@
 formatState = (state) ->
   if !state.id
     return state.text
-  $state = $($(state.element).data('template'))
+  $state = $("<span>#{$(state.element).data('template')}</span>")
   $state
 
 
@@ -67,6 +67,9 @@ class ActiveAdminBootstrap.Select2
     @$element.select2('destroy')
 
   _bind: ->
+    @configs = @$element.data('select2-options') || {}
+    @options = $.extend @options, @configs
+
     @_dynamic_opts()
 
     if(@$element.hasClass('select2-hidden-accessible'))

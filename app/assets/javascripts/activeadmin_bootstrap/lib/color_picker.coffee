@@ -14,15 +14,9 @@ class ActiveAdminBootstrap.ColorPicker
   destroy: ->
     @$element.minicolors('destroy')
 
-  _swatch_opts: (swatches)->
-    @options = $.extend(@options, {
-      'swatches': swatches
-    })
-
   _bind: ->
-    swatches = @$element.data('minicolors-swatch')
-    if swatches && $.isArray(swatches)
-      @_swatch_opts(swatches)
+    @configs = @$element.data('minicolors') || {}
+    @options = $.extend @options, @configs
 
     @$element.minicolors(@options)
     @

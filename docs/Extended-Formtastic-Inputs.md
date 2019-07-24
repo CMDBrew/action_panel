@@ -8,10 +8,55 @@ f.input :super_admin, as: :switch
 f.input :avatar, as: :file, preview: :avatar
 ```
 
-## Trix Editor Input
+## TrixEditor Input
 For more information please see https://github.com/kylefox/trix
 ```ruby
 f.input :body, as: :trix_editor
+```
+
+## ColorPicker Input
+For more information please see https://github.com/kostia/jquery-minicolors-rails
+```ruby
+f.input :color,
+        as: :color_picker,
+        input_html: {
+          data: { minicolors: { swatches: %w[fff eee fcfcfc 222] } }
+        }
+```
+
+## Select2 Input
+For more information please see https://select2.org/
+```ruby
+f.input :category,
+        as: :select2,
+        collection: [
+          ['label_1', 'id_1', { 'data-template': 'template_1' }],
+          ['label_2', 'id_2', { 'data-template': 'template_2' }]
+        ],
+        input_html: {
+          data: {
+            'select2-options': {}, # see select2 docs for options
+            'select2-search': true,
+            'select2-template': true,
+            'select2-selection-template': true,
+            'select2-other': true,
+            'select2-placeholder': 'Please select'
+          }
+        }
+```
+
+## JustDateTimePicker Input
+For more information please see https://github.com/mspanc/just-datetime-picker
+```ruby
+# In your ActiveAdmin form
+f.input :joined_at, as: :just_datetime_picker
+```
+
+```ruby
+# In your model add
+class User < ActiveRecord::Base
+  just_define_datetime_picker :joined_at, add_to_attr_accessor: true
+end
 ```
 
 ## Columns inside HasMany
