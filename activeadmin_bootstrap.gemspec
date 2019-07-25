@@ -44,12 +44,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'fullcalendar-rails', '~> 3.1'
   spec.add_dependency 'bootstrap-datepicker-rails'
 
-  spec.add_development_dependency 'byebug'
-  spec.add_development_dependency 'devise'
   spec.add_development_dependency 'faker'
   spec.add_development_dependency 'interactive_editor'
   spec.add_development_dependency 'letter_opener'
   spec.add_development_dependency 'pg', '~> 0.15'
   spec.add_development_dependency 'rename'
-  spec.add_development_dependency 'thin'
 end
