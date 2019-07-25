@@ -64,7 +64,7 @@ RSpec.describe ActiveAdmin::Views::Header do
     let(:application) { ActiveAdmin::Application.new }
     let(:namespace) { ActiveAdmin::Namespace.new(application, :admin) }
     let(:resource) do
-      namespace.register(AdminUser) do
+      namespace.register(User) do
         config.navigation = 'fixed_top'
         config.sidebar_position = 'left'
         config.filter_position = 'table_tools'

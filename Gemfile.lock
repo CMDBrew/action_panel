@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     activeadmin_bootstrap (2.0.0)
-      activeadmin (~> 2.2)
+      activeadmin (>= 2.2)
       bootstrap (~> 4.3.1)
       bootstrap-datepicker-rails
       coffee-rails
@@ -81,8 +81,6 @@ GEM
     ansi (1.5.0)
     arbre (1.2.1)
       activesupport (>= 3.0.0)
-    archive-zip (0.12.0)
-      io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
     autoprefixer-rails (9.6.1)
@@ -109,14 +107,9 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.2)
       xpath (~> 3.2)
-    capybara-selenium (0.0.6)
-      capybara
-      selenium-webdriver
-    childprocess (0.9.0)
-      ffi (~> 1.0, >= 1.0.11)
-    chromedriver-helper (2.1.0)
-      archive-zip (~> 0.10)
-      nokogiri (~> 1.8)
+    capybara-webkit (1.15.1)
+      capybara (>= 2.3, < 4.0)
+      json
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 5.2.0)
@@ -125,8 +118,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
-    crack (0.4.3)
-      safe_yaml (~> 1.0.0)
     crass (1.0.4)
     database_cleaner (1.6.2)
     devise (4.6.1)
@@ -137,6 +128,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.3)
     docile (1.3.2)
+    equatable (0.6.0)
     erubi (1.8.0)
     execjs (2.7.0)
     factory_bot (5.0.2)
@@ -144,8 +136,13 @@ GEM
     factory_bot_rails (5.0.1)
       factory_bot (~> 5.0.0)
       railties (>= 4.2.0)
-    faker (1.9.3)
+    faker (1.9.4)
       i18n (>= 0.7)
+      pastel (~> 0.7.2)
+      thor (~> 0.20.0)
+      tty-pager (~> 0.12.0)
+      tty-screen (~> 0.6.5)
+      tty-tree (~> 0.3.0)
     ffi (1.10.0)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
@@ -161,7 +158,6 @@ GEM
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
-    hashdiff (0.4.0)
     highline (2.0.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
@@ -185,7 +181,6 @@ GEM
       nokogiri (>= 1.6)
     interactive_editor (0.0.11)
       spoon (>= 0.0.1)
-    io-like (0.3.0)
     jquery-minicolors-rails (2.2.6.1)
       jquery-rails
       rails (>= 3.2.8)
@@ -211,10 +206,6 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
-    launchy (2.4.3)
-      addressable (~> 2.3)
-    letter_opener (1.7.0)
-      launchy (~> 2.2)
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -239,6 +230,9 @@ GEM
     orm_adapter (0.5.0)
     parser (2.6.3.0)
       ast (~> 2.4.0)
+    pastel (0.7.3)
+      equatable (~> 0.6)
+      tty-color (~> 0.5)
     pg (0.21.0)
     popper_js (1.14.5)
     public_suffix (3.0.3)
@@ -289,10 +283,6 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.3.0)
-    rename (1.0.6)
-      activesupport
-      rails (>= 3.0.0)
-      thor (>= 0.19.1)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
@@ -313,8 +303,6 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    rubyzip (1.2.2)
-    safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -337,9 +325,6 @@ GEM
       tilt
     select2-rails (4.0.3)
       thor (~> 0.14)
-    selenium-webdriver (3.141.0)
-      childprocess (~> 0.5)
-      rubyzip (~> 1.2, >= 1.2.2)
     shoulda-matchers (3.1.3)
       activesupport (>= 4.0.0)
     simplecov (0.16.1)
@@ -371,6 +356,11 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    strings (0.1.5)
+      strings-ansi (~> 0.1)
+      unicode-display_width (~> 1.5)
+      unicode_utils (~> 1.4)
+    strings-ansi (0.1.0)
     temple (0.8.1)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
@@ -379,16 +369,20 @@ GEM
     tilt (2.0.9)
     trix-rails (2.0.0)
       rails (> 4.1, < 6.0)
+    tty-color (0.5.0)
+    tty-pager (0.12.1)
+      strings (~> 0.1.4)
+      tty-screen (~> 0.6)
+      tty-which (~> 0.4)
+    tty-screen (0.6.5)
+    tty-tree (0.3.0)
+    tty-which (0.4.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.0)
-    vcr (5.0.0)
+    unicode_utils (1.4.0)
     warden (1.2.8)
       rack (>= 2.0.6)
-    webmock (3.6.0)
-      addressable (>= 2.3.6)
-      crack (>= 0.3.2)
-      hashdiff (>= 0.4.0, < 2.0.0)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -399,29 +393,25 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeadmin (~> 2.2)
   activeadmin_bootstrap!
   byebug
   capybara
-  capybara-selenium
-  chromedriver-helper
+  capybara-webkit
   database_cleaner (~> 1.6.2)
   devise
   factory_bot_rails
   faker
   i18n-tasks (~> 0.9.21)
   interactive_editor
-  letter_opener
   meta_request
   pg (~> 0.15)
+  rails (~> 5.2.2)
   rails-controller-testing
-  rename
   rspec-rails (~> 3.6)
-  selenium-webdriver
   shoulda-matchers (~> 3.0)
   simplecov
   simplecov-console
-  vcr
-  webmock
 
 BUNDLED WITH
    1.17.3
