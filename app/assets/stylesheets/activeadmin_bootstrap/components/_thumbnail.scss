@@ -1,9 +1,13 @@
 @each $_key, $_value in $thumbnail-sizes {
   .thumbnail-#{$_key} {
+    @extend .small;
+
     position: relative;
     width: $_value;
     height: $_value;
     overflow: hidden;
+    line-height: $_value;
+    text-align: center;
 
     img {
       position: absolute;
