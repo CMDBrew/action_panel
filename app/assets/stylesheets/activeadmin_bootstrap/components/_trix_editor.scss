@@ -1,0 +1,13 @@
+trix-toolbar {
+  .trix-button-row {
+    flex-wrap: wrap !important;
+  }
+
+  .trix-button-group {
+    margin-left: 0 !important;
+
+    &:not(:last-child) {
+      margin-right: 1.5vw;
+    }
+  }
+}
