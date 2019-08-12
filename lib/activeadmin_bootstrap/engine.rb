@@ -32,6 +32,16 @@ module ActiveAdminBootstrap
       end
     end
 
+    initializer 'assets precompile' do |_app|
+      app.config.assets.precompile += %w[
+        activeadmin_bootstrap/icons/close.svg
+        activeadmin_bootstrap/icons/menu.svg
+        activeadmin_bootstrap/icons/sidebar.svg
+        activeadmin_bootstrap/icons/sortable.svg
+        activeadmin_bootstrap/placeholders/color_brick.png
+      ]
+    end
+
   end
 
 end
