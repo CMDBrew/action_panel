@@ -23,12 +23,14 @@
       }
 
       &::before {
-        top: 2px;
+        top: 50%;
+        @include transform(translateY(calc(-100% - 2px)));
         @include caret-up;
       }
 
       &::after {
-        bottom: 2px;
+        bottom: 50%;
+        @include transform(translateY(calc(100% + 2px)));
         @include caret-down;
       }
     }
