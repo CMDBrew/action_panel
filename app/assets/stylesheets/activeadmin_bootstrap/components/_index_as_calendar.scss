@@ -4,7 +4,7 @@
     text-shadow: none;
     text-transform: capitalize;
     background-image: none;
-    border: 0;
+    border-width: $input-btn-border-width;
     @include box-shadow(none);
     &.active { @extend #{$table-tools-btn-active-theme}; }
     &:not(.active) { @extend #{$table-tools-btn-inactive-theme}; }
