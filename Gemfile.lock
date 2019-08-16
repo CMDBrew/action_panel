@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    activeadmin_bootstrap (2.0.0)
-      activeadmin (>= 2.2)
+    activeadmin_bootstrap (2.2)
+      activeadmin (~> 2.2)
       bootstrap (~> 4.3.1)
       bootstrap-datepicker-rails
       coffee-rails
