@@ -25,6 +25,7 @@ module ActiveAdmin
             class: 'datepicker form-control',
             maxlength: 10,
             placeholder: placeholder,
+            autocomplete: 'off',
             value: current_value(input_name) ? current_value(input_name).strftime('%Y-%m-%d') : ''
           }
         end

@@ -33,7 +33,8 @@ module Formtastic
           "#{method}_date",
           input_html_options.merge(
             class: 'form-control datepicker input-fragment fragment-date',
-            value: builder.object.send("#{method}_date"), maxlength: 10, size: 10
+            value: builder.object.send("#{method}_date"), maxlength: 10, size: 10,
+            autocomplete: 'off'
           )
         )
       end
