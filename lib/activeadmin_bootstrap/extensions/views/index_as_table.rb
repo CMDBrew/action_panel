@@ -17,7 +17,7 @@ module ActiveAdmin
         def dropdown_menu(*args, &block)
           options = args.extract_options!
           super(*args,
-                options.merge(button: { class: ActiveAdminBootstrap::TABLE_BTN_CLASS + ' no-caret' }),
+                options.merge(button: { class: ActiveAdminBootstrap::TABLE_BTN_CLASS }),
                 &block)
         end
 
@@ -26,7 +26,10 @@ module ActiveAdmin
           name          = options.delete(:name)     { '' }
           defaults      = options.delete(:defaults) { true }
           dropdown      = options.delete(:dropdown) { false }
-          dropdown_name = options.delete(:dropdown_name) { aa_icon('menu.svg') }
+          dropdown_name = options.delete(:dropdown_name) do
+            I18n.t 'active_admin.dropdown_actions.button_label', default: 'Actions'
+          end
+
           options[:class] ||= 'col-actions'
 
           column name, options do |resource|

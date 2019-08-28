@@ -6,15 +6,15 @@
   #header { @extend %navigation-fixed-top; }
 
   @if $titlebar-fixed == true {
-    padding-top: calc(#{$header-fixed-top-height} + #{$titlebar-height});
+    padding-top: calc(#{$header-height} + #{$titlebar-height});
 
     #title_bar {
       @extend %titlebar-top-base;
-      top: $header-fixed-top-height;
+      top: $header-height;
       left: 0;
     }
   } @else {
-    padding-top: $header-fixed-top-height;
+    padding-top: $header-height;
   }
 }
 
