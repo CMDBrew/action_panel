@@ -21,6 +21,10 @@ module ActiveAdmin
     register :trix_active_admin_comments, true
     # Pagination Exclusion
     register :pagination_exclusion, []
+    # Action Item Icons
+    register :action_item_new_icon, ''
+    register :action_item_edit_icon, ''
+    register :action_item_delete_icon, ''
 
   end
 

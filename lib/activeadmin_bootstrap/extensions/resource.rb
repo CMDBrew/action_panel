@@ -5,7 +5,8 @@ module ActiveAdmin
 
     attr_writer :sidebar_position, :filter_position, :navigation,
                 :new_action_item_display, :edit_action_item_display,
-                :destroy_action_item_display
+                :destroy_action_item_display, :action_item_new_icon,
+                :action_item_edit_icon, :action_item_delete_icon
 
     def navigation
       @navigation || namespace.navigation
@@ -29,6 +30,18 @@ module ActiveAdmin
 
     def destroy_action_item_display
       @destroy_action_item_display || namespace.destroy_action_item_display
+    end
+
+    def action_item_new_icon
+      @action_item_new_icon || namespace.action_item_new_icon
+    end
+
+    def action_item_edit_icon
+      @action_item_edit_icon || namespace.action_item_edit_icon
+    end
+
+    def action_item_delete_icon
+      @action_item_delete_icon || namespace.action_item_delete_icon
     end
 
   end
