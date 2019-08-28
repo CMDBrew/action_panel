@@ -1,9 +1,13 @@
 .active_admin_comment {
-  @extend #{$activeadmin-comment-theme};
-  fieldset.actions ol { flex-direction: row; }
+  &.formtastic { @extend .mb-4; }
 
-  .comment-date {
-    @extend #{$activeadmin-comment-date-theme};
+  &:not(.formtastic) {
+    @extend #{$activeadmin-comment-theme};
+    fieldset.actions ol { flex-direction: row; }
+
+    .comment-date {
+      @extend #{$activeadmin-comment-date-theme};
+    }
   }
 }
 
