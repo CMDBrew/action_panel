@@ -48,7 +48,7 @@ module ActiveAdmin
           index as: :calendar, default: options[:default] do |context|
             context[:fullCalendarOptions] = options[:fullCalendarOptions]
             {
-              url: "#{collection_path}/index_as_events.json",
+              url: url_for(controller: controller_path, action: 'index_as_events', format: 'json'),
               type: 'GET',
               data: params
             }
