@@ -16,7 +16,7 @@ module ViewHelpers
     private
 
     def menu_title(label)
-      label.is_a?(Class) ? label.model_name.human(count: 2) : label
+      content_tag(:span, label.is_a?(Class) ? label.model_name.human(count: 2) : label)
     end
 
     def menu_badge(count)

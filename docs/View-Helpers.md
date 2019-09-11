@@ -1,5 +1,5 @@
 ## Add Icons
-We recommend using svg for icons. To start using icons add your svgs to `app/images/activeadmin_bootstrap/icons` and add class `path` to `<path>`. Now you can use the helper method to insert icons inside your arb files.
+We recommend using svg for icons. To start using icons add your svgs to `app/assets/images/activeadmin_bootstrap/icons` and add class `path` to `<path>`. Now you can use the helper method to insert icons inside your arb files.
 ```ruby
 aa_icon('cat')
 ```
