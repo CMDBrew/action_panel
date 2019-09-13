@@ -1,5 +1,5 @@
-.aa-icon {
-  @include aa-icon-size($icon-size);
+.svg-icon {
+  @include svg-icon-size($icon-size);
   display: inherit;
   overflow: visible;
   stroke: currentColor;

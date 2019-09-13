@@ -1,20 +1,26 @@
-@each $_key, $_value in $thumbnail-sizes {
-  .thumbnail-#{$_key} {
-    @extend .small;
+.thumbnail {
+  @extend .small;
 
-    position: relative;
+  position: relative;
+  width: map-get($thumbnail-sizes, 'sm');
+  height: map-get($thumbnail-sizes, 'sm');
+  overflow: hidden;
+  line-height: map-get($thumbnail-sizes, 'sm');
+  text-align: center;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    @include transform(translateX(-50%));
+  }
+}
+
+@each $_key, $_value in $thumbnail-sizes {
+  .thumbnail.#{$_key} {
     width: $_value;
     height: $_value;
-    overflow: hidden;
     line-height: $_value;
-    text-align: center;
-
-    img {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      height: 100%;
-      @include transform(translateX(-50%));
-    }
   }
 }

@@ -46,7 +46,7 @@
   }
 }
 
-@mixin aa-icon-size($size) {
+@mixin svg-icon-size($size) {
   height: $size;
   line-height: $size;
 }
