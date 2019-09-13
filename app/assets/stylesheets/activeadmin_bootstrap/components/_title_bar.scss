@@ -15,6 +15,7 @@
   #titlebar_left {
     flex: 1;
     margin-right: $spacer;
+    overflow: hidden;
   }
 
   #titlebar_left,
@@ -32,6 +33,7 @@
 
     .breadcrumb-item {
       @extend .text-truncate;
+      max-width: 100px;
       white-space: nowrap;
     }
   }

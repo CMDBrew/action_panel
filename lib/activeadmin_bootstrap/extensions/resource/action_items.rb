@@ -20,7 +20,7 @@ module ActiveAdmin
              authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
-              safe_join([active_admin_config.action_item_new_icon.html_safe, localizer.t(:new_model)]),
+              safe_join([active_admin_config.action_item_new_label_prefix.html_safe, localizer.t(:new_model)]),
               new_resource_path
             )
           end
@@ -34,7 +34,7 @@ module ActiveAdmin
              authorized?(ActiveAdmin::Auth::UPDATE, resource)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
-              safe_join([active_admin_config.action_item_edit_icon.html_safe, localizer.t(:edit_model)]),
+              safe_join([active_admin_config.action_item_edit_label_prefix.html_safe, localizer.t(:edit_model)]),
               edit_resource_path(resource)
             )
           end
@@ -47,7 +47,7 @@ module ActiveAdmin
           if controller.action_methods.include?('destroy') &&
              authorized?(ActiveAdmin::Auth::DESTROY, resource)
             link_to(
-              safe_join([active_admin_config.action_item_delete_icon.html_safe, destroy_btn_title]),
+              safe_join([active_admin_config.action_item_delete_label_prefix.html_safe, destroy_btn_title]),
               resource_path(resource),
               method: :delete, data: { confirm: destroy_title, message: destroy_message }
             )

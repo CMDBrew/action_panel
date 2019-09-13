@@ -11,9 +11,9 @@ ActiveAdmin.setup do |config|
    config.edit_action_item_display = :show
    config.destroy_action_item_display = :show
    config.pagination_exclusion = []
-   config.action_item_new_icon = ''
-   config.action_item_edit_icon = ''
-   config.action_item_delete_icon = ''
+   config.action_item_new_label_prefix = ''
+   config.action_item_edit_label_prefix = ''
+   config.action_item_delete_label_prefix = ''
 
    config.namespace :admin do |admin|
      admin.navigation = 'fixed_top'
@@ -24,9 +24,9 @@ ActiveAdmin.setup do |config|
      admin.edit_action_item_display = :show
      admin.destroy_action_item_display = :show
      config.pagination_exclusion = []
-     config.action_item_new_icon = ''
-     config.action_item_edit_icon = ''
-     config.action_item_delete_icon = ''
+     config.action_item_new_label_prefix = ''
+     config.action_item_edit_label_prefix = ''
+     config.action_item_delete_label_prefix = ''
    end
 end
 ```
@@ -50,13 +50,13 @@ ActiveAdmin.register AdminUser do
 end
 ```
 
-#### ActionItem Icons
+#### ActionItem Label Prefixes
 - You can also pass the option as per page basis. Please see below.
 ```ruby
 ActiveAdmin.register AdminUser do
-  config.action_item_new_icon = "<i class='fa fa-plus mr-2'></i>"
-  config.action_item_edit_icon = "<i class='fa fa-pencil mr-2'></i>"
-  config.action_item_delete_icon = "<i class='fa fa-trash mr-2'></i>"
+  config.action_item_new_label_prefix = "<i class='fa fa-plus mr-2'></i>"
+  config.action_item_edit_label_prefix = "<i class='fa fa-pencil mr-2'></i>"
+  config.action_item_delete_label_prefix = "<i class='fa fa-trash mr-2'></i>"
 end
 ```
 

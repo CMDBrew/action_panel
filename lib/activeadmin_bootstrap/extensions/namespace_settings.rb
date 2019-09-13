@@ -22,9 +22,9 @@ module ActiveAdmin
     # Pagination Exclusion
     register :pagination_exclusion, []
     # Action Item Icons
-    register :action_item_new_icon, ''
-    register :action_item_edit_icon, ''
-    register :action_item_delete_icon, ''
+    register :action_item_new_label_prefix, ''
+    register :action_item_edit_label_prefix, ''
+    register :action_item_delete_label_prefix, ''
 
   end
 
