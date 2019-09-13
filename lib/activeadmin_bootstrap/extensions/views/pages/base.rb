@@ -12,6 +12,7 @@ module ActiveAdmin
         def build_page
           within body(class: body_classes) do
             header active_admin_namespace, current_menu
+            header_backdrop
             title_bar title, action_items_for_action
             build_flash_messages
 
@@ -20,6 +21,11 @@ module ActiveAdmin
               build_page_content
             end
           end
+        end
+
+        def header_backdrop
+          div id: 'header-backdrop', class: 'backdrop',
+              'data-toggle': 'collapse', 'data-target': '#header'
         end
 
         def build_page_content

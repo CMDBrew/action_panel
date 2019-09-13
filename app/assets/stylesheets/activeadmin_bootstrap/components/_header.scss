@@ -43,12 +43,24 @@
   top: 0;
   bottom: 0;
   left: 0;
+  z-index: $zindex-fixed;
   align-items: flex-start;
   flex-direction: column;
   padding: 0;
   overflow: hidden;
 
+  @at-root {
+    #header-backdrop { z-index: $zindex-fixed - 1; }
+
+    &.show + #header-backdrop { display: block; }
+  }
+
   .navbar-nav { width: 100%; }
+
+  .nav-item > .nav-link {
+    @extend .dropdown-toggle;
+    &:not(.dropdown-toggle)::before { visibility: hidden; }
+  }
 
   .nav-link,
   .navbar-brand {
@@ -83,6 +95,7 @@
   min-height: $header-height;
   #main-nav { @extend .mr-auto; }
   .dropdown-item a { color: inherit; }
+
   .navbar-nav {
     @include media-breakpoint-up($sidebar-breakpoint) {
       align-items: center;
@@ -108,6 +121,7 @@
   @extend %navigation-sidebar-base;
   display: flex;
   width: $header-sidebar-width;
+  @include transform(translateX(-100%));
 
   @at-root {
     &,
@@ -123,21 +137,11 @@
     height: $titlebar-height;
   }
 
-  @include media-breakpoint-down(nth($breakpoints, index($breakpoints, map-get($header-breakpoints, 'top')) - 1)) {
-    @include transform(translateX(-100%));
-    width: $header-sidebar-md-width;
+  &.show {
+    @include transform(translateX(0%));
 
-    &.show {
-      @include transform(translateX(0%));
-
-      ~ nav,
-      ~ div {
-        @include transform(translateX($header-sidebar-md-width));
-      }
-
-      @at-root {
-        body.header-active { overflow: hidden; }
-      }
+    @at-root {
+      body.header-active { overflow: hidden; }
     }
   }
 }
@@ -161,7 +165,6 @@
     }
 
     .aa-icon {
-      @extend %streamline-icon;
       @include aa-icon-size($header-icon-size);
       display: inline-block;
 

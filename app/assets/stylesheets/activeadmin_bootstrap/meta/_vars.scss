@@ -7,40 +7,38 @@ $header-breakpoints: (
 ) !default;
 
 // Header Navigation
-$header-theme:             '.navbar-dark, .bg-dark' !default;
-$header-height:  58px !default;
-$header-sidebar-width:     200px !default;
-$header-sidebar-md-width:  320px !default;
-$header-icon-size:         20px !default;
-$header-icon-offset:       0.5rem !default;
-$header-icon-color:        $navbar-dark-color !default;
-$header-icon-hover-color:  $navbar-dark-hover-color !default;
+$header-theme: '.navbar-dark, .bg-dark' !default;
+$header-height: 58px !default;
+$header-sidebar-width: 280px !default;
+$header-icon-size: 20px !default;
+$header-icon-offset: 0.5rem !default;
+$header-icon-color: $navbar-dark-color !default;
+$header-icon-hover-color: $navbar-dark-hover-color !default;
 $header-icon-active-color: $navbar-dark-active-color !default;
-$header-menu-badge-theme:  '.badge, .badge-light' !default;
-$header-logo-size:         32px !default;
+$header-menu-badge-theme: '.badge, .badge-light' !default;
+$header-logo-size: 32px !default;
 
 // TitleBar
-$titlebar-theme:     '.navbar-light, .bg-light' !default;
-$titlebar-height:    56px !default;
-$titlebar-fixed:     true !default;
+$titlebar-theme: '.navbar-light, .bg-light' !default;
+$titlebar-height: 56px !default;
 $action-items-theme: '.btn, .btn-secondary' !default;
 
 // Sidebar
-$sidebar-width:         320px !default;
-$sidebar-theme:         '.bg-transparent' !default;
+$sidebar-width: 320px !default;
+$sidebar-theme: '.bg-transparent' !default;
 $sidebar-header-height: $titlebar-height !default;
 $sidebar-header-theme:  $titlebar-theme !default;
 
 // Table Tools
-$table-tools-btn-theme:          '.btn, .btn-sm' !default;
+$table-tools-btn-theme: '.btn, .btn-sm' !default;
 $table-tools-btn-inactive-theme: '.btn-light' !default;
-$table-tools-btn-active-theme:   '.btn-primary' !default;
-$scope-count-theme:              '.badge, .badge-light' !default;
+$table-tools-btn-active-theme: '.btn-primary' !default;
+$scope-count-theme: '.badge, .badge-light' !default;
 
 // Table
-$table-for-theme:            '.table-sm, .text-nowrap, .align-middle' !default;
-$table-for-btn-theme:        '.btn, .btn-sm, .btn-light' !default;
-$table-for-selected-color:   $table-hover-bg !default;
+$table-for-theme: '.table-sm, .text-nowrap, .align-middle' !default;
+$table-for-btn-theme: '.btn, .btn-sm, .btn-light' !default;
+$table-for-selected-color: $table-hover-bg !default;
 
 // Attributes Table
 $attributes-table-empty-color: $text-muted !default;
@@ -51,14 +49,14 @@ $attributes-table-value-align: left !default;
 $tab-theme: '.nav, .nav-tabs' !default;
 
 // FORM
-$form-has-many-theme:          '.bg-light, .mb-2' !default;
+$form-has-many-theme: '.bg-light, .mb-2' !default;
 $form-has-many-sortable-color: $secondary !default;
-$form-cancel-theme:            '.btn, .btn-link' !default;
-$form-submit-theme:            '.btn, .btn-primary' !default;
-$form-sortable-helper-bg:      $gray-100 !default;
-$form-sortable-helper-border:  2px dashed $input-border-color !default;
-$form-has-many-remove-color:   $danger !default;
-$form-label-theme:             '.text-capitalize' !default;
+$form-cancel-theme: '.btn, .btn-link' !default;
+$form-submit-theme: '.btn, .btn-primary' !default;
+$form-sortable-helper-bg: $gray-100 !default;
+$form-sortable-helper-border: 2px dashed $input-border-color !default;
+$form-has-many-remove-color: $danger !default;
+$form-label-theme: '.text-capitalize' !default;
 
 // FLASH
 $flash-theme: '.rounded-0' !default;
@@ -69,7 +67,7 @@ $blank-slate-theme: '.alert, .alert-secondary, .text-center' !default;
 // Status Tag
 $status-tag-theme: '.badge, .badge-light' !default;
 $status-tag-success: '.badge-success' !default;
-$status-tag-error:   '.badge-danger' !default;
+$status-tag-error: '.badge-danger' !default;
 
 // Containers
 $wrapper-container: '.container-fluid' !default;

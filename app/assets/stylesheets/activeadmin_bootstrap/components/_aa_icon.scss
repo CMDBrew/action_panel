@@ -1,7 +1,7 @@
 .aa-icon {
-  @extend %streamline-icon;
   @include aa-icon-size($icon-size);
   display: inherit;
   overflow: visible;
   stroke: currentColor;
+  fill: currentColor;
 }

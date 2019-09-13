@@ -4,4 +4,6 @@
   .site_title { flex: 1; }
 
   #site_title_image { height: $header-logo-size; }
+
+  img + span { margin-left: map-get($spacers, 2); }
 }
