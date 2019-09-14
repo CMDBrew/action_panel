@@ -3,16 +3,6 @@ module ViewHelpers
   # ViewHelpers Base
   module Base
 
-    def svg_icon(icon, prefix: 'svg-icon', path: 'activeadmin_bootstrap/icons')
-      return if icon.blank?
-
-      if block_given?
-        yield
-      else
-        inline_svg "#{path}/#{icon}", class: prefix
-      end
-    end
-
     private
 
     def bs_class_for(type)

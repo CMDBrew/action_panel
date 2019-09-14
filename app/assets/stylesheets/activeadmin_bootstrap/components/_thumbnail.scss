@@ -1,4 +1,5 @@
 .thumbnail {
+  @extend %background-cover;
   @extend .small;
 
   position: relative;
@@ -7,6 +8,7 @@
   overflow: hidden;
   line-height: map-get($thumbnail-sizes, 'sm');
   text-align: center;
+
 
   img {
     position: absolute;

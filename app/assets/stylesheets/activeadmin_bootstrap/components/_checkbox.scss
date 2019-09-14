@@ -1,0 +1,27 @@
+.form-check {
+  padding-left: 0;
+
+  input[type='checkbox'] { display: none; }
+
+  .checkbox-icon {
+    @extend %mdi-icon;
+    margin-right: map-get($spacers, 1);
+    color: $secondary;
+    &::before { content: map-get($mdi-icons, 'checkbox-outline'); }
+  }
+
+  .form-check-label * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  input:checked + .form-check-label .checkbox-icon {
+    color: $component-active-bg;
+    &::before { content: map-get($mdi-icons, 'checkbox-checked'); }
+  }
+
+  input:indeterminate + .form-check-label .checkbox-icon {
+    color: $component-active-bg;
+    &::before { content: map-get($mdi-icons, 'checkbox-intermediate'); }
+  }
+}

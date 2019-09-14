@@ -12,6 +12,7 @@
 //= require_self
 //
 
+@import url('https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css');
 @import 'trix';
 @import 'fullcalendar';
 @import 'font-awesome';
@@ -22,6 +23,7 @@
 @import 'bootstrap-datepicker3';
 @import 'bootstrap_overrides/import';
 @import 'meta/vars';
+@import 'utilities/**/*';
 @import 'components/**/*';
 @import 'vendors/**/*';
 @import 'layouts/**/*';

@@ -152,8 +152,6 @@
   z-index: $zindex-fixed;
 
   .nav-item {
-    .menu_badge { margin-left: $header-icon-offset;  }
-
     .nav-link {
       @extend .text-truncate;
       width: 100%;
@@ -163,17 +161,5 @@
         vertical-align: middle;
       }
     }
-
-    .svg-icon {
-      @include svg-icon-size($header-icon-size);
-      display: inline-block;
-
-      margin-right: $header-icon-offset;
-      vertical-align: middle;
-      stroke: $header-icon-color;
-    }
   }
-
-  .nav-link:hover .svg-icon { stroke: $header-icon-hover-color; }
-  .nav-item.active .svg-icon { stroke: $header-icon-active-color; }
 }
