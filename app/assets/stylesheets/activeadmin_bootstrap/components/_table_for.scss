@@ -1,5 +1,7 @@
-.index_table {
-  @extend #{$index-table-theme};
+.table_for {
+  &:not(.index_table) { @extend #{$table-for-theme}; }
+  &.index_table { @extend #{$table-for-index-table-theme}; }
+
   .col { width: auto; }
   .col-actions { text-align: right; }
 
@@ -41,11 +43,11 @@
     vertical-align: inherit !important;
   }
 
-  tr.selected td { background: $index-table-selected-color; }
+  tr.selected td { background: $table-for-selected-color; }
 }
 
 .table_btn {
-  @extend #{$index-table-btn-theme};
+  @extend #{$table-for-btn-theme};
 
   &.dropdown-toggle {
     span + i { margin-left: map-get($spacers, 2); }

@@ -37,9 +37,10 @@ $table-tools-btn-active-theme: '.btn-primary' !default;
 $scope-count-theme: '.badge, .badge-light' !default;
 
 // Table
-$index-table-theme: '.table-sm, .text-nowrap, .align-middle' !default;
-$index-table-btn-theme: '.btn, .btn-sm, .btn-light' !default;
-$index-table-selected-color: $table-hover-bg !default;
+$table-for-theme: '.text-nowrap, .align-middle' !default;
+$table-for-btn-theme: '.btn, .btn-sm, .btn-light' !default;
+$table-for-selected-color: $table-hover-bg !default;
+$table-for-index-table-theme: '.table-sm, .text-nowrap, .align-middle' !default;
 
 // Attributes Table
 $attributes-table-empty-color: $text-muted !default;
