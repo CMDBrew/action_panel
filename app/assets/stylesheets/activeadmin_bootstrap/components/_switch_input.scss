@@ -1,17 +1,18 @@
 // Switches for Bootstrap 4.
-$switch-height:              calc(#{$input-height} * 0.8) !default;
-$switch-height-sm:           calc(#{$input-height-sm} * 0.8) !default;
-$switch-height-lg:           calc(#{$input-height-lg} * 0.8) !default;
-$switch-border-radius:       $switch-height !default;
-$switch-border:              1px solid $input-border-color !default;
-$switch-bg:                  $custom-control-indicator-bg !default;
-$switch-checked-bg:          map-get($theme-colors, 'primary') !default;
-$switch-disabled-bg:         $custom-control-indicator-disabled-bg !default;
-$switch-disabled-color:      $custom-control-label-disabled-color !default;
-$switch-thumb-bg:            $white !default;
+$switch-height: 24px !default;
+$switch-inner-height: 16px !default;
+$switch-border-radius: $switch-height !default;
+$switch-border: 0 !default;
+$switch-bg: $input-disabled-bg !default;
+$switch-checked-bg: theme-color-level('primary', $alert-bg-level) !default;
+$switch-checked-thumb-bg: map-get($theme-colors, 'primary') !default;
+$switch-disabled-bg: $custom-control-indicator-disabled-bg !default;
+$switch-disabled-color: $custom-control-label-disabled-color !default;
+$switch-thumb-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.54) !default;
+$switch-thumb-bg: $white !default;
 $switch-thumb-border-radius: 50% !default;
-$switch-focus-box-shadow:    0 0 0 $input-btn-focus-width rgba(map-get($theme-colors, 'primary'), 0.25) !default;
-$switch-transition:          0.2s all !default;
+$switch-focus-box-shadow: 0 0 0 $input-btn-focus-width rgba(map-get($theme-colors, 'primary'), 0.25) !default;
+$switch-transition: 0.2s all !default;
 
 .form-switch {
   position: relative;
@@ -48,8 +49,6 @@ $switch-transition:          0.2s all !default;
       &::before,
       &::after {
         position: absolute;
-        top: 0;
-        bottom: 0;
         left: 0;
         display: block;
         width: calc(#{$switch-height} * 2);
@@ -57,29 +56,37 @@ $switch-transition:          0.2s all !default;
       }
 
       &::before {
+        top: 50%;
         right: 0;
+        height: $switch-inner-height;
         background-color: $switch-bg;
         border: $switch-border;
-        border-radius: $switch-border-radius;
+        border-radius: calc(#{$switch-inner-height} / 2);
         transition: $switch-transition;
+        @include transform(translateY(-50%));
       }
 
       &::after {
         top: 0;
+        bottom: 0;
         left: 0;
         width: $switch-height;
         height: $switch-height;
         background-color: $switch-thumb-bg;
         border: $switch-border;
         border-radius: $switch-thumb-border-radius;
+        box-shadow: $switch-thumb-box-shadow;
         transition: $switch-transition;
-        @include box-shadow(0 0 0 1px rgba($dark, 0.05), 0 0 8px rgba($dark, 0.05));
       }
     }
 
     &:checked + label .switch-btn {
       &::before { background-color: $switch-checked-bg; }
-      &::after { margin-left: $switch-height; }
+
+      &::after {
+        margin-left: $switch-height;
+        background: $switch-checked-thumb-bg;
+      }
     }
 
     &:focus + label .switch-btn::before {
