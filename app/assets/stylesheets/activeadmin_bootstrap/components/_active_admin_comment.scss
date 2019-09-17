@@ -22,3 +22,7 @@
 
   .empty { display: none; }
 }
+
+#active_admin_comment_body_input {
+  .trix-button-group--file-tools { display: none; }
+}

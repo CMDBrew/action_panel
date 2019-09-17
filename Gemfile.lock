@@ -18,7 +18,7 @@ PATH
       sass-rails
       select2-rails
       slim-rails
-      trix-rails (~> 2.0)
+      trix-rails (>= 2.0)
 
 GEM
   remote: https://rubygems.org/

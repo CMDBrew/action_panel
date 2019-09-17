@@ -10,7 +10,6 @@ module ActiveAdmin
 
         protected
 
-        # rubocop:disable Rails/OutputSafety
         def build_comments
           build_comment_form
 
@@ -24,7 +23,6 @@ module ActiveAdmin
             build_empty_message
           end
         end
-        # rubocop:enable Rails/OutputSafety
 
         # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
         def build_comment(comment)

@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'coffee-rails'
   spec.add_dependency 'select2-rails'
   spec.add_dependency 'inline_svg', '~> 1.3.1'
-  spec.add_dependency 'trix-rails', '~> 2.0'
+  spec.add_dependency 'trix-rails', '>= 2.0'
   spec.add_dependency 'jquery-ui-rails', '~> 6.0.1'
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'jquery-minicolors-rails'

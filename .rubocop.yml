@@ -12,9 +12,6 @@ AllCops:
     - 'db/migrate/**/*'
     - 'activeadmin_bootstrap.gemspec'
 
-Rails:
-  Enabled: true
-
 Documentation:
   Exclude:
     - 'app/controllers/**/*.rb'
@@ -50,10 +47,6 @@ Metrics/BlockLength:
     - 'app/views/**/*.arb'
     - 'lib/activeadmin_bootstrap/admin/**/*.rb'
     - 'activeadmin_bootstrap.gemspec'
-
-Rails/DynamicFindBy:
-  Exclude:
-    - 'spec/**/*.rb'
 
 Layout/EmptyLinesAroundClassBody:
   EnforcedStyle: empty_lines
