@@ -25,7 +25,7 @@ module ActiveAdmin
       def build_header_toggle
         return unless %w[sidebar].include? active_admin_config.navigation
 
-        button class: 'navbar-toggler mr-3 d-xl-none',
+        button class: 'navbar-toggler mr-3',
                'data-target': '#header', 'data-toggle': 'collapse' do
           span class: 'navbar-toggler-icon'
         end

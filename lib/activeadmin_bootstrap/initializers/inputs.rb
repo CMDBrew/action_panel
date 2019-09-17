@@ -6,7 +6,7 @@ module ActiveAdminBootstrap
     module Inputs
 
       BASE_FILES  = %w[search_method_select].freeze
-      OTHER_FILES = %w[form date_range_input].freeze
+      OTHER_FILES = %w[form date_range_input select2_input].freeze
 
       include Base
       extend ActiveSupport::Concern

@@ -48,6 +48,5 @@ module ActiveAdminBootstrap
   FLASH_CLASS                  = 'flash_message'.freeze
   COLUMN_BREAKPOINT            = 'md'.freeze
   SCOPE_COUNT_CLASS            = 'scope_count'.freeze
-  MENU_BADGE_CLASS             = 'menu_badge'.freeze
 
 end

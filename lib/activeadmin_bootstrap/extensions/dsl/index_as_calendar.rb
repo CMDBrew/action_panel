@@ -11,7 +11,6 @@ module ActiveAdmin
       # rubocop:disable all
       def index_as_calendar(options = {}, &block)
         default_options = {
-          ajax: true,   # Use AJAX to fetch events. Set to false to send data during render.
           model: nil,   # Model to be used to fetch events. Defaults to ActiveAdmin resource model.
           includes: [], # Eager loading of related models
           start_date: :created_at, # Field to be used as start date for events
@@ -42,39 +41,39 @@ module ActiveAdmin
           # rubocop:enable all
         end
 
-        # Setup AJAX
-        if options[:ajax]
-          # Setup fullCalendar to use AJAX calls to retrieve event data
-          index as: :calendar, default: options[:default] do |context|
-            context[:fullCalendarOptions] = options[:fullCalendarOptions]
-            {
-              url: "#{collection_path}/index_as_events.json",
-              type: 'GET',
-              data: params
-            }
+        # Setup fullCalendar to use AJAX calls to retrieve event data
+        index as: :calendar, default: options[:default] do |context|
+          context[:fullCalendarOptions] = options[:fullCalendarOptions]
+          {
+            url: url_for(controller: controller_path, action: 'index_as_events', format: 'json'),
+            type: 'GET',
+            data: params
+          }
+        end
+
+        # Defines collection_action to get events data
+        collection_action :index_as_events, method: :get do
+          items = options[:model] || end_of_association_chain
+          items = instance_exec(items, &current_scope.scope_block) if params[:scope].present?
+          items = items.includes(options[:includes]) if options[:includes].present?
+          records =
+            items.where("#{options[:start_date]} BETWEEN ? AND ?",
+                        params[:start].to_date,
+                        params[:end].to_date)
+          if options[:end_date].present?
+            records =
+              items.or(items.where("#{options[:end_date]} BETWEEN ? AND ?",
+                                   params[:start].to_date,
+                                   params[:end].to_date)).
+              or(items.where("#{options[:start_date]} <= ? AND #{options[:end_date]} >= ?",
+                             params[:start].to_date, params[:end].to_date))
           end
 
-          # Defines collection_action to get events data
-          collection_action :index_as_events, method: :get do
-            items = options[:model] || end_of_association_chain
-            items = instance_exec(items, &current_scope.scope_block) if params[:scope].present?
-            items = items.includes(options[:includes]) if options[:includes].present?
-            items =
-              items.where(options[:start_date] => params[:start].to_date...params[:end].to_date).
-              ransack(params[:q]).result
+          records = records.ransack(params[:q]).result
+          events = event_mapping(records, options)
 
-            events = event_mapping(items, options)
-
-            respond_to do |format|
-              format.json { render json: events }
-            end
-          end
-
-        # Return events to be used during partial render
-        else
-          index as: :calendar, default: options[:default] do |context|
-            context[:fullCalendarOptions] = options[:fullCalendarOptions]
-            controller.event_mapping(context[:collection], options)
+          respond_to do |format|
+            format.json { render json: events }
           end
         end
       end

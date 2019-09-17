@@ -17,21 +17,24 @@ module ActiveAdmin
         def dropdown_menu(*args, &block)
           options = args.extract_options!
           super(*args,
-                options.merge(button: { class: ActiveAdminBootstrap::TABLE_BTN_CLASS + ' no-caret' }),
+                options.merge(button: { class: ActiveAdminBootstrap::TABLE_BTN_CLASS }),
                 &block)
         end
 
         # rubocop:disable all
         def actions(options = {}, &block)
-          name          = options.delete(:name)     { '' }
-          defaults      = options.delete(:defaults) { true }
-          dropdown      = options.delete(:dropdown) { false }
-          dropdown_name = options.delete(:dropdown_name) { aa_icon('menu.svg') }
+          name = options.delete(:name)     { '' }
+          defaults = options.delete(:defaults) { true }
+          dropdown = options.delete(:dropdown) { false }
+          dropdown_name = options.delete(:dropdown_name) do
+            I18n.t 'active_admin.dropdown_actions.button_label', default: 'Actions'
+          end
+
           options[:class] ||= 'col-actions'
 
           column name, options do |resource|
             if dropdown
-              dropdown_menu dropdown_name do
+              dropdown_menu dropdown_name&.html_safe do
                 defaults(resource) if defaults
                 instance_exec(resource, &block) if block_given?
               end

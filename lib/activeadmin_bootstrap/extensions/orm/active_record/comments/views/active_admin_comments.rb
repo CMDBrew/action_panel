@@ -8,16 +8,6 @@ module ActiveAdmin
       # - lib/active_admin/orm/active_record/comments/views/active_admin_comments.rb
       class Comments < ActiveAdmin::Views::Panel
 
-        def build(resource)
-          @resource = resource
-          @comments =
-            ActiveAdmin::Comment.
-            find_for_resource_in_namespace(resource, active_admin_namespace.name).
-            includes(:author).page(params[:page]).per(active_admin_namespace.comments_per_page)
-          super(title, for: resource)
-          build_comments
-        end
-
         protected
 
         # rubocop:disable Rails/OutputSafety
@@ -65,9 +55,8 @@ module ActiveAdmin
           return unless authorized?(ActiveAdmin::Auth::DESTROY, comment)
 
           div class: 'comment-actions' do
-            dropdown_menu aa_icon('menu.svg'),
-                          button: { class: 'btn-sm no-caret' },
-                          menu: { class: 'dropdown-menu-right' } do
+            dropdown_menu '', button: { class: 'btn-sm' },
+                              menu: { class: 'dropdown-menu-right' } do
               comment_action_delete(comment)
             end
           end

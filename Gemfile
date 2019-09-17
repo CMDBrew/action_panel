@@ -14,6 +14,8 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 group :development, :test do
+  # Generate fake data
+  gem 'faker'
   # Find unused I18n keys
   gem 'i18n-tasks', '~> 0.9.21'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -26,9 +28,17 @@ group :development, :test do
   gem 'devise'
   # Rails Chrome Panel
   gem 'meta_request'
+  # Postgres DB
+  gem 'pg', '~> 0.15'
 end
 
 group :test do
+  default_rails_version = '5.2.2'
+  default_activeadmin_version = '2.2'
+
+  gem 'rails', "~> #{ENV['RAILS'] || default_rails_version}"
+  gem 'activeadmin', "~> #{ENV['AA'] || default_activeadmin_version}"
+
   # Validation
   gem 'shoulda-matchers', '~> 3.0', require: false
   # Use RSpec as Testing Framework
@@ -36,15 +46,15 @@ group :test do
   gem 'rspec-rails', '~> 3.6'
   # Browser testing
   gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
-  # gem 'capybara-webkit', '~> 1.14.0'
+  # gem 'selenium-webdriver'
+  # gem 'chromedriver-helper'
+  gem 'capybara-webkit'
   # gem 'capybara-screenshot'
   gem 'database_cleaner', '~> 1.6.2'
   # Spec Converage
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   # API Tests
-  gem 'webmock'
-  gem 'vcr'
+  # gem 'webmock'
+  # gem 'vcr'
 end

@@ -32,6 +32,10 @@ module ActiveAdminBootstrap
       end
     end
 
+    initializer 'assets precompile' do |app|
+      app.config.assets.precompile += %w[activeadmin_bootstrap/placeholders/color_brick.png]
+    end
+
   end
 
 end

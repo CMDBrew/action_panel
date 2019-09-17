@@ -34,3 +34,7 @@ report.txt
 
 # Ignore Dummy app
 spec/dummy/*
+spec/rails/*
+
+# Ignore builds
+*.gem

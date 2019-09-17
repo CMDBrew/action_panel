@@ -6,7 +6,7 @@ module ActiveAdminBootstrap
     module BatchActions
 
       FILES = %w[controller resource_extension].freeze
-      VIEW_FILES = %w[batch_action_selector].freeze
+      VIEW_FILES = %w[batch_action_selector selection_cells].freeze
 
       include Base
       extend ActiveSupport::Concern

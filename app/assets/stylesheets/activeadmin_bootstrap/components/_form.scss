@@ -2,6 +2,8 @@
   .hidden { display: none; }
 }
 
+.form-group .label { @extend #{$form-label-theme}; }
+
 li.has-many-inputs,
 fieldset.inputs,
 fieldset.actions {
@@ -33,7 +35,6 @@ fieldset.columns > ol {
 }
 
 fieldset.has_many_fields {
-  @extend .card;
   @extend #{$form-has-many-theme};
 
   &.ui-sortable-placeholder {
@@ -54,7 +55,14 @@ fieldset.has_many_fields {
         display: flex;
         align-items: center;
         padding: map-get($spacers, 2);
+        color: $form-has-many-sortable-color;
+        cursor: move;
         border-right: $input-border-width solid $input-border-color;
+
+        &::before {
+          @extend %mdi-icon;
+          content: map-get($mdi-icons, 'sortable-handle');
+        }
       }
 
       &.has-many-inputs {
@@ -64,9 +72,12 @@ fieldset.has_many_fields {
     }
   }
 
-  .sortable-handle { color: $form-has-many-sortable-color; }
   .has-many-actions { text-align: right; }
   .has_many_delete { margin-bottom: 0; }
+
+  .has_many_add {
+    @extend #{$form-has-many-add-theme};
+  }
 
   .has_many_delete,
   .has_many_remove {
@@ -82,7 +93,10 @@ li.input { list-style: none; }
   legend.label {
     font-size: $font-size-base;
 
-    & > label { @extend label; }
+    & > label {
+      @extend label;
+      @extend #{$form-label-theme};
+    }
   }
 
   .input-fragment {
@@ -110,3 +124,7 @@ li.input { list-style: none; }
 
 .form_cancel { @extend #{$form-cancel-theme}; }
 .form_submit { @extend #{$form-submit-theme}; }
+
+.choices-group {
+  @extend .list-unstyled;
+}

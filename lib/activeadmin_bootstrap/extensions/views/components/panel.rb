@@ -6,12 +6,14 @@ module ActiveAdmin
     class Panel < ActiveAdmin::Component
 
       def build(title = nil, attributes = {})
+        header_class = attributes.delete(:header_class)
+        body_class   = attributes.delete(:body_class)
         super(attributes)
         add_class 'panel'
         add_class 'card'
 
-        @title    = div(build_title(title), class: 'card-header')
-        @contents = div(class: 'panel_contents card-body')
+        @title    = div(build_title(title), class: "card-header #{header_class}".strip)
+        @contents = div(class: "panel_contents card-body #{body_class}".strip)
       end
 
       def header_action(*args)

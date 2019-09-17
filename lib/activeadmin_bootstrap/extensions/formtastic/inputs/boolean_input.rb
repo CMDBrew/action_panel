@@ -17,6 +17,22 @@ module Formtastic
 
       private
 
+      def label_html
+        builder.label(
+          method,
+          checkbox_icon + label_span,
+          label_html_options
+        )
+      end
+
+      def checkbox_icon
+        template.content_tag(:i, '', class: 'checkbox-icon')
+      end
+
+      def label_span
+        template.content_tag(:span, label_text)
+      end
+
       def label_html_options
         {
           for: input_html_options[:id],

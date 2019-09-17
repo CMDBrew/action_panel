@@ -27,10 +27,11 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rails', '>= 5.0.2'
 
-  spec.add_dependency 'activeadmin', '~> 1.4.3'
+  spec.add_dependency 'activeadmin', '~> 2.3.1'
   spec.add_dependency 'bootstrap', '~> 4.3.1'
   spec.add_dependency 'slim-rails'
   spec.add_dependency 'sass-rails'
+  spec.add_dependency 'coffee-rails'
   spec.add_dependency 'select2-rails'
   spec.add_dependency 'inline_svg', '~> 1.3.1'
   spec.add_dependency 'trix-rails', '~> 2.0'
@@ -42,13 +43,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'momentjs-rails'
   spec.add_dependency 'fullcalendar-rails', '~> 3.1'
   spec.add_dependency 'bootstrap-datepicker-rails'
-
-  spec.add_development_dependency 'byebug'
-  spec.add_development_dependency 'devise'
-  spec.add_development_dependency 'faker'
-  spec.add_development_dependency 'interactive_editor'
-  spec.add_development_dependency 'letter_opener'
-  spec.add_development_dependency 'pg', '~> 0.15'
-  spec.add_development_dependency 'rename'
-  spec.add_development_dependency 'thin'
 end

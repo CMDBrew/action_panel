@@ -1,3 +1,6 @@
-.blank_slate {
+.blank_slate_container {
   @extend #{$blank-slate-theme};
+
+  a { @extend .alert-link; }
 }
+

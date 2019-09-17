@@ -12,13 +12,17 @@ module ActiveAdmin
         add_default_destroy_action_item
       end
 
+      # rubocop:disable all
       # Adds the default New link on index
       def add_default_new_action_item
         add_action_item :new, only: proc { new_action_item_display } do
           if controller.action_methods.include?('new') &&
              authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
-            link_to localizer.t(:new_model), new_resource_path
+            link_to(
+              safe_join([active_admin_config.action_item_new_label_prefix.html_safe, content_tag(:span, localizer.t(:new_model))]),
+              new_resource_path
+            )
           end
         end
       end
@@ -29,7 +33,10 @@ module ActiveAdmin
           if controller.action_methods.include?('edit') &&
              authorized?(ActiveAdmin::Auth::UPDATE, resource)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
-            link_to localizer.t(:edit_model), edit_resource_path(resource)
+            link_to(
+              safe_join([active_admin_config.action_item_edit_label_prefix.html_safe, content_tag(:span, localizer.t(:edit_model))]),
+              edit_resource_path(resource)
+            )
           end
         end
       end
@@ -39,11 +46,15 @@ module ActiveAdmin
         add_action_item :destroy, priority: 99, only: proc { destroy_action_item_display } do
           if controller.action_methods.include?('destroy') &&
              authorized?(ActiveAdmin::Auth::DESTROY, resource)
-            link_to(destroy_btn_title, resource_path(resource),
-                    method: :delete, data: { confirm: destroy_title, message: destroy_message })
+            link_to(
+              safe_join([active_admin_config.action_item_delete_label_prefix.html_safe, content_tag(:span, destroy_btn_title)]),
+              resource_path(resource),
+              method: :delete, data: { confirm: destroy_title, message: destroy_message }
+            )
           end
         end
       end
+      # rubocop:enable all
 
     end
 

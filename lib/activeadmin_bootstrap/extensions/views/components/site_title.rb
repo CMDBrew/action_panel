@@ -20,6 +20,16 @@ module ActiveAdmin
         end
       end
 
+      private
+
+      def site_title_content
+        if site_title_image.present?
+          title_image + helpers.content_tag(:span, title_text)
+        else
+          title_text
+        end
+      end
+
     end
 
   end

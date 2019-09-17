@@ -1,7 +1,7 @@
 %titlebar-top-base {
   position: fixed;
   right: 0;
-  z-index: $zindex-fixed - 1;
+  z-index: $zindex-fixed - 5;
 }
 
 #title_bar {
@@ -13,25 +13,22 @@
   height: $titlebar-height;
 
   #titlebar_left {
+    @extend .text-truncate;
     flex: 1;
     margin-right: $spacer;
+    overflow: hidden;
   }
 
-  #titlebar_left,
-  #titlebar_right,
   #breadcrumb {
     @extend .text-truncate;
-    white-space: nowrap;
-  }
-
-  #breadcrumb {
     flex-wrap: nowrap;
-    padding: 0;
     margin: 0;
-    background: transparent;
+    overflow-x: scroll;
 
     .breadcrumb-item {
       @extend .text-truncate;
+      flex-shrink: 0;
+      max-width: $titlebar-breadcrumb-item-max-width;
       white-space: nowrap;
     }
   }

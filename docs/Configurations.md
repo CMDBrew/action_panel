@@ -11,6 +11,9 @@ ActiveAdmin.setup do |config|
    config.edit_action_item_display = :show
    config.destroy_action_item_display = :show
    config.pagination_exclusion = []
+   config.action_item_new_label_prefix = ''
+   config.action_item_edit_label_prefix = ''
+   config.action_item_delete_label_prefix = ''
 
    config.namespace :admin do |admin|
      admin.navigation = 'fixed_top'
@@ -21,6 +24,9 @@ ActiveAdmin.setup do |config|
      admin.edit_action_item_display = :show
      admin.destroy_action_item_display = :show
      config.pagination_exclusion = []
+     config.action_item_new_label_prefix = ''
+     config.action_item_edit_label_prefix = ''
+     config.action_item_delete_label_prefix = ''
    end
 end
 ```
@@ -41,6 +47,16 @@ end
 ```ruby
 ActiveAdmin.register AdminUser do
   config.sidebar_position = 'left'
+end
+```
+
+#### ActionItem Label Prefixes
+- You can also pass the option as per page basis. Please see below.
+```ruby
+ActiveAdmin.register AdminUser do
+  config.action_item_new_label_prefix = "<i class='mdi mdi-plus'></i>"
+  config.action_item_edit_label_prefix = "<i class='mdi mdi-square-edit-outline'></i>"
+  config.action_item_delete_label_prefix = "<i class='mdi mdi-delete'></i>"
 end
 ```
 

@@ -1,3 +1,17 @@
-%streamline-icon {
-  fill: currentColor;
+%background-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+%mdi-icon {
+  display: inline-block;
+  font-family: 'Material Design Icons';
+  font-size: $mdi-icon-size;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.mdi { @extend %mdi-icon; }

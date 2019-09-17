@@ -5,7 +5,7 @@ module ActiveAdminBootstrap
     # ViewHelpers Initializers
     module ViewHelpers
 
-      FILES = %w[base notice menu].freeze
+      FILES = %w[base notice].freeze
 
       include Base
       extend ActiveSupport::Concern

@@ -1,16 +1,28 @@
+.thumbnail {
+  @extend %background-cover;
+  @extend .small;
+
+  position: relative;
+  width: map-get($thumbnail-sizes, 'sm');
+  height: map-get($thumbnail-sizes, 'sm');
+  overflow: hidden;
+  line-height: map-get($thumbnail-sizes, 'sm');
+  text-align: center;
+
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    @include transform(translateX(-50%));
+  }
+}
+
 @each $_key, $_value in $thumbnail-sizes {
-  .thumbnail-#{$_key} {
-    position: relative;
+  .thumbnail.#{$_key} {
     width: $_value;
     height: $_value;
-    overflow: hidden;
-
-    img {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      height: 100%;
-      @include transform(translateX(-50%));
-    }
+    line-height: $_value;
   }
 }

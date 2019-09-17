@@ -11,11 +11,11 @@
 # about supported directives.
 #
 #= require jquery3
-#= require jquery-ui/widget
 #= require jquery-ui/widgets/datepicker
 #= require jquery-ui/widgets/dialog
 #= require jquery-ui/widgets/sortable
 #= require jquery-ui/widgets/tabs
+#= require jquery-ui/widget
 #= require jquery_ujs
 #= require popper
 #= require bootstrap
@@ -27,14 +27,14 @@
 #= require jquery.minicolors
 #= require trix
 #= require_self
+#= require active_admin/ext/jquery-ui
+#= require active_admin/ext/jquery
+#= require active_admin/lib/active_admin
 #= require active_admin/lib/checkbox-toggler
-#= require active_admin/lib/flash
 #= require active_admin/lib/per_page
 #= require active_admin/lib/table-checkbox-toggler
 #= require active_admin/lib/has_many
 #= require active_admin/initializers/filters
-#= require active_admin/ext/jquery-ui
-#= require active_admin/ext/jquery
 #= require_tree ./lib
 #= require_tree ./initializers
 
@@ -65,3 +65,7 @@ $(document).ready(->
   ).on 'page:load turbolinks:load', ->
     onReady()
     onDocReady(document)
+
+$(document)
+  .on 'has_many_add:after', '.has_many_container', (e, fieldset, container) ->
+    onDocReady(fieldset[0])

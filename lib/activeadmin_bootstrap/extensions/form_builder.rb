@@ -52,9 +52,7 @@ module ActiveAdmin
       return unless sortable_column
 
       form_builder.input sortable_column, as: :hidden
-      template.content_tag(:li, class: 'handle') do
-        template.aa_icon 'sortable.svg'
-      end
+      template.content_tag(:li, '', class: 'handle')
     end
 
     # rubocop:disable Naming/PredicateName, Metrics/MethodLength

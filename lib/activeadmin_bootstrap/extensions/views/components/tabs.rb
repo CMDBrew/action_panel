@@ -18,7 +18,7 @@ module ActiveAdmin
       end
 
       def build_menu_item(title, options, &_block)
-        fragment = options.fetch(:id, title.parameterize)
+        fragment = options.fetch(:id, fragmentize(title))
         html_options = options.fetch(:html_options, {})
         li html_options.merge(class: 'nav-item') do
           if @http
@@ -31,8 +31,8 @@ module ActiveAdmin
       end
 
       def build_content_item(title, options, &block)
-        fragment = options.fetch(:id, title.parameterize)
-        options  = options.reverse_merge(id: title.parameterize)
+        fragment = options.fetch(:id, fragmentize(title))
+        options  = options.reverse_merge(id: fragmentize(title))
         klass    = options.delete(:class)
         if @http
           div(options.merge(class: "#{klass} active"), &block) if current_tab?(fragment)

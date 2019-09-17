@@ -1,0 +1,39 @@
+.form-check {
+  padding-left: 0;
+
+  .checkbox-icon {
+    @extend %mdi-icon;
+    margin-right: map-get($spacers, 1);
+    color: $secondary;
+  }
+
+  .form-check-label * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  input { display: none; }
+
+  input[type='radio'] {
+    & + .form-check-label .checkbox-icon::before { content: map-get($mdi-icons, 'radiobox-outline'); }
+
+    &:checked + .form-check-label .checkbox-icon {
+      color: $component-active-bg;
+      &::before { content: map-get($mdi-icons, 'radiobox-checked'); }
+    }
+  }
+
+  input[type='checkbox'] {
+    & + .form-check-label .checkbox-icon::before { content: map-get($mdi-icons, 'checkbox-outline'); }
+
+    &:checked + .form-check-label .checkbox-icon {
+      color: $component-active-bg;
+      &::before { content: map-get($mdi-icons, 'checkbox-checked'); }
+    }
+
+    &:indeterminate + .form-check-label .checkbox-icon {
+      color: $component-active-bg;
+      &::before { content: map-get($mdi-icons, 'checkbox-intermediate'); }
+    }
+  }
+}

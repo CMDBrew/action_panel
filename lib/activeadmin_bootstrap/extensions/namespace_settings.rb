@@ -19,10 +19,12 @@ module ActiveAdmin
     register :destroy_action_item_display, :show
     # Use rich textarea for active_admin_comments?
     register :trix_active_admin_comments, true
-    # The default comments per page
-    register :comments_per_page, 2
     # Pagination Exclusion
     register :pagination_exclusion, []
+    # Action Item Icons
+    register :action_item_new_label_prefix, ''
+    register :action_item_edit_label_prefix, ''
+    register :action_item_delete_label_prefix, ''
 
   end
 

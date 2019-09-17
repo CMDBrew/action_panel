@@ -3,18 +3,14 @@
 }
 
 @include navigation('fixed_top') {
+  padding-top: calc(#{$header-height} + #{$titlebar-height});
+
   #header { @extend %navigation-fixed-top; }
 
-  @if $titlebar-fixed == true {
-    padding-top: calc(#{$header-fixed-top-height} + #{$titlebar-height});
-
-    #title_bar {
-      @extend %titlebar-top-base;
-      top: $header-fixed-top-height;
-      left: 0;
-    }
-  } @else {
-    padding-top: $header-fixed-top-height;
+  #title_bar {
+    @extend %titlebar-top-base;
+    top: $header-height;
+    left: 0;
   }
 }
 
@@ -23,24 +19,13 @@
 
   #header {
     @extend %navigation-sidebar;
-    height: 100% !important;
+    height: 100%;
   }
 
-  @if #{$titlebar-fixed} == true {
-    #title_bar {
-      @extend %titlebar-top-base;
-      top: 0;
-      left: 0;
-
-      @include media-breakpoint-up(map-get($header-breakpoints, 'sidebar')) {
-        left: $header-sidebar-width;
-        width: calc(100% - #{$header-sidebar-width});
-      }
-    }
-  }
-
-  @include media-breakpoint-up(map-get($header-breakpoints, 'sidebar')) {
-    padding-left: $header-sidebar-width;
+  #title_bar {
+    @extend %titlebar-top-base;
+    top: 0;
+    left: 0;
   }
 }
 
