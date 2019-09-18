@@ -1,9 +1,6 @@
 # Require Gem Dependencies
 require 'activeadmin'
 require 'bootstrap'
-require 'inline_svg'
-require 'trix'
-require 'font-awesome-rails'
 require 'fullcalendar-rails'
 require 'momentjs-rails'
 require 'select2-rails'
@@ -25,7 +22,7 @@ require 'activeadmin_bootstrap/initializers/others'
 
 # Compilers
 require 'slim-rails'
-require 'sass'
+require 'sass-rails'
 
 # Require Engine
 require 'activeadmin_bootstrap/engine'
@@ -49,4 +46,7 @@ module ActiveAdminBootstrap
   COLUMN_BREAKPOINT            = 'md'.freeze
   SCOPE_COUNT_CLASS            = 'scope_count'.freeze
 
+  def self.rails6?
+    Rails.version.start_with? '6'
+  end
 end

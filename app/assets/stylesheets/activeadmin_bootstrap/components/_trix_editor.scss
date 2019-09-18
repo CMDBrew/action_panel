@@ -16,3 +16,19 @@ trix-toolbar {
     }
   }
 }
+
+.trix-content {
+  img {
+    height: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+trix-editor,
+.trix-content {
+  figure {
+    @extend .border;
+    @extend .rounded;
+    padding: map-get($spacers, 2);
+  }
+}

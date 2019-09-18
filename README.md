@@ -8,7 +8,6 @@ To customize ActiveAdminBootstrap please see the **[Wiki](docs/Home.md)**
 ### Add Gem
 Add this line to your application's Gemfile:
 ```ruby
-gem 'activeadmin', '~> 1.4.3'
 gem 'activeadmin_bootstrap', git: 'https://github.com/CMDBrew/activeadmin_bootstrap.git', branch: 'master'
 ```
 
@@ -114,12 +113,14 @@ chdir APP_ROOT do
 end
 ```
 
+If you want to test against a Rails version different from the latest, make sure you use the correct Gemfile, for example:
+```shell
+export BUNDLE_GEMFILE=gemfiles/rails_52.gemfile
+```
+
 Install app on your local
 ```
 $ bundle install
-$ bundle install --gemfile=.overcommit_gems.rb
-$ chmod +x bin/setup_overcommit
-$ overcommit --install
 ```
 
 ## License

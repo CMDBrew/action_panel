@@ -8,10 +8,10 @@ f.input :super_admin, as: :switch
 f.input :avatar, as: :file, preview: :avatar
 ```
 
-## TrixEditor Input
-For more information please see https://github.com/kylefox/trix
+## ActionText Input
+For more information please see https://edgeguides.rubyonrails.org/action_text_overview.html#examples
 ```ruby
-f.input :body, as: :trix_editor
+f.input :body, as: :rich_text_area
 ```
 
 ## ColorPicker Input

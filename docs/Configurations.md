@@ -6,7 +6,7 @@ ActiveAdmin.setup do |config|
    config.navigation = 'top'
    config.sidebar_position = 'right'
    config.filter_position = 'sidebar'
-   config.trix_active_admin_comments = true
+   config.active_admin_comment_input = 'text'
    config.new_action_item_display = :index
    config.edit_action_item_display = :show
    config.destroy_action_item_display = :show
@@ -19,7 +19,7 @@ ActiveAdmin.setup do |config|
      admin.navigation = 'fixed_top'
      admin.sidebar_position = 'right'
      admin.filter_position = 'sidebar'
-     config.trix_active_admin_comments = false
+     config.active_admin_comment_input = 'string'
      admin.new_action_item_display = :index
      admin.edit_action_item_display = :show
      admin.destroy_action_item_display = :show

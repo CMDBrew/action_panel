@@ -18,7 +18,7 @@ module ActiveAdmin
     # The default destroy action_item display
     register :destroy_action_item_display, :show
     # Use rich textarea for active_admin_comments?
-    register :trix_active_admin_comments, true
+    register :active_admin_comment_input, 'text'
     # Pagination Exclusion
     register :pagination_exclusion, []
     # Action Item Icons

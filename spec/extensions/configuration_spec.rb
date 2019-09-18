@@ -7,7 +7,7 @@ RSpec.describe ActiveAdmin::Views::Header do
     it { expect(application.navigation).to eq('top') }
     it { expect(application.sidebar_position).to eq('right') }
     it { expect(application.filter_position).to eq('sidebar') }
-    it { expect(application.trix_active_admin_comments).to eq(true) }
+    it { expect(application.active_admin_comment_input).to eq('text') }
     it { expect(application.new_action_item_display).to eq(:index) }
     it { expect(application.edit_action_item_display).to eq(:show) }
     it { expect(application.destroy_action_item_display).to eq(:show) }
@@ -19,7 +19,7 @@ RSpec.describe ActiveAdmin::Views::Header do
       application.navigation = 'fixed_top'
       application.sidebar_position = 'left'
       application.filter_position = 'table_tools'
-      application.trix_active_admin_comments = false
+      application.active_admin_comment_input = 'string'
       application.new_action_item_display = :show
       application.edit_action_item_display = :show
       application.destroy_action_item_display = :edit
@@ -29,7 +29,7 @@ RSpec.describe ActiveAdmin::Views::Header do
     it { expect(application.navigation).to eq('fixed_top') }
     it { expect(application.sidebar_position).to eq('left') }
     it { expect(application.filter_position).to eq('table_tools') }
-    it { expect(application.trix_active_admin_comments).to eq(false) }
+    it { expect(application.active_admin_comment_input).to eq('string') }
     it { expect(application.new_action_item_display).to eq(:show) }
     it { expect(application.edit_action_item_display).to eq(:show) }
     it { expect(application.destroy_action_item_display).to eq(:edit) }
@@ -43,7 +43,7 @@ RSpec.describe ActiveAdmin::Views::Header do
       namespace.navigation = 'fixed_top'
       namespace.sidebar_position = 'left'
       namespace.filter_position = 'table_tools'
-      namespace.trix_active_admin_comments = false
+      namespace.active_admin_comment_input = 'string'
       namespace.new_action_item_display = :show
       namespace.edit_action_item_display = :show
       namespace.destroy_action_item_display = :edit
@@ -53,7 +53,7 @@ RSpec.describe ActiveAdmin::Views::Header do
     it { expect(namespace.navigation).to eq('fixed_top') }
     it { expect(namespace.sidebar_position).to eq('left') }
     it { expect(namespace.filter_position).to eq('table_tools') }
-    it { expect(namespace.trix_active_admin_comments).to eq(false) }
+    it { expect(namespace.active_admin_comment_input).to eq('string') }
     it { expect(namespace.new_action_item_display).to eq(:show) }
     it { expect(namespace.edit_action_item_display).to eq(:show) }
     it { expect(namespace.destroy_action_item_display).to eq(:edit) }

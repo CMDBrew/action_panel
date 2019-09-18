@@ -7,7 +7,23 @@ module ActiveAdmin
       # Overwrite Pages::Base - activeadmin/lib/active_admin/views/pages/base.rb
       class Base < Arbre::HTML::Document
 
+        def build(*_args)
+          set_attribute :lang, I18n.locale
+          build_active_admin_head
+          build_webpackers
+          build_page
+        end
+
         private
+
+        def build_webpackers
+          path = Rails.root.join('app', 'javascript', 'packs', 'active_admin.js')
+          return unless ActiveAdminBootstrap.rails6? && File.exist?(path)
+
+          within head do
+            text_node(javascript_pack_tag('active_admin'))
+          end
+        end
 
         def build_page
           within body(class: body_classes) do

@@ -1,4 +1,4 @@
-module WrapActiveadmin
+module ActiveAdminBootstrap
 
   module Generators
 

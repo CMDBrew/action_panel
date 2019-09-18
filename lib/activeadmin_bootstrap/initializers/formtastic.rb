@@ -11,6 +11,7 @@ module ActiveAdminBootstrap
         select_input select2_input check_boxes_input radio_input
         boolean_input switch_input file_input color_picker_input
         date_picker_input just_datetime_picker_input hstore_input
+        rich_text_area_input
       ].freeze
       OTHER_FILES = %w[form_builder].freeze
 
