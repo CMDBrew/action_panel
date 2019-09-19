@@ -3,12 +3,12 @@
   @extend .small;
 
   position: relative;
+  flex-shrink: 0;
   width: map-get($thumbnail-sizes, 'sm');
   height: map-get($thumbnail-sizes, 'sm');
   overflow: hidden;
   line-height: map-get($thumbnail-sizes, 'sm');
   text-align: center;
-
 
   img {
     position: absolute;
