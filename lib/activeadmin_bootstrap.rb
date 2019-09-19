@@ -22,7 +22,7 @@ require 'activeadmin_bootstrap/initializers/others'
 
 # Compilers
 require 'slim-rails'
-require 'sass-rails'
+require 'sassc-rails'
 
 # Require Engine
 require 'activeadmin_bootstrap/engine'
@@ -49,4 +49,5 @@ module ActiveAdminBootstrap
   def self.rails6?
     Rails.version.start_with? '6'
   end
+
 end
