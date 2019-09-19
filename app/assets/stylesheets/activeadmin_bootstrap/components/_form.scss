@@ -75,14 +75,14 @@ fieldset.has_many_fields {
   .has-many-actions { text-align: right; }
   .has_many_delete { margin-bottom: 0; }
 
-  .has_many_add {
-    @extend #{$form-has-many-add-theme};
-  }
-
   .has_many_delete,
   .has_many_remove {
     color: $form-has-many-remove-color;
   }
+}
+
+.has_many_add {
+  @extend #{$form-has-many-add-theme};
 }
 
 li.input { list-style: none; }
