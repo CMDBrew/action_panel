@@ -1,4 +1,4 @@
-module ActiveAdminBootstrap
+module ActiveadminBootstrap
 
   module Generators
 
@@ -27,7 +27,7 @@ module ActiveAdminBootstrap
 
       def setup_imports
         inject_into_file 'app/assets/stylesheets/active_admin.scss',
-                         "\n@import \"activeadmin_bootstrap_overrides/**/*\";",
+                         "\n@import \'activeadmin_bootstrap_overrides/**/*\';",
                          after: %r{// Active Admin's got SASS!}
       end
 
