@@ -32,19 +32,19 @@ module ActiveAdminBootstrap
 
   autoload :VERSION, 'activeadmin_bootstrap/version'
 
-  ACTION_ITEM_CLASS            = 'action_item'.freeze
-  TABLE_CLASS                  = 'table_for'.freeze
-  TABLE_BTN_CLASS              = 'table_btn'.freeze
-  TABLE_TOOLS_BTN_CLASS        = 'table_tool_btn'.freeze
+  ACTION_ITEM_CLASS = 'action_item'.freeze
+  TABLE_CLASS = 'table_for'.freeze
+  TABLE_BTN_CLASS = 'table_btn'.freeze
+  TABLE_TOOLS_BTN_CLASS = 'table_tool_btn'.freeze
   TABLE_TOOLS_BTN_ACTIVE_CLASS = 'table_tool_btn active'.freeze
-  TAB_CLASS                    = 'nav_tabs'.freeze
-  FORM_CANCEL_CLASS            = 'form_cancel'.freeze
-  FORM_SUBMIT_CLASS            = 'form_submit'.freeze
-  WRAPPER_CONTAINER_CLASS      = 'wrapper_container'.freeze
-  CONTENT_CONTAINER_CLASS      = 'content_container'.freeze
-  FLASH_CLASS                  = 'flash_message'.freeze
-  COLUMN_BREAKPOINT            = 'md'.freeze
-  SCOPE_COUNT_CLASS            = 'scope_count'.freeze
+  TAB_CLASS = 'nav_tabs'.freeze
+  FORM_CANCEL_CLASS = 'form_cancel'.freeze
+  FORM_SUBMIT_CLASS = 'form_submit'.freeze
+  WRAPPER_CONTAINER_CLASS = 'wrapper_container'.freeze
+  CONTENT_CONTAINER_CLASS = 'content_container'.freeze
+  FLASH_CLASS = 'flash_message'.freeze
+  COLUMN_BREAKPOINT = 'md'.freeze
+  SCOPE_COUNT_CLASS = 'scope_count'.freeze
 
   def self.rails6?
     Rails.version.start_with? '6'
