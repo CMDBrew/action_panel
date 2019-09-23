@@ -19,7 +19,7 @@ module ActiveAdminBootstrap
       extend ActiveSupport::Concern
 
       included do
-        initializer 'base overrides' do |_app|
+        initializer 'formtastic.overrides' do |_app|
           require_each(BASE_FILES, path: 'formtastic/base')
           require_each(ACTIONS_FILES, path: 'formtastic/actions')
           require_each(INPUTS_FILES, path: 'formtastic/inputs')

@@ -15,7 +15,7 @@ module ActiveAdminBootstrap
           require_each(%w[namespace_settings])
         end
 
-        initializer 'others overrides' do |_app|
+        initializer 'others.overrides' do |_app|
           require_each(FILES)
         end
       end

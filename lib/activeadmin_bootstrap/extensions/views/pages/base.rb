@@ -25,6 +25,7 @@ module ActiveAdmin
           end
         end
 
+        # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         def build_page
           within body(class: body_classes) do
             header active_admin_namespace, current_menu
@@ -35,9 +36,11 @@ module ActiveAdmin
             div id: 'wrapper', class: ActiveAdminBootstrap::WRAPPER_CONTAINER_CLASS do
               build_unsupported_browser
               build_page_content
+              build_htmls unless skip_htmls?
             end
           end
         end
+        # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
         def header_backdrop
           div id: 'header-backdrop', class: 'backdrop',
@@ -69,6 +72,26 @@ module ActiveAdmin
             sidebar(sidebar_sections_for_action,
                     id: 'sidebar', class: ActiveAdminBootstrap::CONTENT_CONTAINER_CLASS)
           end
+        end
+
+        def build_htmls
+          div id: 'htmls' do
+            htmls_for_action.collect do |section|
+              html(section)
+            end
+          end
+        end
+
+        def htmls_for_action
+          if active_admin_config&.htmls?
+            active_admin_config.htmls_for(params[:action], self)
+          else
+            []
+          end
+        end
+
+        def skip_htmls?
+          htmls_for_action.empty? || assigns[:skip_htmls] == true
         end
 
         def body_classes

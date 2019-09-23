@@ -11,7 +11,7 @@ module ActiveAdminBootstrap
       extend ActiveSupport::Concern
 
       included do
-        initializer 'others overrides' do |_app|
+        initializer 'orm.overrides' do |_app|
           require_each(VIEWS, path: 'orm/active_record/comments/views')
         end
       end
