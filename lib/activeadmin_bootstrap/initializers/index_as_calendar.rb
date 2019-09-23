@@ -17,9 +17,9 @@ module ActiveAdminBootstrap
           require_each(VIEW_FILES, path: 'views')
         end
 
-        # initializer 'initialize DSL' do |_app|
-        #   ::ActiveAdmin::DSL.send(:include, ActiveAdmin::IndexAsCalendar::DSL)
-        # end
+        initializer 'initialize DSL' do |_app|
+          ::ActiveAdmin::DSL.send(:include, ActiveAdmin::IndexAsCalendar::DSL)
+        end
       end
 
     end

@@ -14,8 +14,9 @@ module ActiveAdmin
           end
         end
 
-        # rubocop:disable all
         def build_table_tools
+          return unless any_table_tools?
+
           div class: 'table_tools' do
             div build_scopes, class: 'mb-3 tab-ctrls'
             div class: 'scope_ctrls' do
@@ -23,9 +24,8 @@ module ActiveAdmin
               build_index_list
               build_filter_ctrl
             end
-          end if any_table_tools?
+          end
         end
-        # rubocop:enable all
 
         protected
 
