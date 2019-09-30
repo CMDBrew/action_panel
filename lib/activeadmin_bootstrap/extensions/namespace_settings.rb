@@ -6,6 +6,8 @@ module ActiveAdmin
   class NamespaceSettings < DynamicSettingsNode
 
     # The default navigation
+    register :site_title_proc, nil
+    # The default navigation
     register :navigation, 'top'
     # The default sidebar position
     register :sidebar_position, 'right'

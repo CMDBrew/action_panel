@@ -4,6 +4,7 @@ To configure ActiveAdmin create an initializer
 # config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
    config.navigation = 'top'
+   config.site_title_proc = proc { my_custom_site_title_method }
    config.sidebar_position = 'right'
    config.filter_position = 'sidebar'
    config.active_admin_comment_input = 'text'
@@ -17,6 +18,7 @@ ActiveAdmin.setup do |config|
 
    config.namespace :admin do |admin|
      admin.navigation = 'fixed_top'
+     admin.site_title_proc = proc { my_custom_site_title_method }
      admin.sidebar_position = 'right'
      admin.filter_position = 'sidebar'
      config.active_admin_comment_input = 'string'

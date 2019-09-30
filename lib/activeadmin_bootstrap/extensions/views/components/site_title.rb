@@ -13,7 +13,9 @@ module ActiveAdmin
         super(id: 'site_title', class: 'navbar-brand')
         @namespace = namespace
 
-        if site_title_link?
+        if site_title_proc?
+          div @namespace.site_title_proc.call, class: 'site_title'
+        elsif site_title_link?
           div site_title_with_link, class: 'site_title'
         else
           div site_title_content, class: 'site_title'
@@ -21,6 +23,10 @@ module ActiveAdmin
       end
 
       private
+
+      def site_title_proc?
+        @namespace.site_title_proc.present?
+      end
 
       def site_title_content
         if site_title_image.present?
