@@ -1,9 +1,3 @@
-%titlebar-top-base {
-  position: fixed;
-  right: 0;
-  z-index: $zindex-fixed - 5;
-}
-
 #title_bar {
   @extend #{$titlebar-theme};
 

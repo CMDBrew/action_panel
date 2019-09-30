@@ -2,14 +2,18 @@
 $breakpoints: 'xs', 'sm', 'md', 'lg', 'xl' !default;
 $sidebar-breakpoint: 'lg' !default;
 $header-breakpoints: (
-  'sidebar': 'xl',
+  'sidebar': 'lg',
   'top': 'xl'
 ) !default;
 
 // Header Navigation
+$header-sidebar-width: (
+  'expand': 280px,
+  'collapse': calc(100% - 48px)
+) !default;
+
 $header-theme: '.navbar-dark, .bg-dark' !default;
 $header-height: 58px !default;
-$header-sidebar-width: 280px !default;
 $header-icon-size: 20px !default;
 $header-icon-offset: 0.5rem !default;
 $header-icon-color: $navbar-dark-color !default;
