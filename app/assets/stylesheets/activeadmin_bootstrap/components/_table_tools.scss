@@ -14,9 +14,13 @@
   display: flex;
   flex-direction: row;
 
-  .table_tools_segmented_control {
-    padding-left: $spacer;
+  & > * {
+    padding: 0;
     margin: 0;
+
+    &:not(:first-child) {
+      padding-left: $spacer;
+    }
   }
 }
 
