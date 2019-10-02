@@ -14,13 +14,18 @@ $header-sidebar-width: (
 
 $header-theme: '.navbar-dark, .bg-dark' !default;
 $header-height: 58px !default;
-$header-icon-size: 20px !default;
 $header-icon-offset: 0.5rem !default;
 $header-icon-color: $navbar-dark-color !default;
 $header-icon-hover-color: $navbar-dark-hover-color !default;
 $header-icon-active-color: $navbar-dark-active-color !default;
 $header-menu-badge-theme: '.badge, .badge-light' !default;
-$header-logo-size: 32px !default;
+
+// SiteTitle
+$site-title-themes: (
+  'header': '.d-block',
+  'titlebar': '.d-none'
+) !default;
+$site-title-logo-size: 32px !default;
 
 // TitleBar
 $titlebar-theme: '.navbar-light, .bg-light' !default;
@@ -101,13 +106,10 @@ $mdi-icons: (
 ) !default;
 
 // Thumbnails
-$thumbnail-xs: 24px !default;
-$thumbnail-sm: 38px !default;
-$thumbnail-md: 64px !default;
-$thumbnail-lg: 128px !default;
+$thumbnail-default-size: sm !default;
 $thumbnail-sizes: (
-  'xs': $thumbnail-xs,
-  'sm': $thumbnail-sm,
-  'md': $thumbnail-md,
-  'lg': $thumbnail-lg,
+  'xs': 24px,
+  'sm': 32px,
+  'md': 64px,
+  'lg': 128px,
 ) !default;

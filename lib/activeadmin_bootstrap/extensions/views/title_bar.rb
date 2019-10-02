@@ -5,11 +5,12 @@ module ActiveAdmin
     # Overwirte TitleBar - activeadmin/lib/active_admin/views/title_bar.rb
     class TitleBar < Component
 
-      def build(title, action_items)
+      def build(namespace, title, action_items)
         super(id: 'title_bar', class: 'navbar')
         @title = title
         @action_items = action_items
         build_header_toggle
+        site_title namespace
         build_titlebar_left
         build_titlebar_right
       end
@@ -58,6 +59,13 @@ module ActiveAdmin
             li(text_node(link), class: 'breadcrumb-item')
           end
           li(text_node(@title), class: 'breadcrumb-item active')
+        end
+      end
+
+      def build_action_items
+        action_items = @action_items.group_by(&:group)
+        action_items.each do |_index, items|
+          insert_tag(view_factory.action_items, items)
         end
       end
 

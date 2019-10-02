@@ -26,4 +26,8 @@
       white-space: nowrap;
     }
   }
+
+  .site-title-wrapper {
+    @extend #{map-get($site-title-themes, 'titlebar')};
+  }
 }

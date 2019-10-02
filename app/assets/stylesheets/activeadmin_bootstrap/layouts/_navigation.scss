@@ -17,7 +17,7 @@
     padding: 0;
     border: 0;
 
-    @include transform(none !important);
+    @include transform(none);
 
     &,
     .dropdown-item:hover {
@@ -30,15 +30,14 @@
 
       a {
         @extend .nav-link;
-        padding-left: 2.5 * $spacer !important;
+        padding-right: $nav-link-padding-y !important;
+        padding-left: $nav-link-padding-y !important;
       }
     }
   }
 }
 
 %navigation-sidebar-base {
-  $_item-spacer: map-get($spacers, 3);
-
   position: fixed;
   top: 0;
   bottom: 0;
@@ -64,8 +63,8 @@
 
   .nav-link,
   .navbar-brand {
-    padding-right: $_item-spacer;
-    padding-left: $_item-spacer;
+    padding-right: $nav-link-padding-y;
+    padding-left: $nav-link-padding-y;
     white-space: nowrap;
   }
 

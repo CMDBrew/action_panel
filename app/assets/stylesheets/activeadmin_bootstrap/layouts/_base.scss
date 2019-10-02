@@ -4,7 +4,12 @@ html {
   height: 100%;
 }
 
-body { overflow-x: hidden; }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
 #main-content,
 #sidebar {
@@ -12,11 +17,18 @@ body { overflow-x: hidden; }
   padding-bottom: $spacer;
 }
 
+#wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
 .wrapper_container { @extend #{$wrapper-container}; }
 .content_container { @extend #{$content-container}; }
 
 #active_admin_content {
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   margin: 0 calc(#{$grid-gutter-width} / 2 * -1);
 

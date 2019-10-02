@@ -4,10 +4,10 @@
 
   position: relative;
   flex-shrink: 0;
-  width: map-get($thumbnail-sizes, 'sm');
-  height: map-get($thumbnail-sizes, 'sm');
+  width: map-get($thumbnail-sizes, $thumbnail-default-size);
+  height: map-get($thumbnail-sizes, $thumbnail-default-size);
   overflow: hidden;
-  line-height: map-get($thumbnail-sizes, 'sm');
+  line-height: map-get($thumbnail-sizes, $thumbnail-default-size);
   text-align: center;
 
   img {

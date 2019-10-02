@@ -92,7 +92,6 @@ tabs(http: true) do
 end
 ```
 
-
 ## Dropdown Menu
 Added new options for dropdown item
 #### `item_divider` to create a divider
@@ -106,6 +105,14 @@ end
 ```ruby
 dropdown_menu 'my dropdown' do
   raw_item(div('my html content'))
+end
+```
+
+## ActionItems
+Added new options group for btn-groups
+```ruby
+action_item :view, only: :index, priority: 1, group: 10 do
+  link_to 'my awesome link', "#"
 end
 ```
 

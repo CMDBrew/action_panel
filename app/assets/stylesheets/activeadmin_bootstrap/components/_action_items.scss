@@ -1,1 +1,1 @@
-.action_item { @extend #{$action-items-theme}; }
+.action_item:not(.btn) { @extend #{$action-items-theme}; }

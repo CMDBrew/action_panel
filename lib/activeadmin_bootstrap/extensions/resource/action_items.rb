@@ -5,6 +5,11 @@ module ActiveAdmin
     # Overwriting ActionItems - activeadmin/lib/active_admin/resource/action_items.rb
     module ActionItems
 
+      def action_items_for(action, render_context = nil)
+        action_items.select { |item| item.display_on? action, render_context }.
+          sort_by { |x| [x.group, x.priority] }
+      end
+
       # Adds the default action items to each resource
       def add_default_action_items
         add_default_new_action_item
@@ -43,7 +48,7 @@ module ActiveAdmin
 
       # Adds the default Destroy link on show
       def add_default_destroy_action_item
-        add_action_item :destroy, priority: 99, only: proc { destroy_action_item_display } do
+        add_action_item :destroy, only: proc { destroy_action_item_display } do
           if controller.action_methods.include?('destroy') &&
              authorized?(ActiveAdmin::Auth::DESTROY, resource)
             link_to(
@@ -67,6 +72,14 @@ module ActiveAdmin
       @options[:only]   = Array(return_or_proc_exec(@options[:only]))   if @options[:only]
       @options[:except] = Array(return_or_proc_exec(@options[:except])) if @options[:except]
       super
+    end
+
+    def group
+      @options[:group] || 99
+    end
+
+    def priority
+      @options[:priority] || 99
     end
 
     private
