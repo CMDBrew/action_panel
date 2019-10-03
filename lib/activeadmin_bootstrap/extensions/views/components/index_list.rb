@@ -21,7 +21,7 @@ module ActiveAdmin
 
         name = index_class.index_name
         a href: url_with_params, class: classes_for_link(index_class), title: name do
-          I18n.t("active_admin.index_list.#{name}", default: name.to_s.titleize)
+          span I18n.t("active_admin.index_list.#{name}", default: name.to_s.titleize)
         end
       end
 

@@ -30,8 +30,8 @@
 
       a {
         @extend .nav-link;
-        padding-right: $nav-link-padding-y !important;
-        padding-left: $nav-link-padding-y !important;
+        padding-right: $nav-link-padding-x !important;
+        padding-left: $nav-link-padding-x !important;
       }
     }
   }
@@ -63,8 +63,8 @@
 
   .nav-link,
   .navbar-brand {
-    padding-right: $nav-link-padding-y;
-    padding-left: $nav-link-padding-y;
+    padding-right: $nav-link-padding-x;
+    padding-left: $nav-link-padding-x;
     white-space: nowrap;
   }
 
