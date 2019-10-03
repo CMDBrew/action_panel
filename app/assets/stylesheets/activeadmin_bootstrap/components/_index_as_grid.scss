@@ -1,0 +1,8 @@
+.index_as_grid {
+  table {
+    width: 100%;
+    table-layout: fixed;
+
+    td { vertical-align: top; }
+  }
+}
