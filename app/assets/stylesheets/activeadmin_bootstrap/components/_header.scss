@@ -5,7 +5,7 @@
 
   .nav-item {
     .nav-link {
-      @extend .text-truncate;
+      @extend %text-truncate;
       width: 100%;
 
       & > * {
@@ -18,4 +18,9 @@
   .site-title-wrapper {
     @extend #{map-get($site-title-themes, 'header')};
   }
+}
+
+#header-backdrop {
+  background: $modal-backdrop-bg;
+  opacity: $modal-backdrop-opacity;
 }

@@ -14,4 +14,10 @@
   vertical-align: middle;
 }
 
+%text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .mdi { @extend %mdi-icon; }
