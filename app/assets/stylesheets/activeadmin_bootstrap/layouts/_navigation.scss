@@ -150,7 +150,7 @@
 
   #header { @extend %navigation-fixed-top; }
 
-  #title_bar {
+  #titlebar-wrapper {
     @extend %titlebar-fixed-top;
     top: $header-height;
     left: 0;
@@ -167,7 +167,7 @@
     height: 100%;
   }
 
-  #title_bar {
+  #titlebar-wrapper {
     @extend %titlebar-fixed-top;
     top: 0;
     left: map-get($header-sidebar-width, 'expand');
@@ -183,7 +183,7 @@
       max-width: map-get($header-sidebar-width, 'collapse');
     }
 
-    #title_bar {
+    #titlebar-wrapper {
       left: 0;
       .navbar-toggler { display: block; }
     }
