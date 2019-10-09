@@ -20,6 +20,14 @@ $header-icon-hover-color: $navbar-dark-hover-color !default;
 $header-icon-active-color: $navbar-dark-active-color !default;
 $header-menu-badge-theme: '.badge, .badge-light' !default;
 
+// SlidePane
+$slide-pane-theme: '.bg-white' !default;
+$slide-pane-breakpoint: 'sm' !default;
+$slide-pane-width: (
+  'expand': 280px,
+  'collapse': calc(100% - 48px)
+) !default;
+
 // SiteTitle
 $site-title-themes: (
   'header': '.d-block',
@@ -91,6 +99,9 @@ $footer-theme: '.text-center, .small' !default;
 // Comments
 $activeadmin-comment-theme: '.card, .p-3, .mb-3' !default;
 $activeadmin-comment-date-theme: '.text-secondary, .mr-2' !default;
+
+// Backdrop
+$backdrop-bg: rgba($modal-backdrop-bg, $modal-backdrop-opacity) !default;
 
 // Icon
 $mdi-icon-size: 24px !default;

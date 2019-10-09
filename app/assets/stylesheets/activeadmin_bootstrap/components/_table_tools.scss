@@ -43,6 +43,21 @@
     @include media-breakpoint-down(xs) {
       width: calc(100vw - #{$grid-gutter-width});
     }
+
+    .card-body {
+      max-height: 50vh;
+      padding-bottom: 80px;
+      overflow: scroll;
+    }
+
+    .actions {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: $card-spacer-y $card-spacer-x;
+      background: $card-bg;
+    }
   }
 
   .card {

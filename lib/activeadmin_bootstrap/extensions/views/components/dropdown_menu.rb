@@ -17,7 +17,7 @@ module ActiveAdmin
 
         @button =
           build_button(name, button_options.merge('data-toggle': 'dropdown'))
-        @menu   = build_menu(menu_options)
+        @menu = build_menu(menu_options)
 
         super(options)
       end

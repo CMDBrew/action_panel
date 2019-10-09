@@ -5,6 +5,7 @@ module ActiveAdmin
     module Pages
 
       # Overwriting Views::Pages::Index - activeadmin/lib/active_admin/views/pages/index.rb
+      # rubocop:disable Metrics/ClassLength
       class Index < Base
 
         def main_content
@@ -12,6 +13,11 @@ module ActiveAdmin
           wrap_with_batch_action_form do
             build_collection
           end
+        end
+
+        def build_page_content
+          super
+          build_filter_panel
         end
 
         def build_table_tools
@@ -42,10 +48,8 @@ module ActiveAdmin
                                entry_name: active_admin_config.resource_label,
                                entries_name:
                                 active_admin_config.plural_resource_label(count: collection_size),
-                               download_links: download_links,
-                               paginator: paginator,
-                               per_page: per_page,
-                               pagination_total: pagination_total,
+                               download_links: download_links, paginator: paginator,
+                               per_page: per_page, pagination_total: pagination_total,
                                config: config) do
             div class: 'index_content' do
               insert_tag(renderer_class, config, collection)
@@ -56,11 +60,38 @@ module ActiveAdmin
 
         private
 
-        def build_filter_ctrl
-          return unless active_admin_config.filter_position.eql?('table_tools')
+        def build_filter_panel
+          return unless active_admin_config.filter_position.eql?('slide_pane')
 
+          div id: 'slide-pane-wrap' do
+            div id: 'filters', class: 'collapse slide-pane' do
+              filter_sections.collect { |x| sidebar_section(x) }
+            end
+            div class: 'slide-pane-backdrop backdrop',
+                'data-toggle': 'collapse', 'data-target': '#filters'
+          end
+        end
+
+        def build_filter_ctrl
+          if active_admin_config.filter_position.eql?('table_tools')
+            filter_dropdown_menu
+          elsif active_admin_config.filter_position.eql?('slide_pane')
+            filter_slide_pane_btn
+          end
+        end
+
+        def filter_slide_pane_btn
+          div class: 'ml-auto' do
+            a span(I18n.t('active_admin.sidebars.filters')),
+              class: 'table_tool_btn',
+              'data-toggle': 'collapse', 'data-target': '#filters'
+          end
+        end
+
+        def filter_dropdown_menu
           dropdown_menu I18n.t('active_admin.sidebars.filters'),
-                        class: 'filter-dropdown',
+                        class: 'filter-dropdown ml-auto',
+                        button: { class: 'table_tool_btn' },
                         menu: { class: 'dropdown-menu-right' } do
             filter_sections.collect { |x| raw_item(sidebar_section(x)) }
           end
@@ -94,14 +125,15 @@ module ActiveAdmin
 
         def sidebar_sections_for_action
           case active_admin_config.filter_position
-          when 'table_tools'
+          when 'table_tools', 'slide_pane'
             available_sidebar_sections.reject { |x| x.name.to_sym == :filters }
-          when 'sidebar'
+          else
             available_sidebar_sections
           end
         end
 
       end
+      # rubocop:enable Metrics/ClassLength
 
     end
 

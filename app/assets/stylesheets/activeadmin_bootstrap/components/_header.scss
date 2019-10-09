@@ -1,7 +1,6 @@
 #header {
   @extend #{$header-theme};
   @extend .navbar-expand-#{(nth($breakpoints, index($breakpoints, map-get($header-breakpoints, 'top')) - 1))};
-  z-index: $zindex-fixed;
 
   .nav-item {
     .nav-link {
