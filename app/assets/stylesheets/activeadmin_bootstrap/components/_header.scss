@@ -1,6 +1,6 @@
 #header {
   @extend #{$header-theme};
-  @extend .navbar-expand-#{(nth($breakpoints, index($breakpoints, map-get($header-breakpoints, 'top')) - 1))};
+  @extend .navbar-expand-#{(nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), map-get($header-breakpoints, 'top')) - 1))};
 
   .nav-item {
     .nav-link {

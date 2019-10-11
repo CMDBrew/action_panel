@@ -16,7 +16,7 @@
   @include transition(transform 0.2s linear);
   @include transform(translateX(0));
 
-  @include media-breakpoint-down(#{nth($breakpoints, index($breakpoints, $slide-pane-breakpoint))}) {
+  @include media-breakpoint-down(#{nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), $slide-pane-breakpoint))}) {
     width: 100%;
     max-width: map-get($slide-pane-width, 'collapse');
   }

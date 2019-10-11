@@ -180,7 +180,7 @@
     .navbar-toggler { display: none; }
   }
 
-  @include media-breakpoint-down(#{nth($breakpoints, index($breakpoints, map-get($header-breakpoints, 'sidebar')))}) {
+  @include media-breakpoint-down(#{nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), map-get($header-breakpoints, 'sidebar')))}) {
     padding-left: 0;
 
     #header {
