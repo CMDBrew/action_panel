@@ -49,7 +49,7 @@ Or do it manually
 ```ruby
 # config/initializers/activeadmin_bootstrap.rb
 # Create an initializer
-# For more details on the configurations please see https://github.com/CMDBrew/activeadmin_bootstrap_v2/wiki/Configurations
+# For more details on the configurations please see docs/Configurations.md
 ```
 
 ### Install Styles
