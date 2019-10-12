@@ -1,7 +1,6 @@
 group :development, :test do
   # Generate fake data
   gem 'faker'
-  # Find unused I18n keys
   gem 'i18n-tasks', '~> 0.9.21'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

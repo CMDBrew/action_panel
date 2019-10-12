@@ -34,7 +34,7 @@ module ActiveAdmin
         super(*args, options, &block)
       end
 
-      def raw_item(item)
+      def item_html(item)
         within @menu do
           li item
         end

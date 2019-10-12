@@ -8,9 +8,9 @@ module ActiveAdmin
     attr_accessor :name, :options, :block
 
     def initialize(name, options = {}, &block)
-      @name    = name.to_s
+      @name = name.to_s
       @options = options
-      @block   = block
+      @block = block
       normalize_display_options!
     end
 

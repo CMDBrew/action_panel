@@ -1,8 +1,8 @@
-## Using ActionText for ActiveAdminComment
+# Using ActionText for ActiveAdminComment
 1) Install action_text. See https://edgeguides.rubyonrails.org/action_text_overview.html
 2) Create an initializeer
 ```ruby
-# config/initializer/active_admin_comment_action_text.rb
+# config/initializers/active_admin_comment_action_text.rb
 # ActionText
 module ActiveAdminBootstrapActionTextConcern
 
@@ -29,13 +29,11 @@ class DropBodyForActiveAdminComments < ActiveRecord::Migration[6.0]
 end
 ```
 
-4) Change ActiveAdmin Comment Input
-```ruby
-ActiveAdmin.setup do |config|
-  ...
-  config.active_admin_comment_input = 'rich_text_area'
-  ...
-end
+4) Add ActionText styles
+```scss
+// app/assets/stylesheets/active_admin.scss
+// Active Admin's got SASS!
+//= require actiontext
 ```
 
 5) Add webpack file for ActiveAdmin
@@ -44,6 +42,15 @@ end
 require("@rails/activestorage").start()
 require("trix")
 require("@rails/actiontext")
+```
+
+6) Change ActiveAdmin Comment Input
+```ruby
+ActiveAdmin.setup do |config|
+  ...
+  config.active_admin_comment_input = 'rich_text_area'
+  ...
+end
 ```
 
 If you are using Amazon S3 make sure to add the followings to CORS configurations. For more information see https://github.com/rails/rails/issues/30723.

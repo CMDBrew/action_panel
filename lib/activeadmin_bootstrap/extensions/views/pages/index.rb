@@ -93,7 +93,7 @@ module ActiveAdmin
                         class: 'filter-dropdown ml-auto',
                         button: { class: 'table_tool_btn' },
                         menu: { class: 'dropdown-menu-right' } do
-            filter_sections.collect { |x| raw_item(sidebar_section(x)) }
+            filter_sections.collect { |x| item_html(sidebar_section(x)) }
           end
         end
 

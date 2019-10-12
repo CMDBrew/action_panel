@@ -7,6 +7,11 @@ eval_gemfile(File.expand_path('Gemfile.common', __dir__))
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 
+group :lint do
+  # Code style
+  gem 'rubocop', '0.75.0'
+end
+
 gem 'rails', '~> 6.0'
 gem 'webpacker', '~> 4.0'
 

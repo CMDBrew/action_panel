@@ -1,20 +1,21 @@
-## Switch Inputs
+# Switch Inputs
 ```ruby
 f.input :super_admin, as: :switch
 ```
 
-## File Inputs
+# File Inputs
+The preview options needs to be an image path or nil
 ```ruby
 f.input :avatar, as: :file, preview: :avatar
 ```
 
-## ActionText Input
+# ActionText Input
 For more information please see https://edgeguides.rubyonrails.org/action_text_overview.html#examples
 ```ruby
 f.input :body, as: :rich_text_area
 ```
 
-## ColorPicker Input
+# ColorPicker Input
 For more information please see https://github.com/kostia/jquery-minicolors-rails
 ```ruby
 f.input :color,
@@ -24,7 +25,7 @@ f.input :color,
         }
 ```
 
-## Select2 Input
+# Select2 Input
 For more information please see https://select2.org/
 ```ruby
 f.input :category,
@@ -45,7 +46,7 @@ f.input :category,
         }
 ```
 
-## JustDateTimePicker Input
+# JustDateTimePicker Input
 For more information please see https://github.com/mspanc/just-datetime-picker
 ```ruby
 # In your ActiveAdmin form
@@ -59,7 +60,7 @@ class User < ActiveRecord::Base
 end
 ```
 
-## Columns inside HasMany
+# Columns inside HasMany
 Arbre has issues rendering inside Formtastic has_many see [Official Issue](https://github.com/activeadmin/activeadmin/issues/4043) so you can do the followings instead.
 ```ruby
 f.has_many :links, allow_destroy: true do |k|

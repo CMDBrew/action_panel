@@ -1,4 +1,4 @@
-## Form
+# Form
 Allowing multiple forms inside the form page without using partial
 ```ruby
 form multiple: true do
@@ -26,7 +26,7 @@ form multiple: true do
 end
 ```
 
-## Panel
+# Panel
 Title is not required for panel
 ```ruby
 panel do
@@ -47,7 +47,7 @@ panel 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod' 
 end
 ```
 
-## Columns
+# Columns
 Columns now use bootstrap grid
 ```ruby
 columns do
@@ -78,7 +78,7 @@ becomes
 </div>
 ```
 
-## Tabs
+# Tabs
 Allow none jquery tabs. Simply pass in option `http: true` and now it becomes a http tab with `params[:tab]` in the URL.
 ```ruby
 tabs(http: true) do
@@ -92,7 +92,7 @@ tabs(http: true) do
 end
 ```
 
-## Dropdown Menu
+# Dropdown Menu
 Added new options for dropdown item
 #### `item_divider` to create a divider
 ```ruby
@@ -101,18 +101,78 @@ dropdown_menu 'my dropdown' do
 end
 ```
 
-#### `raw_item` to render raw html content
+#### `item_html` to render raw html content
 ```ruby
 dropdown_menu 'my dropdown' do
-  raw_item(div('my html content'))
+  item_html(div('my html content'))
 end
 ```
 
-## ActionItems
-Added new options group for btn-groups
+# ActionItems
+Added new options group for btn-groups. Default priority and group are both 99
 ```ruby
 action_item :view, only: :index, priority: 1, group: 10 do
   link_to 'my awesome link', "#"
 end
 ```
+
+# Extra HTML
+htmls allow you to put whatever content you want on the page.
+
+```ruby
+html :help do
+  "Need help? Email us at help@example.com"
+end
+```
+This will generate a html on every page for that resource. The first argument is used as the title, and can be a symbol, string, or lambda.
+
+You can also use Arbre to define HTML content.
+```ruby
+html :help do
+  ul do
+    li "Second List First Item"
+    li "Second List Second Item"
+  end
+end
+```
+
+HTMLs can be rendered on a specific action by passing :only or :except.
+```ruby
+html :help, only: :index do
+  "Need help? Email us at help@example.com"
+end
+```
+
+If you want to conditionally display a html content, use the :if option and pass it a proc which will be rendered within the view context.
+```ruby
+html :help, if: proc{ current_admin_user.super_admin? } do
+  "Only for super admins!"
+end
+```
+
+You can access your model as resource in the html too:
+```ruby
+html :custom, only: :show do
+  resource.a_method
+end
+```
+
+You can also render a partial:
+```ruby
+html :help                    # app/views/admin/posts/_help_html.html.erb
+html :help, partial: 'custom' # app/views/admin/posts/_custom.html.erb
+```
+
+It’s possible to add custom class name to the html parent element by passing class option:
+```ruby
+html :help, class: 'custom_class'
+```
+
+By default htmls are positioned in the same order as they defined, but it’s also possible to specify their position manually:
+```ruby
+# will push Help section to the top (above default Filters section)
+html :help, priority: 0
+```
+Default html priority is 10.
+
 

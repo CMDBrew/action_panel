@@ -1,10 +1,8 @@
-## Index As Calendar
+# Index As Calendar
 Index calendar view
 Extracted and extended from https://github.com/bys-control/activeadmin-index_as_calendar
-## Usage
 
 ### Basic usage
-
 To render default calendar for your AA resource do
 
 ```RUBY
@@ -27,17 +25,15 @@ end
 ```
 
 ### Customization
-
 ```RUBY
 ActiveAdmin.register Invoices do
-
   index_as_calendar(includes: %i[partner]) do |item|
     {
       id: item.id,
       title: item.partner.name,
       start: item.issue_date,
       url: "#{admin_invoice_path(item)}",
-      tooltip: {
+      popover: {
        title: "Due date #{item.due_date.to_s}",
        text: item.balance.blank? ? nil : item.balance.to_s
       },

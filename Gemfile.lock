@@ -179,6 +179,7 @@ GEM
       responders (>= 2, < 4)
     interactive_editor (0.0.11)
       spoon (>= 0.0.1)
+    jaro_winkler (1.5.3)
     jquery-minicolors-rails (2.2.6.1)
       jquery-rails
       rails (>= 3.2.8)
@@ -225,6 +226,7 @@ GEM
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    parallel (1.17.0)
     parser (2.6.4.1)
       ast (~> 2.4.0)
     pg (0.21.0)
@@ -301,6 +303,14 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
+    rubocop (0.75.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.6)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    ruby-progressbar (1.10.1)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.2.1)
@@ -385,6 +395,7 @@ DEPENDENCIES
   rails (~> 6.0)
   rails-controller-testing
   rspec-rails (~> 3.6)
+  rubocop (= 0.75.0)
   shoulda-matchers (~> 3.0)
   simplecov
   simplecov-console
