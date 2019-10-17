@@ -1,5 +1,5 @@
 .slide-pane-backdrop {
-  z-index: $zindex-fixed - 10;
+  z-index: $zindex-fixed + 5;
 }
 
 .slide-pane {
@@ -9,7 +9,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: $zindex-fixed - 5;
+  z-index: $zindex-fixed + 10;
   display: block !important;
   width: map-get($slide-pane-width, 'expand');
   height: auto !important;

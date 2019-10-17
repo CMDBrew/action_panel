@@ -2,27 +2,13 @@
   &.navbar-dark  .dropdown-item a { color: $yiq-text-light; }
   &.navbar-light .dropdown-item a { color: $yiq-text-dark; }
 
-  .dropdown-toggle {
-    &::after { display: none; }
-
-    &::before {
-      @extend .dropdown-toggle::after;
-      display: inline-block;
-      margin-right: map-get($spacers, 1);
-    }
-  }
-
   .dropdown-menu {
     position: static !important;
     padding: 0;
+    background: transparent;
     border: 0;
 
     @include transform(none);
-
-    &,
-    .dropdown-item:hover {
-      background: transparent;
-    }
 
     .dropdown-item {
       padding: 0;
@@ -57,7 +43,6 @@
   .navbar-nav { width: 100%; }
 
   .nav-item > .nav-link {
-    @extend .dropdown-toggle;
     &:not(.dropdown-toggle)::before { visibility: hidden; }
   }
 
@@ -131,7 +116,7 @@
     &,
     #title_bar,
     #wrapper {
-      @include transition(all 0.2s linear);
+      @include transition(transform 0.2s linear);
     }
   }
 
