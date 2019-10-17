@@ -26,7 +26,7 @@ module ActiveAdmin
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
               safe_join([active_admin_config.action_item_new_label_prefix.html_safe, content_tag(:span, localizer.t(:new_model))]),
-              new_resource_path, title: content_tag(:span, localizer.t(:new_model))
+              new_resource_path, title: localizer.t(:new_model)
             )
           end
         end
@@ -40,7 +40,7 @@ module ActiveAdmin
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
               safe_join([active_admin_config.action_item_edit_label_prefix.html_safe, content_tag(:span, localizer.t(:edit_model))]),
-              edit_resource_path(resource), title: content_tag(:span, localizer.t(:edit_model))
+              edit_resource_path(resource), title: localizer.t(:edit_model)
             )
           end
         end
@@ -53,7 +53,7 @@ module ActiveAdmin
              authorized?(ActiveAdmin::Auth::DESTROY, resource)
             link_to(
               safe_join([active_admin_config.action_item_delete_label_prefix.html_safe, content_tag(:span, destroy_btn_title)]),
-              resource_path(resource), title: content_tag(:span, destroy_btn_title),
+              resource_path(resource), title: destroy_btn_title,
               method: :delete, data: { confirm: destroy_title, message: destroy_message }
             )
           end
