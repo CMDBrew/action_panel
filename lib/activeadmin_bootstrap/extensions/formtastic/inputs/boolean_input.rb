@@ -2,7 +2,7 @@ module Formtastic
 
   module Inputs
 
-    # Overwriting BooleanInput - formtastic/lib/formtastic/inputs/boolean_input.rb
+    # Overwrite BooleanInput - formtastic/lib/formtastic/inputs/boolean_input.rb
     class BooleanInput
 
       def to_html

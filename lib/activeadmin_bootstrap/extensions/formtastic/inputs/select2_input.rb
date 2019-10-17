@@ -2,7 +2,7 @@ module Formtastic
 
   module Inputs
 
-    # Overwriting Formastic Default FileInput - formtastic/lib/formtastic/inputs/file_input.rb
+    # Overwrite Formastic Default FileInput - formtastic/lib/formtastic/inputs/file_input.rb
     class Select2Input < SelectInput
 
       def input_html_options

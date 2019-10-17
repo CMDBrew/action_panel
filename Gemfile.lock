@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    activeadmin_bootstrap (2.3.1)
+    activeadmin_bootstrap (0.1.0)
       activeadmin (~> 2.3.1)
       bootstrap (~> 4.3.1)
       bootstrap-datepicker-rails
@@ -93,7 +93,7 @@ GEM
     arbre (1.2.1)
       activesupport (>= 3.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.6.1.1)
+    autoprefixer-rails (9.6.4)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -180,7 +180,7 @@ GEM
     interactive_editor (0.0.11)
       spoon (>= 0.0.1)
     jaro_winkler (1.5.3)
-    jquery-minicolors-rails (2.2.6.1)
+    jquery-minicolors-rails (2.2.6.2)
       jquery-rails
       rails (>= 3.2.8)
     jquery-rails (4.3.5)
@@ -359,7 +359,7 @@ GEM
       unicode-display_width (~> 1.1, >= 1.1.1)
     thor (0.20.3)
     thread_safe (0.3.6)
-    tilt (2.0.9)
+    tilt (2.0.10)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.0)

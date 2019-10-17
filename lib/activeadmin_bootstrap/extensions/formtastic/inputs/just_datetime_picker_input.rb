@@ -2,7 +2,7 @@ module Formtastic
 
   module Inputs
 
-    # Overwriting JustDatetimePickerInput -
+    # Overwrite JustDatetimePickerInput -
     # just-datetime-picker/lib/just-datetime-picker/formtastic-input.rb
     class JustDatetimePickerInput
 

@@ -2,7 +2,7 @@ module ActiveAdmin
 
   module Views
 
-    # Overwriting IndexList - activeadmin/lib/active_admin/views/components/index_list.rb
+    # Overwrite IndexList - activeadmin/lib/active_admin/views/components/index_list.rb
     class IndexList < ActiveAdmin::Component
 
       builder_method :index_list_renderer

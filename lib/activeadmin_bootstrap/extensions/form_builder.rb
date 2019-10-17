@@ -1,6 +1,6 @@
 module ActiveAdmin
 
-  # Overwriting FormBuilder - activeadmin/lib/active_admin/form_builder.rb
+  # Overwrite FormBuilder - activeadmin/lib/active_admin/form_builder.rb
   class FormBuilder < ::Formtastic::FormBuilder
 
     def cancel_link(url = { action: 'index' }, html_options = {}, li_attrs = {})
@@ -13,7 +13,7 @@ module ActiveAdmin
 
   end
 
-  # Overwriting HasManyBuilder - activeadmin/lib/active_admin/form_builder.rb
+  # Overwrite HasManyBuilder - activeadmin/lib/active_admin/form_builder.rb
   class HasManyBuilder < SimpleDelegator
 
     # rubocop:disable Metrics/AbcSize

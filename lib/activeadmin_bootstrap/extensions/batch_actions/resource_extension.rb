@@ -2,7 +2,7 @@ module ActiveAdmin
 
   module BatchActions
 
-    # Overwriting BatchAction - activeadmin/lib/active_admin/batch_actions/resource_extension.rb
+    # Overwrite BatchAction - activeadmin/lib/active_admin/batch_actions/resource_extension.rb
     module ResourceExtension
 
       private

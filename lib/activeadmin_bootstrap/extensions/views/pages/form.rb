@@ -4,7 +4,7 @@ module ActiveAdmin
 
     module Pages
 
-      # Overwriting Form activeadmin/lib/active_admin/views/pages/form.rb
+      # Overwrite Form activeadmin/lib/active_admin/views/pages/form.rb
       class Form < Base
 
         # rubocop:disable Metrics/AbcSize

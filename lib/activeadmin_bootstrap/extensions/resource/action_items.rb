@@ -2,7 +2,7 @@ module ActiveAdmin
 
   class Resource
 
-    # Overwriting ActionItems - activeadmin/lib/active_admin/resource/action_items.rb
+    # Overwrite ActionItems - activeadmin/lib/active_admin/resource/action_items.rb
     module ActionItems
 
       def action_items_for(action, render_context = nil)

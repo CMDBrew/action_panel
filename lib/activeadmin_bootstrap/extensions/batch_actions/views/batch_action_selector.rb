@@ -2,7 +2,7 @@ module ActiveAdmin
 
   module BatchActions
 
-    # Overwriting Footer - activeadmin/lib/active_admin/batch_actions/views/batch_action_selector.rb
+    # Overwrite Footer - activeadmin/lib/active_admin/batch_actions/views/batch_action_selector.rb
     class BatchActionSelector < ActiveAdmin::Component
 
       private

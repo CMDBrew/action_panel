@@ -2,7 +2,7 @@ module ActiveAdmin
 
   module Views
 
-    # Overwriting DropdownMenu - activeadmin/lib/active_admin/views/components/dropdown_menu.rb
+    # Overwrite DropdownMenu - activeadmin/lib/active_admin/views/components/dropdown_menu.rb
     class DropdownMenu < ActiveAdmin::Component
 
       def build(name, options = {})

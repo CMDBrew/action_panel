@@ -4,7 +4,7 @@ module ActiveAdmin
 
     module Filters
 
-      # Overwriting DateRangeInput -
+      # Overwrite DateRangeInput -
       # activeadmin/lib/active_admin/inputs/filters/date_range_input.rb
       class DateRangeInput < ::Formtastic::Inputs::StringInput
 

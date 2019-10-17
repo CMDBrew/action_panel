@@ -2,7 +2,7 @@ module ActiveAdmin
 
   module Views
 
-    # Overwriting Columns - activeadmin/lib/active_admin/views/components/columns.rb
+    # Overwrite Columns - activeadmin/lib/active_admin/views/components/columns.rb
     class Columns < ActiveAdmin::Component
 
       def default_class_name
@@ -28,7 +28,7 @@ module ActiveAdmin
 
     end
 
-    # Overwriting Columns
+    # Overwrite Columns
     class Column < ActiveAdmin::Component
 
       def build(options = {})

@@ -4,7 +4,7 @@ module ActiveAdmin
 
     module Pages
 
-      # Overwriting Views::Pages::Index - activeadmin/lib/active_admin/views/pages/index.rb
+      # Overwrite Views::Pages::Index - activeadmin/lib/active_admin/views/pages/index.rb
       # rubocop:disable Metrics/ClassLength
       class Index < Base
 

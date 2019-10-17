@@ -4,7 +4,7 @@ module Formtastic
 
     module Base
 
-      # Overwriting HTML - formtastic/lib/formtastic/inputs/base/html.rb
+      # Overwrite HTML - formtastic/lib/formtastic/inputs/base/html.rb
       module Html
 
         def input_html_options
