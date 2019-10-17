@@ -55,6 +55,7 @@ $scope-count-theme: '.badge, .badge-light' !default;
 // Table
 $table-for-theme: '.text-nowrap, .align-middle' !default;
 $table-for-btn-theme: '.btn, .btn-sm, .btn-light' !default;
+$table-for-btn-dropdown-theme: $table-for-btn-theme !default;
 $table-for-selected-color: $table-hover-bg !default;
 $table-for-index-table-theme: '.table-sm, .text-nowrap, .align-middle' !default;
 
