@@ -6,3 +6,4 @@ ActiveAdminBootstrap extends based on activeadmin default functionalities. To se
 - **[Extended Components](Extended-Components.md)**
 - **[Extended Formtastic Inputs](Extended-Formtastic-Inputs.md)**
 - **[View Helpers](View-Helpers.md)**
+- **[Using ActionText for ActiveAdminComment](Using-ActionText-for-ActiveAdminComment.md)**

@@ -14,14 +14,16 @@
         right: 'month,agendaWeek,agendaDay'
       },
       eventRender: function(event, element){
-        element.popover({
-          animation:true,
-          delay: 300,
-          html: true,
-          title: event.popover.title,
-          content: event.popover.content,
-          trigger: 'hover'
-        });
+        if(event.popover) {
+          element.popover({
+            animation:true,
+            delay: 300,
+            html: true,
+            title: event.popover.title,
+            content: event.popover.content,
+            trigger: 'hover'
+          });
+        }
       },
       events: <%= events.to_json.html_safe %>
     };

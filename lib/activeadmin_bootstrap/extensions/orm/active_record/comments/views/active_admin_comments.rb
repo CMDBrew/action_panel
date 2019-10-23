@@ -10,7 +10,6 @@ module ActiveAdmin
 
         protected
 
-        # rubocop:disable Rails/OutputSafety
         def build_comments
           build_comment_form
 
@@ -24,7 +23,6 @@ module ActiveAdmin
             build_empty_message
           end
         end
-        # rubocop:enable Rails/OutputSafety
 
         # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
         def build_comment(comment)
@@ -45,7 +43,11 @@ module ActiveAdmin
             end
 
             div class: 'active_admin_comment_body' do
-              simple_format comment.body, {}, wrapper_tag: 'div', class: 'trix-content'
+              if active_admin_namespace.active_admin_comment_input.eql?('rich_text_area')
+                text_node comment.body
+              else
+                simple_format comment.body, {}
+              end
             end
           end
         end
@@ -84,9 +86,8 @@ module ActiveAdmin
                       input_html: { value: ActiveAdmin::Comment.resource_type(parent.resource) }
               f.input :resource_id, as: :hidden, input_html: { value: parent.resource.id }
 
-              input_type =
-                active_admin_config&.namespace&.trix_active_admin_comments ? 'trix_editor' : 'text'
-              f.input :body, as: input_type.to_sym, label: false, input_html: { rows: '4' }
+              input_type = active_admin_config&.namespace&.active_admin_comment_input || 'text'
+              f.input :body, as: input_type.to_sym, label: false, input_html: { rows: '3' }
             end
             f.actions do
               f.action :submit, label: I18n.t('active_admin.comments.add')

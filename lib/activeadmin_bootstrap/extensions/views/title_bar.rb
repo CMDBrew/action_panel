@@ -5,11 +5,15 @@ module ActiveAdmin
     # Overwirte TitleBar - activeadmin/lib/active_admin/views/title_bar.rb
     class TitleBar < Component
 
-      def build(title, action_items)
+      def build(namespace, title, action_items)
         super(id: 'title_bar', class: 'navbar')
         @title = title
         @action_items = action_items
-        build_header_toggle
+        div class: 'nav-head' do
+          build_header_toggle
+          # TODO: create custom component for titlebar_title
+          site_title namespace
+        end
         build_titlebar_left
         build_titlebar_right
       end
@@ -25,7 +29,7 @@ module ActiveAdmin
       def build_header_toggle
         return unless %w[sidebar].include? active_admin_config.navigation
 
-        button class: 'navbar-toggler mr-3',
+        button class: 'navbar-toggler',
                'data-target': '#header', 'data-toggle': 'collapse' do
           span class: 'navbar-toggler-icon'
         end
@@ -58,6 +62,13 @@ module ActiveAdmin
             li(text_node(link), class: 'breadcrumb-item')
           end
           li(text_node(@title), class: 'breadcrumb-item active')
+        end
+      end
+
+      def build_action_items
+        action_items = @action_items.group_by(&:group)
+        action_items.each do |_index, items|
+          insert_tag(view_factory.action_items, items)
         end
       end
 

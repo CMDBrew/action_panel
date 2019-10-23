@@ -1,22 +1,39 @@
+// TODO: move theme options to ruby
 // Grid
-$breakpoints: 'xs', 'sm', 'md', 'lg', 'xl' !default;
 $sidebar-breakpoint: 'lg' !default;
 $header-breakpoints: (
-  'sidebar': 'xl',
+  'sidebar': 'lg',
   'top': 'xl'
 ) !default;
 
 // Header Navigation
+$header-sidebar-width: (
+  'expand': 280px,
+  'collapse': calc(100% - 48px)
+) !default;
+
 $header-theme: '.navbar-dark, .bg-dark' !default;
 $header-height: 58px !default;
-$header-sidebar-width: 280px !default;
-$header-icon-size: 20px !default;
 $header-icon-offset: 0.5rem !default;
 $header-icon-color: $navbar-dark-color !default;
 $header-icon-hover-color: $navbar-dark-hover-color !default;
 $header-icon-active-color: $navbar-dark-active-color !default;
 $header-menu-badge-theme: '.badge, .badge-light' !default;
-$header-logo-size: 32px !default;
+
+// SlidePane
+$slide-pane-theme: '.bg-white' !default;
+$slide-pane-breakpoint: 'sm' !default;
+$slide-pane-width: (
+  'expand': 280px,
+  'collapse': calc(100% - 48px)
+) !default;
+
+// SiteTitle
+$site-title-themes: (
+  'header': '.d-block',
+  'titlebar': '.d-none'
+) !default;
+$site-title-logo-size: 32px !default;
 
 // TitleBar
 $titlebar-theme: '.navbar-light, .bg-light' !default;
@@ -39,6 +56,7 @@ $scope-count-theme: '.badge, .badge-light' !default;
 // Table
 $table-for-theme: '.text-nowrap, .align-middle' !default;
 $table-for-btn-theme: '.btn, .btn-sm, .btn-light' !default;
+$table-for-btn-dropdown-theme: $table-for-btn-theme !default;
 $table-for-selected-color: $table-hover-bg !default;
 $table-for-index-table-theme: '.table-sm, .text-nowrap, .align-middle' !default;
 
@@ -83,6 +101,9 @@ $footer-theme: '.text-center, .small' !default;
 $activeadmin-comment-theme: '.card, .p-3, .mb-3' !default;
 $activeadmin-comment-date-theme: '.text-secondary, .mr-2' !default;
 
+// Backdrop
+$backdrop-bg: rgba($modal-backdrop-bg, $modal-backdrop-opacity) !default;
+
 // Icon
 $mdi-icon-size: 24px !default;
 $mdi-icons: (
@@ -91,17 +112,16 @@ $mdi-icons: (
   'checkbox-checked': '\F132',
   'radiobox-outline': '\F43D',
   'radiobox-checked': '\F43E',
-  'sortable-handle': '\F1DB'
+  'sortable-handle': '\F1DB',
+  'chevron-left': '\F141',
+  'chevron-right': '\F142'
 ) !default;
 
 // Thumbnails
-$thumbnail-xs: 24px !default;
-$thumbnail-sm: 38px !default;
-$thumbnail-md: 64px !default;
-$thumbnail-lg: 128px !default;
+$thumbnail-default-size: sm !default;
 $thumbnail-sizes: (
-  'xs': $thumbnail-xs,
-  'sm': $thumbnail-sm,
-  'md': $thumbnail-md,
-  'lg': $thumbnail-lg,
+  'xs': 24px,
+  'sm': 32px,
+  'md': 64px,
+  'lg': 128px,
 ) !default;

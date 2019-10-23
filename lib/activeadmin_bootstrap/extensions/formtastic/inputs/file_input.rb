@@ -2,7 +2,8 @@ module Formtastic
 
   module Inputs
 
-    # Overwriting Formastic Default FileInput - formtastic/lib/formtastic/inputs/file_input.rb
+    # TODO: add direct upload support
+    # Overwrite Formastic Default FileInput - formtastic/lib/formtastic/inputs/file_input.rb
     class FileInput
 
       include Base
@@ -23,10 +24,17 @@ module Formtastic
 
       def file_preview
         template.content_tag(:div, class: 'custom-file-preview') do
-          if options[:preview] && object.try(options[:preview])
-            template.image_tag object.send(options[:preview])
-          end
+          previewable? && template.image_tag(object.send(options[:preview]))
         end
+      end
+
+      def previewable?
+        options[:preview] && object.try(options[:preview]) && file_field_valid?
+      end
+
+      def file_field_valid?
+        object.valid?
+        object.errors[method].blank?
       end
 
       def file_input

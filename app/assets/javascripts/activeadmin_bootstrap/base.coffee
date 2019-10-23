@@ -25,7 +25,6 @@
 #= require fullcalendar
 #= require select2-full
 #= require jquery.minicolors
-#= require trix
 #= require_self
 #= require active_admin/ext/jquery-ui
 #= require active_admin/ext/jquery

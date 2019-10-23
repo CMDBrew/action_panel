@@ -1,14 +1,14 @@
 .thumbnail {
   @extend %background-cover;
-  @extend .small;
 
   position: relative;
-  width: map-get($thumbnail-sizes, 'sm');
-  height: map-get($thumbnail-sizes, 'sm');
+  flex-shrink: 0;
+  width: map-get($thumbnail-sizes, $thumbnail-default-size);
+  height: map-get($thumbnail-sizes, $thumbnail-default-size);
   overflow: hidden;
-  line-height: map-get($thumbnail-sizes, 'sm');
+  font-size: $small-font-size;
+  line-height: map-get($thumbnail-sizes, $thumbnail-default-size);
   text-align: center;
-
 
   img {
     position: absolute;

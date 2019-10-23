@@ -1,9 +1,16 @@
-#site_title {
-  display: flex;
-  align-items: center;
-  .site_title { flex: 1; }
+.site-title-wrapper {
+  .site-title {
+    display: flex;
+    align-items: center;
+    height: 100%;
 
-  #site_title_image { height: $header-logo-size; }
+    * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .site-title-image { height: $site-title-logo-size; }
 
   img + span { margin-left: map-get($spacers, 2); }
 }

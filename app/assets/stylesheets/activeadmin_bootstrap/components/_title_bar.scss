@@ -1,9 +1,3 @@
-%titlebar-top-base {
-  position: fixed;
-  right: 0;
-  z-index: $zindex-fixed - 5;
-}
-
 #title_bar {
   @extend #{$titlebar-theme};
 
@@ -12,24 +6,34 @@
   flex-wrap: nowrap;
   height: $titlebar-height;
 
+  .nav-head {
+    display: flex;
+    flex-direction: row;
+  }
+
   #titlebar_left {
-    @extend .text-truncate;
+    @extend %text-truncate;
     flex: 1;
     margin-right: $spacer;
     overflow: hidden;
   }
 
   #breadcrumb {
-    @extend .text-truncate;
+    @extend %text-truncate;
     flex-wrap: nowrap;
     margin: 0;
     overflow-x: scroll;
+    color: $breadcrumb-active-color;
 
     .breadcrumb-item {
-      @extend .text-truncate;
+      @extend %text-truncate;
       flex-shrink: 0;
       max-width: $titlebar-breadcrumb-item-max-width;
       white-space: nowrap;
     }
+  }
+
+  .site-title-wrapper {
+    @extend #{map-get($site-title-themes, 'titlebar')};
   }
 }

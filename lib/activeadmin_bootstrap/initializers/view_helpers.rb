@@ -11,7 +11,7 @@ module ActiveAdminBootstrap
       extend ActiveSupport::Concern
 
       included do
-        initializer 'view_helpers overrides' do |_app|
+        initializer 'view_helpers.overrides' do |_app|
           require_each(FILES, path: 'view_helpers')
         end
       end

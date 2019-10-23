@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.6
   Include:
     - '**/*.rb'
     - '**/*.rake'
@@ -12,10 +12,7 @@ AllCops:
     - 'db/migrate/**/*'
     - 'activeadmin_bootstrap.gemspec'
 
-Rails:
-  Enabled: true
-
-Documentation:
+Style/Documentation:
   Exclude:
     - 'app/controllers/**/*.rb'
     - 'app/models/**/*.rb'
@@ -50,10 +47,6 @@ Metrics/BlockLength:
     - 'app/views/**/*.arb'
     - 'lib/activeadmin_bootstrap/admin/**/*.rb'
     - 'activeadmin_bootstrap.gemspec'
-
-Rails/DynamicFindBy:
-  Exclude:
-    - 'spec/**/*.rb'
 
 Layout/EmptyLinesAroundClassBody:
   EnforcedStyle: empty_lines

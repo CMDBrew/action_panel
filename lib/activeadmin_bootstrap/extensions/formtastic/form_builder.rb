@@ -1,6 +1,6 @@
 module Formtastic
 
-  # Overwriting FormBuilder - formtastic/lib/formtastic/form_builder.rb
+  # Overwrite FormBuilder - formtastic/lib/formtastic/form_builder.rb
   class FormBuilder < ActionView::Helpers::FormBuilder
 
     configure :default_inline_error_class, 'small mb-0 text-danger'

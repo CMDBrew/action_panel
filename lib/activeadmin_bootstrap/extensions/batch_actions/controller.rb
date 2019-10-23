@@ -2,7 +2,7 @@ module ActiveAdmin
 
   module BatchActions
 
-    # Overwriting Controller - activeadmin/lib/active_admin/batch_actions/controller.rb
+    # Overwrite Controller - activeadmin/lib/active_admin/batch_actions/controller.rb
     module Controller
 
       # Controller action that is called when submitting the batch action form

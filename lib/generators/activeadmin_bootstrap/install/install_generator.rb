@@ -1,4 +1,4 @@
-module WrapActiveadmin
+module ActiveadminBootstrap
 
   module Generators
 
@@ -10,7 +10,7 @@ module WrapActiveadmin
 
       def replace_assets
         gsub_file(
-          'app/assets/javascripts/active_admin.js.coffee',
+          'app/assets/javascripts/active_admin.js',
           'active_admin/',
           'activeadmin_bootstrap/'
         )
@@ -23,7 +23,7 @@ module WrapActiveadmin
 
       def create_initializers
         template(
-          'activeadmin_bootstrap.rb.erb',
+          'activeadmin_bootstrap.erb',
           'config/initializers/activeadmin_bootstrap.rb'
         )
       end

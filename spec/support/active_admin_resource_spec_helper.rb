@@ -16,7 +16,7 @@ module ActiveAdminResourceSpecHelper
           f.input :first_name
           f.input :last_name
           f.input :super_admin, as: :switch
-          f.input :biography, as: :trix_editor
+          f.input :biography
           f.input :color,
                   as: :color_picker,
                   input_html: {

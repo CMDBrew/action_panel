@@ -6,6 +6,7 @@ trix-editor {
 trix-toolbar {
   .trix-button-row {
     flex-wrap: wrap !important;
+    justify-content: flex-start !important;
   }
 
   .trix-button-group {
@@ -16,3 +17,11 @@ trix-toolbar {
     }
   }
 }
+
+.trix-content {
+  img {
+    height: auto !important;
+    max-width: 100% !important;
+  }
+}
+

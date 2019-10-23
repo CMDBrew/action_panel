@@ -12,7 +12,7 @@ module ActiveAdminBootstrap
       extend ActiveSupport::Concern
 
       included do
-        initializer 'inputs overrides' do |_app|
+        initializer 'inputs.overrides' do |_app|
           require_each(BASE_FILES, path: 'inputs/filters/base')
           require_each(OTHER_FILES, path: 'inputs/filters')
         end

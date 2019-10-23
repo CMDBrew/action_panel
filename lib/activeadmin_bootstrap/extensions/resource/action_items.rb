@@ -2,8 +2,13 @@ module ActiveAdmin
 
   class Resource
 
-    # Overwriting ActionItems - activeadmin/lib/active_admin/resource/action_items.rb
+    # Overwrite ActionItems - activeadmin/lib/active_admin/resource/action_items.rb
     module ActionItems
+
+      def action_items_for(action, render_context = nil)
+        action_items.select { |item| item.display_on? action, render_context }.
+          sort_by { |x| [x.group, x.priority] }
+      end
 
       # Adds the default action items to each resource
       def add_default_action_items
@@ -21,7 +26,7 @@ module ActiveAdmin
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
               safe_join([active_admin_config.action_item_new_label_prefix.html_safe, content_tag(:span, localizer.t(:new_model))]),
-              new_resource_path
+              new_resource_path, title: localizer.t(:new_model)
             )
           end
         end
@@ -35,7 +40,7 @@ module ActiveAdmin
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
               safe_join([active_admin_config.action_item_edit_label_prefix.html_safe, content_tag(:span, localizer.t(:edit_model))]),
-              edit_resource_path(resource)
+              edit_resource_path(resource), title: localizer.t(:edit_model)
             )
           end
         end
@@ -43,12 +48,12 @@ module ActiveAdmin
 
       # Adds the default Destroy link on show
       def add_default_destroy_action_item
-        add_action_item :destroy, priority: 99, only: proc { destroy_action_item_display } do
+        add_action_item :destroy, only: proc { destroy_action_item_display } do
           if controller.action_methods.include?('destroy') &&
              authorized?(ActiveAdmin::Auth::DESTROY, resource)
             link_to(
               safe_join([active_admin_config.action_item_delete_label_prefix.html_safe, content_tag(:span, destroy_btn_title)]),
-              resource_path(resource),
+              resource_path(resource), title: destroy_btn_title,
               method: :delete, data: { confirm: destroy_title, message: destroy_message }
             )
           end
@@ -67,6 +72,14 @@ module ActiveAdmin
       @options[:only]   = Array(return_or_proc_exec(@options[:only]))   if @options[:only]
       @options[:except] = Array(return_or_proc_exec(@options[:except])) if @options[:except]
       super
+    end
+
+    def group
+      @options[:group] || 99
+    end
+
+    def priority
+      @options[:priority] || 99
     end
 
     private

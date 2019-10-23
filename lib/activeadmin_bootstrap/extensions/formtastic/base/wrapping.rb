@@ -4,7 +4,7 @@ module Formtastic
 
     module Base
 
-      # Overwriting Wrapping - formtastic/lib/formtastic/inputs/base/wrapping.rb
+      # Overwrite Wrapping - formtastic/lib/formtastic/inputs/base/wrapping.rb
       module Wrapping
 
         def wrapper_classes

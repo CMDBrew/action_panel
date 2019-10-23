@@ -9,7 +9,7 @@
   &:empty { display: none; }
 
   .header-content {
-    @extend .text-truncate;
+    @extend %text-truncate;
     flex: 1;
     margin-right: $spacer;
 

@@ -12,7 +12,7 @@ module ActiveAdminBootstrap
       extend ActiveSupport::Concern
 
       included do
-        initializer 'inputs overrides' do |_app|
+        initializer 'require.index_as_calendar.files' do |_app|
           require_each(DSL_FILES, path: 'dsl')
           require_each(VIEW_FILES, path: 'views')
         end

@@ -17,6 +17,7 @@ module ActiveAdmin
 
         menu.items.each do |item|
           next unless helpers.render_in_context self, item.should_display
+
           menu_item(item, class: item_class, dropdown: dropdown)
         end
         children.sort!

@@ -11,7 +11,7 @@ module ActiveAdminBootstrap
       extend ActiveSupport::Concern
 
       included do
-        initializer 'view overrides' do |_app|
+        initializer 'resources.overrides' do |_app|
           require_each(FILES, path: 'resource')
         end
       end
