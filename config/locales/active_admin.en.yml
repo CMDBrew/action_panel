@@ -1,4 +1,3 @@
 en:
   active_admin:
     delete_message: Deleting records cannot be recovered. Do you still want to continue?
-    powered_by: "Powered by %{active_admin} %{aa_version} with %{activeadmin_bootstrap} %{aab_version}"

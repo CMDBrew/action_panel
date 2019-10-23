@@ -2,6 +2,7 @@ module Formtastic
 
   module Inputs
 
+    # TODO: add direct upload support
     # Overwrite Formastic Default FileInput - formtastic/lib/formtastic/inputs/file_input.rb
     class FileInput
 
