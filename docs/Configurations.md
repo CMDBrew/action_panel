@@ -3,7 +3,7 @@ To configure ActiveAdmin create an initializer
 ```ruby
 # config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
-   config.navigation = 'top'
+   config.header_class = 'navbar-dark bg-dark navbar-expand-lg'
    config.site_title_proc = proc { my_custom_site_title_method }
    config.sidebar_position = 'right'
    config.filter_position = 'sidebar'
@@ -23,7 +23,7 @@ end
 # config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
    config.namespace :admin do |admin|
-     admin.navigation = 'fixed_top'
+     admin.header_class = 'navbar-dark bg-dark navbar-expand-lg'
      admin.site_title_proc = proc { my_custom_site_title_method }
      admin.sidebar_position = 'right'
      admin.filter_position = 'sidebar'
@@ -41,11 +41,10 @@ end
 
 # Resource configurations
 #### Navigation
-- Available `config.navigation` options are: `top`, `fixed_top`, `sidebar`
-- Default value is: `top`
+- Default value is: `navbar-dark bg-dark navbar-expand-lg`
 ```ruby
 ActiveAdmin.register AdminUser do
-  config.navigation = 'sidebar'
+  config.header_class = 'navbar-light bg-light navbar-expand-lg'
 end
 ```
 

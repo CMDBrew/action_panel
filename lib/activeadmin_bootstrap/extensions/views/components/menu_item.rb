@@ -20,10 +20,7 @@ module ActiveAdmin
           item.html_options.reverse_merge!(class: 'nav-link')
         end
 
-        if item.current? assigns[:current_tab]
-          add_class 'active'
-          add_class 'show' if active_dropdown?
-        end
+        add_class 'active' if item.current? assigns[:current_tab]
 
         if item.items.any?
           item.html_options.merge!(class: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown')
@@ -40,12 +37,6 @@ module ActiveAdmin
         @submenu = menu(item, dropdown: true)
       end
       # rubocop:enable all
-
-      private
-
-      def active_dropdown?
-        active_admin_config.navigation.eql?('sidebar')
-      end
 
     end
 

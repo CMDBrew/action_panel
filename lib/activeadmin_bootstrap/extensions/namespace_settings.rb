@@ -5,11 +5,11 @@ module ActiveAdmin
   # Overwrite NamespaceSettings - lib/active_admin/namespace_settings.rb
   class NamespaceSettings < DynamicSettingsNode
 
-    # The default navigation
+    # The default site_title content
     register :site_title_proc, nil
 
-    # The default navigation
-    register :navigation, 'top'
+    # The default header_class
+    register :header_class, 'navbar-dark bg-dark navbar-expand-lg'
 
     # The default sidebar position
     register :sidebar_position, 'right'

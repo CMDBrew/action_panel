@@ -1,8 +1,12 @@
-$_breakpoint: (nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), map-get($header-breakpoints, 'top')) - 1));
-
 #header {
-  @extend #{$header-theme} !optional;
-  @extend .navbar-expand-#{$_breakpoint} !optional;
+  #main-nav { margin-right: auto; }
+  .dropdown-item a { color: inherit; }
+
+  .navbar-nav {
+    @include media-breakpoint-up($sidebar-breakpoint) {
+      align-items: center;
+    }
+  }
 
   .nav-item {
     .nav-link {
@@ -19,9 +23,4 @@ $_breakpoint: (nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints
   .site-title-wrapper {
     @extend #{map-get($site-title-themes, 'header')} !optional;
   }
-}
-
-#header-backdrop {
-  background: $modal-backdrop-bg;
-  opacity: $modal-backdrop-opacity;
 }

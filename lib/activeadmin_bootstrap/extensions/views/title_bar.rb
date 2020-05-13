@@ -11,7 +11,6 @@ module ActiveAdmin
         @action_items = action_items
         div class: 'nav-head' do
           build_header_toggle
-          # TODO: create custom component for titlebar_title
           site_title namespace
         end
         build_titlebar_left
@@ -27,8 +26,6 @@ module ActiveAdmin
       end
 
       def build_header_toggle
-        return unless %w[sidebar].include? active_admin_config.navigation
-
         button class: 'navbar-toggler',
                'data-target': '#header', 'data-toggle': 'collapse' do
           span class: 'navbar-toggler-icon'

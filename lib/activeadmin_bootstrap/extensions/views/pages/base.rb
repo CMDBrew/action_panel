@@ -29,7 +29,6 @@ module ActiveAdmin
         def build_page
           within body(class: body_classes) do
             header active_admin_namespace, current_menu
-            header_backdrop
             div id: 'titlebar-wrapper' do
               title_bar active_admin_namespace, title, action_items_for_action
             end
@@ -44,11 +43,6 @@ module ActiveAdmin
           end
         end
         # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
-
-        def header_backdrop
-          div id: 'header-backdrop', class: 'backdrop',
-              'data-toggle': 'collapse', 'data-target': '#header'
-        end
 
         def build_page_content
           div id: 'active_admin_content' do
@@ -103,7 +97,6 @@ module ActiveAdmin
             params[:controller].tr('/', '_'),
             'active_admin', 'logged_in',
             active_admin_namespace.name.to_s + '_namespace',
-            "navigation-#{active_admin_config.navigation}",
             sidebar_class
           ]
         end

@@ -3,13 +3,13 @@ module ActiveAdmin
   # Overwrite Resource - activeadmin/lib/active_admin/resource.rb
   class Resource
 
-    attr_writer :sidebar_position, :filter_position, :navigation,
+    attr_writer :sidebar_position, :filter_position, :header_class,
                 :new_action_item_display, :edit_action_item_display,
                 :destroy_action_item_display, :action_item_new_label_prefix,
                 :action_item_edit_label_prefix, :action_item_delete_label_prefix
 
-    def navigation
-      @navigation || namespace.navigation
+    def header_class
+      @header_class || namespace.header_class
     end
 
     def sidebar_position

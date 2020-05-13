@@ -11,9 +11,8 @@ module ActiveAdmin
           Arbre::HTML::ClassList.new [
             params[:action],
             params[:controller].tr('/', '_'),
-            'active_admin', 'logged_in', 'custom-page',
+            'active_admin', 'logged_in', 'page',
             active_admin_namespace.name.to_s + '_namespace',
-            "navigation-#{active_admin_config.navigation}",
             sidebar_class
           ]
         end

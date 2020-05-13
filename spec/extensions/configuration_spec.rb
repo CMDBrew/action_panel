@@ -4,7 +4,7 @@ RSpec.describe ActiveAdmin::Views::Header do
   let(:application) { ActiveAdmin::Application.new }
 
   describe 'Default Config' do
-    it { expect(application.navigation).to eq('top') }
+    it { expect(application.header_class).to eq('navbar-dark bg-dark navbar-expand-lg') }
     it { expect(application.sidebar_position).to eq('right') }
     it { expect(application.filter_position).to eq('sidebar') }
     it { expect(application.active_admin_comment_input).to eq('text') }
@@ -16,7 +16,7 @@ RSpec.describe ActiveAdmin::Views::Header do
 
   describe 'Global Config' do
     before do
-      application.navigation = 'fixed_top'
+      application.header_class = 'navbar-light bg-light'
       application.sidebar_position = 'left'
       application.filter_position = 'table_tools'
       application.active_admin_comment_input = 'string'
@@ -26,7 +26,7 @@ RSpec.describe ActiveAdmin::Views::Header do
       application.pagination_exclusion = %i[index_as_custom]
     end
 
-    it { expect(application.navigation).to eq('fixed_top') }
+    it { expect(application.header_class).to eq('navbar-light bg-light') }
     it { expect(application.sidebar_position).to eq('left') }
     it { expect(application.filter_position).to eq('table_tools') }
     it { expect(application.active_admin_comment_input).to eq('string') }
@@ -40,7 +40,7 @@ RSpec.describe ActiveAdmin::Views::Header do
     let(:namespace) { ActiveAdmin::Namespace.new(application, :hosts) }
 
     before do
-      namespace.navigation = 'fixed_top'
+      namespace.header_class = 'navbar-light bg-light'
       namespace.sidebar_position = 'left'
       namespace.filter_position = 'table_tools'
       namespace.active_admin_comment_input = 'string'
@@ -50,7 +50,7 @@ RSpec.describe ActiveAdmin::Views::Header do
       namespace.pagination_exclusion = %i[index_as_custom]
     end
 
-    it { expect(namespace.navigation).to eq('fixed_top') }
+    it { expect(namespace.header_class).to eq('navbar-light bg-light') }
     it { expect(namespace.sidebar_position).to eq('left') }
     it { expect(namespace.filter_position).to eq('table_tools') }
     it { expect(namespace.active_admin_comment_input).to eq('string') }
@@ -65,7 +65,7 @@ RSpec.describe ActiveAdmin::Views::Header do
     let(:namespace) { ActiveAdmin::Namespace.new(application, :admin) }
     let(:resource) do
       namespace.register(User) do
-        config.navigation = 'fixed_top'
+        config.header_class = 'navbar-light bg-light'
         config.sidebar_position = 'left'
         config.filter_position = 'table_tools'
         config.new_action_item_display = :show
@@ -74,7 +74,7 @@ RSpec.describe ActiveAdmin::Views::Header do
       end
     end
 
-    it { expect(resource.navigation).to eq('fixed_top') }
+    it { expect(resource.header_class).to eq('navbar-light bg-light') }
     it { expect(resource.sidebar_position).to eq('left') }
     it { expect(resource.filter_position).to eq('table_tools') }
     it { expect(resource.new_action_item_display).to eq(:show) }

@@ -37,12 +37,3 @@
   -webkit-appearance: $value;
   -moz-appearance: $value;
 }
-
-@mixin navigation($type: 'top') {
-  @at-root {
-    body.navigation-#{$type} {
-      @content;
-    }
-  }
-}
-
