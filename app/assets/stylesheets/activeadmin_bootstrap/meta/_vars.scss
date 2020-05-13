@@ -10,18 +10,8 @@ $slide-pane-width: (
   'collapse': calc(100% - 48px)
 ) !default;
 
-// SiteTitle
-$site-title-themes: (
-  'header': '.d-block',
-  'titlebar': '.d-none'
-) !default;
-$site-title-logo-size: 32px !default;
-
-// TitleBar
-$titlebar-theme: '.navbar-light, .bg-light' !default;
-$titlebar-height: 56px !default;
-$titlebar-breadcrumb-item-max-width: 120px !default;
-$action-items-theme: '.btn, .btn-secondary' !default;
+// Header
+$header-logo-height: 32px !default;
 
 // Sidebar
 $sidebar-width: 320px !default;
@@ -68,9 +58,6 @@ $blank-slate-theme: '.alert, .alert-secondary, .text-center' !default;
 $status-tag-theme: '.badge, .badge-light' !default;
 $status-tag-success: '.badge-success' !default;
 $status-tag-error: '.badge-danger' !default;
-
-// Containers
-$wrapper-container: '.container-fluid' !default;
 
 // Footer
 $footer-theme: '.text-center, .small' !default;

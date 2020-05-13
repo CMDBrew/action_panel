@@ -11,6 +11,12 @@ module ActiveAdmin
     # The default header_class
     register :header_class, 'navbar-dark bg-dark navbar-expand-lg'
 
+    # The default title_bar_class
+    register :title_bar_class, 'navbar-light bg-light'
+
+    # The default action_item_class
+    register :action_item_class, 'btn btn-secondary'
+
     # The default sidebar position
     register :sidebar_position, 'right'
 

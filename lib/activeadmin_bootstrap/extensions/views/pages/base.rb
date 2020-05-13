@@ -30,7 +30,7 @@ module ActiveAdmin
           within body(class: body_classes) do
             header active_admin_namespace, current_menu
             div id: 'titlebar-wrapper' do
-              title_bar active_admin_namespace, title, action_items_for_action
+              title_bar title, action_items_for_action
             end
 
             build_flash_messages

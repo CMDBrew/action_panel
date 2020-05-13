@@ -23,12 +23,15 @@ module ActiveAdmin
         I18n.t('active_admin.delete_model', model: active_admin_config.resource_label).to_s
       end
 
+      def action_item_class
+        @action_item_class ||= active_admin_config.action_item_class.to_s
+      end
+
       private
 
       def link_to(*args, &block)
         options = args.extract_options!
-        options[:class] =
-          "#{options[:class]} #{ActiveAdminBootstrap::ACTION_ITEM_CLASS}".strip
+        options[:class] ||= action_item_class
         super(*args, options, &block)
       end
 

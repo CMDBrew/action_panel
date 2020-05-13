@@ -20,7 +20,21 @@
     }
   }
 
-  .site-title-wrapper {
-    @extend #{map-get($site-title-themes, 'header')} !optional;
+  .site_title {
+    display: block;
+
+    .title {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      * {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+    .image { height: $header-logo-height; }
+    img + span { margin-left: map-get($spacers, 2); }
   }
 }

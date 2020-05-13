@@ -4,6 +4,8 @@ To configure ActiveAdmin create an initializer
 # config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
    config.header_class = 'navbar-dark bg-dark navbar-expand-lg'
+   config.title_bar_class = 'navbar-light bg-light'
+   config.action_item_class = 'btn btn-secondary'
    config.site_title_proc = proc { my_custom_site_title_method }
    config.sidebar_position = 'right'
    config.filter_position = 'sidebar'
@@ -24,6 +26,8 @@ end
 ActiveAdmin.setup do |config|
    config.namespace :admin do |admin|
      admin.header_class = 'navbar-dark bg-dark navbar-expand-lg'
+     admin.title_bar_class = 'navbar-light bg-light'
+     admin.action_item_class = 'btn btn-secondary'
      admin.site_title_proc = proc { my_custom_site_title_method }
      admin.sidebar_position = 'right'
      admin.filter_position = 'sidebar'
@@ -40,11 +44,21 @@ end
 ```
 
 # Resource configurations
-#### Navigation
+#### Header
 - Default value is: `navbar-dark bg-dark navbar-expand-lg`
 ```ruby
 ActiveAdmin.register AdminUser do
   config.header_class = 'navbar-light bg-light navbar-expand-lg'
+end
+```
+
+#### TitleBar
+- `title_bar_class` default value is: `navbar-light bg-light`
+- `action_item_class` default value is: `btn btn-secondary`
+```ruby
+ActiveAdmin.register AdminUser do
+  config.title_bar_class = 'navbar-dark bg-dark'
+  config.action_item_class = 'btn btn-primary'
 end
 ```
 
