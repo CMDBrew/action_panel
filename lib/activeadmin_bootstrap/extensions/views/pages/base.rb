@@ -35,7 +35,7 @@ module ActiveAdmin
 
             build_flash_messages
 
-            div id: 'wrapper', class: ActiveAdminBootstrap::WRAPPER_CONTAINER_CLASS do
+            div id: 'wrapper' do
               build_unsupported_browser
               build_page_content
               build_htmls unless skip_htmls?
@@ -53,22 +53,18 @@ module ActiveAdmin
         end
 
         def build_body_content
-          div id: 'main-content', class: sidebar_class do
-            div class: ActiveAdminBootstrap::CONTENT_CONTAINER_CLASS do
+          div id: 'main', class: sidebar_class do
+            div class: 'container' do
               build_main_content_wrapper
+              footer active_admin_namespace
             end
-
-            footer active_admin_namespace
           end
         end
 
         def build_sidebar_content
           return if skip_sidebar?
 
-          div id: 'sidebar-content' do
-            sidebar(sidebar_sections_for_action,
-                    id: 'sidebar', class: ActiveAdminBootstrap::CONTENT_CONTAINER_CLASS)
-          end
+          div sidebar(sidebar_sections_for_action, class: 'container'), id: 'sidebar'
         end
 
         def build_htmls

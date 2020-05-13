@@ -25,9 +25,6 @@ $action-items-theme: '.btn, .btn-secondary' !default;
 
 // Sidebar
 $sidebar-width: 320px !default;
-$sidebar-theme: '.bg-transparent' !default;
-$sidebar-header-height: $titlebar-height !default;
-$sidebar-header-theme:  $titlebar-theme !default;
 
 // Table Tools
 $table-tools-btn-theme: '.btn, .btn-sm' !default;
@@ -74,7 +71,6 @@ $status-tag-error: '.badge-danger' !default;
 
 // Containers
 $wrapper-container: '.container-fluid' !default;
-$content-container: '.container, .px-0' !default;
 
 // Footer
 $footer-theme: '.text-center, .small' !default;

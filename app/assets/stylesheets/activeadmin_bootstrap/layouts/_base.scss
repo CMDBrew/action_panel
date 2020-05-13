@@ -10,10 +10,9 @@ body.logged_in {
   min-height: 100vh;
   overflow-x: hidden;
 
-  #main-content,
+  #main,
   #sidebar {
-    padding-top: $spacer;
-    padding-bottom: $spacer;
+    padding: $spacer 0;
   }
 
   #wrapper {
@@ -22,23 +21,13 @@ body.logged_in {
     flex-direction: column;
   }
 
-  .wrapper_container { @extend #{$wrapper-container}; }
-  .content_container { @extend #{$content-container}; }
-
   #active_admin_content {
     display: flex;
     flex: 1;
     flex-wrap: wrap;
-    margin: 0 calc(#{$grid-gutter-width} / 2 * -1);
 
-    #main-content {
+    #main {
       width: 100%;
-
-      &.with_sidebar,
-      &.without_sidebar {
-        padding-right: $grid-gutter-width;
-        padding-left: $grid-gutter-width;
-      }
 
       @include media-breakpoint-up($sidebar-breakpoint) {
         &.without_sidebar { flex: 1; }

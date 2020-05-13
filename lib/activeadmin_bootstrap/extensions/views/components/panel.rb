@@ -13,7 +13,7 @@ module ActiveAdmin
         add_class 'card'
 
         @title    = div(build_title(title), class: "card-header #{header_class}".strip)
-        @contents = div(class: "panel_contents card-body #{body_class}".strip)
+        @contents = div(class: "card-body #{body_class}".strip)
       end
 
       def header_action(*args)

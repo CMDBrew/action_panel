@@ -41,7 +41,7 @@ window.ActiveAdmin = {}
 window.ActiveAdminBootstrap = {}
 
 @onDocReady = (element)->
-  $(element).find('#main_content').aaBatchAction()
+  $(element).find('#main').aaBatchAction()
   $(element).find('.custom-file-input-group').aaFileInput()
   $(element).find('.tabs').aaTabs()
   $(element).find('.form-control.select2').aaSelect2()
@@ -53,10 +53,6 @@ onReady = ->
     $('body').removeClass('header-active')
   $('#header').on 'show.bs.collapse', ->
     $('body').addClass('header-active')
-  $('#sidebar-content').on 'hide.bs.collapse', ->
-    $('body').removeClass('sidebar-active')
-  $('#sidebar-content').on 'show.bs.collapse', ->
-    $('body').addClass('sidebar-active')
 
 $(document).ready(->
     onReady()

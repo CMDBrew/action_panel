@@ -1,15 +1,4 @@
-.sidebar-header {
-  @extend #{$sidebar-header-theme};
-  justify-content: flex-end;
-  height: $sidebar-header-height;
-  @include media-breakpoint-up($sidebar-breakpoint) {  display: none; }
-}
-
-#sidebar-content {
-  @extend #{$sidebar-theme};
-
+#sidebar {
   width: 100%;
-  padding-right: $grid-gutter-width;
-  padding-left: $grid-gutter-width;
   @include media-breakpoint-up($sidebar-breakpoint) { width: $sidebar-width; }
 }
