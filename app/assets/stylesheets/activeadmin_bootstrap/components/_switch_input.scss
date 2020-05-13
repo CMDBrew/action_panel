@@ -20,6 +20,11 @@ $switch-transition: 0.2s all !default;
   align-items: center;
   font-size: $font-size-base;
 
+  .form-switch-label > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   input {
     position: absolute;
     width: 1px;
@@ -32,7 +37,7 @@ $switch-transition: 0.2s all !default;
 
     clip-path: inset(50%);
 
-    + label .switch-btn {
+    + .switch-btn {
       position: relative;
       display: inline-block;
       height: $switch-height;
@@ -78,28 +83,38 @@ $switch-transition: 0.2s all !default;
         box-shadow: $switch-thumb-box-shadow;
         transition: $switch-transition;
       }
+
+      & + .form-switch-value {
+        .unchecked-value { display: block; }
+        .checked-value { display: none; }
+      }
     }
 
-    &:checked + label .switch-btn {
+    &:checked + .switch-btn {
       &::before { background-color: $switch-checked-bg; }
 
       &::after {
         margin-left: $switch-height;
         background: $switch-checked-thumb-bg;
       }
+
+      & + .form-switch-value {
+        .unchecked-value { display: none; }
+        .checked-value { display: block; }
+      }
     }
 
-    &:focus + label .switch-btn::before {
+    &:focus + .switch-btn::before {
       outline: none;
       box-shadow: $switch-focus-box-shadow;
     }
 
-    &:disabled + label .switch-btn {
+    &:disabled + .switch-btn {
       color: $switch-disabled-color;
       cursor: not-allowed;
     }
 
-    &:disabled + label .switch-btn::before {
+    &:disabled + .switch-btn::before {
       background-color: $switch-disabled-bg;
     }
   }

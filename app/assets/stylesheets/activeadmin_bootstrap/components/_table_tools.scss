@@ -1,7 +1,7 @@
 %table-tool-btn {
-  @extend #{$table-tools-btn-theme};
-  &.active { @extend #{$table-tools-btn-active-theme}; }
-  &:not(.active) { @extend #{$table-tools-btn-inactive-theme}; }
+  @extend #{$table-tools-btn-theme} !optional;
+  &.active { @extend #{$table-tools-btn-active-theme} !optional; }
+  &:not(.active) { @extend #{$table-tools-btn-inactive-theme} !optional; }
 }
 
 .table_tools {
@@ -24,9 +24,8 @@
   }
 }
 
-.scope_count {
-  @extend #{$scope-count-theme};
-}
+.scope > span { vertical-align: middle; }
+.scope_count { @extend #{$scope-count-theme} !optional; }
 
 .filter-dropdown {
   display: flex;

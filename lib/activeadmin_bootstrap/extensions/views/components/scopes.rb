@@ -24,7 +24,7 @@ module ActiveAdmin
           params = request.query_parameters.except :page, :scope, :commit, :format
 
           a href: url_for(scope: scope.id, params: params), class: classes_for_link(scope) do
-            text_node scope_name(scope)
+            span scope_name(scope)
             if options[:scope_count] && scope.show_count
               span get_scope_count(scope), class: "count #{ActiveAdminBootstrap::SCOPE_COUNT_CLASS}"
             end

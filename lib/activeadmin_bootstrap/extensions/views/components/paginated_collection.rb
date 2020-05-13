@@ -39,7 +39,6 @@ module ActiveAdmin
 
       protected
 
-      # rubocop:disable Rails/OutputSafety
       def build_pagination_with_formats(options)
         div id: 'index_footer' do
           if pagination?
@@ -51,7 +50,6 @@ module ActiveAdmin
           build_download_format_links formats if formats.any?
         end
       end
-      # rubocop:enable Rails/OutputSafety
 
       # rubocop:disable all
       def build_per_page_select

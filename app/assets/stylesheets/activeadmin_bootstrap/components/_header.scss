@@ -1,6 +1,8 @@
+$_breakpoint: (nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), map-get($header-breakpoints, 'top')) - 1));
+
 #header {
-  @extend #{$header-theme};
-  @extend .navbar-expand-#{(nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), map-get($header-breakpoints, 'top')) - 1))};
+  @extend #{$header-theme} !optional;
+  @extend .navbar-expand-#{$_breakpoint} !optional;
 
   .nav-item {
     .nav-link {
@@ -15,7 +17,7 @@
   }
 
   .site-title-wrapper {
-    @extend #{map-get($site-title-themes, 'header')};
+    @extend #{map-get($site-title-themes, 'header')} !optional;
   }
 }
 
