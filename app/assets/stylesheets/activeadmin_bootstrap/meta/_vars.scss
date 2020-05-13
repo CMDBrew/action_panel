@@ -2,14 +2,6 @@
 // Grid
 $sidebar-breakpoint: 'lg' !default;
 
-// SlidePane
-$slide-pane-theme: '.bg-white' !default;
-$slide-pane-breakpoint: 'sm' !default;
-$slide-pane-width: (
-  'expand': 280px,
-  'collapse': calc(100% - 48px)
-) !default;
-
 // Header
 $header-logo-height: 32px !default;
 

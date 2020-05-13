@@ -71,11 +71,11 @@ end
 ```
 
 #### Filter Position
-- Available `config.filter_position` options are: `sidebar`, `table_tools`, `slide_pane`
+- Available `config.filter_position` options are: `sidebar`, `main`
 - Default value is: `sidebar`
 ```ruby
 ActiveAdmin.register AdminUser do
-  config.filter_position = 'table_tools'
+  config.filter_position = 'main'
 end
 ```
 

@@ -7,7 +7,13 @@ module ActiveAdmin
       # Overwrite Pages::Base - activeadmin/lib/active_admin/views/pages/base.rb
       class Base < Arbre::HTML::Document
 
+        SIDEBAR_OPTS = %w[left right].freeze
+
         def build(*_args)
+          unless SIDEBAR_OPTS.include?(active_admin_config.sidebar_position)
+            raise "Invalid sidebar_position. Available options are: #{SIDEBAR_OPTS.join(', ')}"
+          end
+
           set_attribute :lang, I18n.locale
           build_active_admin_head
           build_webpackers
@@ -47,7 +53,7 @@ module ActiveAdmin
         def build_page_content
           div id: 'active_admin_content' do
             contents = %i[build_body_content build_sidebar_content]
-            contents.reverse! if active_admin_config.sidebar_position&.eql?('left')
+            contents.reverse! if active_admin_config.sidebar_position&.eql?(SIDEBAR_OPTS[0])
             contents.each { |x| send(x) }
           end
         end
