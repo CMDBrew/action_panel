@@ -20,12 +20,12 @@ module ActiveAdmin
       # rubocop:disable all
       # Adds the default New link on index
       def add_default_new_action_item
-        add_action_item :new, only: proc { new_action_item_display } do
+        add_action_item :new, only: proc { action_item_display[:new]&.to_sym } do
           if controller.action_methods.include?('new') &&
              authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
-              safe_join([active_admin_config.action_item_new_label_prefix.html_safe, content_tag(:span, localizer.t(:new_model))]),
+              safe_join([active_admin_config.action_item_prefix[:new]&.html_safe, content_tag(:span, localizer.t(:new_model))]),
               new_resource_path, title: localizer.t(:new_model)
             )
           end
@@ -34,12 +34,12 @@ module ActiveAdmin
 
       # Adds the default Edit link on show
       def add_default_edit_action_item
-        add_action_item :edit, only: proc { edit_action_item_display } do
+        add_action_item :edit, only: proc { action_item_display[:edit]&.to_sym } do
           if controller.action_methods.include?('edit') &&
              authorized?(ActiveAdmin::Auth::UPDATE, resource)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
-              safe_join([active_admin_config.action_item_edit_label_prefix.html_safe, content_tag(:span, localizer.t(:edit_model))]),
+              safe_join([active_admin_config.action_item_prefix[:edit]&.html_safe, content_tag(:span, localizer.t(:edit_model))]),
               edit_resource_path(resource), title: localizer.t(:edit_model)
             )
           end
@@ -48,11 +48,11 @@ module ActiveAdmin
 
       # Adds the default Destroy link on show
       def add_default_destroy_action_item
-        add_action_item :destroy, only: proc { destroy_action_item_display } do
+        add_action_item :destroy, only: proc { action_item_display[:destroy]&.to_sym } do
           if controller.action_methods.include?('destroy') &&
              authorized?(ActiveAdmin::Auth::DESTROY, resource)
             link_to(
-              safe_join([active_admin_config.action_item_delete_label_prefix.html_safe, content_tag(:span, destroy_btn_title)]),
+              safe_join([active_admin_config.action_item_prefix[:destroy]&.html_safe, content_tag(:span, destroy_btn_title)]),
               resource_path(resource), title: destroy_btn_title,
               method: :delete, data: { confirm: destroy_title, message: destroy_message }
             )

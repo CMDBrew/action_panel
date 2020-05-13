@@ -15,7 +15,7 @@ module ActiveAdmin
       end
 
       def title_bar_class
-        @title_bar_class ||= active_admin_config.title_bar_class.to_s
+        @title_bar_class ||= active_admin_config.component_class[:title_bar].to_s
       end
 
       private

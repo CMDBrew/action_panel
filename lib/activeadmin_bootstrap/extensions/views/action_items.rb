@@ -24,7 +24,7 @@ module ActiveAdmin
       end
 
       def action_item_class
-        @action_item_class ||= active_admin_config.action_item_class.to_s
+        @action_item_class ||= active_admin_config.component_class[:action_item].to_s
       end
 
       private

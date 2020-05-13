@@ -92,8 +92,7 @@ module ActiveAdmin
             params[:action],
             params[:controller].tr('/', '_'),
             'active_admin', 'logged_in',
-            active_admin_namespace.name.to_s + '_namespace',
-            sidebar_class
+            active_admin_namespace.name.to_s + '_namespace'
           ]
         end
 

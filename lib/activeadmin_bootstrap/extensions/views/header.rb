@@ -20,7 +20,7 @@ module ActiveAdmin
       end
 
       def header_class
-        @header_class ||= active_admin_config.header_class.to_s
+        @header_class ||= active_admin_config.component_class[:header].to_s
       end
 
       private
