@@ -1,14 +1,7 @@
-%table-tool-btn {
-  @extend #{$table-tools-btn-theme} !optional;
-  &.active { @extend #{$table-tools-btn-active-theme} !optional; }
-  &:not(.active) { @extend #{$table-tools-btn-inactive-theme} !optional; }
-}
-
+.scopes,
 .table_tools {
   margin-bottom: $spacer;
 }
-
-.table_tool_btn { @extend %table-tool-btn; }
 
 .scope_ctrls {
   display: flex;
@@ -25,4 +18,3 @@
 }
 
 .scope > span { vertical-align: middle; }
-.scope_count { @extend #{$scope-count-theme} !optional; }

@@ -6,10 +6,10 @@ module ActiveAdminBootstrap
     module Views
 
       COMPONENT_FILES = %w[
-        dropdown_menu site_title menu menu_item table_for attributes_table panel
-        paginated_collection scopes index_list tabs
+        status_tag active_admin_form dropdown_menu site_title menu menu_item table_for
+        attributes_table panel paginated_collection scopes index_list tabs blank_slate
       ].freeze
-      VIEW_FILES = %w[header title_bar action_items index_as_table columns].freeze
+      VIEW_FILES = %w[header title_bar action_items index_as_table columns footer].freeze
       PAGE_FILES = %w[base page index form].freeze
 
       include Base

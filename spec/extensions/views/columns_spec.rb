@@ -15,8 +15,8 @@ RSpec.describe ActiveAdmin::Views::Columns do
 
     describe '#class_list' do
       it { expect(html).to have_selector('.row') }
-      it { expect(html).to have_selector(".col-#{ActiveAdminBootstrap::COLUMN_BREAKPOINT}-4") }
-      it { expect(html).to have_selector(".col-#{ActiveAdminBootstrap::COLUMN_BREAKPOINT}-8") }
+      it { expect(html).to have_selector('.col-md-4') }
+      it { expect(html).to have_selector('.col-md-8') }
     end
   end
 end

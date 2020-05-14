@@ -5,9 +5,13 @@ module ActiveAdmin
     # Overwrite Scopes - activeadmin/lib/active_admin/views/components/scopes.rb
     class Scopes < ActiveAdmin::Component
 
+      include ActiveAdminBootstrap::ConfigsFinder
+
       def build(scopes, options = {})
         scopes.group_by(&:group).each do |group, group_scopes|
-          klass = "table_tools_segmented_control #{ActiveAdminBootstrap::TAB_CLASS} #{group_class(group)}"
+          klass =
+            "table_tools_segmented_control nav #{component_class(:table_tools, :scopes, :tabs)} "\
+              "#{group_class(group)}".strip
           ul class: klass do
             group_scopes.each do |scope|
               build_scope(scope, options) if call_method_or_exec_proc(scope.display_if_block)
@@ -26,7 +30,8 @@ module ActiveAdmin
           a href: url_for(scope: scope.id, params: params), class: classes_for_link(scope) do
             span scope_name(scope)
             if options[:scope_count] && scope.show_count
-              span get_scope_count(scope), class: "count #{ActiveAdminBootstrap::SCOPE_COUNT_CLASS}"
+              span get_scope_count(scope),
+                   class: "count #{component_class(:table_tools, :scopes, :count)}".strip
             end
           end
         end
@@ -40,7 +45,7 @@ module ActiveAdmin
       end
 
       def classes_for_link(scope)
-        classes = ['table_tools_button', 'nav-link']
+        classes = %w[nav-link]
         classes << 'active' if current_scope?(scope)
         classes.join(' ')
       end

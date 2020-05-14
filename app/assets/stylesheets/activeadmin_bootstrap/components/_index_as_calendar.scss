@@ -1,13 +1,10 @@
 .index_as_calendar {
   .btn {
-    @extend #{$table-tools-btn-theme};
     text-shadow: none;
     text-transform: capitalize;
     background-image: none;
     border-width: $input-btn-border-width;
     @include box-shadow(none);
-    &.active { @extend #{$table-tools-btn-active-theme}; }
-    &:not(.active) { @extend #{$table-tools-btn-inactive-theme}; }
   }
 
   .fc-header-toolbar {

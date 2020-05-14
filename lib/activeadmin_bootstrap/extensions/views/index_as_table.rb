@@ -5,21 +5,20 @@ module ActiveAdmin
     # Overwrite IndexAsTable - activeadmin/lib/active_admin/views/index_as_table.rb
     class IndexAsTable < ActiveAdmin::Component
 
+      include ActiveAdminBootstrap::ConfigsFinder
+
       def table_for(*args, &block)
-        div class: 'table-responsive' do
-          insert_tag IndexTableFor, *args, &block
+        options = args.extract_options!
+        options[:class] = "#{options[:class]} #{component_class(:index_as_table, :table)}".strip
+        div class: component_class(:index_as_table, :wrapper) do
+          insert_tag IndexTableFor, *args.push(options), &block
         end
       end
 
       # Overwrite IndexTableActions
       class IndexTableFor < ::ActiveAdmin::Views::TableFor
 
-        def dropdown_menu(*args, &block)
-          options = args.extract_options!
-          super(*args,
-                options.merge(button: { class: ActiveAdminBootstrap::TABLE_BTN_CLASS }),
-                &block)
-        end
+        include ActiveAdminBootstrap::ConfigsFinder
 
         # rubocop:disable all
         def actions(options = {}, &block)
@@ -48,6 +47,11 @@ module ActiveAdmin
               end
             end
           end
+        end
+
+        def dropdown_menu(*args, &block)
+          options = args.extract_options!
+          super(*args, options.merge(button: { class: component_class(:index_as_table, :btn, :item) }), &block)
         end
 
         private
@@ -82,14 +86,16 @@ module ActiveAdmin
         # Overwrite TableActions
         class TableActions < ActiveAdmin::Component
 
+          include ActiveAdminBootstrap::ConfigsFinder
+
           def default_class_name
-            'table_actions btn-group'
+            "table_actions #{component_class(:index_as_table, :btn, :group)}".strip
           end
 
           def item(*args)
             options = args.extract_options!
             options[:class] =
-              "#{options[:class]} #{ActiveAdminBootstrap::TABLE_BTN_CLASS}".strip
+              "#{options[:class]} #{component_class(:index_as_table, :btn, :item)}".strip
             text_node link_to(*args, options)
           end
 

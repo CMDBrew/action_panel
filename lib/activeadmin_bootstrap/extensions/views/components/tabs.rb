@@ -5,14 +5,16 @@ module ActiveAdmin
     # Overwrite Tabs - activeadmin/lib/active_admin/views/components/tabs.rb
     class Tabs < ActiveAdmin::Component
 
+      include ActiveAdminBootstrap::ConfigsFinder
+
       def build(options = {}, &_block)
-        klass  = options.delete(:class) { ActiveAdminBootstrap::TAB_CLASS }
+        klass  = options.delete(:class) { component_class(:tabs) }
         @http  = options.delete(:http) { false }
         @default_tab = options.delete(:default)
         add_class 'http-tabs' if @http
 
         @ctrls = div class: 'tab-ctrls'
-        @menu  = ul(class: klass, role: 'tablist')
+        @menu  = ul(class: "nav #{klass}", role: 'tablist')
         @tabs_content = div(class: 'tab-content')
         @ctrls << @menu
       end

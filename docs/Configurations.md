@@ -6,7 +6,12 @@ ActiveAdmin.setup do |config|
    config.component_class = {
      header: 'navbar-dark bg-dark navbar-expand-lg',
      title_bar: 'navbar-light bg-light',
-     action_item: 'btn btn-secondary'
+     action_item: 'btn btn-secondary',
+     panel: {
+       wrapper: 'card',
+       header: 'card-header',
+       body: 'card-body'
+     }
    }
    config.action_item_display = {
      new: 'index', edit: 'show', destroy: 'show'
@@ -30,7 +35,12 @@ ActiveAdmin.setup do |config|
      admin.component_class = {
        header: 'navbar-dark bg-dark navbar-expand-lg',
        title_bar: 'navbar-light bg-light',
-       action_item: 'btn btn-secondary'
+       action_item: 'btn btn-secondary',
+       panel: {
+         wrapper: 'card',
+         header: 'card-header',
+         body: 'card-body'
+       }
      }
      admin.action_item_display = {
        new: 'index', edit: 'show', destroy: 'show'
@@ -55,7 +65,12 @@ ActiveAdmin.register AdminUser do
   config.component_class = {
     header: 'navbar-dark bg-dark navbar-expand-lg',
     title_bar: 'navbar-light bg-light',
-    action_item: 'btn btn-secondary'
+    action_item: 'btn btn-secondary',
+    panel: {
+      wrapper: 'card',
+      header: 'card-header',
+      body: 'card-body'
+    }
   }
 end
 ```

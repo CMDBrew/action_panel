@@ -5,6 +5,8 @@ module ActiveAdmin
     # Overwrite Header - activeadmin/lib/active_admin/views/header.rb
     class Header < Component
 
+      include ActiveAdminBootstrap::ConfigsFinder
+
       def tag_name
         :nav
       end
@@ -20,7 +22,7 @@ module ActiveAdmin
       end
 
       def header_class
-        @header_class ||= active_admin_config.component_class[:header].to_s
+        @header_class ||= component_class(:header)
       end
 
       private

@@ -8,6 +8,20 @@ module ActiveAdmin
       # - lib/active_admin/orm/active_record/comments/views/active_admin_comments.rb
       class Comments < ActiveAdmin::Views::Panel
 
+        include ActiveAdminBootstrap::ConfigsFinder
+
+        def wrapper_class
+          "#{component_class(:active_admin_comments, :wrapper)} panel".strip
+        end
+
+        def default_header_class
+          "#{component_class(:active_admin_comments, :header)} panel-header".strip
+        end
+
+        def default_body_class
+          "#{component_class(:active_admin_comments, :body)} panel-body".strip
+        end
+
         protected
 
         def build_comments
@@ -90,7 +104,9 @@ module ActiveAdmin
               f.input :body, as: input_type.to_sym, label: false, input_html: { rows: '3' }
             end
             f.actions do
-              f.action :submit, label: I18n.t('active_admin.comments.add')
+              f.action :submit,
+                       label: I18n.t('active_admin.comments.add'),
+                       button_html: { class: component_class(:active_admin_comments, :submit) }
             end
           end
         end

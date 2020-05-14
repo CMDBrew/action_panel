@@ -13,6 +13,7 @@ module ActiveAdmin
           filters.each do |attribute, opts|
             next if opts.key?(:if)     && !call_method_or_proc_on(self, opts[:if])
             next if opts.key?(:unless) &&  call_method_or_proc_on(self, opts[:unless])
+
             opts[:input_html] = instance_exec(&opts[:input_html]) if opts[:input_html].is_a?(Proc)
             f.filter attribute, opts.except(:if, :unless)
           end
@@ -54,13 +55,20 @@ module ActiveAdmin
       end
 
       def submit_button(form)
-        form.submit(I18n.t('active_admin.filters.buttons.filter'),
-                    class: ActiveAdminBootstrap::FORM_SUBMIT_CLASS)
+        form.submit(I18n.t('active_admin.filters.buttons.filter'), class: submit_class)
       end
 
       def cancel_button
         link_to(I18n.t('active_admin.filters.buttons.clear'), '#',
-                class: "#{ActiveAdminBootstrap::FORM_CANCEL_CLASS} clear_filters_btn")
+                class: "#{cancel_class} clear_filters_btn")
+      end
+
+      def submit_class
+        @submit_class ||= component_class(:filters, :actions, :submit)
+      end
+
+      def cancel_class
+        @cancel_class ||= component_class(:filters, :actions, :cancel)
       end
 
     end

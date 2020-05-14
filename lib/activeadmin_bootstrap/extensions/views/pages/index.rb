@@ -14,7 +14,6 @@ module ActiveAdmin
             raise "Invalid filter_position. Available options are: #{FILTER_OPTS.join(', ')}"
           end
 
-          build_filters
           build_table_tools
           wrap_with_batch_action_form do
             build_collection
@@ -29,7 +28,8 @@ module ActiveAdmin
           return unless any_table_tools?
 
           div class: 'table_tools' do
-            div build_scopes, class: 'mb-3 tab-ctrls'
+            build_scopes
+            build_filters
             div class: 'scope_ctrls' do
               build_batch_actions_selector
               build_index_list

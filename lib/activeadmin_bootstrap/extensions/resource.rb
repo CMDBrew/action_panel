@@ -7,7 +7,7 @@ module ActiveAdmin
                 :action_item_prefix
 
     def component_class
-      namespace.component_class.merge(@component_class || {})
+      namespace.component_class.deep_merge(@component_class || {})
     end
 
     def action_item_display

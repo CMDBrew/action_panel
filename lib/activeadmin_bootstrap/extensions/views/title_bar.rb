@@ -5,6 +5,8 @@ module ActiveAdmin
     # Overwirte TitleBar - activeadmin/lib/active_admin/views/title_bar.rb
     class TitleBar < Component
 
+      include ActiveAdminBootstrap::ConfigsFinder
+
       def build(title, action_items)
         super(id: 'title_bar', class: "navbar #{title_bar_class}".strip)
         @title = title
@@ -15,7 +17,7 @@ module ActiveAdmin
       end
 
       def title_bar_class
-        @title_bar_class ||= active_admin_config.component_class[:title_bar].to_s
+        @title_bar_class ||= component_class(:title_bar)
       end
 
       private

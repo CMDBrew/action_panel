@@ -8,58 +8,11 @@ $header-logo-height: 32px !default;
 // Sidebar
 $sidebar-width: 320px !default;
 
-// Table Tools
-$table-tools-btn-theme: '.btn, .btn-sm' !default;
-$table-tools-btn-inactive-theme: '.btn-light' !default;
-$table-tools-btn-active-theme: '.btn-primary' !default;
-$scope-count-theme: '.badge, .badge-light' !default;
-
-// Table
-$table-for-theme: '.text-nowrap, .align-middle' !default;
-$table-for-btn-theme: '.btn, .btn-sm, .btn-light' !default;
-$table-for-btn-dropdown-theme: $table-for-btn-theme !default;
-$table-for-selected-color: $table-hover-bg !default;
-$table-for-index-table-theme: '.table-sm, .text-nowrap, .align-middle' !default;
-
 // Attributes Table
-$attributes-table-empty-color: $text-muted !default;
 $attribute-table-key-width: 30% !default;
-$attributes-table-value-align: left !default;
-
-// Tabs
-$tab-theme: '.nav, .nav-tabs' !default;
 
 // FORM
-$form-has-many-theme: '.card, .mb-3' !default;
-$form-has-many-sortable-color: $secondary !default;
-$form-cancel-theme: '.btn, .btn-link' !default;
-$form-submit-theme: '.btn, .btn-primary' !default;
-$form-has-many-add-theme: '.btn, .btn-link' !default;
 $form-sortable-helper-bg: $gray-100 !default;
-$form-sortable-helper-border: 2px dashed $input-border-color !default;
-$form-has-many-remove-color: $danger !default;
-$form-label-theme: '.text-capitalize' !default;
-
-// FLASH
-$flash-theme: '.rounded-0' !default;
-
-// Blank Slate
-$blank-slate-theme: '.alert, .alert-secondary, .text-center' !default;
-
-// Status Tag
-$status-tag-theme: '.badge, .badge-light' !default;
-$status-tag-success: '.badge-success' !default;
-$status-tag-error: '.badge-danger' !default;
-
-// Footer
-$footer-theme: '.text-center, .small' !default;
-
-// Comments
-$activeadmin-comment-theme: '.card, .p-3, .mb-3' !default;
-$activeadmin-comment-date-theme: '.text-secondary, .mr-2' !default;
-
-// Backdrop
-$backdrop-bg: rgba($modal-backdrop-bg, $modal-backdrop-opacity) !default;
 
 // Icon
 $mdi-icon-size: 24px !default;

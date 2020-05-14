@@ -32,10 +32,10 @@ module ActiveAdmin
     class Column < ActiveAdmin::Component
 
       def build(options = {})
-        options = options.dup
+        options    = options.dup
         @klass     = options.delete(:class)
         @span_size = options.delete(:span)
-        @size      = options.delete(:size) { ActiveAdminBootstrap::COLUMN_BREAKPOINT }
+        @size      = options.delete(:size) { 'md' }
         super(options)
       end
 

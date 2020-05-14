@@ -1,130 +1,106 @@
 .formtastic {
   .hidden { display: none; }
-}
+  .inline-errors { color: $danger; }
+  .inline-hint { color: $secondary; }
 
-.form-group .label { @extend #{$form-label-theme}; }
-
-li.has-many-inputs,
-fieldset.inputs,
-fieldset.actions {
-  & > ol {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-}
-
-fieldset.actions {
-  ol {
-    @extend .list-inline;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: row-reverse;
+  li.has-many-inputs,
+  fieldset.inputs,
+  fieldset.actions {
+    & > ol {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
   }
 
-  li {
-    @extend .list-inline-item;
-    margin-right: map-get($spacers, 2);
-    &:first-child { margin: 0; }
-  }
-}
-
-fieldset.columns > ol {
-  @extend .row;
-  padding: 0;
-}
-
-fieldset.has_many_fields {
-  @extend #{$form-has-many-theme};
-
-  &.ui-sortable-placeholder {
-    z-index: 11;
-    background: $form-sortable-helper-bg;
-    border: $form-sortable-helper-border;
-    visibility: visible !important;
-    box-sizing: border-box;
-    @include box-shadow(none);
-  }
-
-  & > ol {
-    display: flex;
-    flex-direction: row;
+  fieldset.actions {
+    ol {
+      display: flex;
+      align-items: flex-end;
+      -webkit-box-orient: horizontal;
+      -webkit-box-align: end;
+      -webkit-box-direction: reverse;
+      flex-direction: row-reverse;
+    }
 
     li {
-      &.handle {
-        display: flex;
-        align-items: center;
-        padding: map-get($spacers, 2);
-        color: $form-has-many-sortable-color;
-        cursor: move;
-        border-right: $input-border-width solid $input-border-color;
+      display: inline-block;
+      margin-right: map-get($spacers, 2);
+      &:first-child { margin: 0; }
+    }
+  }
 
-        &::before {
-          @extend %mdi-icon;
-          content: map-get($mdi-icons, 'sortable-handle');
+  fieldset.columns > ol {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  fieldset.has_many_fields {
+    &.ui-sortable-placeholder {
+      z-index: 11;
+      background: $form-sortable-helper-bg;
+      visibility: visible !important;
+      box-sizing: border-box;
+      @include box-shadow(none);
+    }
+
+    & > ol {
+      display: flex;
+      flex-direction: row;
+
+      li {
+        &.handle {
+          display: flex;
+          align-items: center;
+          padding: map-get($spacers, 2);
+          cursor: move;
+          border-right: $input-border-width solid $input-border-color;
+
+          &::before {
+            @extend %mdi-icon;
+            content: map-get($mdi-icons, 'sortable-handle');
+          }
+        }
+
+        &.has-many-inputs {
+          flex: 1;
+          padding: map-get($spacers, 2) $spacer;
         }
       }
+    }
 
-      &.has-many-inputs {
-        flex: 1;
-        padding: map-get($spacers, 2) $spacer;
+    .has-many-actions { text-align: right; }
+    .has_many_delete { margin-bottom: 0; }
+  }
+
+  li.input { list-style: none; }
+  .choices-group { @extend %list-unstyled; }
+
+  .fragments {
+    legend { margin-bottom: 0; }
+    legend.label { font-size: $font-size-base; }
+
+    .input-fragment {
+      .field_with_error {
+        display: flex;
+        width: 100%;
       }
     }
   }
 
-  .has-many-actions { text-align: right; }
-  .has_many_delete { margin-bottom: 0; }
+  .fragments-group {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0 calc(-#{$spacer} / 4) !important;
+    list-style: none;
 
-  .has_many_delete,
-  .has_many_remove {
-    color: $form-has-many-remove-color;
-  }
-}
-
-.has_many_add {
-  @extend #{$form-has-many-add-theme};
-}
-
-li.input { list-style: none; }
-
-.fragments {
-  legend { margin-bottom: 0; }
-
-  legend.label {
-    font-size: $font-size-base;
-
-    & > label {
-      @extend label;
-      @extend #{$form-label-theme};
-    }
-  }
-
-  .input-fragment {
-    .field_with_error {
-      display: flex;
-      width: 100%;
+    .fragment {
+      flex: 1;
+      padding: 0 $spacer / 4;
+      margin-bottom: $spacer;
     }
   }
 }
 
-.fragments-group {
-  @extend .row;
-  padding: 0;
-  margin: 0 calc(-#{$spacer} / 4) !important;
-  list-style: none;
-
-  .fragment {
-    @extend .col-md;
-    padding: 0 $spacer / 4;
-    margin-bottom: $spacer;
-
-    & > label { @extend .small; }
-  }
-}
-
-.form_cancel { @extend #{$form-cancel-theme}; }
-.form_submit { @extend #{$form-submit-theme}; }
-
-.choices-group {
-  @extend .list-unstyled;
-}

@@ -12,7 +12,72 @@ module ActiveAdmin
     register(:component_class,
              header: 'navbar-dark bg-dark navbar-expand-lg',
              title_bar: 'navbar-light bg-light',
-             action_item: 'btn btn-secondary')
+             action_item: {
+               group: 'btn-group',
+               item: 'btn btn-secondary'
+             },
+             flash: {
+               default: 'alert',
+               alert: 'alert-warning',
+               notice: 'alert-info'
+             },
+             blank_slate: 'alert alert-secondary text-center',
+             tabs: 'nav-tabs',
+             table_for: 'table',
+             attributes_table: {
+               wrapper: 'table-responsive',
+               table: 'table text-break'
+             },
+             filters: {
+               actions: {
+                 submit: 'btn btn-primary',
+                 cancel: 'btn btn-link'
+               }
+             },
+             form: {
+               has_many: {
+                 item: 'border mb-3',
+                 new: 'btn btn-sm btn-light',
+                 destroy: 'text-danger'
+               },
+               actions: {
+                 submit: 'btn btn-primary',
+                 cancel: 'btn btn-link'
+               }
+             },
+             index_as_table: {
+               wrapper: 'table-responsive',
+               table: 'table table-sm',
+               btn: {
+                 group: 'btn-group',
+                 item: 'btn btn-sm btn-light'
+               }
+             },
+             table_tools: {
+               btn: 'btn btn-sm btn-light',
+               scopes: {
+                 tabs: 'nav-tabs',
+                 count: 'badge badge-primary'
+               },
+               index_list: {
+                 wrapper: 'btn-group',
+                 item: {
+                   inactive: 'btn btn-sm btn-light',
+                   active: 'btn btn-sm btn-primary'
+                 }
+               }
+             },
+             panel: {
+               wrapper: 'card',
+               header: 'card-header',
+               body: 'card-body'
+             },
+             active_admin_comments: {
+               wrapper: 'card',
+               header: 'card-header',
+               body: 'card-body',
+               submit: 'btn btn-primary'
+             })
 
     # The default action_item display actions
     register(:action_item_display,

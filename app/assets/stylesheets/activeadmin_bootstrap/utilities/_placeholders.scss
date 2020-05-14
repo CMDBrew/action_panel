@@ -20,4 +20,10 @@
   white-space: nowrap;
 }
 
+%list-unstyled {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 .mdi { @extend %mdi-icon; }

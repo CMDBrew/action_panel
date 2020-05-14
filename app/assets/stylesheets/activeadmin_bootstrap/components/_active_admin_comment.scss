@@ -2,12 +2,7 @@
   &.formtastic { margin-bottom: map-get($spacers, 4); }
 
   &:not(.formtastic) {
-    @extend #{$activeadmin-comment-theme};
     fieldset.actions ol { flex-direction: row; }
-
-    .comment-date {
-      @extend #{$activeadmin-comment-date-theme};
-    }
   }
 }
 

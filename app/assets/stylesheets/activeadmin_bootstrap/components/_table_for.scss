@@ -1,6 +1,6 @@
 .table_for {
-  &:not(.index_table) { @extend #{$table-for-theme}; }
-  &.index_table { @extend #{$table-for-index-table-theme}; }
+  white-space: nowrap;
+  vertical-align: middle;
 
   .col { width: auto; }
   .col-actions { text-align: right; }
@@ -43,18 +43,7 @@
     vertical-align: inherit !important;
   }
 
-  tr.selected td { background: $table-for-selected-color; }
-}
-
-.table_btn {
-  &:not(.dropdown-toggle) {
-    @extend #{$table-for-btn-theme};
-  }
-
-  &.dropdown-toggle {
-    @extend #{$table-for-btn-dropdown-theme};
-    span + i { margin-left: map-get($spacers, 2); }
-  }
+  tr.selected td { background: $table-active-bg; }
 }
 
 .resource_selection_toggle_cell,

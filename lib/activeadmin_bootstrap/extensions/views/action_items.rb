@@ -5,6 +5,8 @@ module ActiveAdmin
     # Overwrite ActionItems - activeadmin/lib/active_admin/views/action_items.rb
     class ActionItems < ActiveAdmin::Component
 
+      include ActiveAdminBootstrap::ConfigsFinder
+
       def build(action_items)
         action_items.each do |action_item|
           text_node instance_exec(&action_item.block)
@@ -23,20 +25,16 @@ module ActiveAdmin
         I18n.t('active_admin.delete_model', model: active_admin_config.resource_label).to_s
       end
 
-      def action_item_class
-        @action_item_class ||= active_admin_config.component_class[:action_item].to_s
-      end
-
       private
 
       def link_to(*args, &block)
         options = args.extract_options!
-        options[:class] ||= action_item_class
+        options[:class] ||= component_class(:action_item, :item)
         super(*args, options, &block)
       end
 
       def default_class_name
-        'action_items btn-group'
+        "action_items #{component_class(:action_item, :group)}".strip
       end
 
     end

@@ -5,19 +5,21 @@ module ActiveAdmin
     # Overwirte AttributesTable - activeadmin/lib/active_admin/views/components/attributes_table.rb
     class AttributesTable < ActiveAdmin::Component
 
+      include ActiveAdminBootstrap::ConfigsFinder
+
       def build(obj, *attrs)
         @collection     = Array.wrap(obj)
         @resource_class = @collection.first.class
         options = {}
         options[:for] = @collection.first if single_record?
         super(options)
-        @table = table(class: 'table text-break')
+        @table = table(class: component_class(:attributes_table, :table))
         build_colgroups
         rows(*attrs)
       end
 
       def default_class_name
-        'table-responsive attributes_table'
+        "attributes_table #{component_class(:attributes_table, :wrapper)}".strip
       end
 
       # rubocop:disable Metrics/MethodLength, Metrics/AbcSize

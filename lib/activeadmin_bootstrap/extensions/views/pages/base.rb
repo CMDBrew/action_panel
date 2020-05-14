@@ -7,6 +7,8 @@ module ActiveAdmin
       # Overwrite Pages::Base - activeadmin/lib/active_admin/views/pages/base.rb
       class Base < Arbre::HTML::Document
 
+        include ActiveAdminBootstrap::ConfigsFinder
+
         SIDEBAR_OPTS = %w[left right].freeze
 
         def build(*_args)
@@ -108,17 +110,16 @@ module ActiveAdmin
 
         def build_flash_messages
           flash_messages.each do |type, msg|
-            div msg, class: "#{ActiveAdminBootstrap::FLASH_CLASS} alert #{bs_class_for(type)}"
+            div msg, class: "#{default_class} #{flash_class(type)}".strip
           end
         end
 
-        def bs_class_for(type)
-          {
-            success: 'alert-success',
-            error: 'alert-danger',
-            alert: 'alert-warning',
-            notice: 'alert-info'
-          }[type.to_sym] || type.to_s
+        def default_class
+          @default_class ||= component_class(:flash, :default)
+        end
+
+        def flash_class(type)
+          @flash_class ||= component_class(:flash, type.to_sym)
         end
 
       end
