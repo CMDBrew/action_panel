@@ -5,7 +5,7 @@ module ActiveAdmin
     # Overwrite Footer - lib/active_admin/views/footer.rb
     class Footer < Component
 
-      private
+      # private
 
       # def powered_by_message
       #   I18n.t('active_admin.powered_by',

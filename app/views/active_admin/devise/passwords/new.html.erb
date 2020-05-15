@@ -8,6 +8,11 @@
     f.input :email
   end
   f.actions do
-    f.action :submit, label: t('active_admin.devise.reset_password.submit'), button_html: { value: t('active_admin.devise.reset_password.submit') }
+    f.action :submit,
+             label: t('active_admin.devise.reset_password.submit'),
+             button_html: {
+               value: t('active_admin.devise.reset_password.submit'),
+               class: 'btn btn-primary'
+             }
   end
 end %>

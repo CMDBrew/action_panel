@@ -9,7 +9,6 @@ require 'bootstrap-datepicker-rails'
 require 'just-datetime-picker'
 
 # Require Initializers
-require 'activeadmin_bootstrap/helpers/configs_finder'
 require 'activeadmin_bootstrap/initializers/base'
 require 'activeadmin_bootstrap/initializers/view_helpers'
 require 'activeadmin_bootstrap/initializers/batch_actions'
@@ -23,19 +22,19 @@ require 'activeadmin_bootstrap/initializers/orm'
 require 'activeadmin_bootstrap/initializers/others'
 
 # Compilers
-require 'slim-rails'
 require 'sassc-rails'
-
-# Require Engine
-require 'activeadmin_bootstrap/engine'
 
 # Engine
 module ActiveAdminBootstrap
 
   autoload :VERSION, 'activeadmin_bootstrap/version'
+  autoload :ConfigsFinder, 'activeadmin_bootstrap/helpers/configs_finder'
 
   def self.rails6?
     Rails.version.start_with? '6'
   end
 
 end
+
+# Require Engine
+require 'activeadmin_bootstrap/engine'

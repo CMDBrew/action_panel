@@ -15,7 +15,6 @@ PATH
       rails (~> 6.0)
       sass-rails
       select2-rails
-      slim-rails
 
 GEM
   remote: https://rubygems.org/
@@ -333,13 +332,6 @@ GEM
       simplecov
       terminal-table
     simplecov-html (0.10.2)
-    slim (4.0.1)
-      temple (>= 0.7.6, < 0.9)
-      tilt (>= 2.0.6, < 2.1)
-    slim-rails (3.2.0)
-      actionpack (>= 3.1)
-      railties (>= 3.1)
-      slim (>= 3.0, < 5.0)
     spoon (0.0.6)
       ffi
     sprockets (3.7.2)
@@ -353,7 +345,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    temple (0.8.2)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thor (0.20.3)

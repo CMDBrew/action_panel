@@ -10,16 +10,16 @@ module ActiveAdminBootstrap
     end
 
     # Initialize Initializers
-    include ActiveAdminBootstrap::Initializers::Formtastic
-    include ActiveAdminBootstrap::Initializers::Inputs
-    include ActiveAdminBootstrap::Initializers::BatchActions
-    include ActiveAdminBootstrap::Initializers::IndexAsCalendar
-    include ActiveAdminBootstrap::Initializers::Html
-    include ActiveAdminBootstrap::Initializers::Resource
-    include ActiveAdminBootstrap::Initializers::Views
-    include ActiveAdminBootstrap::Initializers::ViewHelpers
-    include ActiveAdminBootstrap::Initializers::Orm
-    include ActiveAdminBootstrap::Initializers::Others
+    include Initializers::Formtastic
+    include Initializers::Inputs
+    include Initializers::BatchActions
+    include Initializers::IndexAsCalendar
+    include Initializers::Html
+    include Initializers::Resource
+    include Initializers::Views
+    include Initializers::ViewHelpers
+    include Initializers::Orm
+    include Initializers::Others
 
     # Change default configs for ActiveAdmin
     config.before_initialize do
