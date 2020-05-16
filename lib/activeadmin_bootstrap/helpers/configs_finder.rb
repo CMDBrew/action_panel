@@ -6,9 +6,18 @@ module ActiveAdminBootstrap
     class ConfigError < StandardError; end
 
     def component_class(*args)
-      active_admin_config.component_class.dig(*args).to_s
+      components_configs.component_class.dig(*args).to_s
     rescue TypeError => _e
       raise ConfigError, "Invalid component_class configs: #{args.join(' -> ')}"
+    end
+
+    private
+
+    def components_configs
+      active_admin_config
+    rescue StandardError => e
+      Rails.logger.info "#{e.class}: active_admin_config is not available for #{self.class}"
+      ActiveAdmin.application
     end
 
   end

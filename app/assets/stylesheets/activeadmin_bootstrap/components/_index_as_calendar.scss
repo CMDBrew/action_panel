@@ -4,7 +4,7 @@
     text-transform: capitalize;
     background-image: none;
     border-width: $input-btn-border-width;
-    @include box-shadow(none);
+    @include shadow(none);
   }
 
   .fc-header-toolbar {

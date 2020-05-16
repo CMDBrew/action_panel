@@ -10,12 +10,7 @@ RSpec.describe ActiveAdmin::Views::AttributesTable do
 
     describe '#class_list' do
       subject { super().class_list }
-      it      { is_expected.to include('table-responsive') }
-    end
-
-    describe '#content' do
-      subject { super().children.first.class_list }
-      it      { is_expected.to include('table', 'text-break') }
+      it      { is_expected.to include('attributes_table') }
     end
   end
 end

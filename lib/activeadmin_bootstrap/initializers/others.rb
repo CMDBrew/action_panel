@@ -12,7 +12,7 @@ module ActiveAdminBootstrap
 
       included do
         config.before_configuration do |_app|
-          require_each(%w[namespace_settings])
+          require_each(%w[dynamic_settings_node namespace_settings])
         end
 
         initializer 'others.overrides' do |_app|

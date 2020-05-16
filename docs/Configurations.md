@@ -6,15 +6,75 @@ ActiveAdmin.setup do |config|
    config.component_class = {
      header: 'navbar-dark bg-dark navbar-expand-lg',
      title_bar: 'navbar-light bg-light',
-     action_item: 'btn btn-secondary',
+     action_item: {
+       group: 'btn-group',
+       item: 'btn btn-secondary'
+     },
+     flash: {
+       default: 'alert',
+       alert: 'alert-warning',
+       notice: 'alert-info'
+     },
+     blank_slate: 'alert alert-secondary text-center',
+     tabs: 'nav-tabs',
+     table_for: 'table',
+     attributes_table: {
+       wrapper: 'table-responsive',
+       table: 'table text-break'
+     },
+     filters: {
+       actions: {
+         submit: 'btn btn-primary',
+         cancel: 'btn btn-link'
+       }
+     },
+     form: {
+       has_many: {
+         item: 'border mb-3',
+         new: 'btn btn-sm btn-light',
+         destroy: 'text-danger'
+       },
+       actions: {
+         submit: 'btn btn-primary',
+         cancel: 'btn btn-link'
+       }
+     },
+     index_as_table: {
+       wrapper: 'table-responsive',
+       table: 'table table-sm',
+       btn: {
+         group: 'btn-group',
+         item: 'btn btn-sm btn-light'
+       }
+     },
+     table_tools: {
+       btn: 'btn btn-sm btn-light',
+       scopes: {
+         tabs: 'nav-tabs',
+         count: 'badge badge-primary'
+       },
+       indexes: {
+         wrapper: 'btn-group',
+         item: {
+           inactive: 'btn btn-sm btn-light',
+           active: 'btn btn-sm btn-primary'
+         }
+       }
+     },
      panel: {
        wrapper: 'card',
        header: 'card-header',
        body: 'card-body'
+     },
+     active_admin_comments: {
+       wrapper: 'card',
+       header: 'card-header',
+       body: 'card-body',
+       submit: 'btn btn-primary'
      }
    }
    config.action_item_display = {
-     new: 'index', edit: 'show', destroy: 'show'
+     new: :index, edit: :show, destroy: :show
    }
    config.action_item_prefix = {
      new: nil, edit: nil, destroy: nil
@@ -32,27 +92,14 @@ end
 # config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
    config.namespace :admin do |admin|
-     admin.component_class = {
-       header: 'navbar-dark bg-dark navbar-expand-lg',
-       title_bar: 'navbar-light bg-light',
-       action_item: 'btn btn-secondary',
-       panel: {
-         wrapper: 'card',
-         header: 'card-header',
-         body: 'card-body'
-       }
-     }
-     admin.action_item_display = {
-       new: 'index', edit: 'show', destroy: 'show'
-     }
-     admin.action_item_prefix = {
-       new: nil, edit: nil, destroy: nil
-     }
+     admin.component_class = { header: 'navbar-dark bg-dark navbar-expand-lg' }
+     admin.action_item_display = { destroy: :edit }
+     admin.action_item_prefix = { new: '<i class="mdi mdi-plus"></i>' }
      admin.site_title_proc = proc { my_custom_site_title_method }
      admin.sidebar_position = 'right'
      admin.filter_position = 'sidebar'
-     config.active_admin_comment_input = 'string'
-     config.pagination_exclusion = []
+     admin.active_admin_comment_input = 'string'
+     admin.pagination_exclusion = []
    end
 end
 ```
@@ -62,16 +109,7 @@ end
 - If the key is not specified it will fallback to default.
 ```ruby
 ActiveAdmin.register AdminUser do
-  config.component_class = {
-    header: 'navbar-dark bg-dark navbar-expand-lg',
-    title_bar: 'navbar-light bg-light',
-    action_item: 'btn btn-secondary',
-    panel: {
-      wrapper: 'card',
-      header: 'card-header',
-      body: 'card-body'
-    }
-  }
+  config.component_class = { header: 'navbar-dark bg-dark navbar-expand-lg' }
 end
 ```
 
@@ -95,12 +133,13 @@ end
 ```
 
 #### Action Items Display Actions
-- Available options are: `index`, `show`, `edit`
+- Available options are: `:index`, `:show`, `:edit`
 - If the key is not specified it will fallback to default.
+- You can also pass in an array (e.g. %i[edit show]).
 ```ruby
 ActiveAdmin.register AdminUser do
   config.action_item_display = {
-    new: 'index', edit: 'show', destroy: 'show'
+    new: :index, edit: :show, destroy: :show
   }
 end
 ```

@@ -42,7 +42,7 @@
       background: $form-sortable-helper-bg;
       visibility: visible !important;
       box-sizing: border-box;
-      @include box-shadow(none);
+      @include shadow(none);
     }
 
     & > ol {

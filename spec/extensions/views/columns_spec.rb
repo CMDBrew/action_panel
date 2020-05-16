@@ -5,8 +5,8 @@ RSpec.describe ActiveAdmin::Views::Columns do
     subject do
       render_arbre_component do
         columns do
-          column span: 4
-          column span: 8
+          column size: 'lg', span: 4
+          column size: 'lg', span: 8
         end
       end
     end
@@ -15,8 +15,8 @@ RSpec.describe ActiveAdmin::Views::Columns do
 
     describe '#class_list' do
       it { expect(html).to have_selector('.row') }
-      it { expect(html).to have_selector('.col-md-4') }
-      it { expect(html).to have_selector('.col-md-8') }
+      it { expect(html).to have_selector('.col-lg-4') }
+      it { expect(html).to have_selector('.col-lg-8') }
     end
   end
 end

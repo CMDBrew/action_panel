@@ -48,7 +48,7 @@ $color-brick-size: 24px !default;
   .minicolors-panel {
     border-color: $dropdown-border-color;
     border-radius: $dropdown-border-radius;
-    @include box-shadow($dropdown-box-shadow);
+    @include shadow($dropdown-box-shadow);
   }
 
   .minicolors-picker {

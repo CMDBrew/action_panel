@@ -59,13 +59,13 @@ ActiveAdmin.modal_dialog = (title, inputs, callback, message='', form='')->
     buttons: [
       {
         text: 'Cancel'
-        'class': '<%= ActiveAdminBootstrap::FORM_CANCEL_CLASS %>'
+        'class': 'btn-cancel btn'
         click: ->
           $(@).dialog('close').remove()
       }
       {
         text: 'Ok'
-        'class': '<%= ActiveAdminBootstrap::FORM_SUBMIT_CLASS %> ml-1'
+        'class': 'btn-submit btn ml-1'
         click: ->
           callback $(@).find('form').serializeObject()
           $(@).dialog 'close'

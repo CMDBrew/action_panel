@@ -31,11 +31,13 @@ module ActiveAdmin
     # Overwrite Columns
     class Column < ActiveAdmin::Component
 
+      include ActiveAdminBootstrap::ConfigsFinder
+
       def build(options = {})
         options    = options.dup
         @klass     = options.delete(:class)
         @span_size = options.delete(:span)
-        @size      = options.delete(:size) { 'md' }
+        @size      = options.delete(:size) { component_class(:columns, :breakpoint) }
         super(options)
       end
 

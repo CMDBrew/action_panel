@@ -11,7 +11,7 @@
   -ms-user-select: none;
 }
 
-@mixin box-shadow($value...) {
+@mixin shadow($value...) {
   box-shadow: #{$value};
   -webkit-box-shadow: #{$value};
   -moz-box-shadow: #{$value};

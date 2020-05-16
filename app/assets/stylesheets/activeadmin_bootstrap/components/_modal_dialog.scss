@@ -24,7 +24,7 @@ body.modal-open {
   width: $modal-md !important;
   border: 0;
   @if $enable-shadows {
-    @include box-shadow($modal-content-box-shadow-xs);
+    @include shadow($modal-content-box-shadow-xs);
   }
 
   .ui-dialog-titlebar {
@@ -52,6 +52,14 @@ body.modal-open {
       margin: 0;
       list-style: none;
     }
+  }
+
+  .ui-dialog-buttonset {
+    $_cancel-color: $modal-dialog-btn-cancel-color;
+    $_submit-color: $modal-dialog-btn-submit-color;
+
+    .btn-cancel { @include button-variant($_cancel-color, $_cancel-color); }
+    .btn-submit { @include button-variant($_submit-color, $_submit-color); }
   }
 }
 

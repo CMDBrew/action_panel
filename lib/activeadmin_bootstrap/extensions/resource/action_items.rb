@@ -20,7 +20,7 @@ module ActiveAdmin
       # rubocop:disable all
       # Adds the default New link on index
       def add_default_new_action_item
-        add_action_item :new, only: proc { action_item_display[:new]&.to_sym } do
+        add_action_item :new, only: proc { action_item_display[:new] } do
           if controller.action_methods.include?('new') &&
              authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
@@ -34,7 +34,7 @@ module ActiveAdmin
 
       # Adds the default Edit link on show
       def add_default_edit_action_item
-        add_action_item :edit, only: proc { action_item_display[:edit]&.to_sym } do
+        add_action_item :edit, only: proc { action_item_display[:edit] } do
           if controller.action_methods.include?('edit') &&
              authorized?(ActiveAdmin::Auth::UPDATE, resource)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
@@ -48,7 +48,7 @@ module ActiveAdmin
 
       # Adds the default Destroy link on show
       def add_default_destroy_action_item
-        add_action_item :destroy, only: proc { action_item_display[:destroy]&.to_sym } do
+        add_action_item :destroy, only: proc { action_item_display[:destroy] } do
           if controller.action_methods.include?('destroy') &&
              authorized?(ActiveAdmin::Auth::DESTROY, resource)
             link_to(

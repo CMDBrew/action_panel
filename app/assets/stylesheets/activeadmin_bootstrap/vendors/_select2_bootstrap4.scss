@@ -72,7 +72,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 // Mixins
 // --------------------------------------------------
 @mixin bootstrap-input-defaults($font-size: $s2bs-font-size-base) {
-  @include box-shadow($s2bs-form-control-default-box-shadow);
+  @include shadow($s2bs-form-control-default-box-shadow);
   background-color: $s2bs-input-bg;
   border: $s2bs-input-border-width solid $s2bs-input-border;
   @include border-radius($s2bs-input-border-radius);
@@ -89,7 +89,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
 
   .select2-container--focus .select2-selection,
   .select2-container--open .select2-selection {
-    @include box-shadow($shadow);
+    @include shadow($shadow);
     border-color: darken($color, 10%);
   }
 
@@ -219,7 +219,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
   &.select2-container--focus,
   &.select2-container--open {
     .select2-selection {
-      @include box-shadow($s2bs-form-control-focus-box-shadow);
+      @include shadow($s2bs-form-control-focus-box-shadow);
       @include transition($s2bs-form-control-transition);
       border-color: $s2bs-input-border-focus;
     }
@@ -266,7 +266,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
   &.select2-container--disabled {
     .select2-selection {
       border-color: $s2bs-input-border;
-      @include box-shadow(none);
+      @include shadow(none);
     }
 
     .select2-selection,
@@ -286,14 +286,14 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
   }
 
   .select2-dropdown {
-    @include box-shadow($s2bs-dropdown-box-shadow);
+    @include shadow($s2bs-dropdown-box-shadow);
     border-color: $s2bs-input-border-focus;
     border-width: $s2bs-input-border-width;
     overflow-x: hidden;
     margin-top: -1px;
 
     &--above {
-      @include box-shadow($s2bs-dropdown-box-shadow-above);
+      @include shadow($s2bs-dropdown-box-shadow-above);
       margin-top: 1px;
     }
   }

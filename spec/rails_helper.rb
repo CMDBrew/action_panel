@@ -9,13 +9,13 @@ Bundler.setup
 
 ENV['RAILS_ENV'] = 'test'
 # Ensure the Active Admin load path is happy
-require 'rails'
+require 'rails/all'
 ENV['RAILS'] = Rails.version
 ENV['RAILS_ROOT'] = File.expand_path("../rails/rails-#{ENV['RAILS']}", __FILE__)
 # Create the test app if it doesn't exists
 system 'rake setup' unless File.exist?(ENV['RAILS_ROOT'])
 
-require 'active_model'
+# require 'active_model'
 # require ActiveRecord to ensure that Ransack loads correctly
 require 'active_record'
 require 'active_admin'

@@ -29,6 +29,7 @@ module ActiveAdminBootstrap
 
   autoload :VERSION, 'activeadmin_bootstrap/version'
   autoload :ConfigsFinder, 'activeadmin_bootstrap/helpers/configs_finder'
+  autoload :ConfigsDefault, 'activeadmin_bootstrap/helpers/configs_default'
 
   def self.rails6?
     Rails.version.start_with? '6'

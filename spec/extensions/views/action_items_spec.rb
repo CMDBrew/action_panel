@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe ActiveAdmin::Views::ActionItems do
-  let(:helpers)      { mock_action_view }
-  let(:application)  { ActiveAdmin::Application.new }
-  let(:namespace)    { ActiveAdmin::Namespace.new(application, :admin) }
+  let(:helpers)     { mock_action_view }
+  let(:application) { ActiveAdmin::Application.new }
+  let(:namespace)   { ActiveAdmin::Namespace.new(application, :admin) }
   let(:action_items) do
     [].push(
       ActiveAdmin::ActionItem.new('test') do
@@ -20,6 +20,6 @@ RSpec.describe ActiveAdmin::Views::ActionItems do
 
   describe 'html' do
     let(:action_items_html) { build_action_items(namespace, action_items) }
-    it { expect(action_items_html.class_list).to include('btn-group') }
+    it { expect(action_items_html.class_list).to include('action_items') }
   end
 end
