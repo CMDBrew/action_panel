@@ -65,7 +65,7 @@ ActiveAdmin.modal_dialog = (title, inputs, callback, message='', form='')->
       }
       {
         text: 'Ok'
-        'class': 'btn-submit btn ml-1'
+        'class': 'btn-submit btn'
         click: ->
           callback $(@).find('form').serializeObject()
           $(@).dialog 'close'

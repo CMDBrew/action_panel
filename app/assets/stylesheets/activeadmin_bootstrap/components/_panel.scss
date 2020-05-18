@@ -1,5 +1,6 @@
 .panel {
   margin-bottom: $grid-gutter-width;
+  overflow: hidden;
 
   .panel-header {
     display: flex;

@@ -7,7 +7,8 @@ module ActiveAdminBootstrap
 
       COMPONENT_FILES = %w[
         status_tag active_admin_form dropdown_menu site_title menu menu_item table_for
-        attributes_table panel paginated_collection scopes index_list tabs blank_slate
+        attributes_table panel sidebar_section paginated_collection scopes index_list
+        tabs blank_slate
       ].freeze
       VIEW_FILES = %w[header title_bar action_items index_as_table columns footer].freeze
       PAGE_FILES = %w[base page index form].freeze

@@ -3,8 +3,12 @@ module ActiveAdmin
   # Overwrite Resource - activeadmin/lib/active_admin/resource.rb
   class Resource
 
-    attr_writer :sidebar_position, :filter_position, :component_class, :action_item_display,
-                :action_item_prefix
+    attr_writer :sidebar_position, :filter_position, :layout_class, :component_class,
+                :action_item_display, :action_item_prefix
+
+    def layout_class
+      @layout_class || namespace.layout_class
+    end
 
     def component_class
       namespace.component_class.deep_merge(@component_class || {})

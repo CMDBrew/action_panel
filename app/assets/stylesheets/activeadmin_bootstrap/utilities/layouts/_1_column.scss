@@ -1,0 +1,9 @@
+%layout-1-column {
+  grid-template-areas:
+    "header"
+    "title_bar"
+    "content";
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 64px 64px minmax(0, 1fr);
+}

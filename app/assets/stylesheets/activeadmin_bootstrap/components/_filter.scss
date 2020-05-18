@@ -1,2 +1,10 @@
 #filter { margin-bottom: $spacer; }
-#filter-toggler { margin-left: auto; }
+
+#filter-toggler {
+  margin-left: auto;
+
+  .filter_toggler::before {
+    @extend %mdi-icon;
+    content: map-get($mdi-icons, 'filters');
+  }
+}

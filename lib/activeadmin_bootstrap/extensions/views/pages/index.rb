@@ -7,6 +7,7 @@ module ActiveAdmin
       # Overwrite Views::Pages::Index - activeadmin/lib/active_admin/views/pages/index.rb
       class Index < Base
 
+        include ActiveAdminBootstrap::ConfigsFinder
         FILTER_OPTS = %w[sidebar main].freeze
 
         def main_content
@@ -53,7 +54,8 @@ module ActiveAdmin
 
           div id: 'filter-toggler' do
             a span(I18n.t('active_admin.sidebars.filters')),
-              class: 'table_tool_btn', 'data-toggle': 'collapse', 'data-target': '#filter'
+              class: "filter_toggler #{component_class(:table_tools, :btn)}",
+              'data-toggle': 'collapse', 'data-target': '#filter'
           end
         end
 

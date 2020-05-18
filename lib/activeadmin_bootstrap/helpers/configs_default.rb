@@ -7,6 +7,7 @@ module ActiveAdminBootstrap
       component_class action_item_display action_item_prefix
     ].freeze
 
+    LAYOUT_CLASS = 'layout-1-column'.freeze
     COMPONENT_CLASS = {
       header: 'navbar-dark bg-dark navbar-expand-lg',
       title_bar: 'navbar-light bg-light',
@@ -33,6 +34,7 @@ module ActiveAdminBootstrap
         }
       },
       form: {
+        errors: 'alert alert-danger',
         has_many: {
           item: 'border mb-3',
           new: 'btn btn-sm btn-light',
@@ -80,7 +82,6 @@ module ActiveAdminBootstrap
         submit: 'btn btn-primary'
       }
     }.freeze
-
     ACTION_ITEM_DISPLAY = { new: :index, edit: :show, destroy: :show }.freeze
     ACTION_ITEM_PREFIX = { new: nil, edit: nil, destroy: nil }.freeze
     SIDEBAR_POSITION = 'right'.freeze

@@ -33,24 +33,21 @@ module ActiveAdmin
           end
         end
 
-        # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+        # rubocop:disable Metrics/AbcSize
         def build_page
           within body(class: body_classes) do
             header active_admin_namespace, current_menu
-            div id: 'titlebar-wrapper' do
-              title_bar title, action_items_for_action
-            end
-
-            build_flash_messages
+            title_bar title, action_items_for_action
 
             div id: 'wrapper' do
+              build_flash_messages
               build_unsupported_browser
               build_page_content
               build_htmls unless skip_htmls?
             end
           end
         end
-        # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
+        # rubocop:enable Metrics/AbcSize
 
         def build_page_content
           div id: 'active_admin_content' do
@@ -100,7 +97,8 @@ module ActiveAdmin
             params[:action],
             params[:controller].tr('/', '_'),
             'active_admin', 'logged_in',
-            active_admin_namespace.name.to_s + '_namespace'
+            active_admin_namespace.name.to_s + '_namespace',
+            active_admin_config.layout_class
           ]
         end
 
@@ -109,8 +107,12 @@ module ActiveAdmin
         end
 
         def build_flash_messages
-          flash_messages.each do |type, msg|
-            div msg, class: "#{default_class} #{flash_class(type)}".strip
+          return if flash_messages.blank?
+
+          div class: 'flashes' do
+            flash_messages.each do |type, msg|
+              div msg, class: "flash #{default_class} #{flash_class(type)}".strip
+            end
           end
         end
 

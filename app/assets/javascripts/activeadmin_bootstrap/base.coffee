@@ -49,10 +49,9 @@ window.ActiveAdminBootstrap = {}
 
 onReady = ->
   $('#active_admin_content .dropdown:not(.filter-dropdown)').aaDropdown()
-  $('#header').on 'hide.bs.collapse', ->
-    $('body').removeClass('header-active')
-  $('#header').on 'show.bs.collapse', ->
-    $('body').addClass('header-active')
+  $('.header-toggler').on 'click', (e)->
+    e.preventDefault();
+    $('body').toggleClass 'header-active'
 
 $(document).ready(->
     onReady()

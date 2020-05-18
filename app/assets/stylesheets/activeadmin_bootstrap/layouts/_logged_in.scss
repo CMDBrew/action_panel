@@ -1,18 +1,14 @@
 body.logged_in {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
+
+  &.layout-1-column { @extend %layout-1-column; }
+  &.layout-2-column { @extend %layout-2-column; }
+  #wrapper { grid-area: content; }
 
   #main,
   #sidebar {
     padding: $spacer 0;
-  }
-
-  #wrapper {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
   }
 
   #active_admin_content {

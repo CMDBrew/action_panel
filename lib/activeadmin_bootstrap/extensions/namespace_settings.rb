@@ -9,6 +9,9 @@ module ActiveAdmin
     register :site_title_proc, nil
 
     # The default component_class
+    register :layout_class, Configs::LAYOUT_CLASS
+
+    # The default component_class
     register :component_class, Configs::COMPONENT_CLASS
 
     # The default action_item display actions

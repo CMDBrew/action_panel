@@ -3,4 +3,6 @@ body.logged_out {
   .card-title {
     text-align: center;
   }
+
+  .logo { height: $logged-out-logo-height; }
 }

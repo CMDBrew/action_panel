@@ -58,6 +58,7 @@ body.modal-open {
     $_cancel-color: $modal-dialog-btn-cancel-color;
     $_submit-color: $modal-dialog-btn-submit-color;
 
+    .btn:not(:last-child) { margin-right: map-get($spacers, 2); }
     .btn-cancel { @include button-variant($_cancel-color, $_cancel-color); }
     .btn-submit { @include button-variant($_submit-color, $_submit-color); }
   }

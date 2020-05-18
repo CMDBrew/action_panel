@@ -11,7 +11,7 @@ module ActiveAdmin
         super(id: 'title_bar', class: "navbar #{title_bar_class}".strip)
         @title = title
         @action_items = action_items
-        build_header_toggle
+        build_header_toggler
         build_titlebar_left
         build_titlebar_right
       end
@@ -23,14 +23,11 @@ module ActiveAdmin
       private
 
       def build_titlebar_left
-        div id: 'titlebar_left' do
-          build_breadcrumb
-        end
+        div build_breadcrumb, id: 'titlebar_left'
       end
 
-      def build_header_toggle
-        button class: 'navbar-toggler',
-               'data-target': '#header', 'data-toggle': 'collapse' do
+      def build_header_toggler
+        button class: 'navbar-toggler header-toggler' do
           span class: 'navbar-toggler-icon'
         end
       end

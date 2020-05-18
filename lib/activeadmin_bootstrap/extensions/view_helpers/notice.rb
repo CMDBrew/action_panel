@@ -5,6 +5,7 @@ module ViewHelpers
 
     def error_messages(resource)
       return if resource.errors.blank?
+
       content_tag :div, class: 'alert alert-danger' do
         content_tag :ul, class: 'errors mb-0 pl-3' do
           resource.errors.details.keys.each do |x|
@@ -23,6 +24,7 @@ module ViewHelpers
 
     def devise_error_messages!
       return '' unless devise_error_messages?
+
       safe_join [devise_error_html]
     end
 

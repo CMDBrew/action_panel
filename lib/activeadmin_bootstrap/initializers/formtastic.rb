@@ -5,8 +5,8 @@ module ActiveAdminBootstrap
     # Formtastic Initializers
     module Formtastic
 
-      BASE_FILES    = %w[wrapping html choices].freeze
-      INPUTS_FILES  = %w[
+      BASE_FILES   = %w[wrapping html choices].freeze
+      INPUTS_FILES = %w[
         select_input select2_input check_boxes_input radio_input
         boolean_input switch_input file_input color_picker_input
         date_picker_input just_datetime_picker_input hstore_input

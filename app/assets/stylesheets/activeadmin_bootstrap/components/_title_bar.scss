@@ -1,5 +1,6 @@
 #title_bar {
   flex-wrap: nowrap;
+  grid-area: title_bar;
 
   .navbar-toggler { display: none; }
 
