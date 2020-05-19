@@ -1,5 +1,24 @@
 module ActiveAdmin
 
+  # Overwrite FormBuilder - activeadmin/lib/active_admin/form_builder.rb
+  class FormBuilder < ::Formtastic::FormBuilder
+
+    include ActiveAdminBootstrap::ConfigsFinder
+
+    def semantic_errors(*args)
+      template.content_tag :div, class: component_class(:form, :errors) do
+        super(*args)
+      end
+    end
+
+    private
+
+    def active_admin_config
+      @active_admin_config ||= template.active_admin_config
+    end
+
+  end
+
   # Overwrite HasManyBuilder - activeadmin/lib/active_admin/form_builder.rb
   class HasManyBuilder < SimpleDelegator
 

@@ -1,4 +1,5 @@
 .formtastic {
+  .errors { margin-bottom: 0; }
   .hidden { display: none; }
   .inline-errors { color: $danger; }
   .inline-hint { color: $secondary; }
