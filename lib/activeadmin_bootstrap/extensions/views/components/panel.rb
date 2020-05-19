@@ -8,8 +8,8 @@ module ActiveAdmin
       include ActiveAdminBootstrap::ConfigsFinder
 
       def build(title = nil, attributes = {})
-        header_class = attributes.delete(:header_class)
-        body_class   = attributes.delete(:body_class)
+        header_class = attributes[:header_class]
+        body_class   = attributes[:body_class]
         super(attributes)
         add_class "#{component_class(:panel, :wrapper)} panel".strip
 

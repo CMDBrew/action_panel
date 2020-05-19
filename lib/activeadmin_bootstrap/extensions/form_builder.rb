@@ -6,6 +6,8 @@ module ActiveAdmin
     include ActiveAdminBootstrap::ConfigsFinder
 
     def semantic_errors(*args)
+      return if @object.errors.blank?
+
       template.content_tag :div, class: component_class(:form, :errors) do
         super(*args)
       end
