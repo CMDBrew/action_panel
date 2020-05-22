@@ -3,7 +3,7 @@ To configure ActiveAdmin create an initializer
 ```ruby
 # config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
-   config.layout_class = 'layout-1-column'
+   config.layout_class = 'layout-header-top'
    config.component_class = {
      header: 'navbar-dark bg-dark navbar-expand-lg',
      title_bar: 'navbar-light bg-light',
@@ -93,7 +93,7 @@ end
 # config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
    config.namespace :admin do |admin|
-     admin.layout_class = 'layout-1-column'
+     admin.layout_class = 'layout-header-top'
      admin.component_class = { header: 'navbar-dark bg-dark navbar-expand-lg' }
      admin.action_item_display = { destroy: :edit }
      admin.action_item_prefix = { new: '<i class="mdi mdi-plus"></i>' }
@@ -108,11 +108,11 @@ end
 
 # Resource configurations
 #### Layout Class
-- Available `config.layout_class` options are: `layout-1-column`, `layout-2-column`.
-- Default value is: `layout-1-column`
+- Available `config.layout_class` options are: `layout-header-top`, `layout-header-left`.
+- Default value is: `layout-header-top`
 ```ruby
 ActiveAdmin.register AdminUser do
-  config.layout_class = 'layout-2-column'
+  config.layout_class = 'layout-header-left'
 end
 ```
 

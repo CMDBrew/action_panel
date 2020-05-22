@@ -1,4 +1,4 @@
-%layout-2-column {
+%layout-header-left {
   display: grid;
   transition: all 1s;
   grid-template-areas:
@@ -49,3 +49,6 @@
     #title_bar .navbar-toggler { display: none; }
   }
 }
+
+body.layout-header-left { @extend %layout-header-left; }
+

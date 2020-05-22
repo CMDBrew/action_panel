@@ -1,4 +1,4 @@
-%layout-1-column {
+%layout-header-top {
   grid-template-areas:
     "header"
     "title_bar"
@@ -7,3 +7,5 @@
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: 64px 64px minmax(0, 1fr);
 }
+
+body.layout-header-top { @extend %layout-header-top; }

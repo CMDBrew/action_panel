@@ -1,9 +1,6 @@
 body.logged_in {
   min-height: 100vh;
   overflow-x: hidden;
-
-  &.layout-1-column { @extend %layout-1-column; }
-  &.layout-2-column { @extend %layout-2-column; }
   #wrapper { grid-area: content; }
 
   #main,

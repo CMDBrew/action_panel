@@ -7,7 +7,7 @@ module ActiveAdminBootstrap
       component_class action_item_display action_item_prefix
     ].freeze
 
-    LAYOUT_CLASS = 'layout-1-column'.freeze
+    LAYOUT_CLASS = 'layout-header-top'.freeze
     COMPONENT_CLASS = {
       header: 'navbar-dark bg-dark navbar-expand-lg',
       title_bar: 'navbar-light bg-light',
