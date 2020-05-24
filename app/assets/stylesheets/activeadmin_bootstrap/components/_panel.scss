@@ -1,5 +1,5 @@
 .panel {
-  margin-bottom: $grid-gutter-width;
+  margin-bottom: calc(#{$grid-gutter-width} / 2);
   overflow: hidden;
 
   .panel-header {

@@ -1,0 +1,6 @@
+.card {
+  @if $card-shadow-enabled {
+    border: 0;
+    @include shadow($card-shadow);
+  }
+}

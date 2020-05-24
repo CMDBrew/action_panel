@@ -7,7 +7,7 @@ module ActiveAdminBootstrap
 
       DSL_FILES = %w[htmls].freeze
       RESOURCE_FILES = %w[htmls].freeze
-      VIEW_FILES = %w[html].freeze
+      VIEW_FILES = %w[htmls].freeze
       OTHER_FILES = %w[html].freeze
 
       include Base

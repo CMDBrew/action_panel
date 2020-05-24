@@ -1,0 +1,81 @@
+%layout-navigation-drawer-dismissible {
+  $_header-width: map-get($layout-navigation-drawer-dismissible, 'header');
+  $_title-bar-height: map-get($layout-navigation-drawer-dismissible, 'title_bar');
+
+  display: grid;
+  grid-template-areas:
+    "header title_bar"
+    "header content";
+  grid-template-columns: 0 minmax(0, 1fr);
+  grid-template-rows: $_title-bar-height minmax(0, 1fr);
+
+  #wrapper {
+    height: calc(100vh - #{map-get($layout-navigation-drawer-dismissible, 'title_bar')});
+    overflow-y: auto;
+    grid-area: content;
+  }
+
+  #title_bar {
+    grid-area: title_bar;
+
+    .navbar-toggler {
+      display: block;
+      margin-right: $spacer;
+    }
+
+    .site_title {
+      display: block;
+    }
+  }
+
+  #header {
+    display: none;
+    height: 100% !important;
+    overflow-y: auto;
+    grid-area: header;
+
+    .site_title { display: none; }
+    .navbar-toggler { display: none; }
+    .collapse { display: block !important; }
+
+    .nav-link {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    #header-nav {
+      width: 100%;
+
+      .navbar-nav {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  $_breakpoint: (nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), map-get($layout-navigation-drawer-dismissible, 'breakpoint')) - 1));
+  @include media-breakpoint-down($_breakpoint) {
+    &.header-active {
+      grid-template-columns: $_header-width 100vw;
+      #header { display: block; }
+      .float-actions { display: none; }
+    }
+  }
+
+  @include media-breakpoint-up(map-get($layout-navigation-drawer-dismissible, 'breakpoint')) {
+    grid-template-areas:
+      "title_bar title_bar"
+      "header content";
+    grid-template-columns: $_header-width minmax(0, 1fr);
+
+    #header { display: block; }
+
+    &.header-active {
+      grid-template-columns: 0 minmax(0, 1fr);
+      #header { display: none; }
+    }
+  }
+}
+
+body.layout-navigation-drawer-dismissible { @extend %layout-navigation-drawer-dismissible; }
+

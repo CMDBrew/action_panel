@@ -1,0 +1,20 @@
+.index_as_calendar {
+  .fc-header-toolbar .fc-center h2 { font-size: $h5-font-size; }
+  .btn { @include button-variant($index-as-calender-btn-bg, $index-as-calender-btn-bg); }
+  .fc-today { background: $index-as-calender-today-bg; }
+
+  .fc-day-header,
+  .fc-week-number,
+  .fc-axis,
+  .fc-day-top {
+    padding: map-get($spacers, 2) !important;
+  }
+
+  .fc-day-header,
+  .fc-week-number,
+  .fc-day-top {
+    text-align: center;
+  }
+
+  .fc-day-number { float: none !important; }
+}

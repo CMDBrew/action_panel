@@ -18,7 +18,7 @@
     & + .form-check-label .checkbox-icon::before { content: map-get($mdi-icons, 'radiobox-outline'); }
 
     &:checked + .form-check-label .checkbox-icon {
-      color: $component-active-bg;
+      color: $component-active-color;
       &::before { content: map-get($mdi-icons, 'radiobox-checked'); }
     }
   }
@@ -27,12 +27,12 @@
     & + .form-check-label .checkbox-icon::before { content: map-get($mdi-icons, 'checkbox-outline'); }
 
     &:checked + .form-check-label .checkbox-icon {
-      color: $component-active-bg;
+      color: $component-active-color;
       &::before { content: map-get($mdi-icons, 'checkbox-checked'); }
     }
 
     &:indeterminate + .form-check-label .checkbox-icon {
-      color: $component-active-bg;
+      color: $component-active-color;
       &::before { content: map-get($mdi-icons, 'checkbox-intermediate'); }
     }
   }

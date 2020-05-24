@@ -13,6 +13,14 @@ module ActiveAdmin
         cancel_link({ action: 'index' }, class: component_class(:form, :actions, :cancel))
       end
 
+      def action(method, options = {})
+        if method.eql?(:submit)
+          options.merge!(button_html: { class: component_class(:form, :actions, :submit) })
+        end
+
+        super(method, options)
+      end
+
     end
 
   end

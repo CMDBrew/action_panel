@@ -1,0 +1,94 @@
+@mixin navigation-drawer-link($_item-height) {
+  padding: map-get($spacers, 1) 0;
+
+  & > * {
+    position: relative;
+    height: $_item-height;
+    padding: map-get($spacers, 2);
+    overflow: hidden;
+    font-weight: $btn-font-weight;
+    border-radius: $border-radius;
+
+  }
+
+  & * > i.icon {
+    width: $_item-height;
+    height: $_item-height;
+    margin-right: map-get($spacers, 2);
+    line-height: $_item-height;
+    text-align: center;
+  }
+
+  &.active:not(.dropdown) > a {
+    color: $component-active-color;
+    background: $component-active-bg;
+  }
+
+  &:not(.active) > a:hover {
+    background: $component-hover-bg;
+  }
+}
+
+%layout-base {
+  .navbar-toggler {
+    margin-right: 0;
+    border: 0;
+    outline: none;
+  }
+}
+
+%layout-drawer {
+  $_item-height: 40px;
+
+  #header {
+    padding: 0;
+    border-right: $border-width solid $border-color;
+
+    .navbar-brand {
+      padding-right: $spacer;
+      padding-left: $spacer;
+    }
+
+    &.navbar-dark {
+      .nav-link,
+      .dropdown-item a {
+        color: $navbar-dark-color;
+      }
+    }
+
+    &.navbar-light {
+      .nav-link,
+      .dropdown-item a {
+        color: $navbar-light-color;
+      }
+    }
+
+    .nav-item {
+      @include navigation-drawer-link($_item-height);
+      &.dropdown .nav-link::after { content: none; }
+    }
+
+    .navbar-nav { padding: map-get($spacers, 2); }
+
+    .navbar-nav:not(:last-child) {
+      border-bottom: $border-width solid $border-color;
+    }
+
+    .dropdown-menu {
+      position: relative;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      animation: none;
+
+      .dropdown-item.active {
+        color: inherit;
+        background: transparent;
+      }
+
+      .dropdown-item {
+        @include navigation-drawer-link($_item-height);
+      }
+    }
+  }
+}

@@ -3,7 +3,8 @@ To configure ActiveAdmin create an initializer
 ```ruby
 # config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
-   config.layout_class = 'layout-header-top'
+   config.navigation = 'top'
+   config.body_class = nil
    config.component_class = {
      header: 'navbar-dark bg-dark navbar-expand-lg',
      title_bar: 'navbar-light bg-light',
@@ -74,11 +75,23 @@ ActiveAdmin.setup do |config|
        submit: 'btn btn-primary'
      }
    }
-   config.action_item_display = {
-     new: :index, edit: :show, destroy: :show
-   }
-   config.action_item_prefix = {
-     new: nil, edit: nil, destroy: nil
+   config.enable_float_actions = false
+   config.action_item_configs = {
+     new: {
+        display: :index,
+        prefix: nil,
+        class: 'btn btn-primary'
+      },
+      edit: {
+        display: :show,
+        prefix: nil,
+        class: nil
+      },
+      destroy: {
+        display: :show,
+        prefix: nil,
+        class: nil
+      }
    }
    config.site_title_proc = proc { my_custom_site_title_method }
    config.sidebar_position = 'right'
@@ -93,10 +106,11 @@ end
 # config/initializers/activeadmin_bootstrap.rb
 ActiveAdmin.setup do |config|
    config.namespace :admin do |admin|
-     admin.layout_class = 'layout-header-top'
+     admin.navigation = 'drawer'
+     admin.body_class = 'custom-class'
      admin.component_class = { header: 'navbar-dark bg-dark navbar-expand-lg' }
-     admin.action_item_display = { destroy: :edit }
-     admin.action_item_prefix = { new: '<i class="mdi mdi-plus"></i>' }
+     admin.enable_float_actions = true
+     admin.action_item_configs = { destroy: { display: :edit } }
      admin.site_title_proc = proc { my_custom_site_title_method }
      admin.sidebar_position = 'right'
      admin.filter_position = 'sidebar'
@@ -107,12 +121,21 @@ end
 ```
 
 # Resource configurations
-#### Layout Class
-- Available `config.layout_class` options are: `layout-header-top`, `layout-header-left`.
-- Default value is: `layout-header-top`
+#### Navigation
+- Available `config.navigation` options are: `top`, `drawer`.
+- Default value is: `top`
 ```ruby
 ActiveAdmin.register AdminUser do
-  config.layout_class = 'layout-header-left'
+  config.navigation = 'drawer'
+end
+```
+
+#### Float Actions
+- Enable default float actions
+- Default value is: `false`.
+```ruby
+ActiveAdmin.register AdminUser do
+  config.enable_float_actions = true
 end
 ```
 
@@ -143,27 +166,20 @@ ActiveAdmin.register AdminUser do
 end
 ```
 
-#### Action Items Display Actions
-- Available options are: `:index`, `:show`, `:edit`
+#### Action Items
 - If the key is not specified it will fallback to default.
-- You can also pass in an array (e.g. %i[edit show]).
-```ruby
-ActiveAdmin.register AdminUser do
-  config.action_item_display = {
-    new: :index, edit: :show, destroy: :show
-  }
-end
-```
 
-#### ActionItem Prefixes
-- Available options are: `index`, `show`, `edit`
-- If the key is not specified it will fallback to default.
+- Available display options are: `:index`, `:show`, `:edit`
+- You can also pass in an array for display (e.g. %i[edit show]).
 ```ruby
 ActiveAdmin.register AdminUser do
-  config.action_item_prefix = {
-    new: "<i class='mdi mdi-plus'></i>",
-    edit: "<i class='mdi mdi-square-edit-outline'></i>",
-    destroy: "<i class='mdi mdi-delete'></i>"
+  config.action_item_configs = {
+    new: {
+      prefix: "<i class='mdi mdi-plus'></i>",
+    },
+    destory: {
+      class: 'btn btn-link text-danger'
+    }
   }
 end
 ```

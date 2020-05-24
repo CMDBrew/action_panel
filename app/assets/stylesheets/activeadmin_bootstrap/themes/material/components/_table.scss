@@ -1,0 +1,33 @@
+table.table {
+  border-radius: $border-radius;
+  &:not(.index_table) { margin-bottom: 0; }
+  th { font-weight: $font-weight-bold; }
+
+  thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    a { color: inherit; }
+  }
+
+  td,
+  td {
+    &.col.col-selectable {
+      width: 48px;
+      max-width: 48px;
+    }
+  }
+}
+
+.attributes_table {
+  .table {
+    th { padding-left: 0; }
+    td { padding-right: 0; }
+
+    tr:first-child {
+      td,
+      th {
+        border-top: 0;
+      }
+    }
+  }
+}

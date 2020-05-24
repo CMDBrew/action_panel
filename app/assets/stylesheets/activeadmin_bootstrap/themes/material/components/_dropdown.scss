@@ -1,0 +1,23 @@
+@keyframes dropdown-animation {
+  from {
+    @include transform(perspective(1000px) rotate3d(1, 0, 0, 90deg)scale(0.5)translateY(0));
+  }
+
+  to {
+    @include transform(perspective(1000px)rotate3d(1, 0, 0, 0)scale(1));
+  }
+}
+@-webkit-keyframes dropdown-animation {
+  from {
+    @include transform(perspective(1000px)rotate3d(1, 0, 0, 90deg)scale(0.5)translateY(0));
+  }
+
+  to {
+    @include transform(perspective(1000px)rotate3d(1, 0, 0, 0)scale(1));
+  }
+}
+
+.dropdown-menu {
+  @include shadow($dropdown-box-shadow);
+  &:not(.datepicker) { @include animation(dropdown-animation 0.2s); }
+}

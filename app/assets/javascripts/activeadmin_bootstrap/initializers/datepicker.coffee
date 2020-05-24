@@ -1,3 +1,16 @@
+$.fn.datepicker.dates['en'] = {
+    days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    daysMin: ["S", "M", "T", "W", "T", "F", "S"],
+    months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    today: "Today",
+    clear: "Clear",
+    format: "mm/dd/yyyy",
+    titleFormat: "MM yyyy",
+    weekStart: 0
+};
+
 onDOMReady = ->
   $(document).on 'focus', 'input.datepicker:not(.hasDatepicker)', ->
     input = $(@)
@@ -9,6 +22,7 @@ onDOMReady = ->
       todayHighlight: true
       todayBtn: true
       clearBtn: true
+      locale: 'en'
       format: 'yyyy-mm-dd'
       templates:
         leftArrow: '<i class="mdi mdi-chevron-left"></i>'

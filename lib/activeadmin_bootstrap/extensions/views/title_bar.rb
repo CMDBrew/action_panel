@@ -7,13 +7,19 @@ module ActiveAdmin
 
       include ActiveAdminBootstrap::ConfigsFinder
 
-      def build(title, action_items)
+      def build(namespace, title, action_items)
         super(id: 'title_bar', class: "navbar #{title_bar_class}".strip)
         @title = title
         @action_items = action_items
+        @namespace = namespace
         build_header_toggler
+        site_title @namespace
         build_titlebar_left
         build_titlebar_right
+      end
+
+      def tag_name
+        :nav
       end
 
       def title_bar_class

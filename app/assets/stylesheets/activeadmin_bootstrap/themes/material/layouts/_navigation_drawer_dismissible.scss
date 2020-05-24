@@ -1,0 +1,6 @@
+body.layout-navigation-drawer-dismissible {
+  @extend %layout-base;
+  @extend %layout-drawer;
+
+  #title_bar .navbar-toggler { margin-left: -#{$navbar-toggler-padding-x}; }
+}

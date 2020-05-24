@@ -6,34 +6,21 @@
   .col-actions { text-align: right; }
 
   th.sortable {
-    &.sorted-asc a::before { color: $primary; }
-    &.sorted-desc a::after { color: $primary; }
+    &.sorted-asc a::before { content: map-get($mdi-icons, 'sorted-asc'); }
+    &.sorted-desc a::before { content: map-get($mdi-icons, 'sorted-desc'); }
 
     a {
       position: relative;
-      padding-left: $spacer;
-
-      &::before,
-      &::after {
-        position: absolute;
-        left: 0;
-        display: inline-block;
-        margin-left: $caret-spacing;
-        color: $nav-link-disabled-color;
-        vertical-align: $caret-vertical-align;
-        content: '';
-      }
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      * { vertical-align: middle; }
 
       &::before {
-        top: 50%;
-        @include transform(translateY(calc(-100% - 2px)));
-        @include caret-up;
-      }
-
-      &::after {
-        bottom: 50%;
-        @include transform(translateY(calc(100% + 2px)));
-        @include caret-down;
+        @extend %mdi-icon;
+        margin-right: map-get($spacers, 1);
+        text-decoration: none;
+        content: '';
       }
     }
   }
@@ -60,12 +47,12 @@
   }
 
   input:checked + .checkbox-icon {
-    color: $component-active-bg;
+    color: $component-active-color;
     &::before { content: map-get($mdi-icons, 'checkbox-checked'); }
   }
 
   input:indeterminate + .checkbox-icon {
-    color: $component-active-bg;
+    color: $component-active-color;
     &::before { content: map-get($mdi-icons, 'checkbox-intermediate'); }
   }
 }

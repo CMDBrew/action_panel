@@ -18,12 +18,16 @@ $switch-transition: 0.2s all !default;
   position: relative;
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
+  margin-top: map-get($spacers, 2);
   font-size: $font-size-base;
 
   .form-switch-label > * {
     display: inline-block;
     vertical-align: middle;
   }
+
+  .switch-text { flex: 1; }
 
   input {
     position: absolute;
@@ -37,12 +41,11 @@ $switch-transition: 0.2s all !default;
 
     clip-path: inset(50%);
 
-    + .switch-btn {
+    + .form-switch-label .switch-btn {
       position: relative;
       display: inline-block;
       height: $switch-height;
       min-width: calc(#{$switch-height} * 2);
-      margin-right: $spacer;
       line-height: $switch-height;
       text-indent: calc(calc(#{$switch-height} * 2) + 0.5rem);
       vertical-align: middle;
@@ -90,7 +93,7 @@ $switch-transition: 0.2s all !default;
       }
     }
 
-    &:checked + .switch-btn {
+    &:checked + .form-switch-label .switch-btn {
       &::before { background-color: $switch-checked-bg; }
 
       &::after {
@@ -104,17 +107,17 @@ $switch-transition: 0.2s all !default;
       }
     }
 
-    &:focus + .switch-btn::before {
+    &:focus + .form-switch-label .switch-btn::before {
       outline: none;
       box-shadow: $switch-focus-box-shadow;
     }
 
-    &:disabled + .switch-btn {
+    &:disabled + .form-switch-label .switch-btn {
       color: $switch-disabled-color;
       cursor: not-allowed;
     }
 
-    &:disabled + .switch-btn::before {
+    &:disabled + .form-switch-label .switch-btn::before {
       background-color: $switch-disabled-bg;
     }
   }

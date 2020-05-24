@@ -54,7 +54,7 @@ module ActiveAdmin
 
           div id: 'filter-toggler' do
             a span(I18n.t('active_admin.sidebars.filters')),
-              class: "filter_toggler #{component_class(:table_tools, :btn)}",
+              href: '#', class: "filter_toggler #{component_class(:table_tools, :btn)}",
               'data-toggle': 'collapse', 'data-target': '#filter'
           end
         end

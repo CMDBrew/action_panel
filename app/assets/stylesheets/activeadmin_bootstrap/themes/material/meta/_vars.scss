@@ -1,0 +1,28 @@
+// Layout
+$layout-navigation-top: (
+  'header': 56px
+) !default;
+
+// Sidebar
+$sidebar-width: 340px !default;
+// *** CUSTOM ***
+$sidebar-bg: $gray-200 !default;
+
+// Icons
+$custom-icons: (
+  'index-as-table': '\F04EB',
+  'index-as-block': '\F0DD0',
+  'index-as-calendar': '\F00EE'
+) !default;
+
+// Index As Calender
+// *** CUSTOM ***
+$index-as-calender-btn-bg: $nav-pills-bg !default;
+$index-as-calender-today-bg: $component-active-bg !default;
+
+// Snakebar
+// *** CUSTOM ***
+$snakebar-bg:            $dark !default;
+$snakebar-shadow:        $box-shadow !default;
+$snake-breakpoint:       sm !default;
+$enable-snakebar-shadow: true !default;

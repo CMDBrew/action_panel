@@ -1,0 +1,10 @@
+.paginator { display: inline-block; }
+
+.pagination {
+  font-weight: $btn-font-weight;
+  text-transform: $btn-text-transform;
+  border: $pagination-border-width solid $pagination-border-color;
+
+  .page-item .page-link { border-width: 0 0 0 $pagination-border-width; }
+  .page-item:first-child .page-link { border: 0; }
+}

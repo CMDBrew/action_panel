@@ -55,8 +55,8 @@
           display: flex;
           align-items: center;
           padding: map-get($spacers, 2);
+          color: $text-muted;
           cursor: move;
-          border-right: $input-border-width solid $input-border-color;
 
           &::before {
             @extend %mdi-icon;

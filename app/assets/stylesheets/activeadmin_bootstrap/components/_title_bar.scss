@@ -1,8 +1,10 @@
 #title_bar {
   flex-wrap: nowrap;
-  grid-area: title_bar;
 
-  .navbar-toggler { display: none; }
+  .site_title,
+  .navbar-toggler {
+    display: none;
+  }
 
   .navbar-head {
     display: flex;

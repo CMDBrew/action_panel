@@ -4,16 +4,20 @@ module ActiveAdminBootstrap
   module ConfigsDefault
 
     PERSIST_DEFAULTS = %i[
-      component_class action_item_display action_item_prefix
+      component_class action_item_configs
     ].freeze
 
-    LAYOUT_CLASS = 'layout-header-top'.freeze
+    NAVIGATION_CLASS = 'top'.freeze
     COMPONENT_CLASS = {
       header: 'navbar-dark bg-dark navbar-expand-lg',
       title_bar: 'navbar-light bg-light',
       action_item: {
         group: 'btn-group',
         item: 'btn btn-secondary'
+      },
+      float_action: {
+        group: 'fabs',
+        item: 'btn btn-primary'
       },
       flash: {
         default: 'alert',
@@ -63,11 +67,7 @@ module ActiveAdminBootstrap
           count: 'badge badge-primary'
         },
         indexes: {
-          wrapper: 'btn-group',
-          item: {
-            inactive: 'btn btn-sm btn-light',
-            active: 'btn btn-sm btn-primary'
-          }
+          tabs: 'nav-pills nav-sm'
         }
       },
       panel: {
@@ -82,8 +82,26 @@ module ActiveAdminBootstrap
         submit: 'btn btn-primary'
       }
     }.freeze
-    ACTION_ITEM_DISPLAY = { new: :index, edit: :show, destroy: :show }.freeze
-    ACTION_ITEM_PREFIX = { new: nil, edit: nil, destroy: nil }.freeze
+
+    ACTION_ITEM_CONFIGS = {
+      new: {
+        display: :index,
+        prefix: nil,
+        class: 'btn btn-primary'
+      },
+      edit: {
+        display: :show,
+        prefix: nil,
+        class: nil
+      },
+      destroy: {
+        display: :show,
+        prefix: nil,
+        class: nil
+      }
+    }.freeze
+    # ACTION_ITEM_DISPLAY = { new: :index, edit: :show, destroy: :show }.freeze
+    # ACTION_ITEM_PREFIX = { new: nil, edit: nil, destroy: nil }.freeze
     SIDEBAR_POSITION = 'right'.freeze
     FILTER_POSITION = 'sidebar'.freeze
     ACTIVE_ADMIN_COMMENT_INPUT = 'text'.freeze

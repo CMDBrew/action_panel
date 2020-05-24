@@ -1,7 +1,8 @@
-$datepicker-zindex: 1100 !default;
-$datepicker-header-bg: $white !default;
-$datepicker-option-today-bg: $gray-200 !default;
+$datepicker-zindex:           1100 !default;
+$datepicker-header-bg:        $white !default;
+$datepicker-option-today-bg:  $gray-200 !default;
 $datepicker-option-active-bg: $primary !default;
+$datepicker-option-hover-bg:  $gray-100 !default;
 $datepicker-option-old-color: $text-muted !default;
 
 .datepicker-dropdown {
@@ -34,11 +35,12 @@ $datepicker-option-old-color: $text-muted !default;
     }
 
     tr th {
-      @extend .btn;
-      @extend .btn-link;
+      @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
       display: flex !important;
       align-items: center;
       width: auto;
+      color: $link-color;
+      text-decoration: $link-decoration;
     }
   }
 
@@ -71,7 +73,7 @@ $datepicker-option-old-color: $text-muted !default;
       background: transparent !important;
       border-color: transparent !important;
 
-      &:not(.active):hover::before { @extend .bg-light; }
+      &:not(.active):hover::before { background: $datepicker-option-hover-bg; }
 
       &.active,
       &.active:hover,

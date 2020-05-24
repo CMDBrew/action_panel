@@ -20,13 +20,16 @@ module ActiveAdmin
       # rubocop:disable all
       # Adds the default New link on index
       def add_default_new_action_item
-        add_action_item :new, only: proc { action_item_display[:new] } do
+        add_action_item :new, only: proc { action_item_configs.dig(:new, :display) } do
           if controller.action_methods.include?('new') &&
-             authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class)
+             authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class) &&
+             !active_admin_config.enable_float_actions
+
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
-              safe_join([active_admin_config.action_item_prefix[:new]&.html_safe, content_tag(:span, localizer.t(:new_model))]),
-              new_resource_path, title: localizer.t(:new_model)
+              safe_join([active_admin_config.action_item_configs.dig(:new, :prefix)&.html_safe, content_tag(:span, localizer.t(:new_model))]),
+              new_resource_path, title: localizer.t(:new_model),
+              class: active_admin_config.action_item_configs.dig(:new, :class)
             )
           end
         end
@@ -34,13 +37,14 @@ module ActiveAdmin
 
       # Adds the default Edit link on show
       def add_default_edit_action_item
-        add_action_item :edit, only: proc { action_item_display[:edit] } do
+        add_action_item :edit, only: proc { action_item_configs.dig(:edit, :display) } do
           if controller.action_methods.include?('edit') &&
              authorized?(ActiveAdmin::Auth::UPDATE, resource)
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(
-              safe_join([active_admin_config.action_item_prefix[:edit]&.html_safe, content_tag(:span, localizer.t(:edit_model))]),
-              edit_resource_path(resource), title: localizer.t(:edit_model)
+              safe_join([active_admin_config.action_item_configs.dig(:edit, :prefix)&.html_safe, content_tag(:span, localizer.t(:edit_model))]),
+              edit_resource_path(resource), title: localizer.t(:edit_model),
+              class: active_admin_config.action_item_configs.dig(:edit, :class)
             )
           end
         end
@@ -48,12 +52,13 @@ module ActiveAdmin
 
       # Adds the default Destroy link on show
       def add_default_destroy_action_item
-        add_action_item :destroy, only: proc { action_item_display[:destroy] } do
+        add_action_item :destroy, only: proc { action_item_configs.dig(:destroy, :display) } do
           if controller.action_methods.include?('destroy') &&
              authorized?(ActiveAdmin::Auth::DESTROY, resource)
             link_to(
-              safe_join([active_admin_config.action_item_prefix[:destroy]&.html_safe, content_tag(:span, destroy_btn_title)]),
+              safe_join([active_admin_config.action_item_configs.dig(:destroy, :prefix)&.html_safe, content_tag(:span, destroy_btn_title)]),
               resource_path(resource), title: destroy_btn_title,
+              class: active_admin_config.action_item_configs.dig(:destroy, :class),
               method: :delete, data: { confirm: destroy_title, message: destroy_message }
             )
           end

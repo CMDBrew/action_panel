@@ -1,0 +1,28 @@
+.datepicker-dropdown {
+  padding: $spacer;
+  padding-bottom: 0;
+
+  th.dow { font-weight: $font-weight-normal; }
+  td.old { visibility: hidden; }
+
+  td.today::before {
+    border: 1px solid $body-color;
+  }
+
+  tbody tr td.day {
+    $_size: 32px;
+    width: calc(#{$_size} + #{map-get($spacers, 1)});
+    height: calc(#{$_size} + #{map-get($spacers, 1)});
+    font-size: $small-font-size;
+
+    &::before {
+      width: $_size;
+      height: $_size;
+    }
+  }
+
+  tfoot tr th {
+    font-weight: $btn-font-weight;
+    text-transform: $btn-text-transform;
+  }
+}

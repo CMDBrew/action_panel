@@ -13,6 +13,7 @@
   line-height: 1;
   vertical-align: middle;
 }
+.mdi { @extend %mdi-icon; }
 
 %text-truncate {
   overflow: hidden;
@@ -25,5 +26,3 @@
   margin: 0;
   list-style: none;
 }
-
-.mdi { @extend %mdi-icon; }

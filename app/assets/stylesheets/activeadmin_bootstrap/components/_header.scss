@@ -1,6 +1,4 @@
 #header {
-  grid-area: header;
-
   #main-nav { margin-right: auto; }
   .dropdown-item a { color: inherit; }
 
@@ -20,23 +18,5 @@
         vertical-align: middle;
       }
     }
-  }
-
-  .site_title {
-    display: block;
-
-    .title {
-      display: flex;
-      align-items: center;
-      height: 100%;
-
-      * {
-        display: inline-block;
-        vertical-align: middle;
-      }
-    }
-
-    .image { height: $header-logo-height; }
-    img + span { margin-left: map-get($spacers, 2); }
   }
 }

@@ -5,9 +5,9 @@ module Formtastic
     # Overwrite SelectInput - formtastic/lib/formtastic/inputs/select_input.rb
     class SelectInput
 
-      def select_html
-        builder.select(input_name, collection, input_options,
-                       input_html_options.reverse_merge(class: 'custom-select'))
+      def input_html_options
+        extra_input_html_options.merge(super.reject { |k, v| k == :name && v.nil? }).
+          merge(class: 'form-control custom-select')
       end
 
     end

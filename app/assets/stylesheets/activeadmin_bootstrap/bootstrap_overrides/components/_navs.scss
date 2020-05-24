@@ -1,0 +1,18 @@
+.nav {
+  &.nav-sm .nav-link {
+    padding: $btn-padding-y-sm $btn-padding-x-sm;
+    font-size: $btn-font-size-sm;
+    line-height: $btn-line-height-sm;
+  }
+
+  &.nav-lg .nav-link {
+    padding: $btn-padding-y-lg $btn-padding-x-lg;
+    font-size: $btn-font-size-lg;
+    line-height: $btn-line-height-lg;
+  }
+
+  * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

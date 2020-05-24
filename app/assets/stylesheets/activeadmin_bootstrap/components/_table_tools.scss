@@ -11,9 +11,7 @@
     padding: 0;
     margin: 0;
 
-    &:not(:first-child) {
-      padding-left: $spacer;
-    }
+    &:not(:first-child) { margin-left: $spacer; }
   }
 }
 

@@ -15,6 +15,7 @@ module ActiveAdminBootstrap
     include Initializers::BatchActions
     include Initializers::IndexAsCalendar
     include Initializers::Html
+    include Initializers::FloatActions
     include Initializers::Resource
     include Initializers::Views
     include Initializers::ViewHelpers

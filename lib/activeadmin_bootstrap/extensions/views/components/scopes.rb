@@ -31,12 +31,16 @@ module ActiveAdmin
             span scope_name(scope)
             if options[:scope_count] && scope.show_count
               span get_scope_count(scope),
-                   class: "count #{component_class(:table_tools, :scopes, :count)}".strip
+                   class: "count #{count_class(scope)} #{component_class(:table_tools, :scopes, :count)}".strip
             end
           end
         end
       end
       # rubocop:enable Metrics/AbcSize
+
+      def count_class(scope)
+        get_scope_count(scope).positive? ? 'positive' : 'empty'
+      end
 
       def classes_for_scope(scope)
         classes = ['scope', 'nav-item', scope.id]

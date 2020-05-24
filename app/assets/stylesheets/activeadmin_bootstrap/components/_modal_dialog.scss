@@ -22,10 +22,10 @@ body.modal-open {
   position: fixed;
   z-index: $zindex-modal;
   width: $modal-md !important;
+  max-width: calc(100vw - #{$spacer} * 2);
   border: 0;
-  @if $enable-shadows {
-    @include shadow($modal-content-box-shadow-xs);
-  }
+
+  @include shadow($modal-content-box-shadow-sm-up);
 
   .ui-dialog-titlebar {
     @extend .modal-header;

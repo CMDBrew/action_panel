@@ -8,7 +8,6 @@ module ActiveAdmin
       # activeadmin/lib/active_admin/inputs/filters/date_range_input.rb
       class DateRangeInput < ::Formtastic::Inputs::StringInput
 
-        # rubocop:disable Rails/OutputSafety
         def to_html
           input_wrapping do
             [
@@ -17,7 +16,6 @@ module ActiveAdmin
             ].join("\n")&.html_safe
           end
         end
-        # rubocop:enable Rails/OutputSafety
 
         def input_html_options(input_name = gt_input_name, placeholder = gt_input_placeholder)
           {

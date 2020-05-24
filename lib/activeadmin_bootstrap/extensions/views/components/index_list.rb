@@ -10,9 +10,13 @@ module ActiveAdmin
       include ActiveAdminBootstrap::ConfigsFinder
       include ::ActiveAdmin::Helpers::Collection
 
+      def tag_name
+        :div
+      end
+
       def default_class_name
         'indexes table_tools_segmented_control '\
-          "#{component_class(:table_tools, :indexes, :wrapper)}".strip
+          "nav #{component_class(:table_tools, :indexes, :tabs)}".strip
       end
 
       protected
@@ -22,17 +26,15 @@ module ActiveAdmin
         url_with_params = url_for(params.merge(as: index_class.index_name.to_sym))
         name = index_class.index_name
 
-        a href: url_with_params, class: classes_for_link(index_class), title: name do
+        a href: url_with_params, class: "nav #{classes_for_link(index_class)} index-mode-#{name}", title: name do
           span I18n.t("active_admin.index_list.#{name}", default: name.to_s.titleize)
         end
       end
 
       def classes_for_link(index_class)
-        if current_index?(index_class)
-          component_class(:table_tools, :indexes, :item, :active)
-        else
-          component_class(:table_tools, :indexes, :item, :inactive)
-        end
+        klass = 'nav-item nav-link'
+        klass += ' active' if current_index?(index_class)
+        klass
       end
 
     end

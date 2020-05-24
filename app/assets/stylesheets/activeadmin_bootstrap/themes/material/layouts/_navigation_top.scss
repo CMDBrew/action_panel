@@ -1,0 +1,22 @@
+body.layout-navigation-top {
+  #header {
+    @extend %layout-base;
+    @include box-shadow($box-shadow-sm);
+
+    &.navbar-dark .nav-item.active { @include tab-underline($navbar-dark-active-color); }
+    &.navbar-light .nav-item.active { @include tab-underline($navbar-light-active-color); }
+    .navbar-toggler { margin-right: -#{$navbar-toggler-padding-x}; }
+
+    #utility-nav .dropdown-menu {
+      right: 0;
+      left: auto;
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: map-get($layout-navigation-top, 'header');
+    }
+  }
+}

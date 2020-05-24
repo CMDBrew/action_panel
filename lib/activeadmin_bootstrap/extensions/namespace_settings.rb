@@ -8,17 +8,20 @@ module ActiveAdmin
     # The default site_title content
     register :site_title_proc, nil
 
-    # The default component_class
-    register :layout_class, Configs::LAYOUT_CLASS
+    # The default float_actions
+    register :enable_float_actions, false
+
+    # The default body_class
+    register :body_class, nil
+
+    # The default navigation style
+    register :navigation, Configs::NAVIGATION_CLASS
 
     # The default component_class
     register :component_class, Configs::COMPONENT_CLASS
 
-    # The default action_item display actions
-    register :action_item_display, Configs::ACTION_ITEM_DISPLAY
-
-    # The default action_item prefix
-    register :action_item_prefix, Configs::ACTION_ITEM_PREFIX
+    # The default action_item configs
+    register :action_item_configs, Configs::ACTION_ITEM_CONFIGS
 
     # The default sidebar position
     register :sidebar_position, Configs::SIDEBAR_POSITION

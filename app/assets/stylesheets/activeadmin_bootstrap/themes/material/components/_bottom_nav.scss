@@ -1,0 +1,69 @@
+@keyframes snakebar-animation {
+  from {
+    @include transform(translateY(calc(100% + 100px)));
+  }
+
+  to {
+    @include transform(translateY(0));
+  }
+}
+
+@-webkit-keyframes snakebar-animation {
+  from {
+    @include transform(translateY(calc(100% + 100px)));
+  }
+
+  to {
+    @include transform(translateY(0));
+  }
+}
+
+.flashes {
+  position: fixed;
+  display: none;
+}
+
+#bottom-nav {
+  position: fixed;
+  right: map-get($spacers, 3);
+  bottom: map-get($spacers, 3);
+  left: map-get($spacers, 3);
+  z-index: $zindex-fixed;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  pointer-events: none;
+  & > * { pointer-events: all; }
+
+  .btn-fab + .btn-fab { margin-bottom: map-get($spacers, 2); }
+
+  .flash {
+    position: relative;
+    z-index: $zindex-fixed;
+    display: none;
+    margin-right: $spacer;
+    margin-bottom: 0;
+    color: color-yiq($snakebar-bg);
+    background: $snakebar-bg;
+    border-radius: $border-radius;
+
+    @if $enable-snakebar-shadow {
+      @include shadow($snakebar-shadow);
+    }
+
+    &.active {
+      display: block;
+      @include animation(snakebar-animation 0.2s);
+    }
+  }
+
+  @include media-breakpoint-down($snake-breakpoint) {
+    flex-direction: column;
+
+    .flash {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: $spacer;
+    }
+  }
+}

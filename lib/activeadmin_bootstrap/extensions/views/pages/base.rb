@@ -33,21 +33,27 @@ module ActiveAdmin
           end
         end
 
-        # rubocop:disable Metrics/AbcSize
         def build_page
           within body(class: body_classes) do
-            header active_admin_namespace, current_menu
-            title_bar title, action_items_for_action
+            header(active_admin_namespace, current_menu)
+            title_bar(active_admin_namespace, title, action_items_for_action)
 
             div id: 'wrapper' do
               build_flash_messages
               build_unsupported_browser
               build_page_content
-              build_htmls unless skip_htmls?
+              build_extra_components
             end
           end
         end
-        # rubocop:enable Metrics/AbcSize
+
+        def build_extra_components
+          div id: 'bottom-nav' do
+            float_actions(float_actions_for_action) unless skip_float_actions?
+          end
+
+          htmls(htmls_for_action) unless skip_htmls?
+        end
 
         def build_page_content
           div id: 'active_admin_content' do
@@ -72,24 +78,26 @@ module ActiveAdmin
           div sidebar(sidebar_sections_for_action, class: 'container'), id: 'sidebar'
         end
 
-        def build_htmls
-          div id: 'htmls' do
-            htmls_for_action.collect do |section|
-              html(section)
-            end
-          end
-        end
-
         def htmls_for_action
           if active_admin_config&.htmls?
             active_admin_config.htmls_for(params[:action], self)
-          else
-            []
+          else []
+          end
+        end
+
+        def float_actions_for_action
+          if active_admin_config&.float_actions?
+            active_admin_config.float_actions_for(params[:action], self)
+          else []
           end
         end
 
         def skip_htmls?
           htmls_for_action.empty? || assigns[:skip_htmls] == true
+        end
+
+        def skip_float_actions?
+          float_actions_for_action.empty? || assigns[:skip_float_actions] == true
         end
 
         def body_classes
@@ -98,7 +106,8 @@ module ActiveAdmin
             params[:controller].tr('/', '_'),
             'active_admin', 'logged_in',
             active_admin_namespace.name.to_s + '_namespace',
-            active_admin_config.layout_class
+            active_admin_config.body_class,
+            "layout-navigation-#{active_admin_config.navigation}"
           ]
         end
 

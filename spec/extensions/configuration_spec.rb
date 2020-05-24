@@ -13,8 +13,7 @@ RSpec.describe ActiveAdmin::Views::Header do
       expect(application.active_admin_comment_input).to eq(defaults::ACTIVE_ADMIN_COMMENT_INPUT)
     end
 
-    it { expect(application.action_item_display).to eq(defaults::ACTION_ITEM_DISPLAY) }
-    it { expect(application.action_item_prefix).to eq(defaults::ACTION_ITEM_PREFIX) }
+    it { expect(application.action_item_configs).to eq(defaults::ACTION_ITEM_CONFIGS) }
     it { expect(application.pagination_exclusion).to eq(defaults::PAGINATION_EXCLUSION) }
   end
 
@@ -24,8 +23,9 @@ RSpec.describe ActiveAdmin::Views::Header do
       application.sidebar_position = 'left'
       application.filter_position = 'main'
       application.active_admin_comment_input = 'string'
-      application.action_item_display = { destroy: %i[show edit] }
-      application.action_item_prefix = { new: 'fake_icon' }
+      application.action_item_configs = {
+        new: { prefix: 'fake_icon' }, destroy: { display: %i[show edit] }
+      }
       application.pagination_exclusion = %i[index_as_custom]
     end
 
@@ -34,11 +34,8 @@ RSpec.describe ActiveAdmin::Views::Header do
     it { expect(application.sidebar_position).to eq('left') }
     it { expect(application.filter_position).to eq('main') }
     it { expect(application.active_admin_comment_input).to eq('string') }
-    it do
-      expect(application.action_item_display).
-        to eq(new: :index, edit: :show, destroy: %i[show edit])
-    end
-    it { expect(application.action_item_prefix).to eq(new: 'fake_icon', edit: nil, destroy: nil) }
+    it { expect(application.action_item_configs.dig(:new, :prefix)).to eq('fake_icon') }
+    it { expect(application.action_item_configs.dig(:destroy, :display)).to eq(%i[show edit]) }
     it { expect(application.pagination_exclusion).to eq(%i[index_as_custom]) }
   end
 
@@ -50,8 +47,9 @@ RSpec.describe ActiveAdmin::Views::Header do
       namespace.sidebar_position = 'left'
       namespace.filter_position = 'main'
       namespace.active_admin_comment_input = 'string'
-      namespace.action_item_display = { destroy: %i[show edit] }
-      namespace.action_item_prefix = { new: 'fake_icon' }
+      namespace.action_item_configs = {
+        new: { prefix: 'fake_icon' }, destroy: { display: %i[show edit] }
+      }
       namespace.pagination_exclusion = %i[index_as_custom]
     end
 
@@ -60,11 +58,8 @@ RSpec.describe ActiveAdmin::Views::Header do
     it { expect(namespace.sidebar_position).to eq('left') }
     it { expect(namespace.filter_position).to eq('main') }
     it { expect(namespace.active_admin_comment_input).to eq('string') }
-    it do
-      expect(namespace.action_item_display).
-        to eq(new: :index, edit: :show, destroy: %i[show edit])
-    end
-    it { expect(namespace.action_item_prefix).to eq(new: 'fake_icon', edit: nil, destroy: nil) }
+    it { expect(namespace.action_item_configs.dig(:new, :prefix)).to eq('fake_icon') }
+    it { expect(namespace.action_item_configs.dig(:destroy, :display)).to eq(%i[show edit]) }
     it { expect(namespace.pagination_exclusion).to eq(%i[index_as_custom]) }
   end
 
@@ -76,8 +71,9 @@ RSpec.describe ActiveAdmin::Views::Header do
         config.component_class = { header: 'navbar-light bg-light' }
         config.sidebar_position = 'left'
         config.filter_position = 'main'
-        config.action_item_display = { destroy: %i[show edit] }
-        config.action_item_prefix = { new: 'fake_icon' }
+        config.action_item_configs = {
+          new: { prefix: 'fake_icon' }, destroy: { display: %i[show edit] }
+        }
       end
     end
 
@@ -85,10 +81,7 @@ RSpec.describe ActiveAdmin::Views::Header do
     it { expect(resource.component_class[:title_bar]).to eq('navbar-light bg-light') }
     it { expect(resource.sidebar_position).to eq('left') }
     it { expect(resource.filter_position).to eq('main') }
-    it do
-      expect(resource.action_item_display).
-        to eq(new: :index, edit: :show, destroy: %i[show edit])
-    end
-    it { expect(resource.action_item_prefix).to eq(new: 'fake_icon', edit: nil, destroy: nil) }
+    it { expect(resource.action_item_configs.dig(:new, :prefix)).to eq('fake_icon') }
+    it { expect(resource.action_item_configs.dig(:destroy, :display)).to eq(%i[show edit]) }
   end
 end

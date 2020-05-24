@@ -19,7 +19,7 @@
 #= require jquery_ujs
 #= require popper
 #= require bootstrap
-#= require bootstrap-datepicker
+#= require bootstrap-datepicker/core
 #= require moment
 #= require moment/es.js
 #= require fullcalendar
@@ -46,12 +46,10 @@ window.ActiveAdminBootstrap = {}
   $(element).find('.tabs').aaTabs()
   $(element).find('.form-control.select2').aaSelect2()
   $(element).find('.form-control.minicolors').aaColorPicker()
+  $(element).find('.header-toggler').aaHeaderToggler()
 
 onReady = ->
   $('#active_admin_content .dropdown:not(.filter-dropdown)').aaDropdown()
-  $('.header-toggler').on 'click', (e)->
-    e.preventDefault();
-    $('body').toggleClass 'header-active'
 
 $(document).ready(->
     onReady()

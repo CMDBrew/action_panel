@@ -1,0 +1,9 @@
+#header {
+  position: relative;
+  z-index: $zindex-fixed;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .nav-link { font-weight: $btn-font-weight; }
+}
+
