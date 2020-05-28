@@ -5,27 +5,19 @@ module ActiveadminBootstrap
     # Install Gem
     class InstallGenerator < Rails::Generators::Base
 
-      desc 'Installs ActiveAdminBootstrap'
+      desc 'Installs ActiveAdminBootstrap and generates the necessary migrations'
+      argument :name, type: :string, default: 'material'
+
       source_root File.expand_path('templates', __dir__)
 
       def replace_assets
-        gsub_file(
-          'app/assets/javascripts/active_admin.js',
-          'active_admin/',
-          'activeadmin_bootstrap/'
-        )
-        gsub_file(
-          'app/assets/stylesheets/active_admin.scss',
-          'active_admin/',
-          'activeadmin_bootstrap/'
-        )
-      end
-
-      def create_initializers
-        template(
-          'activeadmin_bootstrap.erb',
-          'config/initializers/activeadmin_bootstrap.rb'
-        )
+        if name.present?
+          generate 'activeadmin_bootstrap:theme', name
+        else
+          template 'active_admin.js', 'app/assets/javascripts/active_admin.js'
+          template 'active_admin.scss', 'app/assets/stylesheets/active_admin.scss'
+          template 'activeadmin_bootstrap.rb.erb', 'config/initializers/activeadmin_bootstrap.rb'
+        end
       end
 
     end

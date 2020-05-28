@@ -1,0 +1,6 @@
+class DropBodyForActiveAdminComments < ActiveRecord::Migration[<%= ActiveRecord::Migration.current_version.to_s %>]
+  def change
+    # If you need migrate existing comments you should do it first
+    remove_column :active_admin_comments, :body, :text
+  end
+end
