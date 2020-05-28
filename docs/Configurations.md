@@ -75,7 +75,6 @@ ActiveAdmin.setup do |config|
        submit: 'btn btn-primary'
      }
    }
-   config.enable_float_actions = false
    config.action_item_configs = {
      new: {
         display: :index,
@@ -109,7 +108,6 @@ ActiveAdmin.setup do |config|
      admin.navigation = 'drawer'
      admin.body_class = 'custom-class'
      admin.component_class = { header: 'navbar-dark bg-dark navbar-expand-lg' }
-     admin.enable_float_actions = true
      admin.action_item_configs = { destroy: { display: :edit } }
      admin.site_title_proc = proc { my_custom_site_title_method }
      admin.sidebar_position = 'right'
@@ -127,15 +125,6 @@ end
 ```ruby
 ActiveAdmin.register AdminUser do
   config.navigation = 'drawer'
-end
-```
-
-#### Float Actions
-- Enable default float actions
-- Default value is: `false`.
-```ruby
-ActiveAdmin.register AdminUser do
-  config.enable_float_actions = true
 end
 ```
 
@@ -158,11 +147,11 @@ end
 ```
 
 #### Filter Position
-- Available `config.filter_position` options are: `sidebar`, `main`
+- Available `config.filter_position` options are: `sidebar`, `table_tools`
 - Default value is: `sidebar`
 ```ruby
 ActiveAdmin.register AdminUser do
-  config.filter_position = 'main'
+  config.filter_position = 'table_tools'
 end
 ```
 

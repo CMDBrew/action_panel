@@ -22,8 +22,7 @@ module ActiveAdmin
       def add_default_new_action_item
         add_action_item :new, only: proc { action_item_configs.dig(:new, :display) } do
           if controller.action_methods.include?('new') &&
-             authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class) &&
-             !active_admin_config.enable_float_actions
+             authorized?(ActiveAdmin::Auth::CREATE, active_admin_config.resource_class)
 
             localizer = ActiveAdmin::Localizers.resource(active_admin_config)
             link_to(

@@ -6,6 +6,7 @@ module ActiveAdmin
     class ActionItems < ActiveAdmin::Component
 
       include ActiveAdminBootstrap::ConfigsFinder
+      include ActiveAdminBootstrap::MdiIcon
 
       def build(action_items)
         action_items.each do |action_item|

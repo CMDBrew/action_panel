@@ -8,6 +8,7 @@ module ActiveAdmin
       builder_method :float_actions
 
       include ActiveAdminBootstrap::ConfigsFinder
+      include ActiveAdminBootstrap::MdiIcon
 
       def build(float_actions)
         float_actions.each do |float_action|
@@ -19,7 +20,7 @@ module ActiveAdmin
 
       def link_to(*args, &block)
         options = args.extract_options!
-        options[:class] ||= component_class(:float_action, :item)
+        options[:class] = "#{component_class(:float_action, :item)} #{options[:class]}".strip
         super(*args, options, &block)
       end
 

@@ -46,6 +46,12 @@ f.input :category,
         }
 ```
 
+# Auto Format Input
+For more information please see https://nosir.github.io/cleave.js/
+```ruby
+f.input :name, input_html: { data: { toggle: 'format', 'format-options': { 'blocks': [3, 3, 3], 'uppercase': true } } }
+```
+
 # JustDateTimePicker Input
 For more information please see https://github.com/mspanc/just-datetime-picker
 ```ruby

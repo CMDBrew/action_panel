@@ -16,6 +16,18 @@ module ActiveAdmin
         build_sidebar_content
       end
 
+      def default_wrapper_class
+        "#{component_class(:sidebar_section, :wrapper)} panel".strip
+      end
+
+      def default_header_class
+        "#{component_class(:sidebar_section, :header)} panel-header".strip
+      end
+
+      def default_body_class
+        "#{component_class(:sidebar_section, :body)} panel-body".strip
+      end
+
     end
 
   end

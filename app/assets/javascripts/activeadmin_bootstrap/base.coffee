@@ -34,6 +34,7 @@
 #= require active_admin/lib/table-checkbox-toggler
 #= require active_admin/lib/has_many
 #= require active_admin/initializers/filters
+#= require_tree ./vendors
 #= require_tree ./lib
 #= require_tree ./initializers
 
@@ -43,10 +44,13 @@ window.ActiveAdminBootstrap = {}
 @onDocReady = (element)->
   $(element).find('#main').aaBatchAction()
   $(element).find('.custom-file-input-group').aaFileInput()
+  $(element).find('.custom-password-input-group').aaPasswordInput()
   $(element).find('.tabs').aaTabs()
   $(element).find('.form-control.select2').aaSelect2()
   $(element).find('.form-control.minicolors').aaColorPicker()
   $(element).find('.header-toggler').aaHeaderToggler()
+  $(element).find('[data-toggle="format"]').aaInputFormatter()
+  $(element).find('[data-toggle="tooltip"]').tooltip()
 
 onReady = ->
   $('#active_admin_content .dropdown:not(.filter-dropdown)').aaDropdown()

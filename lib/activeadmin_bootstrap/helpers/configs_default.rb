@@ -17,7 +17,7 @@ module ActiveAdminBootstrap
       },
       float_action: {
         group: 'fabs',
-        item: 'btn btn-primary'
+        item: 'btn-fab'
       },
       flash: {
         default: 'alert',
@@ -69,6 +69,11 @@ module ActiveAdminBootstrap
         indexes: {
           tabs: 'nav-pills nav-sm'
         }
+      },
+      sidebar_section: {
+        wrapper: 'card',
+        header: 'card-header',
+        body: 'card-body'
       },
       panel: {
         wrapper: 'card',

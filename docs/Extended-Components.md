@@ -1,3 +1,9 @@
+# Menu
+Add icon to menu
+```ruby
+menu priority: 1, mdi_icon: 'plus'
+```
+
 # Form
 Allowing multiple forms inside the form page without using partial
 ```ruby
@@ -111,8 +117,22 @@ end
 # ActionItems
 Added new options group for btn-groups. Default priority and group are both 99
 ```ruby
-action_item :view, only: :index, priority: 1, group: 10 do
-  link_to 'my awesome link', "#"
+action_item :new, only: :index, priority: 1, group: 10 do
+  link_to "#", class: 'btn btn-primary' do
+    mdi_icon('plus') + 'New User'
+  end
+end
+```
+
+# FloatActions
+Added new options group for btn-groups. Default priority and group are both 99
+```ruby
+float_action :new, only: :index, priority: 1 do
+  link_to mdi_icon('plus'), '#', title: 'New User', class: 'btn btn-primary', data: { toggle: 'tooltip', placement: 'left' }
+end
+
+float_action :new, only: :index, priority: 2 do
+  link_to mdi_icon('plus'), '#', title: 'test', class: 'btn btn-light btn-sm', data: { toggle: 'tooltip', placement: 'left' }
 end
 ```
 

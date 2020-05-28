@@ -28,9 +28,10 @@ require 'sassc-rails'
 # Engine
 module ActiveAdminBootstrap
 
-  autoload :VERSION, 'activeadmin_bootstrap/version'
-  autoload :ConfigsFinder, 'activeadmin_bootstrap/helpers/configs_finder'
+  autoload :VERSION,        'activeadmin_bootstrap/version'
+  autoload :ConfigsFinder,  'activeadmin_bootstrap/helpers/configs_finder'
   autoload :ConfigsDefault, 'activeadmin_bootstrap/helpers/configs_default'
+  autoload :MdiIcon,        'activeadmin_bootstrap/helpers/mdi_icon'
 
   def self.rails6?
     Rails.version.start_with? '6'

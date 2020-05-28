@@ -8,7 +8,6 @@ module ActiveAdmin
       class Index < Base
 
         include ActiveAdminBootstrap::ConfigsFinder
-        FILTER_OPTS = %w[sidebar main].freeze
 
         def main_content
           unless FILTER_OPTS.include?(active_admin_config.filter_position)

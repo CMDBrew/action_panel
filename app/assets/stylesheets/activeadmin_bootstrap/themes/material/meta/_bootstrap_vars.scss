@@ -128,6 +128,12 @@ $card-cap-bg:         transparent !default;
 $card-shadow-enabled: $enable-shadows !default;
 $card-shadow:         0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,0,0,.12) !default;
 
+// 841: Tooltips
+$tooltip-bg:           rgba($dark, 0.87) !default;
+$tooltip-arrow-width:  0 !default;
+$tooltip-arrow-height: 0 !default;
+$tooltip-margin:       0.5rem !default;
+
 // 910: Badges
 $badge-font-size:     12px !default;
 $badge-padding-x:     0.5rem !default;

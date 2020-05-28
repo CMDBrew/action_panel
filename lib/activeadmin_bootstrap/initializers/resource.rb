@@ -5,7 +5,7 @@ module ActiveAdminBootstrap
     # Resource Initializers
     module Resource
 
-      FILES = %w[action_items].freeze
+      FILES = %w[action_items menu_item].freeze
 
       include Base
       extend ActiveSupport::Concern

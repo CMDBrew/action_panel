@@ -3,3 +3,34 @@
   @extend %text-truncate;
   padding-right: 20%;
 }
+
+.custom-password-input-group {
+  $_size: calc(#{$mdi-icon-size} + 2 * #{map-get($spacers, 2)});
+  position: relative;
+
+  &.show {
+    .icon-show { display: none; }
+    .icon-hide { display: block; }
+  }
+
+  .icon-show { display: block; }
+  .icon-hide { display: none; }
+
+  .form-control {
+    padding-right: $_size;
+    margin-right: 0 !important;
+  }
+
+  .password-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $_size;
+    color: $input-placeholder-color;
+  }
+}

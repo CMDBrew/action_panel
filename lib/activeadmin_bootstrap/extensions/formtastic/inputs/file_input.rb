@@ -41,10 +41,14 @@ module Formtastic
         template.content_tag(:div, class: 'input-group') do
           template.content_tag(:div, class: 'custom-file') do
             builder.file_field(method, input_html_options) +
-              template.content_tag(:label, ::I18n.t('activeadmin_bootstrap.form.placeholders.file'),
+              template.content_tag(:label, i18n_label,
                                    class: 'custom-file-label', for: input_html_options[:id])
           end
         end
+      end
+
+      def i18n_label
+        ::I18n.t('activeadmin_bootstrap.formtastic.custom_file.upload')
       end
 
       def input_html_options

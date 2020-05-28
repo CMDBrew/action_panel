@@ -4,7 +4,7 @@ module ActiveAdmin
   class Resource
 
     attr_writer :sidebar_position, :filter_position, :body_class, :component_class,
-                :action_item_configs, :enable_float_actions, :navigation
+                :action_item_configs, :navigation
 
     def body_class
       @body_class || namespace.body_class
@@ -12,10 +12,6 @@ module ActiveAdmin
 
     def navigation
       @navigation || namespace.navigation
-    end
-
-    def enable_float_actions
-      @enable_float_actions || namespace.enable_float_actions
     end
 
     def component_class

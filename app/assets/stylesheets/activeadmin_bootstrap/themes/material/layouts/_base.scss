@@ -1,8 +1,10 @@
 @mixin navigation-drawer-link($_item-height) {
   padding: map-get($spacers, 1) 0;
 
-  & > * {
+  & > a {
     position: relative;
+    display: flex;
+    align-items: center;
     height: $_item-height;
     padding: map-get($spacers, 2);
     overflow: hidden;
@@ -11,11 +13,8 @@
 
   }
 
-  & * > i.icon {
-    width: $_item-height;
-    height: $_item-height;
+  & * > i.mdi-icon {
     margin-right: map-get($spacers, 2);
-    line-height: $_item-height;
     text-align: center;
   }
 

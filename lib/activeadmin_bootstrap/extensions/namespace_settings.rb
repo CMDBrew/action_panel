@@ -8,9 +8,6 @@ module ActiveAdmin
     # The default site_title content
     register :site_title_proc, nil
 
-    # The default float_actions
-    register :enable_float_actions, false
-
     # The default body_class
     register :body_class, nil
 

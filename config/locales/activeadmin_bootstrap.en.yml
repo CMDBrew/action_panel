@@ -1,8 +1,8 @@
 en:
   activeadmin_bootstrap:
-    form:
-      placeholders:
-        file: Choose File
-        switch:
-          'true': 'Yes'
-          'false': 'No'
+    formtastic:
+      custom_file:
+        upload: Choose File
+      custom_password:
+        show: Show
+        hide: Hide

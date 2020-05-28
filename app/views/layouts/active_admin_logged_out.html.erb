@@ -33,8 +33,8 @@
               <% end %>
             </div>
             <div class="card panel">
+              <h5 class="card-header"><%= yield :title %></h5>
               <div class="card-body">
-                <h5 class="card-title"><%= yield :title %></h5>
                 <%= flashes_html %>
                 <%= yield %>
               </div>

@@ -5,6 +5,8 @@ module ActiveAdminBootstrap
 
     class ConfigError < StandardError; end
 
+    FILTER_OPTS = %w[sidebar table_tools].freeze
+
     def component_class(*args)
       components_configs.component_class.dig(*args).to_s
     rescue TypeError => _e

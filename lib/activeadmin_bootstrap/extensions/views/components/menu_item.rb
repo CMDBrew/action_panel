@@ -5,6 +5,10 @@ module ActiveAdmin
     # Overwrite MenuItem activeadmin/lib/active_admin/views/components/menu_item.rb
     class MenuItem < Component
 
+      include ActiveAdminBootstrap::MdiIcon
+
+      attr_reader :icon
+
       # rubocop:disable all
       def build(item, options = {})
         dropdown = options.delete(:dropdown) { false }
@@ -12,6 +16,7 @@ module ActiveAdmin
         super(options.merge(id: item.id))
         @label    = helpers.render_in_context self, item.label
         @url      = helpers.render_in_context self, item.url
+        @icon     = helpers.render_in_context self, item.mdi_icon
         @priority = item.priority
         @submenu  = nil
 
@@ -27,9 +32,9 @@ module ActiveAdmin
         end
 
         if url
-          text_node link_to label, url, item.html_options
+          text_node link_to menu_label, url, item.html_options
         else
-          span label, item.html_options
+          span menu_label, item.html_options
         end
 
         return unless item.items.any?
@@ -37,6 +42,15 @@ module ActiveAdmin
         @submenu = menu(item, dropdown: true)
       end
       # rubocop:enable all
+
+      private
+
+      def menu_label
+        html = []
+        html.push mdi_icon(icon) if icon.present?
+        html.push label
+        safe_join html
+      end
 
     end
 
