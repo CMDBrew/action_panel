@@ -55,6 +55,17 @@ window.ActiveAdminBootstrap = {}
 onReady = ->
   $('#active_admin_content .dropdown:not(.filter-dropdown)').aaDropdown()
 
+  # Scroll Detection
+  $(window).scroll ->
+    $('body').addClass 'scrolling'
+
+  $('#wrapper').scroll ->
+    $('body').addClass 'scrolling'
+
+  setInterval (->
+    $('body').removeClass 'scrolling'
+  ), 500
+
 $(document).ready(->
     onReady()
     onDocReady(document)
