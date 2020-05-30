@@ -84,12 +84,10 @@ module ActiveAdmin
                            class: "button has_many_remove #{destroy_class}"
         end
       elsif allow_destroy?(form_builder.object)
-        form_builder.input(
-          :_destroy,
-          as: :boolean,
-          wrapper_html: { class: "button has_many_delete #{destroy_class}" },
-          label: I18n.t('active_admin.has_many_delete')
-        )
+        form_builder.input(:_destroy,
+                           as: :boolean,
+                           wrapper_html: { class: "button has_many_delete #{destroy_class}" },
+                           label: I18n.t('active_admin.has_many_delete'))
       end
 
       contents

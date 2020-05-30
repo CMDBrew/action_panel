@@ -1,10 +1,10 @@
 table.table {
   border-radius: $border-radius;
   &:not(.index_table) { margin-bottom: 0; }
+  &:not(.table-bordered) th { border-top: 0; }
   th { font-weight: $font-weight-bold; }
 
   thead th {
-    border-top: 0;
     border-bottom-width: 1px;
     a { color: inherit; }
   }
@@ -19,11 +19,11 @@ table.table {
 }
 
 .attributes_table {
-  .table {
-    th { padding-left: 0; }
-    td { padding-right: 0; }
+  & > table.table {
+    & > tbody > tr > th { padding-left: 0; }
+    & > tbody > tr > td { padding-right: 0; }
 
-    tr:first-child {
+    & > tbody > tr:first-child {
       td,
       th {
         border-top: 0;

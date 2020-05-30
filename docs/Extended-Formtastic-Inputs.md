@@ -51,6 +51,16 @@ For more information please see https://nosir.github.io/cleave.js/
 ```ruby
 f.input :name, input_html: { data: { toggle: 'format', 'format-options': { 'blocks': [3, 3, 3], 'uppercase': true } } }
 ```
+To add country phone format validation. Please add the country format js file (https://github.com/nosir/cleave.js/tree/master/dist/addons) in your `vendor/assets/javascripts` folder.
+```ruby
+f.input :phone,
+        input_html: {
+          data: {
+            toggle: 'format',
+            'format-options': { 'phone': true, 'phoneRegionCode': 'us' }
+          }
+        }
+```
 
 # JustDateTimePicker Input
 For more information please see https://github.com/mspanc/just-datetime-picker

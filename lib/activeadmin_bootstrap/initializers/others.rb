@@ -5,7 +5,7 @@ module ActiveAdminBootstrap
     # Others Initializers
     module Others
 
-      FILES = %w[resource page form_builder view_helpers].freeze
+      FILES = %w[resource page form_builder view_helpers base_controller].freeze
 
       include Base
       extend ActiveSupport::Concern

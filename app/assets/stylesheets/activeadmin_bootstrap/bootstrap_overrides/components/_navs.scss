@@ -1,4 +1,6 @@
 .nav {
+  margin-bottom: $spacer;
+
   &.nav-sm .nav-link {
     padding: $btn-padding-y-sm $btn-padding-x-sm;
     font-size: $btn-font-size-sm;

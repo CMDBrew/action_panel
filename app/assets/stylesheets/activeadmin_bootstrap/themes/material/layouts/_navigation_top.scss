@@ -17,6 +17,7 @@ body.layout-navigation-top {
       display: flex;
       align-items: center;
       height: map-get($layout-navigation-top, 'header');
+      .mdi-icon { margin-right: map-get($spacers, 1); }
     }
 
     &.navbar-expand {
