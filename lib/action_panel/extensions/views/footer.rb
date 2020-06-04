@@ -5,13 +5,15 @@ module ActiveAdmin
     # Overwrite Footer - lib/active_admin/views/footer.rb
     class Footer < Component
 
-      # private
+      private
 
-      # def powered_by_message
-      #   I18n.t('active_admin.powered_by',
-      #          active_admin: link_to('ActionPanel', 'https://ActionPanel.io'),
-      #          version: ActionPanel::VERSION).html_safe
-      # end
+      def powered_by_message
+        I18n.t('action_panel.footer.powered_by',
+               name:
+                 link_to('ActionPanel', 'https://cmdbrew.com/action_panel',
+                         target: '_blank', rel: 'noopener'),
+               version: ActionPanel::VERSION).html_safe
+      end
 
     end
 

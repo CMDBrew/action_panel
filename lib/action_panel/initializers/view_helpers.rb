@@ -5,7 +5,7 @@ module ActionPanel
     # ViewHelpers Initializers
     module ViewHelpers
 
-      FILES = %w[base notice].freeze
+      FILES = %w[base components notice].freeze
 
       include Base
       extend ActiveSupport::Concern

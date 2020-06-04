@@ -6,3 +6,5 @@ en:
       custom_password:
         show: Show
         hide: Hide
+    footer:
+      powered_by: Powered by %{name} %{version}

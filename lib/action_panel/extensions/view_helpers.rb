@@ -2,6 +2,7 @@
 module ActiveAdmin::ViewHelpers
 
   include ViewHelpers::Base
+  include ViewHelpers::Components
   include ViewHelpers::Notice
   include ActionPanel::ConfigsFinder
   include ActionPanel::MdiIcon
