@@ -1,8 +1,0 @@
-en:
-  activeadmin_bootstrap:
-    formtastic:
-      custom_file:
-        upload: Choose File
-      custom_password:
-        show: Show
-        hide: Hide

@@ -10,7 +10,7 @@ AllCops:
     - 'script/**/*'
     - 'node_modules/**/*'
     - 'db/migrate/**/*'
-    - 'activeadmin_bootstrap.gemspec'
+    - 'action_panel.gemspec'
 
 Style/Documentation:
   Exclude:
@@ -35,7 +35,7 @@ Metrics/LineLength:
     - 'Gemfile'
 Metrics/ModuleLength:
   Exclude:
-    - 'lib/activeadmin_bootstrap/extensions/views/helpers/view_helpers.rb'
+    - 'lib/action_panel/extensions/views/helpers/view_helpers.rb'
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*.rb'
@@ -45,8 +45,8 @@ Metrics/BlockLength:
     - 'config/**/*.rb'
     - 'app/admin/**/*.rb'
     - 'app/views/**/*.arb'
-    - 'lib/activeadmin_bootstrap/admin/**/*.rb'
-    - 'activeadmin_bootstrap.gemspec'
+    - 'lib/action_panel/admin/**/*.rb'
+    - 'action_panel.gemspec'
 
 Layout/EmptyLinesAroundClassBody:
   EnforcedStyle: empty_lines

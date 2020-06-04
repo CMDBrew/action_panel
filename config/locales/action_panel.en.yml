@@ -1,0 +1,8 @@
+en:
+  action_panel:
+    formtastic:
+      custom_file:
+        upload: Choose File
+      custom_password:
+        show: Show
+        hide: Hide

@@ -20,7 +20,7 @@ run 'rm Gemfile'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 generate :'active_admin:install --skip-users'
-generate :'activeadmin_bootstrap:install'
+generate :'action_panel:install'
 
 run 'rm -r test'
 run 'rm -r spec'

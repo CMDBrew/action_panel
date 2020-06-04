@@ -1,7 +1,7 @@
 # Using ActionText for ActiveAdminComment
 ## Installation
 1. Install action_text. See https://edgeguides.rubyonrails.org/action_text_overview.html
-1. Run `rails g activeadmin_bootstrap:action_text_comments`
+1. Run `rails g action_panel:action_text_comments`
 1. Change ActiveAdmin Comment Input
     ```ruby
     ActiveAdmin.setup do |config|

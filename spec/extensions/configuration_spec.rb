@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ActiveAdmin::Views::Header do
   let(:application) { ActiveAdmin::Application.new }
-  let(:defaults) { ActiveAdminBootstrap::ConfigsDefault }
+  let(:defaults) { ActionPanel::ConfigsDefault }
 
   describe 'Default Config' do
     it { expect(application.component_class).to eq(defaults::COMPONENT_CLASS) }

@@ -1,7 +1,7 @@
 # Global configurations
 To configure ActiveAdmin create an initializer
 ```ruby
-# config/initializers/activeadmin_bootstrap.rb
+# config/initializers/action_panel.rb
 ActiveAdmin.setup do |config|
    config.navigation = 'top'
    config.body_class = nil
@@ -102,7 +102,7 @@ end
 
 # Namespace configurations
 ```ruby
-# config/initializers/activeadmin_bootstrap.rb
+# config/initializers/action_panel.rb
 ActiveAdmin.setup do |config|
    config.namespace :admin do |admin|
      admin.navigation = 'drawer'
@@ -183,5 +183,5 @@ end
 ```
 
 # Theming
-- See **[_bootstrap_vars.scss](../app/assets/stylesheets/activeadmin_bootstrap/meta/_bootstrap_vars.scss)** for available bootstrap configurations
-- See **[_vars.scss](../app/assets/stylesheets/activeadmin_bootstrap/meta/_vars.scss)** for available activeadmin component configurations.
+- See **[_bootstrap_vars.scss](../app/assets/stylesheets/action_panel/meta/_bootstrap_vars.scss)** for available bootstrap configurations
+- See **[_vars.scss](../app/assets/stylesheets/action_panel/meta/_vars.scss)** for available activeadmin component configurations.
