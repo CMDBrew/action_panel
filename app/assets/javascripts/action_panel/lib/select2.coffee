@@ -1,7 +1,14 @@
-formatState = (state) ->
+_template_state = (state) ->
   if !state.id
     return state.text
-  $state = $("<span>#{$(state.element).data('template')}</span>")
+  $state = $($(state.element).data('template'))
+  $state
+
+_result_state = (state) ->
+  if !state.id
+    return state.text
+  template = $(state.element).data('result-template') || $(state.element).data('template')
+  $state = $(template)
   $state
 
 
@@ -32,12 +39,12 @@ class ActionPanel.Select2
 
   _template_opts: ->
     @options = $.extend(@options, {
-      templateResult: formatState
+      templateResult: _template_state
     })
 
   _selection_template_opts: ->
     @options = $.extend(@options, {
-      templateSelection: formatState
+      templateSelection: _result_state
     })
 
   _multiple_opts: ->
