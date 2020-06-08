@@ -19,7 +19,9 @@ class ActionPanel.Snakebar
     $('body').addClass(@options.bodyClass)
     $(el).addClass(@options.activeClass).delay(@options.destroyDelay)
           .prependTo(@options.container).queue((next) =>
-      $(el).remove()
+      $(el).hide().delay(3000).queue ->
+        $(@).remove()
+
       $('body').removeClass(@options.bodyClass)
       next()
     )
