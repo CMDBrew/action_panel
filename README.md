@@ -21,15 +21,20 @@ And then execute:
 bundle install
 ```
 
-### Install ActiveAdmin
-If you haven't already installed it
-```bash
-rails g active_admin:install
-```
-
 ### Install ActionPanel
+All the options are inherit from ActiveAdmin. You can find the options here https://activeadmin.info/0-installation.html#setting-up-active-admin.
 ```bash
 rails g action_panel:install
+```
+
+If you already installed ActiveAdmin you can skip it by adding the `--skip-activeadmin` option.
+```bash
+rails g action_panel:install --skip-activeadmin
+```
+
+If you want to install with raw bootstrap without the default `material` theme you can add the `--skip-theme` option.
+```bash
+rails g action_panel:install --skip-theme
 ```
 
 ## Develpoing
