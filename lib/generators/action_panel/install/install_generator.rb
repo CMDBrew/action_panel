@@ -13,14 +13,14 @@ module ActionPanel
       # ActiveAdmin Options
       argument :name, type: :string, default: 'AdminUser'
       class_option :skip_users,
-                   type: :boolean, default: false, desc: 'Skip installation of comments'
+                   type: :boolean, default: false, desc: 'Skip installation of users'
       class_option :skip_comments,
                    type: :boolean, default: false, desc: 'Skip installation of comments'
 
       # ActionPanel Options
       class_option :skip_activeadmin, type: :boolean, default: false, desc: 'Skip ActiveAdmin'
-      class_option :theme, type: :string, default: 'material', desc: 'Install a specific theme'
-      class_option :skip_theme, type: :boolean, default: false, desc: 'Skip theme'
+      hook_for :theme, type: :string, default: 'material',
+                       desc: 'Install with a theme, Skip with --skip-theme'
 
       source_root File.expand_path('templates', __dir__)
 
@@ -34,18 +34,21 @@ module ActionPanel
       end
 
       def replace_assets
-        if options[:skip_theme]
+        if options[:theme]
+          generate 'action_panel:theme', options[:theme]
+        else
           template 'active_admin.js', 'app/assets/javascripts/active_admin.js'
           template 'active_admin.scss', 'app/assets/stylesheets/active_admin.scss'
           template 'action_panel.rb.erb', 'config/initializers/action_panel.rb'
-        else
-          generate 'action_panel:theme', options[:theme]
         end
       end
 
       def replace_default_admin_files
         template 'dashboard.rb.erb', 'app/admin/dashboard.rb'
-        template 'admin_users.rb.erb', 'app/admin/admin_users.rb' unless options[:skip_users]
+        retunr if options[:skip_users]
+
+        @user_class = name
+        template 'admin_users.rb.erb', "app/admin/#{name.underscore.pluralize}.rb"
       end
 
     end
