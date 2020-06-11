@@ -17,10 +17,11 @@
 
   #title_bar {
     grid-area: title_bar;
+    z-index: $zindex-fixed + 1;
 
     .navbar-toggler {
       display: block;
-      margin-right: $spacer;
+      margin-right: map-get($spacers, 2);
     }
 
     .site_title {
