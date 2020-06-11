@@ -37,6 +37,9 @@ If you want to install with raw bootstrap without the default `material` theme y
 rails g action_panel:install --skip-theme
 ```
 
+## Issues
+For a list of common issues please see **[Common Issues](docs/Common-Issues.md)**.
+
 ## Develpoing
 Please see **[Developing](docs/Developing.md)** for details.
 
