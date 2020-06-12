@@ -59,7 +59,7 @@ onReady = ->
   $(window).scroll ->
     $('body').addClass 'scrolling'
 
-  $('#wrapper').scroll ->
+  $('#wrapper, #main, #sidebar').scroll ->
     $('body').addClass 'scrolling'
 
   setInterval (->
