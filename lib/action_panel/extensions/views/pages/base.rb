@@ -20,9 +20,17 @@ module ActiveAdmin
           build_active_admin_head
           build_webpackers
           build_page
+          build_breakpoint_helpers
         end
 
         private
+
+        def build_breakpoint_helpers
+          div id: 'breakpoint-helpers' do
+            span class: 'breakpoint-up-helper'
+            span class: 'breakpoint-down-helper'
+          end
+        end
 
         def build_webpackers
           path = Rails.root.join('app', 'javascript', 'packs', 'active_admin.js')
@@ -65,7 +73,7 @@ module ActiveAdmin
 
         def build_body_content
           div id: 'main', class: sidebar_class do
-            div class: 'container' do
+            div class: content_wrapper_class do
               build_main_content_wrapper
               footer active_admin_namespace
             end
@@ -132,6 +140,19 @@ module ActiveAdmin
 
         def flash_class(type)
           @flash_class ||= component_class(:flash, type.to_sym)
+        end
+
+        def content_wrapper_class
+          klass =
+            case self.class.to_s
+            when 'ActiveAdmin::Views::Pages::Index'
+              component_class(:content_wrapper, :index)
+            when 'ActiveAdmin::Views::Pages::Form'
+              component_class(:content_wrapper, :form)
+            when 'ActiveAdmin::Views::Pages::Show'
+              component_class(:content_wrapper, :show)
+            end
+          klass || 'container'
         end
 
       end

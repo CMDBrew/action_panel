@@ -11,6 +11,11 @@ module ActionPanel
     COMPONENT_CLASS = {
       header: 'navbar-dark bg-dark navbar-expand-lg',
       title_bar: 'navbar-light bg-light',
+      content_wrapper: {
+        index: 'container',
+        show: 'container',
+        form: 'container'
+      },
       action_item: {
         group: 'btn-group',
         item: 'btn btn-secondary'
@@ -84,7 +89,8 @@ module ActionPanel
         wrapper: 'card',
         header: 'card-header',
         body: 'card-body',
-        submit: 'btn btn-primary'
+        submit: 'btn btn-primary',
+        item: nil
       }
     }.freeze
 

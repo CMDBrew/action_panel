@@ -8,6 +8,12 @@
     "header content";
   grid-template-columns: 0 minmax(0, 1fr);
   grid-template-rows: $_title-bar-height minmax(0, 1fr);
+  overflow: hidden;
+
+  .breakpoint-up-helper,
+  .breakpoint-down-helper {
+    display: none;
+  }
 
   #wrapper {
     height: calc(100vh - #{map-get($layout-navigation-drawer-dismissible, 'title_bar')});
@@ -53,6 +59,8 @@
 
   $_breakpoint: (nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), map-get($layout-navigation-drawer-dismissible, 'breakpoint')) - 1));
   @include media-breakpoint-down($_breakpoint) {
+    overflow-y: auto;
+
     &.header-active {
       grid-template-columns: $_header-width 100vw;
       #header { display: block; }
@@ -60,7 +68,8 @@
     }
 
     #title_bar .site_title { display: none; }
-    #wrapper { overflow: auto; }
+    .breakpoint-down-helper { display: block; }
+    #wrapper { height: auto; }
   }
 
   @include media-breakpoint-up(map-get($layout-navigation-drawer-dismissible, 'breakpoint')) {
@@ -73,6 +82,8 @@
       grid-template-columns: 0 minmax(0, 1fr);
       #header { display: none; }
     }
+
+    .breakpoint-up-helper { display: block; }
 
     #header .site_title { display: none; }
     #header { display: block; }

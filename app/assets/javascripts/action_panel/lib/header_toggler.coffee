@@ -42,7 +42,7 @@ class ActionPanel.HeaderToggler
     options = @options
     cookie = @_getCookie()
 
-    if cookie == @options.activeClass
+    if cookie == @options.activeClass && $('.breakpoint-up-helper').is(':visible')
       @_add()
 
     @$element.on 'click', (e) =>

@@ -10,7 +10,7 @@ module ActiveAdmin
 
         include ActionPanel::ConfigsFinder
 
-        def wrapper_class
+        def default_wrapper_class
           "#{component_class(:active_admin_comments, :wrapper)} panel".strip
         end
 
@@ -20,6 +20,10 @@ module ActiveAdmin
 
         def default_body_class
           "#{component_class(:active_admin_comments, :body)} panel-body".strip
+        end
+
+        def default_item_class
+          component_class(:active_admin_comments, :item)
         end
 
         protected
@@ -40,7 +44,7 @@ module ActiveAdmin
 
         # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
         def build_comment(comment)
-          div for: comment do
+          div for: comment, class: default_item_class do
             div class: 'active_admin_comment_meta row' do
               strong class: 'active_admin_comment_author col' do
                 if comment.author
