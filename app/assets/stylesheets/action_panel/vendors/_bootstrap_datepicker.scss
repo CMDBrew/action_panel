@@ -16,6 +16,16 @@ $datepicker-option-old-color: $text-muted !default;
 
   table { display: block; }
 
+  table tr td span:hover {
+    color: color-yiq($datepicker-option-hover-bg);
+    background: $datepicker-option-hover-bg;
+  }
+
+  table tr td span.focused {
+    color: color-yiq($datepicker-option-active-bg) !important;
+    background: $datepicker-option-active-bg !important;
+  }
+
   tbody tr td span {
     width: calc(100% / 3 - #{$spacer});
     height: 32px;
@@ -92,8 +102,9 @@ $datepicker-option-old-color: $text-muted !default;
       &.today:hover,
       &.today:focus,
       &.today:focus:active {
+        color: color-yiq($datepicker-option-today-bg) !important;
+
         &::before {
-          color: color-yiq($datepicker-option-today-bg) !important;
           background: $datepicker-option-today-bg !important;
         }
       }

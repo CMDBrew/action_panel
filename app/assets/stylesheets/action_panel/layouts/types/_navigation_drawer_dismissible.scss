@@ -33,7 +33,6 @@
     height: 100% !important;
     grid-area: header;
 
-    .site_title { display: none; }
     .navbar-toggler { display: none; }
     .collapse { display: block !important; }
 
@@ -60,6 +59,7 @@
       .float-actions { display: none; }
     }
 
+    #title_bar .site_title { display: none; }
     #wrapper { overflow: auto; }
   }
 
@@ -74,6 +74,7 @@
       #header { display: none; }
     }
 
+    #header .site_title { display: none; }
     #header { display: block; }
     #wrapper { overflow: hidden; }
 

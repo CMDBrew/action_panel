@@ -34,6 +34,12 @@ $trix-icons: (
 trix-editor {
   background: $input-bg;
   border: $input-border-width solid $input-border-color;
+  border-width: 0 0 $input-border-width;
+  @if $input-solid {
+    @extend %input-solid;
+
+    .trix-content.focused-visible { @extend %input-solid-focused; }
+  }
 }
 
 trix-toolbar {
