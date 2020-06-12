@@ -52,6 +52,8 @@ trix-toolbar {
     }
 
     .trix-button {
+      height: auto;
+      padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
       color: color-yiq($trix-toolbar-btn-group-bg);
       border-bottom: 0;
 
