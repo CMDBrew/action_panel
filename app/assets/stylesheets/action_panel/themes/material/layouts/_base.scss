@@ -87,6 +87,7 @@
 
       .dropdown-item {
         @include navigation-drawer-link($_item-height);
+        &:hover { background: transparent; }
       }
     }
   }

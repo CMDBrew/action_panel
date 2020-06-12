@@ -35,6 +35,10 @@
   pointer-events: none;
   & > * { pointer-events: all; }
 
+  @at-root body.with_sidebar #bottom-nav {
+    @include media-breakpoint-up($sidebar-breakpoint) { right: calc(#{$sidebar-width} + #{map-get($spacers, 3)}); }
+  }
+
   .btn-fab + .btn-fab { margin-bottom: map-get($spacers, 2); }
 
   .flash {

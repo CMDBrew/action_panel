@@ -11,7 +11,6 @@
 
   #wrapper {
     height: calc(100vh - #{map-get($layout-navigation-drawer-dismissible, 'title_bar')});
-    overflow-y: auto;
     grid-area: content;
   }
 
@@ -32,7 +31,6 @@
   #header {
     display: none;
     height: 100% !important;
-    overflow-y: auto;
     grid-area: header;
 
     .site_title { display: none; }
@@ -61,6 +59,8 @@
       #header { display: block; }
       .float-actions { display: none; }
     }
+
+    #wrapper { overflow: auto; }
   }
 
   @include media-breakpoint-up(map-get($layout-navigation-drawer-dismissible, 'breakpoint')) {
@@ -69,11 +69,24 @@
       "header content";
     grid-template-columns: $_header-width minmax(0, 1fr);
 
-    #header { display: block; }
-
     &.header-active {
       grid-template-columns: 0 minmax(0, 1fr);
       #header { display: none; }
+    }
+
+    #header { display: block; }
+    #wrapper { overflow: hidden; }
+
+    #active_admin_content,
+    #main,
+    #sidebar {
+      height: 100%;
+    }
+
+    #main,
+    #header,
+    #sidebar {
+      overflow-y: auto;
     }
   }
 }

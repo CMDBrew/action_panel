@@ -107,7 +107,8 @@ module ActiveAdmin
             'active_admin', 'logged_in',
             active_admin_namespace.name.to_s + '_namespace',
             active_admin_config.body_class,
-            "layout-navigation-#{active_admin_config.navigation}"
+            "layout-navigation-#{active_admin_config.navigation}",
+            sidebar_class
           ]
         end
 
