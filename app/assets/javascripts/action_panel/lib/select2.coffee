@@ -49,7 +49,7 @@ class ActionPanel.Select2
 
   _multiple_opts: ->
     @options = $.extend(@options, {
-      'closeOnSelect': false
+      'closeOnSelect': true
     })
 
   _search_opts: ->

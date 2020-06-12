@@ -56,6 +56,7 @@ $display3-size:        2.815rem !default;
 $display4-size:        2.125rem !default;
 $small-font-size:      87.5% !default;
 $text-muted:           $gray-400 !default;
+$hr-border-color:      $border-color !default;
 // *** CUSTOM ***
 $caption-font-size: 0.75rem !default;
 
@@ -135,7 +136,7 @@ $tooltip-arrow-height: 0 !default;
 $tooltip-margin:       0.5rem !default;
 
 // 910: Badges
-$badge-font-size:     12px !default;
+$badge-font-size:     75% !default;
 $badge-padding-x:     0.5rem !default;
 $badge-border-radius: 10px !default;
 // *** CUSTOM ***

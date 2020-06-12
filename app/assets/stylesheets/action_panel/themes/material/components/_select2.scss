@@ -1,0 +1,48 @@
+$select2-multiple-choice-bg: $component-focus-bg !default;
+$select2-multiple-choice-color: $input-color !default;
+$select2-remove-bg: $secondary !default;
+$select2-remove-icon-size: 18px !default;
+
+.select2-container--focus .select2-selection.select2-selection--single,
+.select2-container--open .select2-selection.select2-selection--multiple {
+  @extend %input-solid-focused;
+}
+
+.select2-search--dropdown { padding: map-get($spacers, 2); }
+
+.select2-container--bootstrap4 .select2-search--dropdown .select2-search__field {
+  @extend %input-solid;
+}
+
+.select2-selection {
+  &.select2-selection--multiple,
+  &.select2-selection--single {
+    @extend %input-solid;
+    @include shadow(none);
+  }
+
+  &.select2-selection--multiple .select2-selection__choice {
+    position: relative;
+    padding-right: calc(#{$select2-remove-icon-size} + 3 * #{map-get($spacers, 1)});
+    padding-left: map-get($spacers, 2);
+    color: $select2-multiple-choice-color;
+    background: $select2-multiple-choice-bg;
+    border: 0;
+    border-radius: 12px;
+
+    .select2-selection__choice__remove {
+      position: absolute;
+      top: 50%;
+      right: map-get($spacers, 1);
+      width: $select2-remove-icon-size;
+      height: $select2-remove-icon-size;
+      margin: 0;
+      line-height: $select2-remove-icon-size;
+      color: color-yiq($select2-remove-bg);
+      text-align: center;
+      background: $select2-remove-bg;
+      border-radius: 50%;
+      @include transform(translateY(-50%));
+    }
+  }
+}

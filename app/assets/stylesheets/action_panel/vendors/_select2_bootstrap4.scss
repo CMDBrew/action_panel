@@ -21,6 +21,7 @@ $s2bs-dropdown-link-active-color: $dropdown-link-active-color !default;
 $s2bs-dropdown-link-disabled-color: $dropdown-link-disabled-color !default;
 $s2bs-dropdown-link-hover-bg: $dropdown-link-hover-bg !default;
 $s2bs-dropdown-link-hover-color: $dropdown-link-hover-color !default;
+$s2bs-dropdown-bg: $dropdown-bg !default;
 $s2bs-font-size-base: $font-size-base !default;
 $s2bs-font-size-large: $font-size-lg !default;
 $s2bs-font-size-small: $font-size-sm !default;
@@ -62,7 +63,7 @@ $s2bs-dropdown-header-font-size: $s2bs-font-size-small !default;
 // These should not be overridden.
 // -------------------------
 $s2bs-form-control-default-box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !default;
-$s2bs-form-control-focus-box-shadow: $s2bs-form-control-default-box-shadow, 0 0 8px rgba($s2bs-input-border-focus, 0.6) !default;
+$s2bs-form-control-focus-box-shadow: none !default;
 $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !default;
 
 
@@ -291,6 +292,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     border-width: $s2bs-input-border-width;
     overflow-x: hidden;
     margin-top: -1px;
+    background: $s2bs-dropdown-bg;
 
     &--above {
       @include shadow($s2bs-dropdown-box-shadow-above);

@@ -39,52 +39,6 @@
     }
   }
 
-  .select2-container--focus .select2-selection.select2-selection--single,
-  .select2-container--open .select2-selection.select2-selection--multiple {
-    @extend %input-solid-focused;
-  }
-
-  .select2-search--dropdown { padding: map-get($spacers, 2); }
-
-  .select2-container--bootstrap4 .select2-search--dropdown .select2-search__field {
-    @extend %input-solid;
-  }
-
-  .select2-selection {
-    &.select2-selection--multiple,
-    &.select2-selection--single {
-      @extend %input-solid;
-      @include shadow(none);
-    }
-
-    &.select2-selection--multiple .select2-selection__choice {
-      $_remove-size: 18px;
-      $_remove-bg: $secondary;
-
-      position: relative;
-      padding-right: calc(#{$_remove-size} + 3 * #{map-get($spacers, 1)});
-      padding-left: map-get($spacers, 2);
-      background: $component-focus-bg;
-      border: 0;
-      border-radius: 12px;
-
-      .select2-selection__choice__remove {
-        position: absolute;
-        top: 50%;
-        right: map-get($spacers, 1);
-        width: $_remove-size;
-        height: $_remove-size;
-        margin: 0;
-        line-height: $_remove-size;
-        color: color-yiq($_remove-bg);
-        text-align: center;
-        background: $_remove-bg;
-        border-radius: 50%;
-        @include transform(translateY(-50%));
-      }
-    }
-  }
-
   .form-control,
   .custom-select {
     &:not([type='radio']):not([type='checkbox']) { @extend %input-solid; }
