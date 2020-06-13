@@ -10,10 +10,11 @@
     overflow: hidden;
     font-weight: $btn-font-weight;
     border-radius: $border-radius;
-
   }
 
   & * > i.mdi-icon {
+    width: $mdi-icon-size;
+    height: $mdi-icon-size;
     margin-right: map-get($spacers, 2);
     text-align: center;
   }
