@@ -10,6 +10,20 @@ module ActiveAdmin
 
         include ActionPanel::ConfigsFinder
 
+        def build(resource)
+          return unless authorized?(ActiveAdmin::Auth::READ, ActiveAdmin::Comment)
+
+          @resource = resource
+          @comments =
+            active_admin_authorization.scope_collection(
+              ActiveAdmin::Comment.
+                find_for_resource_in_namespace(resource, active_admin_namespace.name).
+                includes(:author).public_send(Kaminari.config.page_method_name, params[:page])
+            )
+          super(title, for: resource)
+          build_comments
+        end
+
         def default_wrapper_class
           "#{component_class(:active_admin_comments, :wrapper)} panel".strip
         end
