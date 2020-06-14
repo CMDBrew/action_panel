@@ -1,6 +1,6 @@
 table.table {
+  margin-bottom: 0;
   border-radius: $border-radius;
-  &:not(.index_table) { margin-bottom: 0; }
   &:not(.table-bordered) th { border-top: 0; }
   th { font-weight: $font-weight-bold; }
 
