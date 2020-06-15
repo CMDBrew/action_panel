@@ -4,6 +4,7 @@ $trix-toolbar-btn-active-bg: $component-active-bg !default;
 $trix-toolbar-btn-active-color: $component-active-color !default;
 
 $trix-content-pre-bg: $gray-200 !default;
+$trix-content-pre-color: inherit !default;
 $trix-content-blockquote-bg: $gray-200 !default;
 $trix-content-attachment-caption-color: $secondary !default;
 $trix-content-attachment-border-color: $border-color !default;
@@ -122,7 +123,13 @@ trix-toolbar {
   }
 
   blockquote { border-left-color: $trix-content-blockquote-bg; }
-  pre { background: $trix-content-pre-bg; }
+
+  pre {
+    color: $trix-content-pre-color;
+    white-space: pre !important;
+    background: $trix-content-pre-bg;
+  }
+
   .attachment-preview .attachment-caption { color: $trix-content-attachment-caption-color; }
   .attachment--file { border-color: $trix-content-attachment-border-color; }
 }

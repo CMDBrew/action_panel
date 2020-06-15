@@ -25,6 +25,7 @@ $select2-clear-icon-size: 18px !default;
   @extend %input-solid-focused;
 }
 
+.select2-search--inline input { color: $s2bs-input-color; }
 .select2-search--dropdown { padding: map-get($spacers, 2); }
 
 .select2-container--bootstrap4 .select2-search--dropdown .select2-search__field {
