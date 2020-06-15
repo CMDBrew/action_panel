@@ -6,6 +6,7 @@ module ActionPanel
     module Others
 
       FILES = %w[resource page form_builder view_helpers base_controller].freeze
+      PATCHES = ['resource_controller/polymorphic_routes'].freeze
 
       include Base
       extend ActiveSupport::Concern
@@ -17,6 +18,10 @@ module ActionPanel
 
         initializer 'others.overrides' do |_app|
           require_each(FILES)
+        end
+
+        initializer 'others.patches' do |_app|
+          require_each(PATCHES)
         end
       end
 

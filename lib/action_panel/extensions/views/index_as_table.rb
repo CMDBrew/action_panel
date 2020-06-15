@@ -22,7 +22,7 @@ module ActiveAdmin
 
         # rubocop:disable all
         def actions(options = {}, &block)
-          name = options.delete(:name)     { '' }
+          name = options.delete(:name) { '' }
           defaults = options.delete(:defaults) { true }
           dropdown = options.delete(:dropdown) { false }
           dropdown_name = options.delete(:dropdown_name) do
