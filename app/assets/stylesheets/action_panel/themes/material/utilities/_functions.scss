@@ -1,0 +1,7 @@
+@function theme-mode-color($dark-color, $default-color) {
+  @if $enable-dark-mode {
+    @return $dark-color;
+  } @else {
+    @return $default-color;
+  }
+}

@@ -59,7 +59,7 @@ module ActionPanel
       },
       index_as_table: {
         wrapper: 'table-responsive',
-        table: 'table table-sm',
+        table: 'table',
         btn: {
           group: 'btn-group',
           item: 'btn btn-sm btn-light'
