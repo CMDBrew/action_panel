@@ -5,7 +5,7 @@ module ActionPanel
     # Others Initializers
     module Others
 
-      FILES = %w[resource page form_builder view_helpers base_controller].freeze
+      FILES = %w[resource page form_builder view_helpers base_controller sidebar_section].freeze
       PATCHES = ['resource_controller/polymorphic_routes'].freeze
 
       include Base

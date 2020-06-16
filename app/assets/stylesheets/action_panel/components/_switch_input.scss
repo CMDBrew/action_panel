@@ -9,7 +9,7 @@ $switch-checked-thumb-bg: map-get($theme-colors, 'primary') !default;
 $switch-disabled-bg: $custom-control-indicator-disabled-bg !default;
 $switch-disabled-color: $custom-control-label-disabled-color !default;
 $switch-thumb-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.54) !default;
-$switch-thumb-bg: $white !default;
+$switch-thumb-bg: $input-bg !default;
 $switch-thumb-border-radius: 50% !default;
 $switch-focus-box-shadow: 0 0 0 $input-btn-focus-width rgba(map-get($theme-colors, 'primary'), 0.25) !default;
 $switch-transition: 0.2s all !default;

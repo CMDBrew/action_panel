@@ -111,8 +111,7 @@ module ActionPanel
         class: nil
       }
     }.freeze
-    # ACTION_ITEM_DISPLAY = { new: :index, edit: :show, destroy: :show }.freeze
-    # ACTION_ITEM_PREFIX = { new: nil, edit: nil, destroy: nil }.freeze
+
     SIDEBAR_POSITION = 'right'.freeze
     FILTER_POSITION = 'sidebar'.freeze
     ACTIVE_ADMIN_COMMENT_INPUT = 'text'.freeze

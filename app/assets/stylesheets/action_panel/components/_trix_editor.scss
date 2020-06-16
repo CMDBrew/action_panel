@@ -41,6 +41,8 @@ trix-editor {
 
     .trix-content.focused-visible { @extend %input-solid-focused; }
   }
+
+  &:empty:not(:focus)::before { color: $input-placeholder-color; }
 }
 
 trix-toolbar {

@@ -7,6 +7,8 @@
     color: $secondary;
   }
 
+  .form-check-label { display: flex; }
+
   .form-check-label * {
     display: inline-block;
     vertical-align: middle;
