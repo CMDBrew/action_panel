@@ -24,7 +24,7 @@ $teal:   #90EE05 !default;
 $green:  #09af00 !default;
 
 $primary:   $indigo !default;
-$secondary: $gray-600 !default;
+$secondary: theme-mode-color($gray-500, $gray-600) !default;
 $light:     $gray-100 !default;
 $dark:      $gray-800 !default;
 
@@ -44,7 +44,7 @@ $border-width:  1px !default;
 $border-color:  rgba(theme-mode-color($white, $black), 0.12) !default;
 
 $component-active-color: $primary !default;
-$component-active-bg:    rgba($primary, 0.12) !default;
+$component-active-bg:    rgba($primary, 0.26) !default;
 // *** CUSTOM ***
 $component-hover-bg: rgba(theme-mode-color($white, $black), 0.04) !default;
 $component-focus-bg: rgba(theme-mode-color($white, $black), 0.12) !default;
@@ -103,12 +103,12 @@ $nav-tabs-border-color:   $border-color !default;
 $nav-tabs-link-active-bg: transparent !default;
 // *** CUSTOM ***
 $nav-tabs-padding-x:          2rem !default;
-$nav-pills-bg:                $white !default;
+$nav-pills-bg:                theme-mode-color($dark, $white) !default;
 $nav-pills-border-color:      $border-color!default;
 $nav-pills-border-width:      0 !default;
 $nav-pills-link-color:        $body-color !default;
 $nav-pills-link-active-color: $nav-pills-link-color !default;
-$nav-pills-link-active-bg:    rgba($black, 0.12) !default;
+$nav-pills-link-active-bg:    theme-mode-color($component-active-bg, rgba($black, 0.12)) !default;
 
 // 709: Navbar
 $navbar-light-active-color: $dark !default;

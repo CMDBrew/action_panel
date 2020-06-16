@@ -15,7 +15,7 @@ module ActiveAdmin
 
       def action(method, options = {})
         if method.eql?(:submit)
-          options.merge!(button_html: { class: component_class(:form, :actions, :submit) })
+          options.reverse_merge!(button_html: { class: component_class(:form, :actions, :submit) })
         end
 
         super(method, options)

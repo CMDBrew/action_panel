@@ -65,6 +65,9 @@ module ActionPanel
           item: 'btn btn-sm btn-light'
         }
       },
+      index_as_grid: {
+        breakpoint: 'lg'
+      },
       table_tools: {
         btn: 'btn btn-sm btn-light',
         scopes: {

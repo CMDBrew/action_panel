@@ -10,7 +10,7 @@ module ActionPanel
         attributes_table panel sidebar_section paginated_collection scopes index_list
         tabs blank_slate
       ].freeze
-      VIEW_FILES = %w[header title_bar action_items index_as_table columns footer].freeze
+      VIEW_FILES = %w[header title_bar action_items index_as_table index_as_grid columns footer].freeze
       PAGE_FILES = %w[base page index form].freeze
 
       include Base
