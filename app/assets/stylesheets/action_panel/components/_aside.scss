@@ -1,0 +1,46 @@
+#aside-filters {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $zindex-fixed + 1;
+  display: block !important;
+  width: 100%;
+  height: auto !important;
+  padding: calc(#{map-get($spacers, 1)} * 3) 0;
+  background: $aside-bg;
+  @include transition(transform 0.2s linear);
+
+  &:not(.show) {
+    @include transform(translateX(100%));
+  }
+
+  .sidebar_section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .panel-body {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  #aside-close {
+    position: absolute;
+    top: calc(#{map-get($spacers, 1)} * 3 + #{$card-spacer-y});
+    right: $spacer;
+    color: $text-muted;
+  }
+
+  @include media-breakpoint-up($aside-breakpoint) {
+    position: absolute;
+    z-index: 11;
+    width: $aside-width;
+  }
+}
+
+body.aside-active {
+  overflow: hidden !important;
+  .float-actions { display: none; }
+}

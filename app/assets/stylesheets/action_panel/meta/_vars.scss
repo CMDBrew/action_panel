@@ -29,14 +29,18 @@ $layout-navigation-drawer-dismissible:  map-merge(
 // Logged Out
 $logged-out-logo-height: 64px !default;
 
-// Breakpoint
-$sidebar-breakpoint: lg !default;
-
 // Site Title
 $site-title-logo-height: 32px !default;
 
 // Sidebar
 $sidebar-width: 320px !default;
+$sidebar-bg: $body-bg !default;
+$sidebar-breakpoint: lg !default;
+
+// Aside
+$aside-breakpoint: lg !default;
+$aside-width: $sidebar-width !default;
+$aside-bg: $sidebar-bg !default;
 
 // Attributes Table
 $attribute-table-key-width: 30% !default;

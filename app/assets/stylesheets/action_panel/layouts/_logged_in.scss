@@ -2,6 +2,8 @@ body.logged_in {
   min-height: 100vh;
   overflow-x: hidden;
 
+  #wrapper { position: relative; }
+
   #main,
   #sidebar {
     padding: $spacer 0;

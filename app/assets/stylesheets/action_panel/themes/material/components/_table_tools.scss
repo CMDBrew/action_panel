@@ -10,6 +10,10 @@
     margin-left: auto;
 
     .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       span { display: none; }
 
       &::before {

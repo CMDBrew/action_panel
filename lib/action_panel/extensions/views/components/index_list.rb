@@ -26,7 +26,7 @@ module ActiveAdmin
         url_with_params = url_for(params.merge(as: index_class.index_name.to_sym))
         name = index_class.index_name
 
-        a href: url_with_params, class: "nav #{classes_for_link(index_class)} index-mode-#{name}", title: name do
+        a href: url_with_params, class: "#{classes_for_link(index_class)} index-mode-#{name}", title: name do
           span I18n.t("active_admin.index_list.#{name}", default: name.to_s.titleize)
         end
       end
