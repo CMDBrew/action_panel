@@ -1,5 +1,24 @@
+%layout-scrollable {
+  width: 100%;
+  height: 100%;
+
+  #wrapper { overflow: hidden; }
+
+  #active_admin_content,
+  #main,
+  #sidebar {
+    height: 100%;
+  }
+
+  #main,
+  #header,
+  #sidebar {
+    overflow-y: auto;
+  }
+}
+
 body.logged_in {
-  min-height: 100vh;
+  @extend %layout-scrollable;
   overflow-x: hidden;
 
   #wrapper { position: relative; }

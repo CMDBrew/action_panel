@@ -1,6 +1,7 @@
 .paginator { display: inline-block; }
 
 .pagination {
+  flex-wrap: wrap;
   font-weight: $btn-font-weight;
   text-transform: $btn-text-transform;
   border: $pagination-border-width solid $pagination-border-color;

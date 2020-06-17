@@ -16,7 +16,7 @@
   }
 
   #wrapper {
-    height: calc(100vh - #{map-get($layout-navigation-drawer-dismissible, 'title_bar')});
+    height: 100%;
     grid-area: content;
   }
 
@@ -59,8 +59,6 @@
 
   $_breakpoint: (nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), map-get($layout-navigation-drawer-dismissible, 'breakpoint')) - 1));
   @include media-breakpoint-down($_breakpoint) {
-    overflow-y: auto;
-
     &.header-active {
       grid-template-columns: $_header-width 100vw;
       #header { display: block; }
@@ -86,27 +84,6 @@
 
     #header .site_title { display: none; }
     #header { display: block; }
-  }
-
-  $_breakpoint: (nth(map-keys($grid-breakpoints), index(map-keys($grid-breakpoints), $sidebar-breakpoint) - 1));
-  @include media-breakpoint-down($_breakpoint) {
-    #wrapper { height: auto; }
-  }
-
-  @include media-breakpoint-down(up) {
-    #wrapper { overflow: hidden; }
-
-    #active_admin_content,
-    #main,
-    #sidebar {
-      height: 100%;
-    }
-
-    #main,
-    #header,
-    #sidebar {
-      overflow-y: auto;
-    }
   }
 }
 

@@ -133,6 +133,7 @@ $pagination-hover-color:  $pagination-color !default;
 $pagination-hover-bg:     $component-hover-bg !default;
 $pagination-active-color: $pagination-color !default;
 $pagination-active-bg:    rgba($black, 0.12) !default;
+$pagination-disabled-bg:  theme-mode-color($dark, $white) !default;
 
 // 818: Card
 $card-border-width:   1px !default;
