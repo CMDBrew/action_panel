@@ -85,6 +85,10 @@
     #header .site_title { display: none; }
     #header { display: block; }
   }
+
+  @include media-breakpoint-up($aside-breakpoint) {
+    #aside-filters { top: map-get($layout-navigation-drawer-dismissible, 'title_bar'); }
+  }
 }
 
 body.layout-navigation-drawer-dismissible { @extend %layout-navigation-drawer-dismissible; }

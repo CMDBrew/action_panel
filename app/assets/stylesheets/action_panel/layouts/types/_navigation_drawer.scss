@@ -75,6 +75,10 @@
     #header { display: block; }
     #title_bar .navbar-toggler { display: none; }
   }
+
+  @include media-breakpoint-up($aside-breakpoint) {
+    #aside-filters { top: map-get($layout-navigation-drawer, 'title_bar'); }
+  }
 }
 
 body.layout-navigation-drawer { @extend %layout-navigation-drawer; }

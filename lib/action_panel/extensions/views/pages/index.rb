@@ -20,9 +20,12 @@ module ActiveAdmin
           end
         end
 
-        def build_page_content
+        def build_page
           super
-          build_aside
+
+          within body(class: body_classes) do
+            build_aside
+          end
         end
 
         def build_table_tools
@@ -53,6 +56,7 @@ module ActiveAdmin
         def aside_filter_action
           ActiveAdmin::ActionItem.new(:filter, only: :index, group: 98) do
             link_to mdi_icon('magnify'), '#',
+                    id: 'aside-filters-toggler',
                     data: { toggle: 'collapse', target: '#aside-filters' },
                     title: I18n.t(:filters, scope: 'active_admin.sidebars')
           end

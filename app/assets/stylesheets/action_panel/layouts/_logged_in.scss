@@ -15,6 +15,21 @@
   #sidebar {
     overflow-y: auto;
   }
+
+  @include media-breakpoint-down($sidebar-breakpoint) {
+    #active_admin_content,
+    #main,
+    #sidebar {
+      height: auto;
+    }
+
+    #main,
+    #sidebar {
+      overflow: visible;
+    }
+
+    #wrapper { overflow-y: scroll; }
+  }
 }
 
 body.logged_in {

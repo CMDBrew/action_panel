@@ -13,6 +13,12 @@
   #header { grid-area: header; }
   #title_bar { grid-area: title_bar; }
   #wrapper { grid-area: content; }
+
+  @include media-breakpoint-up($aside-breakpoint) {
+    $_header-height: map-get($layout-navigation-top, 'header');
+    $_title-bar-height: map-get($layout-navigation-top, 'title_bar');
+    #aside-filters { top: calc(#{$_header-height} + #{$_title-bar-height}); }
+  }
 }
 
 body.layout-navigation-top { @extend %layout-navigation-top; }
