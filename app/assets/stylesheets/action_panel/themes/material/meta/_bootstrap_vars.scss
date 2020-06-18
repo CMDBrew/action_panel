@@ -150,6 +150,9 @@ $tooltip-arrow-width:  0 !default;
 $tooltip-arrow-height: 0 !default;
 $tooltip-margin:       0.5rem !default;
 
+// 886: Popovers
+$popover-bg: theme-mode-color($dark, $white) !default;
+
 // 910: Badges
 $badge-font-size:     75% !default;
 $badge-padding-x:     0.5rem !default;
