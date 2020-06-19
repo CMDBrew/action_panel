@@ -1,5 +1,9 @@
 .nav {
   margin-bottom: $spacer;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  .nav-item { white-space: nowrap; }
 
   &.nav-sm .nav-link {
     padding: $btn-padding-y-sm $btn-padding-x-sm;

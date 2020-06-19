@@ -173,6 +173,9 @@ $alert-bg-level:     theme-mode-color(10, -10) !default;
 $alert-border-level: theme-mode-color(9, -9) !default;
 $alert-color-level:  theme-mode-color(-6, 6) !default;
 
+// 981: Progress bars
+$progress-bg: theme-mode-color($gray-900, $gray-200) !default;
+
 // 994: List group
 $list-group-bg:                  theme-mode-color($dark, $white) !default;
 $list-group-action-color:        theme-mode-color($light, $gray-700) !default;
