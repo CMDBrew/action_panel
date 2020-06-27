@@ -30,6 +30,8 @@ module Formtastic
       end
 
       def label_span
+        return unless render_label?
+
         template.content_tag(:span, label_text)
       end
 

@@ -71,18 +71,3 @@
     border-color: $danger;
   }
 }
-
-.formtastic {
-  fieldset.has_many_fields {
-    > ol li.has-many-inputs { padding: 0; }
-    > ol { flex-direction: row-reverse; }
-
-    > ol li.handle {
-      padding: $spacer;
-      padding-right: 0;
-    }
-
-    .columns { margin: 0 calc(-#{$grid-gutter-width} / 2); }
-  }
-}
-

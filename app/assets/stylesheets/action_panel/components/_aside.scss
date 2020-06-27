@@ -7,7 +7,7 @@
   display: block !important;
   width: 100%;
   height: auto !important;
-  padding: calc(#{map-get($spacers, 1)} * 3) 0;
+  padding: calc(#{map-get($spacers, 1)} * 3);
   background: $aside-bg;
   @include transition(transform 0.2s linear);
 
@@ -29,7 +29,8 @@
   #aside-close {
     position: absolute;
     top: calc(#{map-get($spacers, 1)} * 3 + #{$card-spacer-y});
-    right: $spacer;
+    right: $card-spacer-x;
+    z-index: 11;
     color: $text-muted;
   }
 

@@ -90,7 +90,7 @@ trix-toolbar {
     }
   }
 
-  [class*="trix-button--icon"]::before {
+  .trix-button--icon::before {
     @extend %mdi-icon;
     top: 50%;
     right: auto;

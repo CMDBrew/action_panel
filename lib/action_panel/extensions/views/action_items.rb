@@ -10,7 +10,7 @@ module ActiveAdmin
 
       def build(action_items)
         action_items.each do |action_item|
-          text_node instance_exec(&action_item.block)
+          instance_exec(&action_item.block)
         end
       end
 
@@ -31,7 +31,7 @@ module ActiveAdmin
       def link_to(*args, &block)
         options = args.extract_options!
         options[:class] ||= component_class(:action_item, :item)
-        super(*args, options, &block)
+        text_node super(*args, options, &block)
       end
 
       def default_class_name

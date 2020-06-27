@@ -58,7 +58,9 @@ $mdi-icons: (
   'sorted-desc': '\F0045',
   'chevron-left': '\F0141',
   'chevron-right': '\F0142',
-  'filters': '\F0236'
+  'filters': '\F0236',
+  'remove': '\F0156',
+  'delete': '\F0376',
 ) !default;
 $custom-icons: () !default;
 $mdi-icons: map-merge($mdi-icons, $custom-icons);

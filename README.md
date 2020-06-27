@@ -13,7 +13,7 @@ gem 'action_panel', git: 'https://github.com/CMDBrew/action_panel.git', branch: 
 
 Add API key to (/Users/username/.bundle/config)
 ```shell
-bundle config github.com YOUR_API_KEY
+bundle config https://github.com/CMDBrew/action_panel YOUR_API_KEY
 ```
 
 And then execute:

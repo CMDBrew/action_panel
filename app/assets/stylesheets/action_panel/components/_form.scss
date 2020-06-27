@@ -41,10 +41,16 @@
   fieldset.has_many_fields {
     &.ui-sortable-placeholder {
       z-index: 11;
-      background: $form-sortable-helper-bg;
+      background: $form-sortable-helper-bg !important;
       visibility: visible !important;
       box-sizing: border-box;
       @include shadow(none);
+    }
+
+    &.ui-sortable-helper {
+      height: auto !important;
+      opacity: 1 !important;
+      .has-many-inputs li:not(:first-child) { display: none; }
     }
 
     & > ol {
@@ -66,13 +72,53 @@
         }
 
         &.has-many-inputs {
+          display: flex;
           flex: 1;
+          flex-direction: row;
           padding: map-get($spacers, 2) $spacer;
+          > ol:first-child { flex: 1; }
+        }
+      }
+
+      .has_many_delete {
+        input[type='checkbox']:checked + label { color: $danger; }
+
+        label.form-check-label {
+          padding-left: $spacer;
+
+          span,
+          i {
+            display: none;
+          }
+
+          &::after {
+            @extend %mdi-icon;
+            content: map-get($mdi-icons, 'delete');
+          }
+        }
+      }
+
+      .has_many_remove {
+        padding-left: $spacer;
+        font-size: 0;
+
+        &::after {
+          @extend %mdi-icon;
+          content: map-get($mdi-icons, 'remove');
         }
       }
     }
 
-    .has-many-actions { text-align: right; }
+    > ol li.has-many-inputs { padding: 0; }
+    > ol { flex-direction: row; }
+
+    > ol li.handle {
+      align-items: flex-start;
+      padding: 0;
+      padding-right: $spacer;
+    }
+
+    .columns { margin: 0 calc(-#{$grid-gutter-width} / 2); }
     .has_many_delete { margin-bottom: 0; }
   }
 

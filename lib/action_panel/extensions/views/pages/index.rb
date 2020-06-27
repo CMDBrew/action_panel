@@ -54,7 +54,7 @@ module ActiveAdmin
         end
 
         def aside_filter_action
-          ActiveAdmin::ActionItem.new(:filter, only: :index, group: 98) do
+          ActiveAdmin::ActionItem.new(:filter, only: :index, group: 90) do
             link_to mdi_icon('magnify'), '#',
                     id: 'aside-filters-toggler',
                     data: { toggle: 'collapse', target: '#aside-filters' },

@@ -19,11 +19,13 @@ $indigo: #6005EE !default;
 $purple: #D605EE !default;
 $pink:   #EE0590 !default;
 $red:    #B00020 !default;
+$yellow: #EEC407 !default;
 $orange: #EE6005 !default;
 $teal:   #90EE05 !default;
 $green:  #09af00 !default;
 
 $primary:   $indigo !default;
+$warning:   $yellow !default;
 $secondary: theme-mode-color($gray-500, $gray-600) !default;
 $light:     $gray-100 !default;
 $dark:      $gray-800 !default;
@@ -95,7 +97,7 @@ $input-border-color:      rgba(theme-mode-color($white, $black), 0.38) !default;
 // *** CUSTOM ***
 $input-solid:             true !default;
 $input-solid-bg:          theme-mode-color($gray-700, $gray-100) !default;
-$form-sortable-helper-bg: theme-mode-color($gray-900, $gray-100) !default;
+$form-sortable-helper-bg: rgba($warning, 0.12) !default;
 
 // 687: Navs
 $nav-link-padding-y:      0.75rem !default;
