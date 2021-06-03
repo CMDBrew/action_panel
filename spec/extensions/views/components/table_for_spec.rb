@@ -12,7 +12,7 @@ RSpec.describe ActiveAdmin::Views::TableFor do
 
     describe '#class_list' do
       subject { super().class_list }
-      it      { is_expected.to include('table') }
+      it      { is_expected.to include('table_for') }
     end
   end
 end

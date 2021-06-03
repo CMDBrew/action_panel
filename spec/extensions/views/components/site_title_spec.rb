@@ -25,6 +25,6 @@ RSpec.describe ActiveAdmin::Views::SiteTitle do
     let(:site_title) { build_title(namespace) }
 
     it { expect(site_title.class_list).to include('navbar-brand') }
-    it { expect(site_title.class_list).to include('site-title-wrapper') }
+    it { expect(site_title.class_list).to include('site_title') }
   end
 end

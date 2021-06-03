@@ -1,0 +1,43 @@
+// Layout
+$layout-navigation-top: (
+  'header': 56px
+) !default;
+
+// Sidebar
+$sidebar-width: 340px !default;
+// *** CUSTOM ***
+$sidebar-bg: theme-mode-color(rgba($black, 0.12), $gray-200) !default;
+
+// Icons
+$custom-icons: (
+  'index-as-table': '\F098F',
+  'index-as-block': '\F0DD0',
+  'index-as-grid': '\F0758',
+  'index-as-calendar': '\F00EE'
+) !default;
+
+// Index As Calender
+// *** CUSTOM ***
+$index-as-calender-btn-bg: $nav-pills-bg !default;
+$index-as-calender-today-bg: $component-active-bg !default;
+
+// Snakebar
+// *** CUSTOM ***
+$snakebar-bg:            $black !default;
+$snakebar-shadow:        $box-shadow !default;
+$snake-breakpoint:       sm !default;
+$enable-snakebar-shadow: true !default;
+
+// app/assets/stylesheets/action_panel/components/_trix_editor.scss
+$trix-toolbar-btn-group-bg: theme-mode-color($dark, $light) !default;
+$trix-content-pre-bg: theme-mode-color(rgba($black, 0.26), $gray-200) !default;
+$trix-content-blockquote-bg: theme-mode-color(rgba($black, 0.26), $gray-200) !default;
+$trix-content-attachment-caption-color: theme-mode-color($light, $secondary) !default;
+
+// app/assets/stylesheets/action_panel/themes/material/components/_select2.scss
+$select2-multiple-choice-bg: theme-mode-color($gray-900, $component-focus-bg) !default;
+
+// app/assets/stylesheets/action_panel/vendors/_bootstrap_datepicker.scss
+$datepicker-header-bg:        theme-mode-color($dropdown-bg, $white) !default;
+$datepicker-option-today-bg:  theme-mode-color($dropdown-bg, $gray-200) !default;
+$datepicker-option-hover-bg:  theme-mode-color($dark, $gray-100) !default;

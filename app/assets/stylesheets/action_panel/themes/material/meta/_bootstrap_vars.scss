@@ -1,0 +1,193 @@
+// CUSTOM
+$enable-dark-mode: false !default;
+
+// 6: Color system
+$white:    #FFF !default;
+$gray-100: #F5F5F5 !default;
+$gray-200: #EEEEEE !default;
+$gray-300: #E0E0E0 !default;
+$gray-400: #BDBDBD !default;
+$gray-500: #9E9E9E !default;
+$gray-600: #757575 !default;
+$gray-700: #444 !default;
+$gray-800: #333 !default;
+$gray-900: #222 !default;
+$black:    #000 !default;
+
+$blue:   #051AEE !default;
+$indigo: #6005EE !default;
+$purple: #D605EE !default;
+$pink:   #EE0590 !default;
+$red:    #B00020 !default;
+$yellow: #EEC407 !default;
+$orange: #EE6005 !default;
+$teal:   #90EE05 !default;
+$green:  #09af00 !default;
+
+$primary:   $indigo !default;
+$warning:   $yellow !default;
+$secondary: theme-mode-color($gray-500, $gray-600) !default;
+$light:     $gray-100 !default;
+$dark:      $gray-800 !default;
+
+// 105: Options
+$enable-shadows: false !default;
+
+// 160: Body
+$body-bg:    theme-mode-color($gray-900, $gray-100) !default;
+$body-color: theme-mode-color($light, $black) !default;
+$theme-colors: ('white': $white, 'body': $body-bg) !default;
+
+// 225: Components
+$box-shadow:    0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12) !default;
+$box-shadow-sm: 0 2px 3px 0 rgba(0,0,0,.12) !default;
+$box-shadow-lg: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,.12) !default;
+$border-width:  1px !default;
+$border-color:  rgba(theme-mode-color($white, $black), 0.12) !default;
+
+$component-active-color: $primary !default;
+$component-active-bg:    rgba($primary, 0.26) !default;
+// *** CUSTOM ***
+$component-hover-bg: rgba(theme-mode-color($white, $black), 0.04) !default;
+$component-focus-bg: rgba(theme-mode-color($white, $black), 0.12) !default;
+
+// 268: Typography
+$font-family-sans-serif: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-weight-bold:     500 !default;
+$headings-font-weight: 500 !default;
+$display1-size:        7rem !default;
+$display2-size:        3.5rem !default;
+$display3-size:        2.815rem !default;
+$display4-size:        2.125rem !default;
+$small-font-size:      87.5% !default;
+$text-muted:           theme-mode-color($gray-600, $gray-400) !default;
+$hr-border-color:      $border-color !default;
+// *** CUSTOM ***
+$caption-font-size: 0.75rem !default;
+
+// 343: Tables
+$table-cell-padding: 0.65rem 0.75rem !default;
+$table-bg:           theme-mode-color($dark, $white) !default;
+$table-active-bg:    rgba($primary, 0.08) !default;
+$table-border-color: $border-color !default;
+
+// 379: Buttons + Forms
+$input-btn-padding-x:    1rem !default;
+$input-btn-padding-x-sm: 0.75rem !default;
+$input-btn-padding-y:    .45rem !default;
+$input-btn-focus-width:  2px !default;
+$input-btn-focus-color:  $primary !default;
+
+// 406: Buttons
+$btn-font-weight: $font-weight-bold !default;
+$btn-box-shadow:  $box-shadow !default;
+// *** CUSTOM ***
+$btn-text-transform:     uppercase !default;
+$btn-shadow-enabled:     $enable-shadows !default;
+$btn-fab-size:           56px !default;
+$btn-fab-size-sm:        40px !default;
+$btn-fab-shadow:         $box-shadow !default;
+$btn-fab-shadow-enabled: true !default;
+
+// 447: Forms
+$input-bg:                theme-mode-color($gray-700, $white) !default;
+$input-disabled-bg:       theme-mode-color($dark, $gray-200) !default;
+$input-color:             theme-mode-color($white, $gray-700) !default;
+$input-border-color:      rgba(theme-mode-color($white, $black), 0.38) !default;
+// *** CUSTOM ***
+$input-solid:             true !default;
+$input-solid-bg:          theme-mode-color($gray-700, $gray-100) !default;
+$form-sortable-helper-bg: rgba($warning, 0.12) !default;
+
+// 687: Navs
+$nav-link-padding-y:      0.75rem !default;
+$nav-tabs-border-color:   $border-color !default;
+$nav-tabs-link-active-bg: transparent !default;
+// *** CUSTOM ***
+$nav-tabs-padding-x:          2rem !default;
+$nav-pills-bg:                theme-mode-color($dark, $white) !default;
+$nav-pills-border-color:      $border-color!default;
+$nav-pills-border-width:      0 !default;
+$nav-pills-link-color:        $body-color !default;
+$nav-pills-link-active-color: $nav-pills-link-color !default;
+$nav-pills-link-active-bg:    theme-mode-color($component-active-bg, rgba($black, 0.12)) !default;
+
+// 709: Navbar
+$navbar-light-active-color: $dark !default;
+$navbar-dark-active-color:  $primary !default;
+
+// 747: Dropdowns
+$dropdown-bg:           theme-mode-color($gray-700, $white) !default;
+$dropdown-border-width: 0 !default;
+$dropdown-box-shadow:   $box-shadow !default;
+
+$dropdown-link-color:       theme-mode-color($light, $gray-900) !default;
+$dropdown-link-hover-color: theme-mode-color($white, darken($gray-900, 5%)) !default;
+$dropdown-link-hover-bg:    theme-mode-color(rgba($white, 0.12), $gray-100) !default;
+
+// 780: Pagination
+$pagination-bg:           theme-mode-color($dark, $white) !default;
+$pagination-padding-x:    0.85rem !default;
+$pagination-border-width: 0 !default;
+$pagination-border-color: $border-color !default;
+$pagination-color:        $body-color !default;
+$pagination-hover-color:  $pagination-color !default;
+$pagination-hover-bg:     $component-hover-bg !default;
+$pagination-active-color: $pagination-color !default;
+$pagination-active-bg:    rgba($black, 0.12) !default;
+$pagination-disabled-bg:  theme-mode-color($dark, $white) !default;
+
+// 818: Card
+$card-border-width:   1px !default;
+$card-border-color:   rgba(theme-mode-color($white, $black), 0.12) !default;
+$card-cap-bg:         transparent !default;
+$card-bg:             theme-mode-color($dark, $white) !default;
+// *** CUSTOM ***
+$card-shadow-enabled: $enable-shadows !default;
+$card-shadow:         0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,0,0,.12) !default;
+
+// 841: Tooltips
+$tooltip-bg:           rgba($black, 0.87) !default;
+$tooltip-arrow-width:  0 !default;
+$tooltip-arrow-height: 0 !default;
+$tooltip-margin:       0.5rem !default;
+
+// 886: Popovers
+$popover-bg: theme-mode-color($dark, $white) !default;
+
+// 910: Badges
+$badge-font-size:     75% !default;
+$badge-padding-x:     0.5rem !default;
+$badge-border-radius: 10px !default;
+// *** CUSTOM ***
+$badge-text-transform: uppercase !default;
+
+// 928: Modals
+$modal-content-bg:               theme-mode-color($dark, $white) !default;
+$modal-content-box-shadow-sm-up: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0,0,0,.12) !default;
+// *** CUSTOM ***
+$modal-dialog-btn-cancel-color: theme-mode-color($dark, $white) !default;
+$modal-dialog-btn-submit-color: $primary !default;
+
+// 965: Alerts
+$alert-border-width: 0 !default;
+$alert-bg-level:     theme-mode-color(10, -10) !default;
+$alert-border-level: theme-mode-color(9, -9) !default;
+$alert-color-level:  theme-mode-color(-6, 6) !default;
+
+// 981: Progress bars
+$progress-bg: theme-mode-color($gray-900, $gray-200) !default;
+
+// 994: List group
+$list-group-bg:                  theme-mode-color($dark, $white) !default;
+$list-group-action-color:        theme-mode-color($light, $gray-700) !default;
+$list-group-action-hover-color:  $primary !default;
+$list-group-action-active-color: $primary !default;
+$list-group-hover-bg:            $component-hover-bg !default;
+$list-group-action-active-bg:    $component-focus-bg !default;
+$list-group-border-color:        $border-color !default;
+
+// 1036: Breadcrumbs
+$breadcrumb-padding-x:    0 !default;
+$breadcrumb-bg:           transparent !default;
+$breadcrumb-active-color: $body-color !default;

@@ -1,0 +1,62 @@
+.nav {
+  &.nav-pills {
+    overflow: hidden;
+
+    .nav-item:first-child {
+      &,
+      .nav-link {
+        border-radius: $nav-pills-border-radius 0 0 $nav-pills-border-radius;
+      }
+    }
+
+    .nav-item:last-child {
+      &,
+      .nav-link {
+        border-radius: 0 $nav-pills-border-radius $nav-pills-border-radius 0;
+      }
+    }
+
+    .nav-link {
+      color: $nav-pills-link-color;
+      background: $nav-pills-bg;
+      border: $nav-pills-border-width solid $nav-pills-border-color;
+      border-radius: 0;
+      &:not(:first-child) { margin-left: -1px; }
+
+      &.active {
+        color: $nav-pills-link-active-color;
+        background: $nav-pills-link-active-bg;
+      }
+    }
+  }
+
+  &.nav-tabs {
+    flex-wrap: nowrap;
+
+    .nav-item { margin-bottom: 0; }
+
+    .nav-link {
+      position: relative;
+      padding-right: $nav-tabs-padding-x;
+      padding-left: $nav-tabs-padding-x;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+
+      &:hover { background: $component-hover-bg; }
+
+      &.active {
+        color: $primary;
+        @include tab-underline($primary);
+      }
+    }
+  }
+
+  .nav-link {
+    font-size: $small-font-size;
+    font-weight: $btn-font-weight;
+    color: $secondary;
+    text-transform: $btn-text-transform;
+  }
+}
+

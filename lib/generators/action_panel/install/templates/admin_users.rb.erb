@@ -1,0 +1,50 @@
+ActiveAdmin.register <%= @user_class %> do
+
+  menu priority: 99
+
+  permit_params :email, :password, :password_confirmation
+
+  actions :all, except: %i[show]
+
+  filter :email
+  filter :updated_at
+  filter :created_at
+
+  index do
+    selectable_column
+    id_column
+    column :email
+    column :created_at
+    actions(dropdown: true)
+  end
+
+  form multiple: true do
+    panel do
+      form_section [:admin, resource] do |f|
+        f.inputs do
+          f.input :email
+        end
+
+        f.actions do
+          f.action :submit
+        end
+      end
+    end
+
+    panel do
+      form_section [:admin, resource] do |f|
+        f.inputs do
+          columns do
+            column(span: 6) { f.input :password }
+            column(span: 6) { f.input :password_confirmation }
+          end
+        end
+
+        f.actions do
+          f.action :submit
+        end
+      end
+    end
+  end
+
+end

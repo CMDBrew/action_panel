@@ -1,0 +1,10 @@
+en:
+  action_panel:
+    formtastic:
+      custom_file:
+        upload: Choose File
+      custom_password:
+        show: Show
+        hide: Hide
+    footer:
+      powered_by: Powered by %{name} %{version}

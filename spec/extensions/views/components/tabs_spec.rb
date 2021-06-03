@@ -14,6 +14,7 @@ RSpec.describe ActiveAdmin::Views::Tabs do
     let(:html) { Capybara.string(subject.to_s) }
 
     describe '#class_list' do
+      it { expect(html).to have_selector('.nav') }
       it { expect(html).to have_selector('.tab-ctrls') }
       it { expect(html).to have_selector('.tab-content') }
       it { expect(html).to have_selector('.nav-item') }

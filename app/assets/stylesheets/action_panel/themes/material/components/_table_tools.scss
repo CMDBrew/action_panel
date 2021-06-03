@@ -1,0 +1,30 @@
+.table_tools {
+  #filter-toggler { margin-left: $spacer; }
+
+  .scopes .count {
+    margin-left: map-get($spacers, 1);
+    &.empty { display: none; }
+  }
+
+  .indexes {
+    margin-left: auto;
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span { display: none; }
+
+      &::before {
+        @extend %mdi-icon;
+        font-size: 20px;
+      }
+
+      &.index-mode-table::before { content: map-get($mdi-icons, 'index-as-table'); }
+      &.index-mode-block::before { content: map-get($mdi-icons, 'index-as-block'); }
+      &.index-mode-grid::before { content: map-get($mdi-icons, 'index-as-grid'); }
+      &.index-mode-calendar::before { content: map-get($mdi-icons, 'index-as-calendar'); }
+    }
+  }
+}

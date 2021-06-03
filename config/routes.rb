@@ -1,2 +1,2 @@
-ActiveAdminBootstrap::Engine.routes.draw do
+ActionPanel::Engine.routes.draw do
 end

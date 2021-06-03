@@ -1,3 +1,5 @@
 en:
   active_admin:
+    batch_actions:
+      selection_toggle_explanation: Toggle Selection
     delete_message: Deleting records cannot be recovered. Do you still want to continue?

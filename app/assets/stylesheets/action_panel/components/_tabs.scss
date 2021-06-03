@@ -1,0 +1,13 @@
+.nav_tabs {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.tab-ctrls {
+  overflow-x: auto;
+  overflow-y: hidden;
+  &:empty { display: none; }
+}
+
+.ui-tabs-active .nav-link { @extend .active; }
+.tab-content > div { display: none; }

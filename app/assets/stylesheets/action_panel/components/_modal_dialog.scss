@@ -1,0 +1,71 @@
+body.modal-open {
+  .select2-container--bootstrap {
+    &.select2-container--open {
+      z-index: $zindex-modal + 2;
+    }
+  }
+}
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal-backdrop;
+  background: $modal-backdrop-bg;
+  opacity: $modal-backdrop-opacity;
+}
+
+.ui-dialog {
+  @extend .modal-content;
+  position: fixed;
+  z-index: $zindex-modal;
+  width: $modal-md !important;
+  max-width: calc(100vw - #{$spacer} * 2);
+  border: 0;
+
+  @include shadow($modal-content-box-shadow-sm-up);
+
+  .ui-dialog-titlebar {
+    @extend .modal-header;
+
+    .ui-dialog-title {
+      @extend .modal-title;
+      @extend h5;
+    }
+  }
+
+  .body {
+    @extend .modal-body;
+  }
+
+  .ui-dialog-buttonpane {
+    @extend .modal-footer;
+  }
+
+  form {
+    ol,
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+  }
+
+  .ui-dialog-buttonset {
+    $_cancel-color: $modal-dialog-btn-cancel-color;
+    $_submit-color: $modal-dialog-btn-submit-color;
+
+    .btn:not(:last-child) { margin-right: map-get($spacers, 2); }
+    .btn-cancel { @include button-variant($_cancel-color, $_cancel-color); }
+    .btn-submit { @include button-variant($_submit-color, $_submit-color); }
+  }
+}
+
+.active_admin_dialog.ui-dialog {
+  .ui-dialog-titlebar-close {
+    display: none;
+  }
+}

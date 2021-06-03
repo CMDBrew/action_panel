@@ -12,7 +12,7 @@ RSpec.describe ActiveAdmin::Views::IndexList do
 
     describe '#class_list' do
       subject { super().class_list }
-      it      { is_expected.to include('indexes', 'table_tools_segmented_control', 'btn-group') }
+      it      { is_expected.to include('indexes', 'table_tools_segmented_control') }
     end
   end
 end

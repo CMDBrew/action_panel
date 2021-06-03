@@ -12,13 +12,13 @@ RSpec.describe ActiveAdmin::Views::Panel do
 
     describe '#class_list' do
       subject { super().class_list }
-      it      { is_expected.to include('card', 'panel') }
+      it      { is_expected.to include('panel') }
     end
 
     describe '#content' do
-      it { expect(html).to have_selector('.card-header') }
-      it { expect(html).to have_selector('.header-content') }
-      it { expect(html).to have_selector('.card-body') }
+      it { expect(html).to have_selector('.panel-header') }
+      it { expect(html).to have_selector('.title') }
+      it { expect(html).to have_selector('.panel-body') }
     end
   end
 end

@@ -1,8 +1,0 @@
-en:
-  activeadmin_bootstrap:
-    form:
-      placeholders:
-        file: Choose File
-        switch:
-          'true': 'Yes'
-          'false': 'No'
