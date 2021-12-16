@@ -1,3 +1,6 @@
+> ## ⛔️ DEPRECATED: THIS GEM IS NO LONGER BEING MAINTAINED
+> This gem is no longer being maintained. Please upgrade to [Adminterface](https://adminterface.io) or other excellent alternatives listed in the [ActiveAdmin Wiki](https://github.com/activeadmin/activeadmin/wiki) instead.
+
 # ActionPanel
 ActionPanel changed the theming for the popular gem **[ActiveAdmin](https://activeadmin.info/)** to **[Bootstrap 4](https://getbootstrap.com/)** while providing some common feature extensions to allow easy creation of beautiful applications with ActiveAdmin.
 
