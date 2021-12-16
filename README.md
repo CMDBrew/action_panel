@@ -8,12 +8,7 @@ To customize ActionPanel please see the **[Wiki](docs/Home.md)**
 ### Add Gem
 Add this line to your application's Gemfile:
 ```ruby
-gem 'action_panel', git: 'https://github.com/CMDBrew/action_panel.git', branch: 'master'
-```
-
-Add API key to (/Users/username/.bundle/config)
-```shell
-bundle config https://github.com/CMDBrew/action_panel YOUR_API_KEY
+gem 'action_panel', git: 'https://github.com/CMDBrew/action_panel.git', tag: 'v0.1.0'
 ```
 
 And then execute:

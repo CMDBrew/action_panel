@@ -45,7 +45,7 @@ module ActionPanel
 
       def replace_default_admin_files
         template 'dashboard.rb.erb', 'app/admin/dashboard.rb'
-        retunr if options[:skip_users]
+        return if options[:skip_users]
 
         @user_class = name
         template 'admin_users.rb.erb', "app/admin/#{name.underscore.pluralize}.rb"
